@@ -14,13 +14,13 @@
 $dist/default/production\Labsdigital2.X.production.o
 cinit CODE 0 F F 4 2 1
 idloc IDLOC 5 2000 2000 4 2 1
-text1 CODE 0 37 37 1C 2 1
-text2 CODE 0 13 13 24 2 1
-maintext CODE 0 53 53 9 2 1
+text1 CODE 0 34 34 18 2 1
+text2 CODE 0 4C 4C C 2 1
+maintext CODE 0 13 13 21 2 1
 cstackCOMMON COMMON 1 70 70 3 1 1
 intentry CODE 0 4 4 8 2 1
 config CONFIG 4 2007 2007 2 2 1
-$C:\Users\diego\AppData\Local\Temp\xcAsejc.o
+$C:\Users\diego\AppData\Local\Temp\xcAs5c4.o
 idloc IDLOC 5 2000 2000 4 2 1
 reset_vec CODE 0 0 0 3 2 1
 end_init CODE 0 C C 3 2 1
@@ -40,11 +40,11 @@ BANK1 A0-EF 1
 BANK2 110-16F 1
 BANK3 190-1EF 1
 CONST 3-3 2
-CONST 5C-1FFF 2
+CONST 58-1FFF 2
 ENTRY 3-3 2
-ENTRY 5C-1FFF 2
+ENTRY 58-1FFF 2
 CODE 3-3 2
-CODE 5C-1FFF 2
+CODE 58-1FFF 2
 SFR0 0-1F 1
 SFR1 80-9F 1
 SFR2 100-10F 1
@@ -52,9 +52,9 @@ SFR3 180-18F 1
 COMMON 73-7D 1
 EEDATA 2100-21FF 2
 STRCODE 3-3 2
-STRCODE 5C-1FFF 2
+STRCODE 58-1FFF 2
 STRING 3-3 2
-STRING 5C-1FFF 2
+STRING 58-1FFF 2
 # %LINETAB Section
 # This section enumerates the file/line to address mappings.
 # The beginning of the section is indicated by %LINETAB.
@@ -69,39 +69,37 @@ STRING 5C-1FFF 2
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production\Labsdigital2.X.production.o
-F cinit CODE >454:C:\Users\diego\AppData\Local\Temp\xcAsejc.s
-F cinit CODE >457:C:\Users\diego\AppData\Local\Temp\xcAsejc.s
-F cinit CODE >463:C:\Users\diego\AppData\Local\Temp\xcAsejc.s
-F cinit CODE >465:C:\Users\diego\AppData\Local\Temp\xcAsejc.s
-10 cinit CODE >466:C:\Users\diego\AppData\Local\Temp\xcAsejc.s
+F cinit CODE >452:C:\Users\diego\AppData\Local\Temp\xcAs5c4.s
+F cinit CODE >455:C:\Users\diego\AppData\Local\Temp\xcAs5c4.s
+F cinit CODE >461:C:\Users\diego\AppData\Local\Temp\xcAs5c4.s
+F cinit CODE >463:C:\Users\diego\AppData\Local\Temp\xcAs5c4.s
+10 cinit CODE >464:C:\Users\diego\AppData\Local\Temp\xcAs5c4.s
 4 intentry CODE >48:C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\Prelab_1.c
-13 text2 CODE >48:C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\Prelab_1.c
-13 text2 CODE >50:C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\Prelab_1.c
-17 text2 CODE >59:C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\Prelab_1.c
-1D text2 CODE >60:C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\Prelab_1.c
-21 text2 CODE >61:C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\Prelab_1.c
-25 text2 CODE >66:C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\Prelab_1.c
-2A text2 CODE >69:C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\Prelab_1.c
-2C text2 CODE >67:C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\Prelab_1.c
-30 text2 CODE >76:C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\Prelab_1.c
-37 text1 CODE >94:C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\Prelab_1.c
-37 text1 CODE >95:C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\Prelab_1.c
-3B text1 CODE >96:C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\Prelab_1.c
-3C text1 CODE >98:C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\Prelab_1.c
-3F text1 CODE >99:C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\Prelab_1.c
-41 text1 CODE >100:C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\Prelab_1.c
-44 text1 CODE >101:C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\Prelab_1.c
-45 text1 CODE >104:C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\Prelab_1.c
-49 text1 CODE >105:C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\Prelab_1.c
-4A text1 CODE >108:C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\Prelab_1.c
-4D text1 CODE >109:C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\Prelab_1.c
-50 text1 CODE >110:C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\Prelab_1.c
-51 text1 CODE >111:C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\Prelab_1.c
-52 text1 CODE >113:C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\Prelab_1.c
-53 maintext CODE >80:C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\Prelab_1.c
-53 maintext CODE >82:C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\Prelab_1.c
-58 maintext CODE >83:C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\Prelab_1.c
-58 maintext CODE >86:C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\Prelab_1.c
+4C text2 CODE >48:C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\Prelab_1.c
+4C text2 CODE >50:C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\Prelab_1.c
+50 text2 CODE >53:C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\Prelab_1.c
+51 text2 CODE >56:C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\Prelab_1.c
+34 text1 CODE >83:C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\Prelab_1.c
+34 text1 CODE >84:C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\Prelab_1.c
+38 text1 CODE >85:C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\Prelab_1.c
+39 text1 CODE >87:C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\Prelab_1.c
+3C text1 CODE >88:C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\Prelab_1.c
+3E text1 CODE >90:C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\Prelab_1.c
+3F text1 CODE >91:C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\Prelab_1.c
+41 text1 CODE >92:C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\Prelab_1.c
+44 text1 CODE >94:C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\Prelab_1.c
+48 text1 CODE >95:C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\Prelab_1.c
+49 text1 CODE >99:C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\Prelab_1.c
+4A text1 CODE >100:C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\Prelab_1.c
+4B text1 CODE >102:C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\Prelab_1.c
+13 maintext CODE >60:C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\Prelab_1.c
+13 maintext CODE >62:C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\Prelab_1.c
+18 maintext CODE >65:C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\Prelab_1.c
+1E maintext CODE >66:C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\Prelab_1.c
+22 maintext CODE >67:C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\Prelab_1.c
+26 maintext CODE >69:C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\Prelab_1.c
+2A maintext CODE >70:C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\Prelab_1.c
+2E maintext CODE >71:C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\Prelab_1.c
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -115,34 +113,36 @@ F cinit CODE >465:C:\Users\diego\AppData\Local\Temp\xcAsejc.s
 # is the name of the object file in which the symbol was defined.
 %SYMTAB
 ___latbits 2 0 ABS 0 - dist/default/production\Labsdigital2.X.production.o
-__Hspace_0 5C 0 ABS 0 - -
+__Hspace_0 58 0 ABS 0 - -
 __Hspace_1 73 0 ABS 0 - -
 __Hspace_2 0 0 ABS 0 - -
 __Hspace_3 0 0 ABS 0 - -
 __Hspace_4 4010 0 ABS 0 - -
 __Heeprom_data 0 0 EEDATA 3 eeprom_data -
 __Hstrings 0 0 ABS 0 strings -
-___sp 0 0 STACK 2 stack C:\Users\diego\AppData\Local\Temp\xcAsejc.o
-_main A6 0 CODE 0 maintext dist/default/production\Labsdigital2.X.production.o
+_WPUB 95 0 ABS 0 - dist/default/production\Labsdigital2.X.production.o
+___sp 0 0 STACK 2 stack C:\Users\diego\AppData\Local\Temp\xcAs5c4.o
+_main 26 0 CODE 0 maintext dist/default/production\Labsdigital2.X.production.o
 btemp 7E 0 ABS 0 - dist/default/production\Labsdigital2.X.production.o
-start 18 0 CODE 0 init C:\Users\diego\AppData\Local\Temp\xcAsejc.o
+start 18 0 CODE 0 init C:\Users\diego\AppData\Local\Temp\xcAs5c4.o
+_OPTION_REGbits 81 0 ABS 0 - dist/default/production\Labsdigital2.X.production.o
 __Hpowerup 0 0 CODE 0 powerup -
-intlevel0 0 0 ENTRY 0 functab C:\Users\diego\AppData\Local\Temp\xcAsejc.o
-intlevel1 0 0 ENTRY 0 functab C:\Users\diego\AppData\Local\Temp\xcAsejc.o
-intlevel2 0 0 ENTRY 0 functab C:\Users\diego\AppData\Local\Temp\xcAsejc.o
-intlevel3 0 0 ENTRY 0 functab C:\Users\diego\AppData\Local\Temp\xcAsejc.o
-intlevel4 0 0 ENTRY 0 functab C:\Users\diego\AppData\Local\Temp\xcAsejc.o
-intlevel5 0 0 ENTRY 0 functab C:\Users\diego\AppData\Local\Temp\xcAsejc.o
+intlevel0 0 0 ENTRY 0 functab C:\Users\diego\AppData\Local\Temp\xcAs5c4.o
+intlevel1 0 0 ENTRY 0 functab C:\Users\diego\AppData\Local\Temp\xcAs5c4.o
+intlevel2 0 0 ENTRY 0 functab C:\Users\diego\AppData\Local\Temp\xcAs5c4.o
+intlevel3 0 0 ENTRY 0 functab C:\Users\diego\AppData\Local\Temp\xcAs5c4.o
+intlevel4 0 0 ENTRY 0 functab C:\Users\diego\AppData\Local\Temp\xcAs5c4.o
+intlevel5 0 0 ENTRY 0 functab C:\Users\diego\AppData\Local\Temp\xcAs5c4.o
 _OSCCONbits 8F 0 ABS 0 - dist/default/production\Labsdigital2.X.production.o
 wtemp0 7E 0 ABS 0 - dist/default/production\Labsdigital2.X.production.o
 __Hfunctab 0 0 ENTRY 0 functab -
 __Hclrtext 0 0 ABS 0 clrtext -
 _ANSELH 189 0 ABS 0 - dist/default/production\Labsdigital2.X.production.o
 __Lmaintext 0 0 ABS 0 maintext -
-___stackhi 0 0 ABS 0 - C:\Users\diego\AppData\Local\Temp\xcAsejc.o
-___stacklo 0 0 ABS 0 - C:\Users\diego\AppData\Local\Temp\xcAsejc.o
+___stackhi 0 0 ABS 0 - C:\Users\diego\AppData\Local\Temp\xcAs5c4.o
+___stacklo 0 0 ABS 0 - C:\Users\diego\AppData\Local\Temp\xcAs5c4.o
 start_initialization 1E 0 CODE 0 cinit dist/default/production\Labsdigital2.X.production.o
-___int_sp 0 0 STACK 2 stack C:\Users\diego\AppData\Local\Temp\xcAsejc.o
+___int_sp 0 0 STACK 2 stack C:\Users\diego\AppData\Local\Temp\xcAs5c4.o
 __Hbank0 0 0 ABS 0 bank0 -
 __Hbank1 0 0 ABS 0 bank1 -
 __Hbank2 0 0 ABS 0 bank2 -
@@ -179,18 +179,17 @@ __Lsfr2 0 0 ABS 0 sfr2 -
 __Lsfr3 0 0 ABS 0 sfr3 -
 __Ltext 0 0 ABS 0 text -
 __HcstackCOMMON 0 0 ABS 0 cstackCOMMON -
+_RB0 30 0 ABS 0 - dist/default/production\Labsdigital2.X.production.o
 _RB1 31 0 ABS 0 - dist/default/production\Labsdigital2.X.production.o
-_RB2 32 0 ABS 0 - dist/default/production\Labsdigital2.X.production.o
-__S0 5C 0 ABS 0 - -
+__S0 58 0 ABS 0 - -
 __S1 73 0 ABS 0 - -
 __S3 0 0 ABS 0 - -
-_isr 26 0 CODE 0 text2 dist/default/production\Labsdigital2.X.production.o
+_isr 98 0 CODE 0 text2 dist/default/production\Labsdigital2.X.production.o
 saved_w 7E 0 ABS 0 - dist/default/production\Labsdigital2.X.production.o
-__end_of_isr 6E 0 CODE 0 text2 dist/default/production\Labsdigital2.X.production.o
+__end_of_isr B0 0 CODE 0 text2 dist/default/production\Labsdigital2.X.production.o
 __Lintentry 8 0 CODE 0 intentry -
-reset_vec 0 0 CODE 0 reset_vec C:\Users\diego\AppData\Local\Temp\xcAsejc.o
-_PIE1bits 8C 0 ABS 0 - dist/default/production\Labsdigital2.X.production.o
-__pmaintext A6 0 CODE 0 maintext dist/default/production\Labsdigital2.X.production.o
+reset_vec 0 0 CODE 0 reset_vec C:\Users\diego\AppData\Local\Temp\xcAs5c4.o
+__pmaintext 26 0 CODE 0 maintext dist/default/production\Labsdigital2.X.production.o
 __Lcommon 0 0 ABS 0 common -
 __Lconfig 0 0 CONFIG 4 config -
 __Lspace_0 0 0 ABS 0 - -
@@ -198,15 +197,14 @@ __Lspace_1 0 0 ABS 0 - -
 __Lspace_2 0 0 ABS 0 - -
 __Lspace_3 0 0 ABS 0 - -
 __Lspace_4 0 0 ABS 0 - -
-_PIR1bits C 0 ABS 0 - dist/default/production\Labsdigital2.X.production.o
 __Lend_init 18 0 CODE 0 end_init -
 __LcstackCOMMON 0 0 ABS 0 cstackCOMMON -
 end_of_initialization 1E 0 CODE 0 cinit dist/default/production\Labsdigital2.X.production.o
 __Hintentry 18 0 CODE 0 intentry -
 __Lstrings 0 0 ABS 0 strings -
 __Hreset_vec 6 0 CODE 0 reset_vec -
-__ptext1 6E 0 CODE 0 text1 dist/default/production\Labsdigital2.X.production.o
-__ptext2 26 0 CODE 0 text2 dist/default/production\Labsdigital2.X.production.o
+__ptext1 68 0 CODE 0 text1 dist/default/production\Labsdigital2.X.production.o
+__ptext2 98 0 CODE 0 text2 dist/default/production\Labsdigital2.X.production.o
 __Lpowerup 0 0 CODE 0 powerup -
 __Leeprom_data 0 0 EEDATA 3 eeprom_data -
 __Lreset_vec 0 0 CODE 0 reset_vec -
@@ -215,17 +213,16 @@ __Lfunctab 0 0 ENTRY 0 functab -
 __Lclrtext 0 0 ABS 0 clrtext -
 __pcstackCOMMON 70 0 COMMON 1 cstackCOMMON dist/default/production\Labsdigital2.X.production.o
 __Hend_init 1E 0 CODE 0 end_init -
-__end_of_main B8 0 CODE 0 maintext dist/default/production\Labsdigital2.X.production.o
+__end_of_main 68 0 CODE 0 maintext dist/default/production\Labsdigital2.X.production.o
 _ANSEL 188 0 ABS 0 - dist/default/production\Labsdigital2.X.production.o
-_PORTA 5 0 ABS 0 - dist/default/production\Labsdigital2.X.production.o
-_PORTB 6 0 ABS 0 - dist/default/production\Labsdigital2.X.production.o
-_TRISA 85 0 ABS 0 - dist/default/production\Labsdigital2.X.production.o
+_PORTC 7 0 ABS 0 - dist/default/production\Labsdigital2.X.production.o
 _TRISB 86 0 ABS 0 - dist/default/production\Labsdigital2.X.production.o
-__end_of_setup A6 0 CODE 0 text1 dist/default/production\Labsdigital2.X.production.o
+_TRISC 87 0 ABS 0 - dist/default/production\Labsdigital2.X.production.o
+__end_of_setup 98 0 CODE 0 text1 dist/default/production\Labsdigital2.X.production.o
 __Hram 0 0 ABS 0 ram -
 __Lram 0 0 ABS 0 ram -
 interrupt_function 8 0 CODE 0 intentry dist/default/production\Labsdigital2.X.production.o
-_setup 6E 0 CODE 0 text1 dist/default/production\Labsdigital2.X.production.o
+_setup 68 0 CODE 0 text1 dist/default/production\Labsdigital2.X.production.o
 __pintentry 8 0 CODE 0 intentry dist/default/production\Labsdigital2.X.production.o
 __initialization 1E 0 CODE 0 cinit dist/default/production\Labsdigital2.X.production.o
 # %SPLITSTAB Section
@@ -254,7 +251,7 @@ __initialization 1E 0 CODE 0 cinit dist/default/production\Labsdigital2.X.produc
 # All other numeric quantities are in decimal.
 %SEGMENTS
 cstackCOMMON 1 70 70 3 1
-intentry 0 4 8 58 2
+intentry 0 4 8 54 2
 reset_vec 0 0 0 3 2
 # %NOTES Section
 # This section contains data of all the note-psects.  The beginning of the section

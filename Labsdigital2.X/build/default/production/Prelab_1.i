@@ -2656,22 +2656,9 @@ void setup(void);
 void __attribute__((picinterrupt(("")))) isr (void)
 {
     if (INTCONbits.RBIF ){
-# 59 "Prelab_1.c"
-        if (!PORTBbits.RB0){
-            while (!RB1);
-                PORTA ++;
 
 
-
-        }
-    if (!PORTBbits.RB1){
-            while (!RB2){
-
-                PORTA --;
-
-                         }
-        }
-
+        __nop();
     }
 
 }
@@ -2683,7 +2670,16 @@ void main (void)
     setup();
     while(1)
     {
+        if (!PORTBbits.RB0){
+            while (!RB0);
+                PORTC ++;
+        }
+    if (!PORTBbits.RB1){
+            while (!RB1) ;
+                PORTC --;
 
+
+        }
     }
 
 
@@ -2696,18 +2692,18 @@ void setup(void){
     ANSEL = 0b00000011;
     ANSELH = 0;
 
-    TRISA = 0x0;
+    TRISC = 0;
     TRISB = 0b11111111;
-    PORTA = 0;
-    PORTB = 0;
 
+    OPTION_REGbits.nRBPU = 0;
+    WPUB = 0b11111111;
+    PORTC = 0;
 
     OSCCONbits.IRCF = 0b0111;
     OSCCONbits.SCS = 1;
 
 
-    PIR1bits.ADIF = 0;
-    PIE1bits.ADIE = 1;
+
     INTCONbits.PEIE = 1;
     INTCONbits.GIE = 1;
 

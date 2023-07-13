@@ -31,7 +31,7 @@
 #include <xc.h>
 #include <stdint.h>
 #include <pic16f887.h>
-#define _XTAL_FREQ 4000000
+
 
 /*
  *Variables
@@ -48,29 +48,9 @@ void setup(void); //Prototipo de la función que contiene todo el setup
 void __interrupt() isr (void)
 {
     if (INTCONbits.RBIF ){
-       
-        //INTCONbits.RBIF = 0;
-        /*
-        if (!PORTBbits.RB0){
-            while (!RB0);
-            SLEEP();
-        }
-         **/
-        if (!PORTBbits.RB0){
-            while (!RB1);
-                PORTA ++;   
+
         
-            
-                         
-        }
-    if (!PORTBbits.RB1){
-            while (!RB2){
-                //valadr = 10;
-                PORTA --; 
-                
-                         }
-        }
-    
+        NOP();
     }
     
 }
@@ -82,7 +62,16 @@ void main (void)
     setup(); //Mandamos a llamar la función del setup
     while(1)
     {
-        
+        if (!PORTBbits.RB0){
+            while (!RB0);
+                PORTC ++;   
+        }
+    if (!PORTBbits.RB1){
+            while (!RB1) ;
+                PORTC  --; 
+                
+                         
+        }
     }
     
     
@@ -95,18 +84,18 @@ void setup(void){
     ANSEL = 0b00000011;
     ANSELH = 0;
     
-    TRISA = 0x0;
+    TRISC = 0;
     TRISB = 0b11111111;
-    PORTA = 0;
-    PORTB = 0;
     
+    OPTION_REGbits.nRBPU =  0;
+    WPUB = 0b11111111;
+    PORTC = 0;
     // Configuración del oscilador
     OSCCONbits.IRCF =   0b0111; //8MHz
     OSCCONbits.SCS = 1;
     
     //Configuración de las interrupciones
-    PIR1bits.ADIF = 0;
-    PIE1bits.ADIE = 1;
+
     INTCONbits.PEIE = 1;
     INTCONbits.GIE = 1;
     
