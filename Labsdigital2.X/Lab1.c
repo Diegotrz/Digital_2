@@ -1,10 +1,9 @@
 /*
- * File:   Prelab 1
+ * File:   Lab1.c
  * Author: Diego Terraza
  *
- * Created on 13 de julio de 2023, 11:10 AM
+ * Created on 13 de julio de 2023, 03:57 PM
  */
-
 
 // PIC16F887 Configuration Bit Settings
 
@@ -31,6 +30,8 @@
 #include <xc.h>
 #include <stdint.h>
 #include <pic16f887.h>
+#include "adclib.h"
+#include "setup_lb.h"
 
 
 /*
@@ -40,9 +41,9 @@
 /*
  * Prototipos de funciones
  */
-void setup(void); //Prototipo de la función que contiene todo el setup
+
 /*
- 
+ /*
  *Interrupción
  */
 void __interrupt() isr (void)
@@ -59,9 +60,18 @@ void __interrupt() isr (void)
  */
 void main (void)
 {
-    setup(); //Mandamos a llamar la función del setup
+ config_pines ( 0b00000011,  0);
+  config_tris ( 0xFF, 0b11111111, 0, 0, 0);
+ config_ports ( 0, 0, 0, 0);
+ config_pullup (0, 0b11111111);
+ 
+ //Llamada del adc
+adc_init( 0, 0,0,0,0b01); //Función para la configuración del adc
+
+ __delay_ms(2000);  // wait 2 seconds
     while(1)
     {
+        PORTD =   adc_read(); 
         if (!PORTBbits.RB0){ //Verifica si la interrupción del puerto RB0 ha cambiado
             while (!RB0);
                 PORTC ++;   
@@ -80,23 +90,3 @@ void main (void)
 /*
  * Funciones
  */
-void setup(void){
-    ANSEL = 0b00000011;
-    ANSELH = 0;
-    
-    TRISC = 0;
-    TRISB = 0b11111111;
-    
-    OPTION_REGbits.nRBPU =  0;
-    WPUB = 0b11111111;
-    PORTC = 0;
-    // Configuración del oscilador
-    OSCCONbits.IRCF =   0b0111; //8MHz
-    OSCCONbits.SCS = 1;
-    
-    //Configuración de las interrupciones
-
-    INTCONbits.PEIE = 1;
-    INTCONbits.GIE = 1;
-    
-}

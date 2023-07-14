@@ -13,6 +13,11 @@
                    displayName="Source Files"
                    projectFiles="true">
       <itemPath>Prelab_1.c</itemPath>
+      <itemPath>Lab1.c</itemPath>
+      <itemPath>adclib.h</itemPath>
+      <itemPath>adclib.c</itemPath>
+      <itemPath>setup_lb.h</itemPath>
+      <itemPath>setup_lb.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
@@ -143,6 +148,8 @@
         <property key="program-the-device-with-default-config-words" value="true"/>
         <property key="remove-unused-sections" value="true"/>
       </HI-TECH-LINK>
+      <item path="Prelab_1.c" ex="true" overriding="false">
+      </item>
       <XC8-CO>
         <property key="coverage-enable" value=""/>
         <property key="stack-guidance" value="false"/>

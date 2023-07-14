@@ -1,4 +1,4 @@
-# 1 "Prelab_1.c"
+# 1 "Lab1.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,8 +6,8 @@
 # 1 "<built-in>" 2
 # 1 "C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "Prelab_1.c" 2
-# 14 "Prelab_1.c"
+# 1 "Lab1.c" 2
+# 13 "Lab1.c"
 #pragma config FOSC = INTRC_CLKOUT
 #pragma config WDTE = OFF
 #pragma config PWRTE = OFF
@@ -2643,16 +2643,148 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 29 "C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\\pic\\include\\xc.h" 2 3
-# 31 "Prelab_1.c" 2
+# 30 "Lab1.c" 2
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c90\\stdint.h" 1 3
-# 32 "Prelab_1.c" 2
-# 43 "Prelab_1.c"
-void setup(void);
+# 31 "Lab1.c" 2
+
+
+# 1 "./adclib.h" 1
+# 11 "./adclib.h"
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c90\\stdint.h" 1 3
+# 11 "./adclib.h" 2
+
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c90\\stdio.h" 1 3
+
+
+
+# 1 "C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\\pic\\include\\__size_t.h" 1 3
+
+
+
+typedef unsigned size_t;
+# 4 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c90\\stdio.h" 2 3
+
+# 1 "C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\\pic\\include\\__null.h" 1 3
+# 5 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c90\\stdio.h" 2 3
 
 
 
 
+
+
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c90\\stdarg.h" 1 3
+
+
+
+
+
+
+typedef void * va_list[1];
+
+#pragma intrinsic(__va_start)
+extern void * __va_start(void);
+
+#pragma intrinsic(__va_arg)
+extern void * __va_arg(void *, ...);
+# 11 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c90\\stdio.h" 2 3
+# 43 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c90\\stdio.h" 3
+struct __prbuf
+{
+ char * ptr;
+ void (* func)(char);
+};
+# 85 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c90\\stdio.h" 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c90\\conio.h" 1 3
+
+
+
+
+
+
+
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c90\\errno.h" 1 3
+# 29 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c90\\errno.h" 3
+extern int errno;
+# 8 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c90\\conio.h" 2 3
+
+
+
+
+extern void init_uart(void);
+
+extern char getch(void);
+extern char getche(void);
+extern void putch(char);
+extern void ungetch(char);
+
+extern __bit kbhit(void);
+
+
+
+extern char * cgets(char *);
+extern void cputs(const char *);
+# 85 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c90\\stdio.h" 2 3
+
+
+
+extern int cprintf(char *, ...);
+#pragma printf_check(cprintf)
+
+
+
+extern int _doprnt(struct __prbuf *, const register char *, register va_list);
+# 180 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c90\\stdio.h" 3
+#pragma printf_check(vprintf) const
+#pragma printf_check(vsprintf) const
+
+extern char * gets(char *);
+extern int puts(const char *);
+extern int scanf(const char *, ...) __attribute__((unsupported("scanf() is not supported by this compiler")));
+extern int sscanf(const char *, const char *, ...) __attribute__((unsupported("sscanf() is not supported by this compiler")));
+extern int vprintf(const char *, va_list) __attribute__((unsupported("vprintf() is not supported by this compiler")));
+extern int vsprintf(char *, const char *, va_list) __attribute__((unsupported("vsprintf() is not supported by this compiler")));
+extern int vscanf(const char *, va_list ap) __attribute__((unsupported("vscanf() is not supported by this compiler")));
+extern int vsscanf(const char *, const char *, va_list) __attribute__((unsupported("vsscanf() is not supported by this compiler")));
+
+#pragma printf_check(printf) const
+#pragma printf_check(sprintf) const
+extern int sprintf(char *, const char *, ...);
+extern int printf(const char *, ...);
+# 12 "./adclib.h" 2
+
+
+
+void adc_init(int channel, int justf,int vcf0,int vcf1,char adcs);
+int adc_read();
+void adc_cchange(int channel);
+int adc_get_channel();
+# 33 "Lab1.c" 2
+
+# 1 "./setup_lb.h" 1
+
+
+
+
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c90\\stdint.h" 1 3
+# 5 "./setup_lb.h" 2
+
+
+
+
+void config_pines(char ans,int ansh);
+void config_tris(char tris_a,char tris_b,char tris_c,char tris_d,char tris_e);
+void config_ports(char port_a,char port_c,char port_d,char port_e);
+void config_pullup(int pulles, char pinpull);
+
+
+
+
+
+int config_osc(char valosc);
+int config_interrupt(int adcif, int adcie,int rbie, int rbif, int pie, int gie );
+# 34 "Lab1.c" 2
+# 49 "Lab1.c"
 void __attribute__((picinterrupt(("")))) isr (void)
 {
     if (INTCONbits.RBIF ){
@@ -2667,9 +2799,18 @@ void __attribute__((picinterrupt(("")))) isr (void)
 
 void main (void)
 {
-    setup();
+ config_pines ( 0b00000011, 0);
+  config_tris ( 0xFF, 0b11111111, 0, 0, 0);
+ config_ports ( 0, 0, 0, 0);
+ config_pullup (0, 0b11111111);
+
+
+adc_init( 0, 0,0,0,0b01);
+
+ _delay((unsigned long)((2000)*(8000000/4000.0)));
     while(1)
     {
+        PORTD = adc_read();
         if (!PORTBbits.RB0){
             while (!RB0);
                 PORTC ++;
@@ -2683,28 +2824,5 @@ void main (void)
     }
 
 
-
-}
-
-
-
-void setup(void){
-    ANSEL = 0b00000011;
-    ANSELH = 0;
-
-    TRISC = 0;
-    TRISB = 0b11111111;
-
-    OPTION_REGbits.nRBPU = 0;
-    WPUB = 0b11111111;
-    PORTC = 0;
-
-    OSCCONbits.IRCF = 0b0111;
-    OSCCONbits.SCS = 1;
-
-
-
-    INTCONbits.PEIE = 1;
-    INTCONbits.GIE = 1;
 
 }
