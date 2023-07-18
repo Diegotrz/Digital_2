@@ -14,19 +14,21 @@
 $dist/default/production\Labsdigital2.X.production.o
 cinit CODE 0 F F 6 2 1
 idloc IDLOC 5 2000 2000 4 2 1
-text1 CODE 0 9A 9A E 2 1
-text2 CODE 0 B4 B4 A 2 1
-text3 CODE 0 A8 A8 C 2 1
-text4 CODE 0 BE BE 8 2 1
-text5 CODE 0 62 62 38 2 1
-text6 CODE 0 C6 C6 8 2 1
-maintext CODE 0 15 15 4D 2 1
+text1 CODE 0 15 15 73 2 1
+text2 CODE 0 12E 12E E 2 1
+text3 CODE 0 148 148 A 2 1
+text4 CODE 0 13C 13C C 2 1
+text5 CODE 0 152 152 8 2 1
+text6 CODE 0 11F 11F F 2 1
+text7 CODE 0 E7 E7 38 2 1
+text8 CODE 0 15A 15A 8 2 1
+maintext CODE 0 88 88 5F 2 1
 cstackCOMMON COMMON 1 70 70 A 1 1
 cstackBANK0 BANK0 1 20 20 9 1 1
 intentry CODE 0 4 4 8 2 1
 bssCOMMON COMMON 1 7A 7A 2 1 1
 config CONFIG 4 2007 2007 2 2 1
-$C:\Users\diego\AppData\Local\Temp\xcAsac.o
+$C:\Users\diego\AppData\Local\Temp\xcAscts.o
 idloc IDLOC 5 2000 2000 4 2 1
 reset_vec CODE 0 0 0 3 2 1
 end_init CODE 0 C C 3 2 1
@@ -46,11 +48,11 @@ BANK1 A0-EF 1
 BANK2 110-16F 1
 BANK3 190-1EF 1
 CONST 3-3 2
-CONST CE-1FFF 2
+CONST 162-1FFF 2
 ENTRY 3-3 2
-ENTRY CE-1FFF 2
+ENTRY 162-1FFF 2
 CODE 3-3 2
-CODE CE-1FFF 2
+CODE 162-1FFF 2
 SFR0 0-1F 1
 SFR1 80-9F 1
 SFR2 100-10F 1
@@ -58,9 +60,9 @@ SFR3 180-18F 1
 COMMON 7C-7D 1
 EEDATA 2100-21FF 2
 STRCODE 3-3 2
-STRCODE CE-1FFF 2
+STRCODE 162-1FFF 2
 STRING 3-3 2
-STRING CE-1FFF 2
+STRING 162-1FFF 2
 # %LINETAB Section
 # This section enumerates the file/line to address mappings.
 # The beginning of the section is indicated by %LINETAB.
@@ -75,64 +77,125 @@ STRING CE-1FFF 2
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production\Labsdigital2.X.production.o
-F cinit CODE >941:C:\Users\diego\AppData\Local\Temp\xcAsac.s
-F cinit CODE >944:C:\Users\diego\AppData\Local\Temp\xcAsac.s
-F cinit CODE >958:C:\Users\diego\AppData\Local\Temp\xcAsac.s
-10 cinit CODE >959:C:\Users\diego\AppData\Local\Temp\xcAsac.s
-11 cinit CODE >965:C:\Users\diego\AppData\Local\Temp\xcAsac.s
-11 cinit CODE >967:C:\Users\diego\AppData\Local\Temp\xcAsac.s
-12 cinit CODE >968:C:\Users\diego\AppData\Local\Temp\xcAsac.s
+F cinit CODE >944:C:\Users\diego\AppData\Local\Temp\xcAscts.s
+F cinit CODE >947:C:\Users\diego\AppData\Local\Temp\xcAscts.s
+F cinit CODE >961:C:\Users\diego\AppData\Local\Temp\xcAscts.s
+10 cinit CODE >962:C:\Users\diego\AppData\Local\Temp\xcAscts.s
+11 cinit CODE >968:C:\Users\diego\AppData\Local\Temp\xcAscts.s
+11 cinit CODE >970:C:\Users\diego\AppData\Local\Temp\xcAscts.s
+12 cinit CODE >971:C:\Users\diego\AppData\Local\Temp\xcAscts.s
 4 intentry CODE >48:C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\Postlab1.c
-C6 text6 CODE >48:C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\Postlab1.c
-C6 text6 CODE >51:C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\Postlab1.c
-C7 text6 CODE >52:C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\Postlab1.c
-62 text5 CODE >15:C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\adclib.c
-62 text5 CODE >17:C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\adclib.c
-67 text5 CODE >17:C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\adclib.c
-69 text5 CODE >17:C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\adclib.c
-6B text5 CODE >18:C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\adclib.c
-70 text5 CODE >18:C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\adclib.c
-72 text5 CODE >18:C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\adclib.c
-74 text5 CODE >19:C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\adclib.c
-79 text5 CODE >19:C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\adclib.c
-7B text5 CODE >19:C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\adclib.c
-7D text5 CODE >20:C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\adclib.c
-80 text5 CODE >21:C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\adclib.c
-84 text5 CODE >22:C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\adclib.c
-90 text5 CODE >23:C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\adclib.c
-99 text5 CODE >24:C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\adclib.c
-BE text4 CODE >15:C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\setup_lb.c
-BF text4 CODE >16:C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\setup_lb.c
-C3 text4 CODE >17:C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\setup_lb.c
-C5 text4 CODE >18:C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\setup_lb.c
-A8 text3 CODE >27:C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\setup_lb.c
-A9 text3 CODE >28:C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\setup_lb.c
-AD text3 CODE >29:C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\setup_lb.c
-AF text3 CODE >30:C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\setup_lb.c
-B1 text3 CODE >31:C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\setup_lb.c
-B3 text3 CODE >32:C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\setup_lb.c
-B4 text2 CODE >33:C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\setup_lb.c
-B4 text2 CODE >34:C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\setup_lb.c
-B7 text2 CODE >34:C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\setup_lb.c
-B9 text2 CODE >34:C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\setup_lb.c
-BB text2 CODE >35:C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\setup_lb.c
-BD text2 CODE >36:C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\setup_lb.c
-9A text1 CODE >19:C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\setup_lb.c
-9B text1 CODE >20:C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\setup_lb.c
-9F text1 CODE >21:C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\setup_lb.c
-A1 text1 CODE >22:C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\setup_lb.c
-A3 text1 CODE >23:C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\setup_lb.c
-A5 text1 CODE >24:C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\setup_lb.c
-A7 text1 CODE >25:C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\setup_lb.c
-15 maintext CODE >56:C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\Postlab1.c
-15 maintext CODE >58:C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\Postlab1.c
-1E maintext CODE >59:C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\Postlab1.c
-29 maintext CODE >60:C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\Postlab1.c
-32 maintext CODE >61:C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\Postlab1.c
-3C maintext CODE >64:C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\Postlab1.c
-51 maintext CODE >66:C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\Postlab1.c
-5E maintext CODE >67:C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\Postlab1.c
-5E maintext CODE >71:C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\Postlab1.c
+15A text8 CODE >48:C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\Postlab1.c
+15A text8 CODE >51:C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\Postlab1.c
+15B text8 CODE >52:C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\Postlab1.c
+E7 text7 CODE >15:C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\adclib.c
+E7 text7 CODE >17:C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\adclib.c
+EC text7 CODE >17:C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\adclib.c
+EE text7 CODE >17:C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\adclib.c
+F0 text7 CODE >18:C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\adclib.c
+F5 text7 CODE >18:C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\adclib.c
+F7 text7 CODE >18:C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\adclib.c
+F9 text7 CODE >19:C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\adclib.c
+FE text7 CODE >19:C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\adclib.c
+100 text7 CODE >19:C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\adclib.c
+102 text7 CODE >20:C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\adclib.c
+105 text7 CODE >21:C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\adclib.c
+109 text7 CODE >22:C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\adclib.c
+115 text7 CODE >23:C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\adclib.c
+11E text7 CODE >24:C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\adclib.c
+11F text6 CODE >25:C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\adclib.c
+11F text6 CODE >26:C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\adclib.c
+125 text6 CODE >27:C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\adclib.c
+126 text6 CODE >28:C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\adclib.c
+12D text6 CODE >30:C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\adclib.c
+152 text5 CODE >15:C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\setup_lb.c
+153 text5 CODE >16:C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\setup_lb.c
+157 text5 CODE >17:C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\setup_lb.c
+159 text5 CODE >18:C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\setup_lb.c
+13C text4 CODE >27:C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\setup_lb.c
+13D text4 CODE >28:C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\setup_lb.c
+141 text4 CODE >29:C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\setup_lb.c
+143 text4 CODE >30:C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\setup_lb.c
+145 text4 CODE >31:C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\setup_lb.c
+147 text4 CODE >32:C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\setup_lb.c
+148 text3 CODE >33:C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\setup_lb.c
+148 text3 CODE >34:C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\setup_lb.c
+14B text3 CODE >34:C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\setup_lb.c
+14D text3 CODE >34:C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\setup_lb.c
+14F text3 CODE >35:C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\setup_lb.c
+151 text3 CODE >36:C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\setup_lb.c
+12E text2 CODE >19:C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\setup_lb.c
+12F text2 CODE >20:C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\setup_lb.c
+133 text2 CODE >21:C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\setup_lb.c
+135 text2 CODE >22:C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\setup_lb.c
+137 text2 CODE >23:C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\setup_lb.c
+139 text2 CODE >24:C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\setup_lb.c
+13B text2 CODE >25:C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\setup_lb.c
+15 text1 CODE >16:C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\displaylib.c
+16 text1 CODE >17:C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\displaylib.c
+17 text1 CODE >19:C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\displaylib.c
+19 text1 CODE >20:C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\displaylib.c
+1A text1 CODE >22:C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\displaylib.c
+1C text1 CODE >23:C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\displaylib.c
+1D text1 CODE >25:C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\displaylib.c
+1F text1 CODE >26:C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\displaylib.c
+20 text1 CODE >28:C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\displaylib.c
+22 text1 CODE >29:C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\displaylib.c
+23 text1 CODE >31:C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\displaylib.c
+25 text1 CODE >32:C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\displaylib.c
+26 text1 CODE >34:C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\displaylib.c
+28 text1 CODE >35:C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\displaylib.c
+29 text1 CODE >37:C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\displaylib.c
+2B text1 CODE >38:C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\displaylib.c
+2C text1 CODE >40:C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\displaylib.c
+2E text1 CODE >41:C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\displaylib.c
+2F text1 CODE >43:C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\displaylib.c
+31 text1 CODE >44:C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\displaylib.c
+32 text1 CODE >46:C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\displaylib.c
+34 text1 CODE >47:C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\displaylib.c
+35 text1 CODE >49:C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\displaylib.c
+37 text1 CODE >50:C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\displaylib.c
+38 text1 CODE >52:C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\displaylib.c
+3A text1 CODE >53:C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\displaylib.c
+3B text1 CODE >55:C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\displaylib.c
+3D text1 CODE >56:C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\displaylib.c
+3E text1 CODE >58:C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\displaylib.c
+40 text1 CODE >59:C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\displaylib.c
+41 text1 CODE >61:C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\displaylib.c
+43 text1 CODE >62:C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\displaylib.c
+44 text1 CODE >64:C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\displaylib.c
+46 text1 CODE >65:C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\displaylib.c
+47 text1 CODE >66:C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\displaylib.c
+4C text1 CODE >66:C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\displaylib.c
+4F text1 CODE >66:C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\displaylib.c
+54 text1 CODE >66:C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\displaylib.c
+57 text1 CODE >66:C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\displaylib.c
+5A text1 CODE >66:C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\displaylib.c
+5D text1 CODE >66:C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\displaylib.c
+60 text1 CODE >66:C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\displaylib.c
+63 text1 CODE >66:C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\displaylib.c
+66 text1 CODE >66:C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\displaylib.c
+69 text1 CODE >66:C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\displaylib.c
+6C text1 CODE >66:C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\displaylib.c
+6F text1 CODE >66:C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\displaylib.c
+74 text1 CODE >66:C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\displaylib.c
+77 text1 CODE >66:C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\displaylib.c
+7A text1 CODE >66:C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\displaylib.c
+7D text1 CODE >66:C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\displaylib.c
+80 text1 CODE >66:C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\displaylib.c
+83 text1 CODE >66:C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\displaylib.c
+86 text1 CODE >68:C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\displaylib.c
+87 text1 CODE >70:C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\displaylib.c
+88 maintext CODE >56:C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\Postlab1.c
+88 maintext CODE >58:C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\Postlab1.c
+91 maintext CODE >59:C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\Postlab1.c
+9C maintext CODE >60:C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\Postlab1.c
+A5 maintext CODE >61:C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\Postlab1.c
+AF maintext CODE >64:C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\Postlab1.c
+C4 maintext CODE >66:C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\Postlab1.c
+D1 maintext CODE >69:C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\Postlab1.c
+D8 maintext CODE >70:C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\Postlab1.c
+E1 maintext CODE >71:C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\Postlab1.c
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -146,7 +209,7 @@ A7 text1 CODE >25:C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigita
 # is the name of the object file in which the symbol was defined.
 %SYMTAB
 ___latbits 2 0 ABS 0 - dist/default/production\Labsdigital2.X.production.o
-__Hspace_0 CE 0 ABS 0 - -
+__Hspace_0 162 0 ABS 0 - -
 __Hspace_1 7C 0 ABS 0 - -
 __Hspace_2 0 0 ABS 0 - -
 __Hspace_3 0 0 ABS 0 - -
@@ -155,20 +218,21 @@ adc_init@justf 22 0 BANK0 1 cstackBANK0 dist/default/production\Labsdigital2.X.p
 __Heeprom_data 0 0 EEDATA 3 eeprom_data -
 __Hstrings 0 0 ABS 0 strings -
 _WPUB 95 0 ABS 0 - dist/default/production\Labsdigital2.X.production.o
-___sp 0 0 STACK 2 stack C:\Users\diego\AppData\Local\Temp\xcAsac.o
-_main 2A 0 CODE 0 maintext dist/default/production\Labsdigital2.X.production.o
+___sp 0 0 STACK 2 stack C:\Users\diego\AppData\Local\Temp\xcAscts.o
+_main 110 0 CODE 0 maintext dist/default/production\Labsdigital2.X.production.o
 btemp 7E 0 ABS 0 - dist/default/production\Labsdigital2.X.production.o
-start 18 0 CODE 0 init C:\Users\diego\AppData\Local\Temp\xcAsac.o
+start 18 0 CODE 0 init C:\Users\diego\AppData\Local\Temp\xcAscts.o
 __HbssCOMMON 0 0 ABS 0 bssCOMMON -
 _OPTION_REGbits 81 0 ABS 0 - dist/default/production\Labsdigital2.X.production.o
 __Hpowerup 0 0 CODE 0 powerup -
-intlevel0 0 0 ENTRY 0 functab C:\Users\diego\AppData\Local\Temp\xcAsac.o
-intlevel1 0 0 ENTRY 0 functab C:\Users\diego\AppData\Local\Temp\xcAsac.o
-intlevel2 0 0 ENTRY 0 functab C:\Users\diego\AppData\Local\Temp\xcAsac.o
-intlevel3 0 0 ENTRY 0 functab C:\Users\diego\AppData\Local\Temp\xcAsac.o
-intlevel4 0 0 ENTRY 0 functab C:\Users\diego\AppData\Local\Temp\xcAsac.o
-intlevel5 0 0 ENTRY 0 functab C:\Users\diego\AppData\Local\Temp\xcAsac.o
+intlevel0 0 0 ENTRY 0 functab C:\Users\diego\AppData\Local\Temp\xcAscts.o
+intlevel1 0 0 ENTRY 0 functab C:\Users\diego\AppData\Local\Temp\xcAscts.o
+intlevel2 0 0 ENTRY 0 functab C:\Users\diego\AppData\Local\Temp\xcAscts.o
+intlevel3 0 0 ENTRY 0 functab C:\Users\diego\AppData\Local\Temp\xcAscts.o
+intlevel4 0 0 ENTRY 0 functab C:\Users\diego\AppData\Local\Temp\xcAscts.o
+intlevel5 0 0 ENTRY 0 functab C:\Users\diego\AppData\Local\Temp\xcAscts.o
 __LbssCOMMON 0 0 ABS 0 bssCOMMON -
+_valdisplay 2A 0 CODE 0 text1 dist/default/production\Labsdigital2.X.production.o
 _OSCCONbits 8F 0 ABS 0 - dist/default/production\Labsdigital2.X.production.o
 adc_init@channel 20 0 BANK0 1 cstackBANK0 dist/default/production\Labsdigital2.X.production.o
 wtemp0 7E 0 ABS 0 - dist/default/production\Labsdigital2.X.production.o
@@ -177,8 +241,9 @@ __Hclrtext 0 0 ABS 0 clrtext -
 _ADRESH 1E 0 ABS 0 - dist/default/production\Labsdigital2.X.production.o
 _ANSELH 189 0 ABS 0 - dist/default/production\Labsdigital2.X.production.o
 __Lmaintext 0 0 ABS 0 maintext -
-___stackhi 0 0 ABS 0 - C:\Users\diego\AppData\Local\Temp\xcAsac.o
-___stacklo 0 0 ABS 0 - C:\Users\diego\AppData\Local\Temp\xcAsac.o
+__end_of_valdisplay 110 0 CODE 0 text1 dist/default/production\Labsdigital2.X.production.o
+___stackhi 0 0 ABS 0 - C:\Users\diego\AppData\Local\Temp\xcAscts.o
+___stacklo 0 0 ABS 0 - C:\Users\diego\AppData\Local\Temp\xcAscts.o
 config_tris@tris_a 76 0 COMMON 1 cstackCOMMON dist/default/production\Labsdigital2.X.production.o
 config_tris@tris_b 72 0 COMMON 1 cstackCOMMON dist/default/production\Labsdigital2.X.production.o
 config_tris@tris_c 73 0 COMMON 1 cstackCOMMON dist/default/production\Labsdigital2.X.production.o
@@ -189,9 +254,9 @@ config_ports@port_c 72 0 COMMON 1 cstackCOMMON dist/default/production\Labsdigit
 config_ports@port_d 73 0 COMMON 1 cstackCOMMON dist/default/production\Labsdigital2.X.production.o
 config_ports@port_e 74 0 COMMON 1 cstackCOMMON dist/default/production\Labsdigital2.X.production.o
 start_initialization 1E 0 CODE 0 cinit dist/default/production\Labsdigital2.X.production.o
-_config_pullup 168 0 CODE 0 text2 dist/default/production\Labsdigital2.X.production.o
+_config_pullup 290 0 CODE 0 text3 dist/default/production\Labsdigital2.X.production.o
 __pcstackBANK0 20 0 BANK0 1 cstackBANK0 dist/default/production\Labsdigital2.X.production.o
-___int_sp 0 0 STACK 2 stack C:\Users\diego\AppData\Local\Temp\xcAsac.o
+___int_sp 0 0 STACK 2 stack C:\Users\diego\AppData\Local\Temp\xcAscts.o
 __Hbank0 0 0 ABS 0 bank0 -
 __Hbank1 0 0 ABS 0 bank1 -
 __Hbank2 0 0 ABS 0 bank2 -
@@ -230,29 +295,31 @@ config_pines@ans 74 0 COMMON 1 cstackCOMMON dist/default/production\Labsdigital2
 __LcstackBANK0 0 0 ABS 0 cstackBANK0 -
 config_pullup@pinpull 74 0 COMMON 1 cstackCOMMON dist/default/production\Labsdigital2.X.production.o
 __HcstackCOMMON 0 0 ABS 0 cstackCOMMON -
-__S0 CE 0 ABS 0 - -
+__S0 162 0 ABS 0 - -
 __S1 7C 0 ABS 0 - -
 __S3 0 0 ABS 0 - -
-_isr 18C 0 CODE 0 text6 dist/default/production\Labsdigital2.X.production.o
+_isr 2B4 0 CODE 0 text8 dist/default/production\Labsdigital2.X.production.o
 saved_w 7E 0 ABS 0 - dist/default/production\Labsdigital2.X.production.o
-__end_of_isr 19C 0 CODE 0 text6 dist/default/production\Labsdigital2.X.production.o
+__end_of_isr 2C4 0 CODE 0 text8 dist/default/production\Labsdigital2.X.production.o
 config_pines@ansh 72 0 COMMON 1 cstackCOMMON dist/default/production\Labsdigital2.X.production.o
-_config_pines 17C 0 CODE 0 text4 dist/default/production\Labsdigital2.X.production.o
-_config_ports 150 0 CODE 0 text3 dist/default/production\Labsdigital2.X.production.o
+_config_pines 2A4 0 CODE 0 text5 dist/default/production\Labsdigital2.X.production.o
+_config_ports 278 0 CODE 0 text4 dist/default/production\Labsdigital2.X.production.o
 __Lintentry 8 0 CODE 0 intentry -
-reset_vec 0 0 CODE 0 reset_vec C:\Users\diego\AppData\Local\Temp\xcAsac.o
-_config_tris 134 0 CODE 0 text1 dist/default/production\Labsdigital2.X.production.o
+reset_vec 0 0 CODE 0 reset_vec C:\Users\diego\AppData\Local\Temp\xcAscts.o
+_config_tris 25C 0 CODE 0 text2 dist/default/production\Labsdigital2.X.production.o
 _PIE1bits 8C 0 ABS 0 - dist/default/production\Labsdigital2.X.production.o
-__end_of_config_pullup 17C 0 CODE 0 text2 dist/default/production\Labsdigital2.X.production.o
-__pmaintext 2A 0 CODE 0 maintext dist/default/production\Labsdigital2.X.production.o
+__end_of_config_pullup 2A4 0 CODE 0 text3 dist/default/production\Labsdigital2.X.production.o
+__pmaintext 110 0 CODE 0 maintext dist/default/production\Labsdigital2.X.production.o
 __Lcommon 0 0 ABS 0 common -
 __Lconfig 0 0 CONFIG 4 config -
 adc_init@adcs 28 0 BANK0 1 cstackBANK0 dist/default/production\Labsdigital2.X.production.o
 adc_init@vcf0 24 0 BANK0 1 cstackBANK0 dist/default/production\Labsdigital2.X.production.o
 adc_init@vcf1 26 0 BANK0 1 cstackBANK0 dist/default/production\Labsdigital2.X.production.o
+_varadc 7A 0 COMMON 1 bssCOMMON dist/default/production\Labsdigital2.X.production.o
 _ADCON0bits 1F 0 ABS 0 - dist/default/production\Labsdigital2.X.production.o
 _ADCON1bits 9F 0 ABS 0 - dist/default/production\Labsdigital2.X.production.o
-_adc_init C4 0 CODE 0 text5 dist/default/production\Labsdigital2.X.production.o
+_adc_init 1CE 0 CODE 0 text7 dist/default/production\Labsdigital2.X.production.o
+_adc_read 23E 0 CODE 0 text6 dist/default/production\Labsdigital2.X.production.o
 __Lspace_0 0 0 ABS 0 - -
 __Lspace_1 0 0 ABS 0 - -
 __Lspace_2 0 0 ABS 0 - -
@@ -260,23 +327,26 @@ __Lspace_3 0 0 ABS 0 - -
 __Lspace_4 0 0 ABS 0 - -
 __pbssCOMMON 7A 0 COMMON 1 bssCOMMON dist/default/production\Labsdigital2.X.production.o
 __HcstackBANK0 0 0 ABS 0 cstackBANK0 -
-__end_of_config_pines 18C 0 CODE 0 text4 dist/default/production\Labsdigital2.X.production.o
-__end_of_config_ports 168 0 CODE 0 text3 dist/default/production\Labsdigital2.X.production.o
+__end_of_config_pines 2B4 0 CODE 0 text5 dist/default/production\Labsdigital2.X.production.o
+__end_of_config_ports 290 0 CODE 0 text4 dist/default/production\Labsdigital2.X.production.o
 _PIR1bits C 0 ABS 0 - dist/default/production\Labsdigital2.X.production.o
 __Lend_init 18 0 CODE 0 end_init -
-__end_of_adc_init 134 0 CODE 0 text5 dist/default/production\Labsdigital2.X.production.o
+__end_of_adc_init 23E 0 CODE 0 text7 dist/default/production\Labsdigital2.X.production.o
+__end_of_adc_read 25C 0 CODE 0 text6 dist/default/production\Labsdigital2.X.production.o
 __LcstackCOMMON 0 0 ABS 0 cstackCOMMON -
 end_of_initialization 22 0 CODE 0 cinit dist/default/production\Labsdigital2.X.production.o
 __Hintentry 18 0 CODE 0 intentry -
 __Lstrings 0 0 ABS 0 strings -
 config_pullup@pulles 72 0 COMMON 1 cstackCOMMON dist/default/production\Labsdigital2.X.production.o
 __Hreset_vec 6 0 CODE 0 reset_vec -
-__ptext1 134 0 CODE 0 text1 dist/default/production\Labsdigital2.X.production.o
-__ptext2 168 0 CODE 0 text2 dist/default/production\Labsdigital2.X.production.o
-__ptext3 150 0 CODE 0 text3 dist/default/production\Labsdigital2.X.production.o
-__ptext4 17C 0 CODE 0 text4 dist/default/production\Labsdigital2.X.production.o
-__ptext5 C4 0 CODE 0 text5 dist/default/production\Labsdigital2.X.production.o
-__ptext6 18C 0 CODE 0 text6 dist/default/production\Labsdigital2.X.production.o
+__ptext1 2A 0 CODE 0 text1 dist/default/production\Labsdigital2.X.production.o
+__ptext2 25C 0 CODE 0 text2 dist/default/production\Labsdigital2.X.production.o
+__ptext3 290 0 CODE 0 text3 dist/default/production\Labsdigital2.X.production.o
+__ptext4 278 0 CODE 0 text4 dist/default/production\Labsdigital2.X.production.o
+__ptext5 2A4 0 CODE 0 text5 dist/default/production\Labsdigital2.X.production.o
+__ptext6 23E 0 CODE 0 text6 dist/default/production\Labsdigital2.X.production.o
+__ptext7 1CE 0 CODE 0 text7 dist/default/production\Labsdigital2.X.production.o
+__ptext8 2B4 0 CODE 0 text8 dist/default/production\Labsdigital2.X.production.o
 __Lpowerup 0 0 CODE 0 powerup -
 __Leeprom_data 0 0 EEDATA 3 eeprom_data -
 __Lreset_vec 0 0 CODE 0 reset_vec -
@@ -286,12 +356,13 @@ __Lclrtext 0 0 ABS 0 clrtext -
 _portval 7B 0 COMMON 1 bssCOMMON dist/default/production\Labsdigital2.X.production.o
 __pcstackCOMMON 70 0 COMMON 1 cstackCOMMON dist/default/production\Labsdigital2.X.production.o
 __Hend_init 1E 0 CODE 0 end_init -
-__end_of_main C4 0 CODE 0 maintext dist/default/production\Labsdigital2.X.production.o
+__end_of_main 1CE 0 CODE 0 maintext dist/default/production\Labsdigital2.X.production.o
 _ANSEL 188 0 ABS 0 - dist/default/production\Labsdigital2.X.production.o
 _PORTA 5 0 ABS 0 - dist/default/production\Labsdigital2.X.production.o
 _PORTC 7 0 ABS 0 - dist/default/production\Labsdigital2.X.production.o
 _PORTD 8 0 ABS 0 - dist/default/production\Labsdigital2.X.production.o
 _PORTE 9 0 ABS 0 - dist/default/production\Labsdigital2.X.production.o
+valdisplay@val 74 0 COMMON 1 cstackCOMMON dist/default/production\Labsdigital2.X.production.o
 _TRISA 85 0 ABS 0 - dist/default/production\Labsdigital2.X.production.o
 _TRISB 86 0 ABS 0 - dist/default/production\Labsdigital2.X.production.o
 _TRISC 87 0 ABS 0 - dist/default/production\Labsdigital2.X.production.o
@@ -301,8 +372,9 @@ __Hram 0 0 ABS 0 ram -
 __Lram 0 0 ABS 0 ram -
 interrupt_function 8 0 CODE 0 intentry dist/default/production\Labsdigital2.X.production.o
 __pintentry 8 0 CODE 0 intentry dist/default/production\Labsdigital2.X.production.o
+?_adc_read 72 0 COMMON 1 cstackCOMMON dist/default/production\Labsdigital2.X.production.o
 __initialization 1E 0 CODE 0 cinit dist/default/production\Labsdigital2.X.production.o
-__end_of_config_tris 150 0 CODE 0 text1 dist/default/production\Labsdigital2.X.production.o
+__end_of_config_tris 278 0 CODE 0 text2 dist/default/production\Labsdigital2.X.production.o
 # %SPLITSTAB Section
 # This section enumerates all the psect splits performed by the assembler.
 # The beginning of the section is indicated by %SPLITSTAB.
@@ -330,7 +402,7 @@ __end_of_config_tris 150 0 CODE 0 text1 dist/default/production\Labsdigital2.X.p
 %SEGMENTS
 cstackCOMMON 1 70 70 C 1
 cstackBANK0 1 20 20 9 1
-intentry 0 4 8 CA 2
+intentry 0 4 8 15E 2
 reset_vec 0 0 0 3 2
 # %NOTES Section
 # This section contains data of all the note-psects.  The beginning of the section

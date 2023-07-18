@@ -237,8 +237,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;./displaylib.h: 13: char portval;
 [v _portval `uc ~T0 @X0 1 e ]
 "16 displaylib.c
-[; ;displaylib.c: 16: void valdisplay(char val){
-[v _valdisplay `(v ~T0 @X0 1 ef1`uc ]
+[; ;displaylib.c: 16: char valdisplay(char val){
+[v _valdisplay `(uc ~T0 @X0 1 ef1`uc ]
 {
 [e :U _valdisplay ]
 [v _val `uc ~T0 @X0 1 r1 ]
@@ -414,6 +414,10 @@ Version 4.0 HI-TECH Software Intermediate Code
  , $ -> -> 12597 `ui `i 157
  140 ]
 [e :U 140 ]
+"68
+[; ;displaylib.c: 68:   return portval;
+[e ) _portval ]
+[e $UE 139  ]
 "70
 [; ;displaylib.c: 70: }
 [e :UE 139 ]

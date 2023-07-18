@@ -11,7 +11,7 @@
 #include <stdio.h>         // for sprintf
 #define _XTAL_FREQ 8000000
 char portval;
-void valdisplay(char val);
+char  valdisplay(char val);
 
 #endif	
 

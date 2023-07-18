@@ -66,8 +66,9 @@ adc_init( 0, 0,0,0,0b01); //Función para la configuración del adc
  __delay_ms(2000);  // wait 2 seconds
     while(1)
     {
-       // varadc=   adc_read(); 
-     //valdisplay(varadc);
+        varadc=   adc_read(); 
+     PORTC = valdisplay(varadc);
+     PORTD = 0b00000001;
     }
     
     

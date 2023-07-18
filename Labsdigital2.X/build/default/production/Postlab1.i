@@ -2793,7 +2793,7 @@ int config_interrupt(int adcif, int adcie,int rbie, int rbif, int pie, int gie )
 
 
 char portval;
-void valdisplay(char val);
+char valdisplay(char val);
 # 34 "Postlab1.c" 2
 
 
@@ -2830,8 +2830,9 @@ adc_init( 0, 0,0,0,0b01);
  _delay((unsigned long)((2000)*(8000000/4000.0)));
     while(1)
     {
-
-
+        varadc= adc_read();
+     PORTC = valdisplay(varadc);
+     PORTD = 0b00000001;
     }
 
 

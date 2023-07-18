@@ -13,7 +13,7 @@
 #include <stdio.h>         // for sprintf
 #include "displaylib.h"
 
-void valdisplay(char val){
+char valdisplay(char val){
     switch (val){
         case '0':
         portval = 0b00000010;    
@@ -65,6 +65,6 @@ void valdisplay(char val){
             break;
     }
 
-  //  return portval;
+  return portval;
 
 }

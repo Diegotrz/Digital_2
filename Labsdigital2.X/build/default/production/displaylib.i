@@ -2737,11 +2737,11 @@ extern int printf(const char *, ...);
 
 
 char portval;
-void valdisplay(char val);
+char valdisplay(char val);
 # 14 "displaylib.c" 2
 
 
-void valdisplay(char val){
+char valdisplay(char val){
     switch (val){
         case '0':
         portval = 0b00000010;
@@ -2793,6 +2793,6 @@ void valdisplay(char val){
             break;
     }
 
-
+  return portval;
 
 }
