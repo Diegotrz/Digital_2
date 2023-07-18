@@ -31,28 +31,24 @@
 #include <pic16f887.h>
 #include "adclib.h"
 #include "setup_lb.h"
+#include "displaylib.h"
 
 
 /*
  *Variables
  */
-
+char varadc;
 /*
  * Prototipos de funciones
  */
 
 /*
- /*
  *Interrupción
  */
 void __interrupt() isr (void)
 {
-    if (INTCONbits.RBIF ){
-
-        
-        NOP();
-    }
-    
+   
+    NOP();
 }
 /*
  *---------------Main-------------
@@ -70,17 +66,8 @@ adc_init( 0, 0,0,0,0b01); //Función para la configuración del adc
  __delay_ms(2000);  // wait 2 seconds
     while(1)
     {
-        PORTD =   adc_read(); 
-        if (!PORTBbits.RB0){ //Verifica si la interrupción del puerto RB0 ha cambiado
-            while (!RB0);
-                PORTC ++;   
-        }
-    if (!PORTBbits.RB1){
-            while (!RB1) ;
-                PORTC  --; 
-                
-                         
-        }
+       // varadc=   adc_read(); 
+     //valdisplay(varadc);
     }
     
     

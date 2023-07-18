@@ -1,4 +1,4 @@
-# 1 "Lab1.c"
+# 1 "displaylib.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,26 +6,8 @@
 # 1 "<built-in>" 2
 # 1 "C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "Lab1.c" 2
-# 13 "Lab1.c"
-#pragma config FOSC = INTRC_CLKOUT
-#pragma config WDTE = OFF
-#pragma config PWRTE = OFF
-#pragma config MCLRE = OFF
-#pragma config CP = OFF
-#pragma config CPD = OFF
-#pragma config BOREN = OFF
-#pragma config IESO = OFF
-#pragma config FCMEN = OFF
-#pragma config LVP = OFF
-
-
-#pragma config BOR4V = BOR40V
-#pragma config WRT = OFF
-
-
-
-
+# 1 "displaylib.c" 2
+# 11 "displaylib.c"
 # 1 "C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\\pic\\include\\xc.h" 1 3
 # 18 "C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -2643,16 +2625,10 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 29 "C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\\pic\\include\\xc.h" 2 3
-# 30 "Lab1.c" 2
+# 11 "displaylib.c" 2
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c90\\stdint.h" 1 3
-# 31 "Lab1.c" 2
-
-
-# 1 "./adclib.h" 1
-# 11 "./adclib.h"
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c90\\stdint.h" 1 3
-# 11 "./adclib.h" 2
+# 12 "displaylib.c" 2
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c90\\stdio.h" 1 3
 
@@ -2751,76 +2727,70 @@ extern int vsscanf(const char *, const char *, va_list) __attribute__((unsupport
 #pragma printf_check(sprintf) const
 extern int sprintf(char *, const char *, ...);
 extern int printf(const char *, ...);
-# 12 "./adclib.h" 2
+# 13 "displaylib.c" 2
 
-
-
-void adc_init(int channel, int justf,int vcf0,int vcf1,char adcs);
-int adc_read();
-void adc_cchange(int channel);
-int adc_get_channel();
-# 33 "Lab1.c" 2
-
-# 1 "./setup_lb.h" 1
-
-
-
-
+# 1 "./displaylib.h" 1
+# 10 "./displaylib.h"
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c90\\stdint.h" 1 3
-# 5 "./setup_lb.h" 2
+# 10 "./displaylib.h" 2
 
 
 
-
-void config_pines(char ans,int ansh);
-void config_tris(char tris_a,char tris_b,char tris_c,char tris_d,char tris_e);
-void config_ports(char port_a,char port_c,char port_d,char port_e);
-void config_pullup(int pulles, char pinpull);
+char portval;
+void valdisplay(char val);
+# 14 "displaylib.c" 2
 
 
-
-
-
-int config_osc(char valosc);
-int config_interrupt(int adcif, int adcie,int rbie, int rbif, int pie, int gie );
-# 34 "Lab1.c" 2
-# 49 "Lab1.c"
-void __attribute__((picinterrupt(("")))) isr (void)
-{
-    if (INTCONbits.RBIF ){
-
-
-        __nop();
-    }
-
-}
-
-
-
-void main (void)
-{
- config_pines ( 0b00000011, 0);
-  config_tris ( 0xFF, 0b11111111, 0, 0, 0);
- config_ports ( 0, 0, 0, 0);
- config_pullup (0, 0b11111111);
-
-
-adc_init( 0, 0,0,0,0b01);
-
- _delay((unsigned long)((2000)*(8000000/4000.0)));
-    while(1)
-    {
-        PORTD = adc_read();
-        if (!PORTBbits.RB0){
-            while (!RB0);
-                PORTC ++;
-        }
-    if (!PORTBbits.RB1){
-            while (!RB1) ;
-                PORTC --;
-
-
-        }
+void valdisplay(char val){
+    switch (val){
+        case '0':
+        portval = 0b00000010;
+            break;
+        case '1':
+         portval = 0b01100000;
+            break;
+        case '2':
+            portval = 0b11011010;
+            break;
+        case '3':
+            portval = 0b11110010;
+            break;
+        case '4':
+            portval = 0b01100110;
+            break;
+        case '5':
+            portval = 0b10110110;
+            break;
+        case '6':
+            portval = 0b10111110;
+            break;
+        case '7':
+            portval = 0b11100000;
+            break;
+        case '8':
+            portval = 0b11111110;
+            break;
+        case '9':
+            portval = 0b11110110;
+            break;
+         case '10':
+            portval = 0b11101110;
+            break;
+             case '11':
+            portval =0b00111110 ;
+            break;
+            case '12':
+            portval = 0b10011100;
+            break;
+            case '13':
+            portval = 0b01111010;
+            break;
+            case '14':
+            portval = 0b10011110;
+            break;
+            case '15':
+            portval = 0b10001110;
+            break;
     }
 
 

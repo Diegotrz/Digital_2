@@ -5,8 +5,6 @@
 [d frameptr 0 ]
 "15 C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\adclib.c
 [v _adc_init adc_init `(v  1 e 1 0 ]
-"25
-[v _adc_read adc_read `(i  1 e 2 0 ]
 "10 C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\sprcadd.c
 [v ___fladd __fladd `(d  1 e 4 0 ]
 "4 C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\Umul8_16.c
@@ -15,9 +13,9 @@
 [v ___eecpymem __eecpymem `(v  1 e 1 0 ]
 "39
 [v ___memcpyee __memcpyee `(v  1 e 1 0 ]
-"49 C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\Lab1.c
+"48 C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\Postlab1.c
 [v _isr isr `II(v  1 e 1 0 ]
-"61
+"56
 [v _main main `(v  1 e 1 0 ]
 "15 C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\setup_lb.c
 [v _config_pines config_pines `(v  1 e 1 0 ]
@@ -27,27 +25,17 @@
 [v _config_ports config_ports `(v  1 e 1 0 ]
 "33
 [v _config_pullup config_pullup `(v  1 e 1 0 ]
+"13 C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X/displaylib.h
+[v _portval portval `uc  1 e 1 0 ]
 "167 C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h
 [v _PORTA PORTA `VEuc  1 e 1 @5 ]
-[s S107 . 1 `uc 1 RB0 1 0 :1:0 
-`uc 1 RB1 1 0 :1:1 
-`uc 1 RB2 1 0 :1:2 
-`uc 1 RB3 1 0 :1:3 
-`uc 1 RB4 1 0 :1:4 
-`uc 1 RB5 1 0 :1:5 
-`uc 1 RB6 1 0 :1:6 
-`uc 1 RB7 1 0 :1:7 
-]
-"246
-[u S116 . 1 `S107 1 . 1 0 ]
-[v _PORTBbits PORTBbits `VES116  1 e 1 @6 ]
 "291
 [v _PORTC PORTC `VEuc  1 e 1 @7 ]
 "353
 [v _PORTD PORTD `VEuc  1 e 1 @8 ]
 "415
 [v _PORTE PORTE `VEuc  1 e 1 @9 ]
-[s S22 . 1 `uc 1 RBIF 1 0 :1:0 
+[s S219 . 1 `uc 1 RBIF 1 0 :1:0 
 `uc 1 INTF 1 0 :1:1 
 `uc 1 T0IF 1 0 :1:2 
 `uc 1 RBIE 1 0 :1:3 
@@ -57,14 +45,14 @@
 `uc 1 GIE 1 0 :1:7 
 ]
 "483
-[s S31 . 1 `uc 1 . 1 0 :2:0 
+[s S228 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 TMR0IF 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 TMR0IE 1 0 :1:5 
 ]
-[u S36 . 1 `S22 1 . 1 0 `S31 1 . 1 0 ]
-[v _INTCONbits INTCONbits `VES36  1 e 1 @11 ]
-[s S312 . 1 `uc 1 TMR1IF 1 0 :1:0 
+[u S233 . 1 `S219 1 . 1 0 `S228 1 . 1 0 ]
+[v _INTCONbits INTCONbits `VES233  1 e 1 @11 ]
+[s S181 . 1 `uc 1 TMR1IF 1 0 :1:0 
 `uc 1 TMR2IF 1 0 :1:1 
 `uc 1 CCP1IF 1 0 :1:2 
 `uc 1 SSPIF 1 0 :1:3 
@@ -73,17 +61,17 @@
 `uc 1 ADIF 1 0 :1:6 
 ]
 "554
-[u S320 . 1 `S312 1 . 1 0 ]
-[v _PIR1bits PIR1bits `VES320  1 e 1 @12 ]
+[u S189 . 1 `S181 1 . 1 0 ]
+[v _PIR1bits PIR1bits `VES189  1 e 1 @12 ]
 "1239
 [v _ADRESH ADRESH `VEuc  1 e 1 @30 ]
-[s S172 . 1 `uc 1 ADON 1 0 :1:0 
+[s S37 . 1 `uc 1 ADON 1 0 :1:0 
 `uc 1 GO_nDONE 1 0 :1:1 
 `uc 1 CHS 1 0 :4:2 
 `uc 1 ADCS 1 0 :2:6 
 ]
 "1277
-[s S177 . 1 `uc 1 . 1 0 :1:0 
+[s S42 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 GO 1 0 :1:1 
 `uc 1 CHS0 1 0 :1:2 
 `uc 1 CHS1 1 0 :1:3 
@@ -92,15 +80,15 @@
 `uc 1 ADCS0 1 0 :1:6 
 `uc 1 ADCS1 1 0 :1:7 
 ]
-[s S186 . 1 `uc 1 . 1 0 :1:0 
+[s S51 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 nDONE 1 0 :1:1 
 ]
-[s S189 . 1 `uc 1 . 1 0 :1:0 
+[s S54 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 GO_DONE 1 0 :1:1 
 ]
-[u S192 . 1 `S172 1 . 1 0 `S177 1 . 1 0 `S186 1 . 1 0 `S189 1 . 1 0 ]
-[v _ADCON0bits ADCON0bits `VES192  1 e 1 @31 ]
-[s S259 . 1 `uc 1 PS 1 0 :3:0 
+[u S57 . 1 `S37 1 . 1 0 `S42 1 . 1 0 `S51 1 . 1 0 `S54 1 . 1 0 ]
+[v _ADCON0bits ADCON0bits `VES57  1 e 1 @31 ]
+[s S128 . 1 `uc 1 PS 1 0 :3:0 
 `uc 1 PSA 1 0 :1:3 
 `uc 1 T0SE 1 0 :1:4 
 `uc 1 T0CS 1 0 :1:5 
@@ -108,12 +96,12 @@
 `uc 1 nRBPU 1 0 :1:7 
 ]
 "1367
-[s S266 . 1 `uc 1 PS0 1 0 :1:0 
+[s S135 . 1 `uc 1 PS0 1 0 :1:0 
 `uc 1 PS1 1 0 :1:1 
 `uc 1 PS2 1 0 :1:2 
 ]
-[u S270 . 1 `S259 1 . 1 0 `S266 1 . 1 0 ]
-[v _OPTION_REGbits OPTION_REGbits `VES270  1 e 1 @129 ]
+[u S139 . 1 `S128 1 . 1 0 `S135 1 . 1 0 ]
+[v _OPTION_REGbits OPTION_REGbits `VES139  1 e 1 @129 ]
 "1417
 [v _TRISA TRISA `VEuc  1 e 1 @133 ]
 "1479
@@ -124,7 +112,7 @@
 [v _TRISD TRISD `VEuc  1 e 1 @136 ]
 "1665
 [v _TRISE TRISE `VEuc  1 e 1 @137 ]
-[s S331 . 1 `uc 1 TMR1IE 1 0 :1:0 
+[s S200 . 1 `uc 1 TMR1IE 1 0 :1:0 
 `uc 1 TMR2IE 1 0 :1:1 
 `uc 1 CCP1IE 1 0 :1:2 
 `uc 1 SSPIE 1 0 :1:3 
@@ -133,45 +121,41 @@
 `uc 1 ADIE 1 0 :1:6 
 ]
 "1719
-[u S339 . 1 `S331 1 . 1 0 ]
-[v _PIE1bits PIE1bits `VES339  1 e 1 @140 ]
-[s S286 . 1 `uc 1 SCS 1 0 :1:0 
+[u S208 . 1 `S200 1 . 1 0 ]
+[v _PIE1bits PIE1bits `VES208  1 e 1 @140 ]
+[s S155 . 1 `uc 1 SCS 1 0 :1:0 
 `uc 1 LTS 1 0 :1:1 
 `uc 1 HTS 1 0 :1:2 
 `uc 1 OSTS 1 0 :1:3 
 `uc 1 IRCF 1 0 :3:4 
 ]
 "1883
-[s S292 . 1 `uc 1 . 1 0 :4:0 
+[s S161 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 IRCF0 1 0 :1:4 
 `uc 1 IRCF1 1 0 :1:5 
 `uc 1 IRCF2 1 0 :1:6 
 ]
-[u S297 . 1 `S286 1 . 1 0 `S292 1 . 1 0 ]
-[v _OSCCONbits OSCCONbits `VES297  1 e 1 @143 ]
+[u S166 . 1 `S155 1 . 1 0 `S161 1 . 1 0 ]
+[v _OSCCONbits OSCCONbits `VES166  1 e 1 @143 ]
 "2347
 [v _WPUB WPUB `VEuc  1 e 1 @149 ]
-[s S157 . 1 `uc 1 . 1 0 :4:0 
+[s S22 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 VCFG0 1 0 :1:4 
 `uc 1 VCFG1 1 0 :1:5 
 `uc 1 . 1 0 :1:6 
 `uc 1 ADFM 1 0 :1:7 
 ]
 "2992
-[u S163 . 1 `S157 1 . 1 0 ]
-[v _ADCON1bits ADCON1bits `VES163  1 e 1 @159 ]
+[u S28 . 1 `S22 1 . 1 0 ]
+[v _ADCON1bits ADCON1bits `VES28  1 e 1 @159 ]
 "3388
 [v _ANSEL ANSEL `VEuc  1 e 1 @392 ]
 "3450
 [v _ANSELH ANSELH `VEuc  1 e 1 @393 ]
-"4108
-[v _RB0 RB0 `VEb  1 e 0 @48 ]
-"4111
-[v _RB1 RB1 `VEb  1 e 0 @49 ]
-"61 C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\Lab1.c
+"56 C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\Postlab1.c
 [v _main main `(v  1 e 1 0 ]
 {
-"89
+"75
 } 0
 "19 C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\setup_lb.c
 [v _config_tris config_tris `(v  1 e 1 0 ]
@@ -212,23 +196,18 @@
 [v config_pines@ans ans `uc  1 a 1 4 ]
 "18
 } 0
-"25 C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\adclib.c
-[v _adc_read adc_read `(i  1 e 2 0 ]
-{
-"30
-} 0
-"15
+"15 C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\adclib.c
 [v _adc_init adc_init `(v  1 e 1 0 ]
 {
-[v adc_init@channel channel `i  1 p 2 2 ]
-[v adc_init@justf justf `i  1 p 2 4 ]
-[v adc_init@vcf0 vcf0 `i  1 p 2 6 ]
-[v adc_init@vcf1 vcf1 `i  1 p 2 8 ]
-[v adc_init@adcs adcs `uc  1 p 1 10 ]
+[v adc_init@channel channel `i  1 p 2 0 ]
+[v adc_init@justf justf `i  1 p 2 2 ]
+[v adc_init@vcf0 vcf0 `i  1 p 2 4 ]
+[v adc_init@vcf1 vcf1 `i  1 p 2 6 ]
+[v adc_init@adcs adcs `uc  1 p 1 8 ]
 "24
 } 0
-"49 C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\Lab1.c
+"48 C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\Postlab1.c
 [v _isr isr `II(v  1 e 1 0 ]
 {
-"57
+"52
 } 0

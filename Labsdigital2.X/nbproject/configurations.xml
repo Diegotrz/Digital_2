@@ -19,6 +19,8 @@
       <itemPath>setup_lb.h</itemPath>
       <itemPath>setup_lb.c</itemPath>
       <itemPath>Postlab1.c</itemPath>
+      <itemPath>displaylib.h</itemPath>
+      <itemPath>displaylib.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
@@ -150,6 +152,14 @@
         <property key="remove-unused-sections" value="true"/>
       </HI-TECH-LINK>
       <item path="Lab1.c" ex="true" overriding="false">
+        <HI-TECH-COMP>
+        </HI-TECH-COMP>
+        <HI-TECH-LINK>
+        </HI-TECH-LINK>
+        <XC8-CO>
+        </XC8-CO>
+        <XC8-config-global>
+        </XC8-config-global>
       </item>
       <item path="Prelab_1.c" ex="true" overriding="false">
         <HI-TECH-COMP>
