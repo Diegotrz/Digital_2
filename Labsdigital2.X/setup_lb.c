@@ -36,12 +36,12 @@ void config_pullup(int pulles, char pinpull){
 }
 
 
-int  config_osc(char valosc){
+void  config_osc(char valosc){
  // Configuración del oscilador
     OSCCONbits.IRCF =   valosc; //8MHz
     OSCCONbits.SCS = 1;
 }
-int config_interrupt(int adcif, int adcie,int rbie, int rbif, int pie, int gie ){
+void  config_interrupt(int adcif, int adcie,int rbie, int rbif, int pie, int gie ){
 //Configuración para la interrupción del ADC      
     PIR1bits.ADIF = adcif;
     PIE1bits.ADIE = adcie;

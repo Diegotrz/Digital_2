@@ -15,8 +15,8 @@ void config_pullup(int pulles, char pinpull);
 * pulles es el estado del pull up para configurar el   OPTION_REGbits.nRBPU
 * pinpull es para configurar qué pines del puerto B configuramos como pullup
 */
-int  config_osc(char valosc); //Función para colocar el valor del oscilador
-int config_interrupt(int adcif, int adcie,int rbie, int rbif, int pie, int gie ); //Configuración de las banderas de interrupción
+void  config_osc(char valosc); //Función para colocar el valor del oscilador
+void config_interrupt(int adcif, int adcie,int rbie, int rbif, int pie, int gie ); //Configuración de las banderas de interrupción
 
 #endif	
 

@@ -5,8 +5,6 @@
 [d frameptr 0 ]
 "15 C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\adclib.c
 [v _adc_init adc_init `(v  1 e 1 0 ]
-"25
-[v _adc_read adc_read `(i  1 e 2 0 ]
 "10 C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\sprcadd.c
 [v ___fladd __fladd `(d  1 e 4 0 ]
 "4 C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\Umul8_16.c
@@ -15,11 +13,9 @@
 [v ___eecpymem __eecpymem `(v  1 e 1 0 ]
 "39
 [v ___memcpyee __memcpyee `(v  1 e 1 0 ]
-"16 C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\displaylib.c
-[v _valdisplay valdisplay `(uc  1 e 1 0 ]
 "48 C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\Postlab1.c
 [v _isr isr `II(v  1 e 1 0 ]
-"56
+"65
 [v _main main `(v  1 e 1 0 ]
 "15 C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\setup_lb.c
 [v _config_pines config_pines `(v  1 e 1 0 ]
@@ -29,10 +25,26 @@
 [v _config_ports config_ports `(v  1 e 1 0 ]
 "33
 [v _config_pullup config_pullup `(v  1 e 1 0 ]
+"39
+[v _config_osc config_osc `(v  1 e 1 0 ]
+"44
+[v _config_interrupt config_interrupt `(v  1 e 1 0 ]
 "13 C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X/displaylib.h
 [v _portval portval `uc  1 e 1 0 ]
 "167 C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h
 [v _PORTA PORTA `VEuc  1 e 1 @5 ]
+[s S310 . 1 `uc 1 RB0 1 0 :1:0 
+`uc 1 RB1 1 0 :1:1 
+`uc 1 RB2 1 0 :1:2 
+`uc 1 RB3 1 0 :1:3 
+`uc 1 RB4 1 0 :1:4 
+`uc 1 RB5 1 0 :1:5 
+`uc 1 RB6 1 0 :1:6 
+`uc 1 RB7 1 0 :1:7 
+]
+"246
+[u S319 . 1 `S310 1 . 1 0 ]
+[v _PORTBbits PORTBbits `VES319  1 e 1 @6 ]
 "291
 [v _PORTC PORTC `VEuc  1 e 1 @7 ]
 "353
@@ -156,38 +168,34 @@
 [v _ANSEL ANSEL `VEuc  1 e 1 @392 ]
 "3450
 [v _ANSELH ANSELH `VEuc  1 e 1 @393 ]
+"4108
+[v _RB0 RB0 `VEb  1 e 0 @48 ]
+"4111
+[v _RB1 RB1 `VEb  1 e 0 @49 ]
 "40 C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\Postlab1.c
 [v _varadc varadc `uc  1 e 1 0 ]
-"56
+"65
 [v _main main `(v  1 e 1 0 ]
 {
-"76
-} 0
-"16 C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\displaylib.c
-[v _valdisplay valdisplay `(uc  1 e 1 0 ]
-{
-[v valdisplay@val val `uc  1 a 1 wreg ]
-[v valdisplay@val val `uc  1 a 1 wreg ]
-[v valdisplay@val val `uc  1 a 1 4 ]
-"70
+"90
 } 0
 "19 C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\setup_lb.c
 [v _config_tris config_tris `(v  1 e 1 0 ]
 {
 [v config_tris@tris_a tris_a `uc  1 a 1 wreg ]
 [v config_tris@tris_a tris_a `uc  1 a 1 wreg ]
-[v config_tris@tris_b tris_b `uc  1 p 1 2 ]
-[v config_tris@tris_c tris_c `uc  1 p 1 3 ]
-[v config_tris@tris_d tris_d `uc  1 p 1 4 ]
-[v config_tris@tris_e tris_e `uc  1 p 1 5 ]
-[v config_tris@tris_a tris_a `uc  1 a 1 6 ]
+[v config_tris@tris_b tris_b `uc  1 p 1 3 ]
+[v config_tris@tris_c tris_c `uc  1 p 1 4 ]
+[v config_tris@tris_d tris_d `uc  1 p 1 5 ]
+[v config_tris@tris_e tris_e `uc  1 p 1 6 ]
+[v config_tris@tris_a tris_a `uc  1 a 1 7 ]
 "25
 } 0
 "33
 [v _config_pullup config_pullup `(v  1 e 1 0 ]
 {
-[v config_pullup@pulles pulles `i  1 p 2 2 ]
-[v config_pullup@pinpull pinpull `uc  1 p 1 4 ]
+[v config_pullup@pulles pulles `i  1 p 2 3 ]
+[v config_pullup@pinpull pinpull `uc  1 p 1 5 ]
 "36
 } 0
 "27
@@ -195,10 +203,10 @@
 {
 [v config_ports@port_a port_a `uc  1 a 1 wreg ]
 [v config_ports@port_a port_a `uc  1 a 1 wreg ]
-[v config_ports@port_c port_c `uc  1 p 1 2 ]
-[v config_ports@port_d port_d `uc  1 p 1 3 ]
-[v config_ports@port_e port_e `uc  1 p 1 4 ]
-[v config_ports@port_a port_a `uc  1 a 1 5 ]
+[v config_ports@port_c port_c `uc  1 p 1 3 ]
+[v config_ports@port_d port_d `uc  1 p 1 4 ]
+[v config_ports@port_e port_e `uc  1 p 1 5 ]
+[v config_ports@port_a port_a `uc  1 a 1 6 ]
 "32
 } 0
 "15
@@ -206,16 +214,31 @@
 {
 [v config_pines@ans ans `uc  1 a 1 wreg ]
 [v config_pines@ans ans `uc  1 a 1 wreg ]
-[v config_pines@ansh ansh `i  1 p 2 2 ]
-[v config_pines@ans ans `uc  1 a 1 4 ]
+[v config_pines@ansh ansh `i  1 p 2 3 ]
+[v config_pines@ans ans `uc  1 a 1 5 ]
 "18
 } 0
-"25 C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\adclib.c
-[v _adc_read adc_read `(i  1 e 2 0 ]
+"39
+[v _config_osc config_osc `(v  1 e 1 0 ]
 {
-"30
+[v config_osc@valosc valosc `uc  1 a 1 wreg ]
+[v config_osc@valosc valosc `uc  1 a 1 wreg ]
+"41
+[v config_osc@valosc valosc `uc  1 a 1 4 ]
+"43
 } 0
-"15
+"44
+[v _config_interrupt config_interrupt `(v  1 e 1 0 ]
+{
+[v config_interrupt@adcif adcif `i  1 p 2 0 ]
+[v config_interrupt@adcie adcie `i  1 p 2 2 ]
+[v config_interrupt@rbie rbie `i  1 p 2 4 ]
+[v config_interrupt@rbif rbif `i  1 p 2 6 ]
+[v config_interrupt@pie pie `i  1 p 2 8 ]
+[v config_interrupt@gie gie `i  1 p 2 10 ]
+"54
+} 0
+"15 C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\adclib.c
 [v _adc_init adc_init `(v  1 e 1 0 ]
 {
 [v adc_init@channel channel `i  1 p 2 0 ]
@@ -228,5 +251,5 @@
 "48 C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\Postlab1.c
 [v _isr isr `II(v  1 e 1 0 ]
 {
-"52
+"61
 } 0

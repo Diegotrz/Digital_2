@@ -2781,8 +2781,8 @@ void config_pullup(int pulles, char pinpull);
 
 
 
-int config_osc(char valosc);
-int config_interrupt(int adcif, int adcie,int rbie, int rbif, int pie, int gie );
+void config_osc(char valosc);
+void config_interrupt(int adcif, int adcie,int rbie, int rbif, int pie, int gie );
 # 33 "Postlab1.c" 2
 
 # 1 "./displaylib.h" 1
@@ -2811,18 +2811,30 @@ char varadc;
 
 void __attribute__((picinterrupt(("")))) isr (void)
 {
+   if (!PORTBbits.RB0){
+            while (!RB0);
+            PORTC ++;
+        }
+    if (!PORTBbits.RB1){
+            while (!RB1)
 
-    __nop();
+                PORTA --;
+
+        }
+
 }
 
 
 
 void main (void)
 {
- config_pines ( 0b00000000, 0);
+ config_pines ( 0, 0);
   config_tris ( 0, 0b11111111, 0, 0, 0);
  config_ports ( 0, 0, 0, 0);
  config_pullup (0, 0b11111111);
+ config_osc(0b0111);
+
+ config_interrupt(1, 1,1, 1, 1, 1 );
 
 
 adc_init( 0, 0,0,0,0b01);
@@ -2830,8 +2842,10 @@ adc_init( 0, 0,0,0,0b01);
  _delay((unsigned long)((100)*(8000000/4000.0)));
     while(1)
     {
-        varadc= adc_read();
-     PORTC = valdisplay(varadc);
+
+        varadc = PORTA;
+        PORTC = varadc;
+
      PORTD = 0b00000001;
     }
 

@@ -429,8 +429,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :UE 142 ]
 }
 "39
-[; ;setup_lb.c: 39: int config_osc(char valosc){
-[v _config_osc `(i ~T0 @X0 1 ef1`uc ]
+[; ;setup_lb.c: 39: void config_osc(char valosc){
+[v _config_osc `(v ~T0 @X0 1 ef1`uc ]
 {
 [e :U _config_osc ]
 [v _valosc `uc ~T0 @X0 1 r1 ]
@@ -446,8 +446,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :UE 143 ]
 }
 "44
-[; ;setup_lb.c: 44: int config_interrupt(int adcif, int adcie,int rbie, int rbif, int pie, int gie ){
-[v _config_interrupt `(i ~T0 @X0 1 ef6`i`i`i`i`i`i ]
+[; ;setup_lb.c: 44: void config_interrupt(int adcif, int adcie,int rbie, int rbif, int pie, int gie ){
+[v _config_interrupt `(v ~T0 @X0 1 ef6`i`i`i`i`i`i ]
 {
 [e :U _config_interrupt ]
 [v _adcif `i ~T0 @X0 1 r1 ]

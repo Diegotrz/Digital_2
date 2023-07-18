@@ -1,9 +1,29 @@
 Version 4.0 HI-TECH Software Intermediate Code
 [t ~ __interrupt . k ]
 [t T1 __interrupt ]
-"8 C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\builtins.h
-[v ___nop `(v ~T0 @X0 0 ef ]
-[p i ___nop ]
+"235 C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h
+[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 235:     struct {
+[s S8 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S8 . RB0 RB1 RB2 RB3 RB4 RB5 RB6 RB7 ]
+"234
+[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 234: typedef union {
+[u S7 `S8 1 ]
+[n S7 . . ]
+"246
+[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 246: extern volatile PORTBbits_t PORTBbits __attribute__((address(0x006)));
+[v _PORTBbits `VS7 ~T0 @X0 0 e@6 ]
+"4108
+[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 4108: extern volatile __bit RB0 __attribute__((address(0x30)));
+[v _RB0 `Vb ~T0 @X0 0 e@48 ]
+"291
+[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 291: extern volatile unsigned char PORTC __attribute__((address(0x007)));
+[v _PORTC `Vuc ~T0 @X0 0 e@7 ]
+"167
+[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 167: extern volatile unsigned char PORTA __attribute__((address(0x005)));
+[v _PORTA `Vuc ~T0 @X0 0 e@5 ]
+"4111
+[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 4111: extern volatile __bit RB1 __attribute__((address(0x31)));
+[v _RB1 `Vb ~T0 @X0 0 e@49 ]
 [p mainexit ]
 "9 ./setup_lb.h
 [; ;./setup_lb.h: 9: void config_pines(char ans,int ansh);
@@ -17,6 +37,12 @@ Version 4.0 HI-TECH Software Intermediate Code
 "12
 [; ;./setup_lb.h: 12: void config_pullup(int pulles, char pinpull);
 [v _config_pullup `(v ~T0 @X0 0 ef2`i`uc ]
+"18
+[; ;./setup_lb.h: 18: void config_osc(char valosc);
+[v _config_osc `(v ~T0 @X0 0 ef1`uc ]
+"19
+[; ;./setup_lb.h: 19: void config_interrupt(int adcif, int adcie,int rbie, int rbif, int pie, int gie );
+[v _config_interrupt `(v ~T0 @X0 0 ef6`i`i`i`i`i`i ]
 "15 ./adclib.h
 [; ;./adclib.h: 15: void adc_init(int channel, int justf,int vcf0,int vcf1,char adcs);
 [v _adc_init `(v ~T0 @X0 0 ef5`i`i`i`i`uc ]
@@ -24,15 +50,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 "12 C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\builtins.h
 [v __delay `JF36 ~T0 @X0 0 e ]
 [p i __delay ]
-"16 ./adclib.h
-[; ;./adclib.h: 16: int adc_read();
-[v _adc_read `(i ~T0 @X0 0 e? ]
-"291 C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h
-[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 291: extern volatile unsigned char PORTC __attribute__((address(0x007)));
-[v _PORTC `Vuc ~T0 @X0 0 e@7 ]
-"14 ./displaylib.h
-[; ;./displaylib.h: 14: char valdisplay(char val);
-[v _valdisplay `(uc ~T0 @X0 0 ef1`uc ]
 "353 C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 353: extern volatile unsigned char PORTD __attribute__((address(0x008)));
 [v _PORTD `Vuc ~T0 @X0 0 e@8 ]
@@ -309,62 +326,103 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 [e :U _isr ]
 [f ]
+"50
+[; ;Postlab1.c: 50:    if (!PORTBbits.RB0){
+[e $ ! ! != -> . . _PORTBbits 0 0 `i -> 0 `i 140  ]
+{
 "51
-[; ;Postlab1.c: 51:     __nop();
-[e ( ___nop ..  ]
+[; ;Postlab1.c: 51:             while (!RB0);
+[e $U 141  ]
+[e :U 142 ]
+[e :U 141 ]
+[e $ ! _RB0 142  ]
+[e :U 143 ]
 "52
-[; ;Postlab1.c: 52: }
+[; ;Postlab1.c: 52:             PORTC ++;
+[e ++ _PORTC -> -> 1 `i `Vuc ]
+"53
+[; ;Postlab1.c: 53:         }
+}
+[e :U 140 ]
+"54
+[; ;Postlab1.c: 54:     if (!PORTBbits.RB1){
+[e $ ! ! != -> . . _PORTBbits 0 1 `i -> 0 `i 144  ]
+{
+"55
+[; ;Postlab1.c: 55:             while (!RB1)
+[e $U 145  ]
+[e :U 146 ]
+"57
+[; ;Postlab1.c: 57:                 PORTA --;
+[e -- _PORTA -> -> 1 `i `Vuc ]
+[e :U 145 ]
+"55
+[; ;Postlab1.c: 55:             while (!RB1)
+[e $ ! _RB1 146  ]
+[e :U 147 ]
+"59
+[; ;Postlab1.c: 59:         }
+}
+[e :U 144 ]
+"61
+[; ;Postlab1.c: 61: }
 [e :UE 139 ]
 }
 [v $root$_main `(v ~T0 @X0 0 e ]
-"56
-[; ;Postlab1.c: 56: void main (void)
+"65
+[; ;Postlab1.c: 65: void main (void)
 [v _main `(v ~T0 @X0 1 ef ]
-"57
-[; ;Postlab1.c: 57: {
+"66
+[; ;Postlab1.c: 66: {
 {
 [e :U _main ]
 [f ]
-"58
-[; ;Postlab1.c: 58:  config_pines ( 0b00000000, 0);
-[e ( _config_pines (2 , -> -> 0 `i `uc -> 0 `i ]
-"59
-[; ;Postlab1.c: 59:   config_tris ( 0, 0b11111111, 0, 0, 0);
-[e ( _config_tris (4 , , , , -> -> 0 `i `uc -> -> 255 `i `uc -> -> 0 `i `uc -> -> 0 `i `uc -> -> 0 `i `uc ]
-"60
-[; ;Postlab1.c: 60:  config_ports ( 0, 0, 0, 0);
-[e ( _config_ports (4 , , , -> -> 0 `i `uc -> -> 0 `i `uc -> -> 0 `i `uc -> -> 0 `i `uc ]
-"61
-[; ;Postlab1.c: 61:  config_pullup (0, 0b11111111);
-[e ( _config_pullup (2 , -> 0 `i -> -> 255 `i `uc ]
-"64
-[; ;Postlab1.c: 64: adc_init( 0, 0,0,0,0b01);
-[e ( _adc_init (4 , , , , -> 0 `i -> 0 `i -> 0 `i -> 0 `i -> -> 1 `i `uc ]
-"66
-[; ;Postlab1.c: 66:  _delay((unsigned long)((100)*(8000000/4000.0)));
-[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
 "67
-[; ;Postlab1.c: 67:     while(1)
-[e :U 142 ]
+[; ;Postlab1.c: 67:  config_pines ( 0, 0);
+[e ( _config_pines (2 , -> -> 0 `i `uc -> 0 `i ]
 "68
-[; ;Postlab1.c: 68:     {
-{
+[; ;Postlab1.c: 68:   config_tris ( 0, 0b11111111, 0, 0, 0);
+[e ( _config_tris (4 , , , , -> -> 0 `i `uc -> -> 255 `i `uc -> -> 0 `i `uc -> -> 0 `i `uc -> -> 0 `i `uc ]
 "69
-[; ;Postlab1.c: 69:         varadc= adc_read();
-[e = _varadc -> ( _adc_read ..  `uc ]
+[; ;Postlab1.c: 69:  config_ports ( 0, 0, 0, 0);
+[e ( _config_ports (4 , , , -> -> 0 `i `uc -> -> 0 `i `uc -> -> 0 `i `uc -> -> 0 `i `uc ]
 "70
-[; ;Postlab1.c: 70:      PORTC = valdisplay(varadc);
-[e = _PORTC -> ( _valdisplay (1 _varadc `uc ]
+[; ;Postlab1.c: 70:  config_pullup (0, 0b11111111);
+[e ( _config_pullup (2 , -> 0 `i -> -> 255 `i `uc ]
 "71
-[; ;Postlab1.c: 71:      PORTD = 0b00000001;
-[e = _PORTD -> -> 1 `i `uc ]
-"72
-[; ;Postlab1.c: 72:     }
-}
-[e :U 141 ]
-[e $U 142  ]
-[e :U 143 ]
+[; ;Postlab1.c: 71:  config_osc(0b0111);
+[e ( _config_osc (1 -> -> 7 `i `uc ]
+"73
+[; ;Postlab1.c: 73:  config_interrupt(1, 1,1, 1, 1, 1 );
+[e ( _config_interrupt (4 , , , , , -> 1 `i -> 1 `i -> 1 `i -> 1 `i -> 1 `i -> 1 `i ]
 "76
-[; ;Postlab1.c: 76: }
-[e :UE 140 ]
+[; ;Postlab1.c: 76: adc_init( 0, 0,0,0,0b01);
+[e ( _adc_init (4 , , , , -> 0 `i -> 0 `i -> 0 `i -> 0 `i -> -> 1 `i `uc ]
+"78
+[; ;Postlab1.c: 78:  _delay((unsigned long)((100)*(8000000/4000.0)));
+[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+"79
+[; ;Postlab1.c: 79:     while(1)
+[e :U 150 ]
+"80
+[; ;Postlab1.c: 80:     {
+{
+"82
+[; ;Postlab1.c: 82:         varadc = PORTA;
+[e = _varadc -> _PORTA `uc ]
+"83
+[; ;Postlab1.c: 83:         PORTC = varadc;
+[e = _PORTC -> _varadc `uc ]
+"85
+[; ;Postlab1.c: 85:      PORTD = 0b00000001;
+[e = _PORTD -> -> 1 `i `uc ]
+"86
+[; ;Postlab1.c: 86:     }
+}
+[e :U 149 ]
+[e $U 150  ]
+[e :U 151 ]
+"90
+[; ;Postlab1.c: 90: }
+[e :UE 148 ]
 }

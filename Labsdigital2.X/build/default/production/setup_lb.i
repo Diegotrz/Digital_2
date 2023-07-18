@@ -2749,8 +2749,8 @@ void config_pullup(int pulles, char pinpull);
 
 
 
-int config_osc(char valosc);
-int config_interrupt(int adcif, int adcie,int rbie, int rbif, int pie, int gie );
+void config_osc(char valosc);
+void config_interrupt(int adcif, int adcie,int rbie, int rbif, int pie, int gie );
 # 13 "setup_lb.c" 2
 
 
@@ -2778,12 +2778,12 @@ void config_pullup(int pulles, char pinpull){
 }
 
 
-int config_osc(char valosc){
+void config_osc(char valosc){
 
     OSCCONbits.IRCF = valosc;
     OSCCONbits.SCS = 1;
 }
-int config_interrupt(int adcif, int adcie,int rbie, int rbif, int pie, int gie ){
+void config_interrupt(int adcif, int adcie,int rbie, int rbif, int pie, int gie ){
 
     PIR1bits.ADIF = adcif;
     PIE1bits.ADIE = adcie;
