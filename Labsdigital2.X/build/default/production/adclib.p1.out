@@ -1,4 +1,45 @@
 Version 4.0 HI-TECH Software Intermediate Code
+"2984 C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h
+[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 2984:     struct {
+[s S116 :4 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S116 . . VCFG0 VCFG1 . ADFM ]
+"2983
+[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 2983: typedef union {
+[u S115 `S116 1 ]
+[n S115 . . ]
+"2992
+[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 2992: extern volatile ADCON1bits_t ADCON1bits __attribute__((address(0x09F)));
+[v _ADCON1bits `VS115 ~T0 @X0 0 e@159 ]
+"1252
+[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 1252:     struct {
+[s S45 :1 `uc 1 :1 `uc 1 :4 `uc 1 :2 `uc 1 ]
+[n S45 . ADON GO_nDONE CHS ADCS ]
+"1258
+[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 1258:     struct {
+[s S46 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S46 . . GO CHS0 CHS1 CHS2 CHS3 ADCS0 ADCS1 ]
+"1268
+[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 1268:     struct {
+[s S47 :1 `uc 1 :1 `uc 1 ]
+[n S47 . . nDONE ]
+"1272
+[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 1272:     struct {
+[s S48 :1 `uc 1 :1 `uc 1 ]
+[n S48 . . GO_DONE ]
+"1251
+[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 1251: typedef union {
+[u S44 `S45 1 `S46 1 `S47 1 `S48 1 ]
+[n S44 . . . . . ]
+"1277
+[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 1277: extern volatile ADCON0bits_t ADCON0bits __attribute__((address(0x01F)));
+[v _ADCON0bits `VS44 ~T0 @X0 0 e@31 ]
+[v F36 `(v ~T0 @X0 1 tf1`ul ]
+"12 C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\builtins.h
+[v __delay `JF36 ~T0 @X0 0 e ]
+[p i __delay ]
+"1239 C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h
+[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 1239: extern volatile unsigned char ADRESH __attribute__((address(0x01E)));
+[v _ADRESH `Vuc ~T0 @X0 0 e@30 ]
 "55 C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 55: __asm("INDF equ 00h");
 [; <" INDF equ 00h ;# ">
@@ -233,192 +274,88 @@ Version 4.0 HI-TECH Software Intermediate Code
 "3547
 [; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 3547: __asm("EECON2 equ 018Dh");
 [; <" EECON2 equ 018Dh ;# ">
-"13 ./displaylib.h
-[; ;./displaylib.h: 13: char portval;
-[v _portval `uc ~T0 @X0 1 e ]
-"16 displaylib.c
-[; ;displaylib.c: 16: char valdisplay(char val){
-[v _valdisplay `(uc ~T0 @X0 1 ef1`uc ]
+"15 adclib.c
+[; ;adclib.c: 15: void adc_init(int channel,int justf,int vcf0,int vcf1,char adcs){
+[v _adc_init `(v ~T0 @X0 1 ef5`i`i`i`i`uc ]
 {
-[e :U _valdisplay ]
-[v _val `uc ~T0 @X0 1 r1 ]
+[e :U _adc_init ]
+[v _channel `i ~T0 @X0 1 r1 ]
+[v _justf `i ~T0 @X0 1 r2 ]
+[v _vcf0 `i ~T0 @X0 1 r3 ]
+[v _vcf1 `i ~T0 @X0 1 r4 ]
+[v _adcs `uc ~T0 @X0 1 r5 ]
 [f ]
 "17
-[; ;displaylib.c: 17:     switch (val){
-[e $U 141  ]
-{
+[; ;adclib.c: 17:   ADCON1bits.ADFM = justf;
+[e = . . _ADCON1bits 0 4 -> _justf `uc ]
 "18
-[; ;displaylib.c: 18:         case '0':
-[e :U 142 ]
+[; ;adclib.c: 18:    ADCON1bits.VCFG0 = vcf0;
+[e = . . _ADCON1bits 0 1 -> _vcf0 `uc ]
 "19
-[; ;displaylib.c: 19:         portval = 0b00111111;
-[e = _portval -> -> 63 `i `uc ]
+[; ;adclib.c: 19:    ADCON1bits.VCFG1 = vcf1;
+[e = . . _ADCON1bits 0 2 -> _vcf1 `uc ]
 "20
-[; ;displaylib.c: 20:             break;
-[e $U 140  ]
+[; ;adclib.c: 20:    ADCON0bits.ADON= 1;
+[e = . . _ADCON0bits 0 0 -> -> 1 `i `uc ]
 "21
-[; ;displaylib.c: 21:         case '1':
-[e :U 143 ]
+[; ;adclib.c: 21:    _delay((unsigned long)((50)*(8000000/4000000.0)));
+[e ( __delay (1 -> * -> -> 50 `i `d / -> -> 8000000 `l `d .4000000.0 `ul ]
 "22
-[; ;displaylib.c: 22:          portval = 0b00000110;
-[e = _portval -> -> 6 `i `uc ]
+[; ;adclib.c: 22: ADCON0bits.ADCS = adcs;
+[e = . . _ADCON0bits 0 3 -> _adcs `uc ]
 "23
-[; ;displaylib.c: 23:             break;
-[e $U 140  ]
+[; ;adclib.c: 23: ADCON0bits.CHS = channel;
+[e = . . _ADCON0bits 0 2 -> _channel `uc ]
 "24
-[; ;displaylib.c: 24:         case '2':
-[e :U 144 ]
-"25
-[; ;displaylib.c: 25:             portval = 0b01011011;
-[e = _portval -> -> 91 `i `uc ]
-"26
-[; ;displaylib.c: 26:             break;
-[e $U 140  ]
-"27
-[; ;displaylib.c: 27:         case '3':
-[e :U 145 ]
-"28
-[; ;displaylib.c: 28:             portval = 0b11110010;
-[e = _portval -> -> 242 `i `uc ]
-"29
-[; ;displaylib.c: 29:             break;
-[e $U 140  ]
-"30
-[; ;displaylib.c: 30:         case '4':
-[e :U 146 ]
-"31
-[; ;displaylib.c: 31:             portval = 0b01100110;
-[e = _portval -> -> 102 `i `uc ]
-"32
-[; ;displaylib.c: 32:             break;
-[e $U 140  ]
-"33
-[; ;displaylib.c: 33:         case '5':
-[e :U 147 ]
-"34
-[; ;displaylib.c: 34:             portval = 0b10110110;
-[e = _portval -> -> 182 `i `uc ]
-"35
-[; ;displaylib.c: 35:             break;
-[e $U 140  ]
-"36
-[; ;displaylib.c: 36:         case '6':
-[e :U 148 ]
-"37
-[; ;displaylib.c: 37:             portval = 0b10111110;
-[e = _portval -> -> 190 `i `uc ]
-"38
-[; ;displaylib.c: 38:             break;
-[e $U 140  ]
-"39
-[; ;displaylib.c: 39:         case '7':
-[e :U 149 ]
-"40
-[; ;displaylib.c: 40:             portval = 0b11100000;
-[e = _portval -> -> 224 `i `uc ]
-"41
-[; ;displaylib.c: 41:             break;
-[e $U 140  ]
-"42
-[; ;displaylib.c: 42:         case '8':
-[e :U 150 ]
-"43
-[; ;displaylib.c: 43:             portval = 0b11111110;
-[e = _portval -> -> 254 `i `uc ]
-"44
-[; ;displaylib.c: 44:             break;
-[e $U 140  ]
-"45
-[; ;displaylib.c: 45:         case '9':
-[e :U 151 ]
-"46
-[; ;displaylib.c: 46:             portval = 0b11110110;
-[e = _portval -> -> 246 `i `uc ]
-"47
-[; ;displaylib.c: 47:             break;
-[e $U 140  ]
-"48
-[; ;displaylib.c: 48:          case '10':
-[e :U 152 ]
-"49
-[; ;displaylib.c: 49:             portval = 0b11101110;
-[e = _portval -> -> 238 `i `uc ]
-"50
-[; ;displaylib.c: 50:             break;
-[e $U 140  ]
-"51
-[; ;displaylib.c: 51:              case '11':
-[e :U 153 ]
-"52
-[; ;displaylib.c: 52:             portval =0b00111110 ;
-[e = _portval -> -> 62 `i `uc ]
-"53
-[; ;displaylib.c: 53:             break;
-[e $U 140  ]
-"54
-[; ;displaylib.c: 54:             case '12':
-[e :U 154 ]
-"55
-[; ;displaylib.c: 55:             portval = 0b10011100;
-[e = _portval -> -> 156 `i `uc ]
-"56
-[; ;displaylib.c: 56:             break;
-[e $U 140  ]
-"57
-[; ;displaylib.c: 57:             case '13':
-[e :U 155 ]
-"58
-[; ;displaylib.c: 58:             portval = 0b01111010;
-[e = _portval -> -> 122 `i `uc ]
-"59
-[; ;displaylib.c: 59:             break;
-[e $U 140  ]
-"60
-[; ;displaylib.c: 60:             case '14':
-[e :U 156 ]
-"61
-[; ;displaylib.c: 61:             portval = 0b10011110;
-[e = _portval -> -> 158 `i `uc ]
-"62
-[; ;displaylib.c: 62:             break;
-[e $U 140  ]
-"63
-[; ;displaylib.c: 63:             case '15':
-[e :U 157 ]
-"64
-[; ;displaylib.c: 64:             portval = 0b10001110;
-[e = _portval -> -> 142 `i `uc ]
-"65
-[; ;displaylib.c: 65:             break;
-[e $U 140  ]
-"66
-[; ;displaylib.c: 66:     }
-}
-[e $U 140  ]
-[e :U 141 ]
-[e [\ -> _val `i , $ -> -> 48 `ui `i 142
- , $ -> -> 49 `ui `i 143
- , $ -> -> 50 `ui `i 144
- , $ -> -> 51 `ui `i 145
- , $ -> -> 52 `ui `i 146
- , $ -> -> 53 `ui `i 147
- , $ -> -> 54 `ui `i 148
- , $ -> -> 55 `ui `i 149
- , $ -> -> 56 `ui `i 150
- , $ -> -> 57 `ui `i 151
- , $ -> -> 12592 `ui `i 152
- , $ -> -> 12593 `ui `i 153
- , $ -> -> 12594 `ui `i 154
- , $ -> -> 12595 `ui `i 155
- , $ -> -> 12596 `ui `i 156
- , $ -> -> 12597 `ui `i 157
- 140 ]
-[e :U 140 ]
-"68
-[; ;displaylib.c: 68:   return portval;
-[e ) _portval ]
-[e $UE 139  ]
-"70
-[; ;displaylib.c: 70: }
+[; ;adclib.c: 24: }
 [e :UE 139 ]
+}
+"25
+[; ;adclib.c: 25: int adc_read(){
+[v _adc_read `(i ~T0 @X0 1 ef ]
+{
+[e :U _adc_read ]
+[f ]
+"26
+[; ;adclib.c: 26: if (ADCON0bits.GO ==0)
+[e $ ! == -> . . _ADCON0bits 1 1 `i -> 0 `i 141  ]
+"27
+[; ;adclib.c: 27:            ADCON0bits.GO =1;
+[e = . . _ADCON0bits 1 1 -> -> 1 `i `uc ]
+[e :U 141 ]
+"28
+[; ;adclib.c: 28: return ADRESH;
+[e ) -> _ADRESH `i ]
+[e $UE 140  ]
+"30
+[; ;adclib.c: 30: }
+[e :UE 140 ]
+}
+"31
+[; ;adclib.c: 31: void adc_cchange(int channel){
+[v _adc_cchange `(v ~T0 @X0 1 ef1`i ]
+{
+[e :U _adc_cchange ]
+[v _channel `i ~T0 @X0 1 r1 ]
+[f ]
+"32
+[; ;adclib.c: 32: ADCON0bits.CHS = channel;
+[e = . . _ADCON0bits 0 2 -> _channel `uc ]
+"33
+[; ;adclib.c: 33: }
+[e :UE 142 ]
+}
+"34
+[; ;adclib.c: 34: int adc_get_channel(){
+[v _adc_get_channel `(i ~T0 @X0 1 ef ]
+{
+[e :U _adc_get_channel ]
+[f ]
+"35
+[; ;adclib.c: 35:     return ADCON0bits.CHS;
+[e ) -> . . _ADCON0bits 0 2 `i ]
+[e $UE 143  ]
+"38
+[; ;adclib.c: 38: }
+[e :UE 143 ]
 }

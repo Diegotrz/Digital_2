@@ -55,15 +55,15 @@ void __interrupt() isr (void)
  */
 void main (void)
 {
- config_pines ( 0b00000011,  0);
-  config_tris ( 0xFF, 0b11111111, 0, 0, 0);
+ config_pines ( 0b00000000,  0);
+  config_tris ( 0, 0b11111111, 0, 0, 0);
  config_ports ( 0, 0, 0, 0);
  config_pullup (0, 0b11111111);
  
  //Llamada del adc
 adc_init( 0, 0,0,0,0b01); //Función para la configuración del adc
 
- __delay_ms(2000);  // wait 2 seconds
+ __delay_ms(100);  // wait 2 seconds
     while(1)
     {
         varadc=   adc_read(); 

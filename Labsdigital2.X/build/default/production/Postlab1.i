@@ -2819,15 +2819,15 @@ void __attribute__((picinterrupt(("")))) isr (void)
 
 void main (void)
 {
- config_pines ( 0b00000011, 0);
-  config_tris ( 0xFF, 0b11111111, 0, 0, 0);
+ config_pines ( 0b00000000, 0);
+  config_tris ( 0, 0b11111111, 0, 0, 0);
  config_ports ( 0, 0, 0, 0);
  config_pullup (0, 0b11111111);
 
 
 adc_init( 0, 0,0,0,0b01);
 
- _delay((unsigned long)((2000)*(8000000/4000.0)));
+ _delay((unsigned long)((100)*(8000000/4000.0)));
     while(1)
     {
         varadc= adc_read();

@@ -2744,13 +2744,13 @@ char valdisplay(char val);
 char valdisplay(char val){
     switch (val){
         case '0':
-        portval = 0b00000010;
+        portval = 0b00111111;
             break;
         case '1':
-         portval = 0b01100000;
+         portval = 0b00000110;
             break;
         case '2':
-            portval = 0b11011010;
+            portval = 0b01011011;
             break;
         case '3':
             portval = 0b11110010;

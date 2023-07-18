@@ -326,11 +326,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U _main ]
 [f ]
 "58
-[; ;Postlab1.c: 58:  config_pines ( 0b00000011, 0);
-[e ( _config_pines (2 , -> -> 3 `i `uc -> 0 `i ]
+[; ;Postlab1.c: 58:  config_pines ( 0b00000000, 0);
+[e ( _config_pines (2 , -> -> 0 `i `uc -> 0 `i ]
 "59
-[; ;Postlab1.c: 59:   config_tris ( 0xFF, 0b11111111, 0, 0, 0);
-[e ( _config_tris (4 , , , , -> -> 255 `i `uc -> -> 255 `i `uc -> -> 0 `i `uc -> -> 0 `i `uc -> -> 0 `i `uc ]
+[; ;Postlab1.c: 59:   config_tris ( 0, 0b11111111, 0, 0, 0);
+[e ( _config_tris (4 , , , , -> -> 0 `i `uc -> -> 255 `i `uc -> -> 0 `i `uc -> -> 0 `i `uc -> -> 0 `i `uc ]
 "60
 [; ;Postlab1.c: 60:  config_ports ( 0, 0, 0, 0);
 [e ( _config_ports (4 , , , -> -> 0 `i `uc -> -> 0 `i `uc -> -> 0 `i `uc -> -> 0 `i `uc ]
@@ -341,8 +341,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;Postlab1.c: 64: adc_init( 0, 0,0,0,0b01);
 [e ( _adc_init (4 , , , , -> 0 `i -> 0 `i -> 0 `i -> 0 `i -> -> 1 `i `uc ]
 "66
-[; ;Postlab1.c: 66:  _delay((unsigned long)((2000)*(8000000/4000.0)));
-[e ( __delay (1 -> * -> -> 2000 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+[; ;Postlab1.c: 66:  _delay((unsigned long)((100)*(8000000/4000.0)));
+[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
 "67
 [; ;Postlab1.c: 67:     while(1)
 [e :U 142 ]

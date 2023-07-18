@@ -1,7 +1,7 @@
 
 
 Microchip MPLAB XC8 Assembler V2.40 build 20220703182018 
-                                                                                               Tue Jul 18 12:57:44 2023
+                                                                                               Tue Jul 18 13:27:37 2023
 
 Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1 
      1                           	processor	16F887
@@ -679,20 +679,20 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1
    665                           ; Regs used in _main: [wreg-fsr0h+status,2+status,0+pclath+cstack]
    666                           
    667                           
-   668                           ;Postlab1.c: 58:  config_pines ( 0b00000011, 0);
+   668                           ;Postlab1.c: 58:  config_pines ( 0b00000000, 0);
    669     0088  3000               	movlw	0
    670     0089  00F2               	movwf	config_pines@ansh
    671     008A  00F3               	movwf	config_pines@ansh+1
-   672     008B  3003               	movlw	3
+   672     008B  3000               	movlw	0
    673     008C  120A  118A  2152  120A  118A  	fcall	_config_pines
    674                           
-   675                           ;Postlab1.c: 59:   config_tris ( 0xFF, 0b11111111, 0, 0, 0);
+   675                           ;Postlab1.c: 59:   config_tris ( 0, 0b11111111, 0, 0, 0);
    676     0091  30FF               	movlw	255
    677     0092  00F2               	movwf	config_tris@tris_b
    678     0093  01F3               	clrf	config_tris@tris_c
    679     0094  01F4               	clrf	config_tris@tris_d
    680     0095  01F5               	clrf	config_tris@tris_e
-   681     0096  30FF               	movlw	255
+   681     0096  3000               	movlw	0
    682     0097  120A  118A  212E  120A  118A  	fcall	_config_tris
    683                           
    684                           ;Postlab1.c: 60:  config_ports ( 0, 0, 0, 0);
@@ -730,12 +730,12 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1
    716     00BF  120A  118A  20E7  120A  118A  	fcall	_adc_init
    717     00C4                     l959:
    718                           
-   719                           ;Postlab1.c: 66:  _delay((unsigned long)((2000)*(8000000/4000.0)));
-   720     00C4  3015               	movlw	21
+   719                           ;Postlab1.c: 66:  _delay((unsigned long)((100)*(8000000/4000.0)));
+   720     00C4  3002               	movlw	2
    721     00C5  00F9               	movwf	??_main+2
-   722     00C6  304B               	movlw	75
+   722     00C6  3004               	movlw	4
    723     00C7  00F8               	movwf	??_main+1
-   724     00C8  30BE               	movlw	190
+   724     00C8  30BA               	movlw	186
    725     00C9  00F7               	movwf	??_main
    726     00CA                     u37:
    727     00CA  0BF7               	decfsz	??_main,f
@@ -814,24 +814,24 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1
    800     0016  2847               	goto	l791
    801     0017                     l757:
    802                           
-   803                           ;displaylib.c: 19:         portval = 0b00000010;
-   804     0017  3002               	movlw	2
+   803                           ;displaylib.c: 19:         portval = 0b00111111;
+   804     0017  303F               	movlw	63
    805     0018  00FB               	movwf	_portval
    806                           
    807                           ;displaylib.c: 20:             break;
    808     0019  2886               	goto	l793
    809     001A                     l759:
    810                           
-   811                           ;displaylib.c: 22:          portval = 0b01100000;
-   812     001A  3060               	movlw	96
+   811                           ;displaylib.c: 22:          portval = 0b00000110;
+   812     001A  3006               	movlw	6
    813     001B  00FB               	movwf	_portval
    814                           
    815                           ;displaylib.c: 23:             break;
    816     001C  2886               	goto	l793
    817     001D                     l761:
    818                           
-   819                           ;displaylib.c: 25:             portval = 0b11011010;
-   820     001D  30DA               	movlw	218
+   819                           ;displaylib.c: 25:             portval = 0b01011011;
+   820     001D  305B               	movlw	91
    821     001E  00FB               	movwf	_portval
    822                           
    823                           ;displaylib.c: 26:             break;
@@ -1333,277 +1333,257 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1
   1318                           ;incstack = 0
   1319                           ; Regs used in _adc_read: [wreg]
   1320                           
-  1321                           
-  1322                           ;adclib.c: 26: if (ADCON0bits.GO ==0)
-  1323     011F  1283               	bcf	3,5	;RP0=0, select bank0
-  1324     0120  1303               	bcf	3,6	;RP1=0, select bank0
-  1325     0121  189F               	btfsc	31,1	;volatile
-  1326     0122  2924               	goto	u21
-  1327     0123  2925               	goto	u20
-  1328     0124                     u21:
-  1329     0124  2926               	goto	l883
-  1330     0125                     u20:
-  1331     0125                     l881:
-  1332                           
-  1333                           ;adclib.c: 27:            ADCON0bits.GO =1;
-  1334     0125  149F               	bsf	31,1	;volatile
-  1335     0126                     l883:
-  1336                           
-  1337                           ;adclib.c: 28: return ADRESH;
-  1338     0126  081E               	movf	30,w	;volatile
-  1339     0127  00F4               	movwf	??_adc_read
-  1340     0128  01F5               	clrf	??_adc_read+1
-  1341     0129  0874               	movf	??_adc_read,w
-  1342     012A  00F2               	movwf	?_adc_read
-  1343     012B  0875               	movf	??_adc_read+1,w
-  1344     012C  00F3               	movwf	?_adc_read+1
-  1345     012D                     l15:
-  1346     012D  0008               	return
-  1347     012E                     __end_of_adc_read:
-  1348                           
-  1349                           	psect	text7
-  1350     00E7                     __ptext7:	
-  1351 ;; *************** function _adc_init *****************
-  1352 ;; Defined at:
-  1353 ;;		line 15 in file "adclib.c"
-  1354 ;; Parameters:    Size  Location     Type
-  1355 ;;  channel         2    0[BANK0 ] int 
-  1356 ;;  justf           2    2[BANK0 ] int 
-  1357 ;;  vcf0            2    4[BANK0 ] int 
-  1358 ;;  vcf1            2    6[BANK0 ] int 
-  1359 ;;  adcs            1    8[BANK0 ] unsigned char 
-  1360 ;; Auto vars:     Size  Location     Type
-  1361 ;;		None
-  1362 ;; Return value:  Size  Location     Type
-  1363 ;;                  1    wreg      void 
-  1364 ;; Registers used:
-  1365 ;;		wreg, status,2, status,0
-  1366 ;; Tracked objects:
-  1367 ;;		On entry : 0/0
-  1368 ;;		On exit  : 0/0
-  1369 ;;		Unchanged: 0/0
-  1370 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
-  1371 ;;      Params:         0       9       0       0       0
-  1372 ;;      Locals:         0       0       0       0       0
-  1373 ;;      Temps:          1       0       0       0       0
-  1374 ;;      Totals:         1       9       0       0       0
-  1375 ;;Total ram usage:       10 bytes
-  1376 ;; Hardware stack levels used: 1
-  1377 ;; Hardware stack levels required when called: 1
-  1378 ;; This function calls:
-  1379 ;;		Nothing
-  1380 ;; This function is called by:
-  1381 ;;		_main
-  1382 ;; This function uses a non-reentrant model
-  1383 ;;
-  1384                           
-  1385     00E7                     _adc_init:	
-  1386                           ;psect for function _adc_init
-  1387                           
-  1388     00E7                     l947:	
-  1389                           ;incstack = 0
-  1390                           ; Regs used in _adc_init: [wreg+status,2+status,0]
-  1391                           
-  1392                           
-  1393                           ;adclib.c: 17:   ADCON1bits.ADFM = justf;
-  1394     00E7  1283               	bcf	3,5	;RP0=0, select bank0
-  1395     00E8  1303               	bcf	3,6	;RP1=0, select bank0
-  1396     00E9  0C22               	rrf	adc_init@justf,w
-  1397     00EA  1683               	bsf	3,5	;RP0=1, select bank1
-  1398     00EB  1303               	bcf	3,6	;RP1=0, select bank1
-  1399     00EC  1C03               	skipc
-  1400     00ED  139F               	bcf	31,7	;volatile
-  1401     00EE  1803               	skipnc
-  1402     00EF  179F               	bsf	31,7	;volatile
-  1403                           
-  1404                           ;adclib.c: 18:    ADCON1bits.VCFG0 = vcf0;
-  1405     00F0  1283               	bcf	3,5	;RP0=0, select bank0
-  1406     00F1  1303               	bcf	3,6	;RP1=0, select bank0
-  1407     00F2  0C24               	rrf	adc_init@vcf0,w
-  1408     00F3  1683               	bsf	3,5	;RP0=1, select bank1
-  1409     00F4  1303               	bcf	3,6	;RP1=0, select bank1
-  1410     00F5  1C03               	skipc
-  1411     00F6  121F               	bcf	31,4	;volatile
-  1412     00F7  1803               	skipnc
-  1413     00F8  161F               	bsf	31,4	;volatile
-  1414                           
-  1415                           ;adclib.c: 19:    ADCON1bits.VCFG1 = vcf1;
-  1416     00F9  1283               	bcf	3,5	;RP0=0, select bank0
-  1417     00FA  1303               	bcf	3,6	;RP1=0, select bank0
-  1418     00FB  0C26               	rrf	adc_init@vcf1,w
-  1419     00FC  1683               	bsf	3,5	;RP0=1, select bank1
-  1420     00FD  1303               	bcf	3,6	;RP1=0, select bank1
-  1421     00FE  1C03               	skipc
-  1422     00FF  129F               	bcf	31,5	;volatile
-  1423     0100  1803               	skipnc
-  1424     0101  169F               	bsf	31,5	;volatile
-  1425     0102                     l949:
-  1426                           
-  1427                           ;adclib.c: 20:    ADCON0bits.ADON= 1;
-  1428     0102  1283               	bcf	3,5	;RP0=0, select bank0
-  1429     0103  1303               	bcf	3,6	;RP1=0, select bank0
-  1430     0104  141F               	bsf	31,0	;volatile
-  1431     0105                     l951:
-  1432                           
-  1433                           ;adclib.c: 21:    _delay((unsigned long)((50)*(8000000/4000000.0)));
-  1434     0105  3021               	movlw	33
-  1435     0106  00F2               	movwf	??_adc_init
-  1436     0107                     u47:
-  1437     0107  0BF2               	decfsz	??_adc_init,f
-  1438     0108  2907               	goto	u47
-  1439     0109                     l953:
-  1440                           
-  1441                           ;adclib.c: 22: ADCON0bits.ADCS = adcs;
-  1442     0109  1283               	bcf	3,5	;RP0=0, select bank0
-  1443     010A  1303               	bcf	3,6	;RP1=0, select bank0
-  1444     010B  0828               	movf	adc_init@adcs,w
-  1445     010C  00F2               	movwf	??_adc_init
-  1446     010D  0EF2               	swapf	??_adc_init,f
-  1447     010E  0DF2               	rlf	??_adc_init,f
-  1448     010F  0DF2               	rlf	??_adc_init,f
-  1449     0110  081F               	movf	31,w	;volatile
-  1450     0111  0672               	xorwf	??_adc_init,w
-  1451     0112  393F               	andlw	-193
-  1452     0113  0672               	xorwf	??_adc_init,w
-  1453     0114  009F               	movwf	31	;volatile
-  1454     0115                     l955:
-  1455                           
-  1456                           ;adclib.c: 23: ADCON0bits.CHS = channel;
-  1457     0115  0820               	movf	adc_init@channel,w
-  1458     0116  00F2               	movwf	??_adc_init
-  1459     0117  0DF2               	rlf	??_adc_init,f
-  1460     0118  0DF2               	rlf	??_adc_init,f
-  1461     0119  081F               	movf	31,w	;volatile
-  1462     011A  0672               	xorwf	??_adc_init,w
-  1463     011B  39C3               	andlw	-61
-  1464     011C  0672               	xorwf	??_adc_init,w
-  1465     011D  009F               	movwf	31	;volatile
-  1466     011E                     l11:
-  1467     011E  0008               	return
-  1468     011F                     __end_of_adc_init:
-  1469                           
-  1470                           	psect	text8
-  1471     015A                     __ptext8:	
-  1472 ;; *************** function _isr *****************
-  1473 ;; Defined at:
-  1474 ;;		line 48 in file "Postlab1.c"
-  1475 ;; Parameters:    Size  Location     Type
-  1476 ;;		None
-  1477 ;; Auto vars:     Size  Location     Type
-  1478 ;;		None
-  1479 ;; Return value:  Size  Location     Type
-  1480 ;;                  1    wreg      void 
-  1481 ;; Registers used:
-  1482 ;;		None
-  1483 ;; Tracked objects:
-  1484 ;;		On entry : 0/0
-  1485 ;;		On exit  : 0/0
-  1486 ;;		Unchanged: 0/0
-  1487 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
-  1488 ;;      Params:         0       0       0       0       0
-  1489 ;;      Locals:         0       0       0       0       0
-  1490 ;;      Temps:          2       0       0       0       0
-  1491 ;;      Totals:         2       0       0       0       0
-  1492 ;;Total ram usage:        2 bytes
-  1493 ;; Hardware stack levels used: 1
-  1494 ;; This function calls:
-  1495 ;;		Nothing
-  1496 ;; This function is called by:
-  1497 ;;		Interrupt level 1
-  1498 ;; This function uses a non-reentrant model
-  1499 ;;
-  1500                           
-  1501     015A                     _isr:	
-  1502                           ;psect for function _isr
-  1503                           
-  1504     015A                     i1l817:
-  1505                           
-  1506                           ;Postlab1.c: 51:     __nop();
-  1507     015A  0000               	nop
-  1508     015B                     i1l104:
-  1509     015B  0871               	movf	??_isr+1,w
-  1510     015C  008A               	movwf	10
-  1511     015D  0E70               	swapf	??_isr,w
-  1512     015E  0083               	movwf	3
-  1513     015F  0EFE               	swapf	btemp,f
-  1514     0160  0E7E               	swapf	btemp,w
-  1515     0161  0009               	retfie
-  1516     0162                     __end_of_isr:
-  1517     007E                     btemp	set	126	;btemp
-  1518     007E                     wtemp0	set	126
-  1519                           
-  1520                           	psect	intentry
-  1521     0004                     __pintentry:	
-  1522                           ;incstack = 0
-  1523                           ; Regs used in _isr: []
-  1524                           
-  1525     0004                     interrupt_function:
-  1526     007E                     saved_w	set	btemp
-  1527     0004  00FE               	movwf	btemp
-  1528     0005  0E03               	swapf	3,w
-  1529     0006  00F0               	movwf	??_isr
-  1530     0007  080A               	movf	10,w
-  1531     0008  00F1               	movwf	??_isr+1
-  1532     0009  120A  118A  295A   	ljmp	_isr
-  1533                           
-  1534                           	psect	idloc
+  1321     011F  1283               	bcf	3,5	;RP0=0, select bank0
+  1322     0120  1303               	bcf	3,6	;RP1=0, select bank0
+  1323     0121  189F               	btfsc	31,1	;volatile
+  1324     0122  2924               	goto	u21
+  1325     0123  2925               	goto	u20
+  1326     0124                     u21:
+  1327     0124  2926               	goto	l883
+  1328     0125                     u20:
+  1329     0125                     l881:
+  1330     0125  149F               	bsf	31,1	;volatile
+  1331     0126                     l883:
+  1332     0126  081E               	movf	30,w	;volatile
+  1333     0127  00F4               	movwf	??_adc_read
+  1334     0128  01F5               	clrf	??_adc_read+1
+  1335     0129  0874               	movf	??_adc_read,w
+  1336     012A  00F2               	movwf	?_adc_read
+  1337     012B  0875               	movf	??_adc_read+1,w
+  1338     012C  00F3               	movwf	?_adc_read+1
+  1339     012D                     l15:
+  1340     012D  0008               	return
+  1341     012E                     __end_of_adc_read:
+  1342                           
+  1343                           	psect	text7
+  1344     00E7                     __ptext7:	
+  1345 ;; *************** function _adc_init *****************
+  1346 ;; Defined at:
+  1347 ;;		line 15 in file "adclib.c"
+  1348 ;; Parameters:    Size  Location     Type
+  1349 ;;  channel         2    0[BANK0 ] int 
+  1350 ;;  justf           2    2[BANK0 ] int 
+  1351 ;;  vcf0            2    4[BANK0 ] int 
+  1352 ;;  vcf1            2    6[BANK0 ] int 
+  1353 ;;  adcs            1    8[BANK0 ] unsigned char 
+  1354 ;; Auto vars:     Size  Location     Type
+  1355 ;;		None
+  1356 ;; Return value:  Size  Location     Type
+  1357 ;;                  1    wreg      void 
+  1358 ;; Registers used:
+  1359 ;;		wreg, status,2, status,0
+  1360 ;; Tracked objects:
+  1361 ;;		On entry : 0/0
+  1362 ;;		On exit  : 0/0
+  1363 ;;		Unchanged: 0/0
+  1364 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+  1365 ;;      Params:         0       9       0       0       0
+  1366 ;;      Locals:         0       0       0       0       0
+  1367 ;;      Temps:          1       0       0       0       0
+  1368 ;;      Totals:         1       9       0       0       0
+  1369 ;;Total ram usage:       10 bytes
+  1370 ;; Hardware stack levels used: 1
+  1371 ;; Hardware stack levels required when called: 1
+  1372 ;; This function calls:
+  1373 ;;		Nothing
+  1374 ;; This function is called by:
+  1375 ;;		_main
+  1376 ;; This function uses a non-reentrant model
+  1377 ;;
+  1378                           
+  1379     00E7                     _adc_init:	
+  1380                           ;psect for function _adc_init
+  1381                           
+  1382     00E7                     l947:	
+  1383                           ;incstack = 0
+  1384                           ; Regs used in _adc_init: [wreg+status,2+status,0]
+  1385                           
+  1386     00E7  1283               	bcf	3,5	;RP0=0, select bank0
+  1387     00E8  1303               	bcf	3,6	;RP1=0, select bank0
+  1388     00E9  0C22               	rrf	adc_init@justf,w
+  1389     00EA  1683               	bsf	3,5	;RP0=1, select bank1
+  1390     00EB  1303               	bcf	3,6	;RP1=0, select bank1
+  1391     00EC  1C03               	skipc
+  1392     00ED  139F               	bcf	31,7	;volatile
+  1393     00EE  1803               	skipnc
+  1394     00EF  179F               	bsf	31,7	;volatile
+  1395     00F0  1283               	bcf	3,5	;RP0=0, select bank0
+  1396     00F1  1303               	bcf	3,6	;RP1=0, select bank0
+  1397     00F2  0C24               	rrf	adc_init@vcf0,w
+  1398     00F3  1683               	bsf	3,5	;RP0=1, select bank1
+  1399     00F4  1303               	bcf	3,6	;RP1=0, select bank1
+  1400     00F5  1C03               	skipc
+  1401     00F6  121F               	bcf	31,4	;volatile
+  1402     00F7  1803               	skipnc
+  1403     00F8  161F               	bsf	31,4	;volatile
+  1404     00F9  1283               	bcf	3,5	;RP0=0, select bank0
+  1405     00FA  1303               	bcf	3,6	;RP1=0, select bank0
+  1406     00FB  0C26               	rrf	adc_init@vcf1,w
+  1407     00FC  1683               	bsf	3,5	;RP0=1, select bank1
+  1408     00FD  1303               	bcf	3,6	;RP1=0, select bank1
+  1409     00FE  1C03               	skipc
+  1410     00FF  129F               	bcf	31,5	;volatile
+  1411     0100  1803               	skipnc
+  1412     0101  169F               	bsf	31,5	;volatile
+  1413     0102                     l949:
+  1414     0102  1283               	bcf	3,5	;RP0=0, select bank0
+  1415     0103  1303               	bcf	3,6	;RP1=0, select bank0
+  1416     0104  141F               	bsf	31,0	;volatile
+  1417     0105                     l951:
+  1418     0105  3021               	movlw	33
+  1419     0106  00F2               	movwf	??_adc_init
+  1420     0107                     u47:
+  1421     0107  0BF2               	decfsz	??_adc_init,f
+  1422     0108  2907               	goto	u47
+  1423     0109                     l953:
+  1424     0109  1283               	bcf	3,5	;RP0=0, select bank0
+  1425     010A  1303               	bcf	3,6	;RP1=0, select bank0
+  1426     010B  0828               	movf	adc_init@adcs,w
+  1427     010C  00F2               	movwf	??_adc_init
+  1428     010D  0EF2               	swapf	??_adc_init,f
+  1429     010E  0DF2               	rlf	??_adc_init,f
+  1430     010F  0DF2               	rlf	??_adc_init,f
+  1431     0110  081F               	movf	31,w	;volatile
+  1432     0111  0672               	xorwf	??_adc_init,w
+  1433     0112  393F               	andlw	-193
+  1434     0113  0672               	xorwf	??_adc_init,w
+  1435     0114  009F               	movwf	31	;volatile
+  1436     0115                     l955:
+  1437     0115  0820               	movf	adc_init@channel,w
+  1438     0116  00F2               	movwf	??_adc_init
+  1439     0117  0DF2               	rlf	??_adc_init,f
+  1440     0118  0DF2               	rlf	??_adc_init,f
+  1441     0119  081F               	movf	31,w	;volatile
+  1442     011A  0672               	xorwf	??_adc_init,w
+  1443     011B  39C3               	andlw	-61
+  1444     011C  0672               	xorwf	??_adc_init,w
+  1445     011D  009F               	movwf	31	;volatile
+  1446     011E                     l11:
+  1447     011E  0008               	return
+  1448     011F                     __end_of_adc_init:
+  1449                           
+  1450                           	psect	text8
+  1451     015A                     __ptext8:	
+  1452 ;; *************** function _isr *****************
+  1453 ;; Defined at:
+  1454 ;;		line 48 in file "Postlab1.c"
+  1455 ;; Parameters:    Size  Location     Type
+  1456 ;;		None
+  1457 ;; Auto vars:     Size  Location     Type
+  1458 ;;		None
+  1459 ;; Return value:  Size  Location     Type
+  1460 ;;                  1    wreg      void 
+  1461 ;; Registers used:
+  1462 ;;		None
+  1463 ;; Tracked objects:
+  1464 ;;		On entry : 0/0
+  1465 ;;		On exit  : 0/0
+  1466 ;;		Unchanged: 0/0
+  1467 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+  1468 ;;      Params:         0       0       0       0       0
+  1469 ;;      Locals:         0       0       0       0       0
+  1470 ;;      Temps:          2       0       0       0       0
+  1471 ;;      Totals:         2       0       0       0       0
+  1472 ;;Total ram usage:        2 bytes
+  1473 ;; Hardware stack levels used: 1
+  1474 ;; This function calls:
+  1475 ;;		Nothing
+  1476 ;; This function is called by:
+  1477 ;;		Interrupt level 1
+  1478 ;; This function uses a non-reentrant model
+  1479 ;;
+  1480                           
+  1481     015A                     _isr:	
+  1482                           ;psect for function _isr
+  1483                           
+  1484     015A                     i1l817:
+  1485                           
+  1486                           ;Postlab1.c: 51:     __nop();
+  1487     015A  0000               	nop
+  1488     015B                     i1l104:
+  1489     015B  0871               	movf	??_isr+1,w
+  1490     015C  008A               	movwf	10
+  1491     015D  0E70               	swapf	??_isr,w
+  1492     015E  0083               	movwf	3
+  1493     015F  0EFE               	swapf	btemp,f
+  1494     0160  0E7E               	swapf	btemp,w
+  1495     0161  0009               	retfie
+  1496     0162                     __end_of_isr:
+  1497     007E                     btemp	set	126	;btemp
+  1498     007E                     wtemp0	set	126
+  1499                           
+  1500                           	psect	intentry
+  1501     0004                     __pintentry:	
+  1502                           ;incstack = 0
+  1503                           ; Regs used in _isr: []
+  1504                           
+  1505     0004                     interrupt_function:
+  1506     007E                     saved_w	set	btemp
+  1507     0004  00FE               	movwf	btemp
+  1508     0005  0E03               	swapf	3,w
+  1509     0006  00F0               	movwf	??_isr
+  1510     0007  080A               	movf	10,w
+  1511     0008  00F1               	movwf	??_isr+1
+  1512     0009  120A  118A  295A   	ljmp	_isr
+  1513                           
+  1514                           	psect	idloc
+  1515                           
+  1516                           ;Config register IDLOC0 @ 0x2000
+  1517                           ;	unspecified, using default values
+  1518     2000                     	org	8192
+  1519     2000  3FFF               	dw	16383
+  1520                           
+  1521                           ;Config register IDLOC1 @ 0x2001
+  1522                           ;	unspecified, using default values
+  1523     2001                     	org	8193
+  1524     2001  3FFF               	dw	16383
+  1525                           
+  1526                           ;Config register IDLOC2 @ 0x2002
+  1527                           ;	unspecified, using default values
+  1528     2002                     	org	8194
+  1529     2002  3FFF               	dw	16383
+  1530                           
+  1531                           ;Config register IDLOC3 @ 0x2003
+  1532                           ;	unspecified, using default values
+  1533     2003                     	org	8195
+  1534     2003  3FFF               	dw	16383
   1535                           
-  1536                           ;Config register IDLOC0 @ 0x2000
-  1537                           ;	unspecified, using default values
-  1538     2000                     	org	8192
-  1539     2000  3FFF               	dw	16383
-  1540                           
-  1541                           ;Config register IDLOC1 @ 0x2001
-  1542                           ;	unspecified, using default values
-  1543     2001                     	org	8193
-  1544     2001  3FFF               	dw	16383
-  1545                           
-  1546                           ;Config register IDLOC2 @ 0x2002
-  1547                           ;	unspecified, using default values
-  1548     2002                     	org	8194
-  1549     2002  3FFF               	dw	16383
-  1550                           
-  1551                           ;Config register IDLOC3 @ 0x2003
-  1552                           ;	unspecified, using default values
-  1553     2003                     	org	8195
-  1554     2003  3FFF               	dw	16383
-  1555                           
-  1556                           	psect	config
-  1557                           
-  1558                           ;Config register CONFIG1 @ 0x2007
-  1559                           ;	Oscillator Selection bits
-  1560                           ;	FOSC = INTRC_CLKOUT, INTOSC oscillator: CLKOUT function on RA6/OSC2/CLKOUT pin, I/O fu
+  1536                           	psect	config
+  1537                           
+  1538                           ;Config register CONFIG1 @ 0x2007
+  1539                           ;	Oscillator Selection bits
+  1540                           ;	FOSC = INTRC_CLKOUT, INTOSC oscillator: CLKOUT function on RA6/OSC2/CLKOUT pin, I/O fu
       +                          nction on RA7/OSC1/CLKIN
-  1561                           ;	Watchdog Timer Enable bit
-  1562                           ;	WDTE = OFF, WDT disabled and can be enabled by SWDTEN bit of the WDTCON register
-  1563                           ;	Power-up Timer Enable bit
-  1564                           ;	PWRTE = OFF, PWRT disabled
-  1565                           ;	RE3/MCLR pin function select bit
-  1566                           ;	MCLRE = OFF, RE3/MCLR pin function is digital input, MCLR internally tied to VDD
-  1567                           ;	Code Protection bit
-  1568                           ;	CP = OFF, Program memory code protection is disabled
-  1569                           ;	Data Code Protection bit
-  1570                           ;	CPD = OFF, Data memory code protection is disabled
-  1571                           ;	Brown Out Reset Selection bits
-  1572                           ;	BOREN = OFF, BOR disabled
-  1573                           ;	Internal External Switchover bit
-  1574                           ;	IESO = OFF, Internal/External Switchover mode is disabled
-  1575                           ;	Fail-Safe Clock Monitor Enabled bit
-  1576                           ;	FCMEN = OFF, Fail-Safe Clock Monitor is disabled
-  1577                           ;	Low Voltage Programming Enable bit
-  1578                           ;	LVP = OFF, RB3 pin has digital I/O, HV on MCLR must be used for programming
-  1579                           ;	In-Circuit Debugger Mode bit
-  1580                           ;	DEBUG = 0x1, unprogrammed default
-  1581     2007                     	org	8199
-  1582     2007  20D5               	dw	8405
-  1583                           
-  1584                           ;Config register CONFIG2 @ 0x2008
-  1585                           ;	Brown-out Reset Selection bit
-  1586                           ;	BOR4V = BOR40V, Brown-out Reset set to 4.0V
-  1587                           ;	Flash Program Memory Self Write Enable bits
-  1588                           ;	WRT = OFF, Write protection off
-  1589     2008                     	org	8200
-  1590     2008  3FFF               	dw	16383
+  1541                           ;	Watchdog Timer Enable bit
+  1542                           ;	WDTE = OFF, WDT disabled and can be enabled by SWDTEN bit of the WDTCON register
+  1543                           ;	Power-up Timer Enable bit
+  1544                           ;	PWRTE = OFF, PWRT disabled
+  1545                           ;	RE3/MCLR pin function select bit
+  1546                           ;	MCLRE = OFF, RE3/MCLR pin function is digital input, MCLR internally tied to VDD
+  1547                           ;	Code Protection bit
+  1548                           ;	CP = OFF, Program memory code protection is disabled
+  1549                           ;	Data Code Protection bit
+  1550                           ;	CPD = OFF, Data memory code protection is disabled
+  1551                           ;	Brown Out Reset Selection bits
+  1552                           ;	BOREN = OFF, BOR disabled
+  1553                           ;	Internal External Switchover bit
+  1554                           ;	IESO = OFF, Internal/External Switchover mode is disabled
+  1555                           ;	Fail-Safe Clock Monitor Enabled bit
+  1556                           ;	FCMEN = OFF, Fail-Safe Clock Monitor is disabled
+  1557                           ;	Low Voltage Programming Enable bit
+  1558                           ;	LVP = OFF, RB3 pin has digital I/O, HV on MCLR must be used for programming
+  1559                           ;	In-Circuit Debugger Mode bit
+  1560                           ;	DEBUG = 0x1, unprogrammed default
+  1561     2007                     	org	8199
+  1562     2007  20D5               	dw	8405
+  1563                           
+  1564                           ;Config register CONFIG2 @ 0x2008
+  1565                           ;	Brown-out Reset Selection bit
+  1566                           ;	BOR4V = BOR40V, Brown-out Reset set to 4.0V
+  1567                           ;	Flash Program Memory Self Write Enable bits
+  1568                           ;	WRT = OFF, Write protection off
+  1569     2008                     	org	8200
+  1570     2008  3FFF               	dw	16383
 
 Data Sizes:
     Strings     0
@@ -1754,7 +1734,7 @@ DATA                 0      0      15      12        0.0%
 
 
 Microchip Technology PIC Macro Assembler V2.40 build 20220703182018 
-Symbol Table                                                                                   Tue Jul 18 12:57:44 2023
+Symbol Table                                                                                   Tue Jul 18 13:27:37 2023
 
                      l11 011E                       l15 012D                       l61 013B  
                      l64 0147                       l58 0159                       l67 0151  
