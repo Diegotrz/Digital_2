@@ -47,42 +47,60 @@ char varadc;
  */
 void __interrupt() isr (void)
 {
-   if (!PORTBbits.RB0){
+    if(PIR1bits.ADIF){
+        //Interrupción
+       if (ADCON0bits.CHS ==0){
+             varadc=  ADRESH;
+             PORTC = varadc;
+             PIR1bits.ADIF =0;
+        }
+       
+    }
+    
+   /*
+   if (INTCONbits.RBIF ){
+       
+        if (!PORTBbits.RB0){
             while (!RB0);
-            PORTC ++;
+               PORTA ++; 
+                           
+            
+                         
         }
     if (!PORTBbits.RB1){
-            while (!RB1)
-                //valadr = 10;
-                PORTA --;
-        
+            while (!RB1);
+            PORTA --;
+                       
         }
-    
+    //INTCONbits.RBIF = 0;   
+    }
+    */ 
 }
 /*
  *---------------Main-------------
  */
 void main (void)
 {
- config_pines ( 0,  0);
+ config_pines ( 0b00000011,  0);
   config_tris ( 0, 0b11111111, 0, 0, 0);
  config_ports ( 0, 0, 0, 0);
  config_pullup (0, 0b11111111);
- config_osc(0b0111);
+ config_osc(0b0110);
  //Configuracion de las interrupciones
- config_interrupt(1, 1,1, 1, 1, 1 );
+ config_interrupt(0, 1,0, 1, 1, 1 );
  
  //Llamada del adc
 adc_init( 0, 0,0,0,0b01); //Función para la configuración del adc
 
- __delay_ms(100);  // wait 2 seconds
+
     while(1)
     {
-        //varadc=   adc_read(); 
-        varadc = PORTA;
-        PORTC = varadc;
+         
+        
+       // varadc = PORTA;
+       
   //   PORTC = valdisplay(varadc);
-     PORTD = 0b00000001;
+     PORTD =1;
     }
     
     

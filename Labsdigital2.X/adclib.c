@@ -23,8 +23,6 @@ ADCON0bits.ADCS = adcs;
 ADCON0bits.CHS = channel; //Configuración del canal
 }
 int  adc_read(){
-if (ADCON0bits.GO ==0)
-           ADCON0bits.GO =1;
 return ADRESH;
 
 }
