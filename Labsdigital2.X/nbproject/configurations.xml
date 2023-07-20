@@ -21,6 +21,7 @@
       <itemPath>Postlab1.c</itemPath>
       <itemPath>displaylib.h</itemPath>
       <itemPath>displaylib.c</itemPath>
+      <itemPath>prelab2.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
@@ -160,6 +161,8 @@
         </XC8-CO>
         <XC8-config-global>
         </XC8-config-global>
+      </item>
+      <item path="Postlab1.c" ex="true" overriding="false">
       </item>
       <item path="Prelab_1.c" ex="true" overriding="false">
         <HI-TECH-COMP>
