@@ -1,4 +1,4 @@
-# 1 "LCD.c"
+# 1 "Lab2.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,10 +6,30 @@
 # 1 "<built-in>" 2
 # 1 "D:/Mpxlab/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "LCD.c" 2
-# 11 "LCD.c"
-# 1 "./LCD.h" 1
-# 42 "./LCD.h"
+# 1 "Lab2.c" 2
+
+
+
+
+
+
+#pragma config FOSC = INTRC_CLKOUT
+#pragma config WDTE = OFF
+#pragma config PWRTE = OFF
+#pragma config MCLRE = OFF
+#pragma config CP = OFF
+#pragma config CPD = OFF
+#pragma config BOREN = OFF
+#pragma config IESO = OFF
+#pragma config FCMEN = OFF
+#pragma config LVP = OFF
+
+
+#pragma config BOR4V = BOR40V
+#pragma config WRT = OFF
+
+
+
 # 1 "D:/Mpxlab/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\\pic\\include\\xc.h" 1 3
 # 18 "D:/Mpxlab/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -2627,12 +2647,132 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 29 "D:/Mpxlab/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\\pic\\include\\xc.h" 2 3
-# 42 "./LCD.h" 2
+# 23 "Lab2.c" 2
+
+# 1 "./setup_lb.h" 1
+
+
+
+
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c90\\stdint.h" 1 3
+# 5 "./setup_lb.h" 2
+
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c90\\stdio.h" 1 3
+
+
+
+# 1 "D:/Mpxlab/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\\pic\\include\\__size_t.h" 1 3
+
+
+
+typedef unsigned size_t;
+# 4 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c90\\stdio.h" 2 3
+
+# 1 "D:/Mpxlab/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\\pic\\include\\__null.h" 1 3
+# 5 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c90\\stdio.h" 2 3
 
 
 
 
 
+
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c90\\stdarg.h" 1 3
+
+
+
+
+
+
+typedef void * va_list[1];
+
+#pragma intrinsic(__va_start)
+extern void * __va_start(void);
+
+#pragma intrinsic(__va_arg)
+extern void * __va_arg(void *, ...);
+# 11 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c90\\stdio.h" 2 3
+# 43 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c90\\stdio.h" 3
+struct __prbuf
+{
+ char * ptr;
+ void (* func)(char);
+};
+# 85 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c90\\stdio.h" 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c90\\conio.h" 1 3
+
+
+
+
+
+
+
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c90\\errno.h" 1 3
+# 29 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c90\\errno.h" 3
+extern int errno;
+# 8 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c90\\conio.h" 2 3
+
+
+
+
+extern void init_uart(void);
+
+extern char getch(void);
+extern char getche(void);
+extern void putch(char);
+extern void ungetch(char);
+
+extern __bit kbhit(void);
+
+
+
+extern char * cgets(char *);
+extern void cputs(const char *);
+# 85 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c90\\stdio.h" 2 3
+
+
+
+extern int cprintf(char *, ...);
+#pragma printf_check(cprintf)
+
+
+
+extern int _doprnt(struct __prbuf *, const register char *, register va_list);
+# 180 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c90\\stdio.h" 3
+#pragma printf_check(vprintf) const
+#pragma printf_check(vsprintf) const
+
+extern char * gets(char *);
+extern int puts(const char *);
+extern int scanf(const char *, ...) __attribute__((unsupported("scanf() is not supported by this compiler")));
+extern int sscanf(const char *, const char *, ...) __attribute__((unsupported("sscanf() is not supported by this compiler")));
+extern int vprintf(const char *, va_list) __attribute__((unsupported("vprintf() is not supported by this compiler")));
+extern int vsprintf(char *, const char *, va_list) __attribute__((unsupported("vsprintf() is not supported by this compiler")));
+extern int vscanf(const char *, va_list ap) __attribute__((unsupported("vscanf() is not supported by this compiler")));
+extern int vsscanf(const char *, const char *, va_list) __attribute__((unsupported("vsscanf() is not supported by this compiler")));
+
+#pragma printf_check(printf) const
+#pragma printf_check(sprintf) const
+extern int sprintf(char *, const char *, ...);
+extern int printf(const char *, ...);
+# 6 "./setup_lb.h" 2
+
+
+
+void config_pines(char ans,int ansh);
+void config_tris(char tris_a,char tris_b,char tris_c,char tris_d,char tris_e);
+void config_ports(char port_a,char port_c,char port_d,char port_e);
+void config_pullup(int pulles, char pinpull);
+
+
+
+
+
+void config_osc(char valosc);
+void config_interrupt(int adcif, int adcie,int rbie, int rbif, int pie, int gie );
+# 24 "Lab2.c" 2
+
+# 1 "./LCD.h" 1
+# 47 "./LCD.h"
 void Lcd_Port(char a);
 
 void Lcd_Cmd(char a);
@@ -2650,106 +2790,160 @@ void Lcd_Write_String(char *a);
 void Lcd_Shift_Right(void);
 
 void Lcd_Shift_Left(void);
-# 11 "LCD.c" 2
+# 25 "Lab2.c" 2
+
+# 1 "./adclib.h" 1
+# 11 "./adclib.h"
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c90\\stdint.h" 1 3
+# 11 "./adclib.h" 2
 
 
-void Lcd_Port(char a) {
-    if (a & 1)
-        RD4 = 1;
-    else
-        RD4 = 0;
 
-    if (a & 2)
-        RD5 = 1;
-    else
-        RD5 = 0;
 
-    if (a & 4)
-        RD6 = 1;
-    else
-        RD6 = 0;
+void adc_init(int channel, int justf,int vcf0,int vcf1,char adcs);
+int adc_read();
+void adc_cchange(int channel);
+int adc_get_channel();
+# 26 "Lab2.c" 2
 
-    if (a & 8)
-        RD7 = 1;
-    else
-        RD7 = 0;
-}
 
-void Lcd_Cmd(char a) {
-    PORTDbits.RD2 = 0;
-    Lcd_Port(a);
-    RD3 = 1;
-    _delay((unsigned long)((4)*(8000000/4000.0)));
-    RD3 = 0;
-}
+# 1 "./display8bits.h" 1
+# 63 "./display8bits.h"
+void LCD8_PORT(char a);
 
-void Lcd_Clear(void) {
-    Lcd_Cmd(0);
-    Lcd_Cmd(1);
-}
+void LCD8_CMD(char a);
 
-void Lcd_Set_Cursor(char a, char b) {
-    char temp, z, y;
-    if (a == 1) {
-        temp = 0x80 + b - 1;
-        z = temp >> 4;
-        y = temp & 0x0F;
-        Lcd_Cmd(z);
-        Lcd_Cmd(y);
-    } else if (a == 2) {
-        temp = 0xC0 + b - 1;
-        z = temp >> 4;
-        y = temp & 0x0F;
-        Lcd_Cmd(z);
-        Lcd_Cmd(y);
+void LCD8_CLEAR(void);
+
+void LCD8_SET_CURSOR(char a, char b);
+
+void LCD8_INIT(void);
+
+void LCD8_WRITE_CHAR(char a);
+
+void LCD8_WRITE_STRING(char *a);
+
+void LCD8_SHIFT_RIGHT(void);
+
+void LCD8_SHIFT_LEFT(void);
+# 28 "Lab2.c" 2
+
+void setup(void);
+int i;
+int valpot0;
+int valpot1;
+int val;
+float varvolt;
+void __attribute__((picinterrupt(("")))) isr (void)
+{
+if(PIR1bits.ADIF){
+
+       if (ADCON0bits.CHS ==1){
+
+              valpot0 =5/ ADRESH;
+
+        }
+        else if (ADCON0bits.CHS ==0){
+
+         varvolt = ADRESH;
+        }
+      else if (ADCON0bits.CHS == 2)
+            val = ADRESH;
+
+            PIR1bits.ADIF =0;
+
     }
 }
 
-void Lcd_Init(void) {
-    Lcd_Port(0x00);
-    _delay((unsigned long)((20)*(8000000/4000.0)));
-    Lcd_Cmd(0x03);
-    _delay((unsigned long)((5)*(8000000/4000.0)));
-    Lcd_Cmd(0x03);
-    _delay((unsigned long)((11)*(8000000/4000.0)));
-    Lcd_Cmd(0x03);
 
-    Lcd_Cmd(0x02);
-    Lcd_Cmd(0x02);
-    Lcd_Cmd(0x08);
-    Lcd_Cmd(0x00);
-    Lcd_Cmd(0x0C);
-    Lcd_Cmd(0x00);
-    Lcd_Cmd(0x06);
+
+void main(void) {
+
+
+
+
+
+
+
+ setup();
+ ADCON0bits.GO =1;
+ i=0;
+
+ Lcd_Init();
+    while(1){
+
+
+     if (ADCON0bits.GO ==0){
+           for (i=0;i<=2;i++){
+           ADCON0bits.CHS = i;
+           ADCON0bits.GO =1;
+        }
+     }
+
+     char s[20];
+    float f=5.1267;
+      Lcd_Clear();
+
+
+
+
+
+
+
+float varvolt2 = (varvolt*5)/255 ;
+
+        sprintf(s, "volt= %f", varvolt2);
+    Lcd_Set_Cursor(1,1);
+
+    Lcd_Write_String(s);
+    _delay((unsigned long)((2000)*(8000000/4000.0)));
+    }
+
+
 }
+void setup(void){
+    ANSEL = 0b00000011;
+    ANSELH = 0;
 
-void Lcd_Write_Char(char a) {
-    char temp, y;
-    temp = a & 0x0F;
-    y = a & 0xF0;
-    PORTDbits.RD2 = 1;
-    Lcd_Port(y >> 4);
-    RD3 = 1;
-    _delay((unsigned long)((40)*(8000000/4000000.0)));
-    RD3 = 0;
-    Lcd_Port(temp);
-    RD3 = 1;
-    _delay((unsigned long)((40)*(8000000/4000000.0)));
-    RD3 = 0;
-}
+    TRISA = 0xFF;
+    TRISB = 0b11111111;
+    TRISC = 0;
+    TRISD = 0;
+    TRISE = 0;
+    OPTION_REGbits.nRBPU = 0;
+    WPUB = 0b111111;
 
-void Lcd_Write_String(char *a) {
-    int i;
-    for (i = 0; a[i] != '\0'; i++)
-        Lcd_Write_Char(a[i]);
-}
 
-void Lcd_Shift_Right(void) {
-    Lcd_Cmd(0x01);
-    Lcd_Cmd(0x0C);
-}
+    PORTD = 0;
+    PORTE = 0;
 
-void Lcd_Shift_Left(void) {
-    Lcd_Cmd(0x01);
-    Lcd_Cmd(0x08);
+
+
+
+
+    OSCCONbits.IRCF = 0b0111;
+    OSCCONbits.SCS = 1;
+
+
+    ADCON1bits.ADFM = 0;
+    ADCON1bits.VCFG0 = 0;
+    ADCON1bits.VCFG1 = 0;
+
+    ADCON0bits.ADCS = 0b01;
+    ADCON0bits.CHS = 0;
+    ADCON0bits.ADON= 1;
+    _delay((unsigned long)((50)*(8000000/4000000.0)));
+
+
+
+    PIR1bits.ADIF = 0;
+    PIE1bits.ADIE = 1;
+
+    INTCONbits.RBIE = 0;
+    INTCONbits.RBIF = 1;
+
+    INTCONbits.PEIE = 1;
+    INTCONbits.GIE = 1;
+
+
 }

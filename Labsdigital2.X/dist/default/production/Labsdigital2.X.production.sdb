@@ -53,51 +53,41 @@
 [v ___eecpymem __eecpymem `(v  1 e 1 0 ]
 "39
 [v ___memcpyee __memcpyee `(v  1 e 1 0 ]
-"13 C:\Users\Diego\Documents\GitHub\Digital_2\Labsdigital2.X\LCD.c
-[v _Lcd_Port Lcd_Port `(v  1 e 1 0 ]
+"13 C:\Users\Diego\Documents\GitHub\Digital_2\Labsdigital2.X\display8bits.c
+[v _LCD8_PORT LCD8_PORT `(v  1 e 1 0 ]
 "35
-[v _Lcd_Cmd Lcd_Cmd `(v  1 e 1 0 ]
-"43
-[v _Lcd_Clear Lcd_Clear `(v  1 e 1 0 ]
-"48
-[v _Lcd_Set_Cursor Lcd_Set_Cursor `(v  1 e 1 0 ]
-"65
-[v _Lcd_Init Lcd_Init `(v  1 e 1 0 ]
+[v _LCD8_CMD LCD8_CMD `(v  1 e 1 0 ]
 "83
-[v _Lcd_Write_Char Lcd_Write_Char `(v  1 e 1 0 ]
-"98
-[v _Lcd_Write_String Lcd_Write_String `(v  1 e 1 0 ]
-"34 C:\Users\Diego\Documents\GitHub\Digital_2\Labsdigital2.X\prelab2.c
+[v _LCD8_WRITE_CHAR LCD8_WRITE_CHAR `(v  1 e 1 0 ]
+"35 C:\Users\Diego\Documents\GitHub\Digital_2\Labsdigital2.X\Lab2.c
 [v _isr isr `II(v  1 e 1 0 ]
-"57
+"58
 [v _main main `(v  1 e 1 0 ]
-"101
+"102
 [v _setup setup `(v  1 e 1 0 ]
-"13 C:\Users\Diego\Documents\GitHub\Digital_2\Labsdigital2.X/displaylib.h
-[v _portval portval `uc  1 e 1 0 ]
 "358 C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\doprnt.c
 [v _dpowers dpowers `DC[10]ul  1 s 40 dpowers ]
 "7 C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\powers.c
 [v __powers_ _powers_ `DC[13]d  1 e 52 0 ]
 "39
 [v __npowers_ _npowers_ `DC[13]d  1 e 52 0 ]
-"353 D:/Mpxlab/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h
-[v _PORTD PORTD `VEuc  1 e 1 @8 ]
-[s S328 . 1 `uc 1 RD0 1 0 :1:0 
-`uc 1 RD1 1 0 :1:1 
-`uc 1 RD2 1 0 :1:2 
-`uc 1 RD3 1 0 :1:3 
-`uc 1 RD4 1 0 :1:4 
-`uc 1 RD5 1 0 :1:5 
-`uc 1 RD6 1 0 :1:6 
-`uc 1 RD7 1 0 :1:7 
+[s S26 . 1 `uc 1 RC0 1 0 :1:0 
+`uc 1 RC1 1 0 :1:1 
+`uc 1 RC2 1 0 :1:2 
+`uc 1 RC3 1 0 :1:3 
+`uc 1 RC4 1 0 :1:4 
+`uc 1 RC5 1 0 :1:5 
+`uc 1 RC6 1 0 :1:6 
+`uc 1 RC7 1 0 :1:7 
 ]
-"370
-[u S337 . 1 `S328 1 . 1 0 ]
-[v _PORTDbits PORTDbits `VES337  1 e 1 @8 ]
+"308 D:/Mpxlab/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h
+[u S35 . 1 `S26 1 . 1 0 ]
+[v _PORTCbits PORTCbits `VES35  1 e 1 @7 ]
+"353
+[v _PORTD PORTD `VEuc  1 e 1 @8 ]
 "415
 [v _PORTE PORTE `VEuc  1 e 1 @9 ]
-[s S222 . 1 `uc 1 RBIF 1 0 :1:0 
+[s S279 . 1 `uc 1 RBIF 1 0 :1:0 
 `uc 1 INTF 1 0 :1:1 
 `uc 1 T0IF 1 0 :1:2 
 `uc 1 RBIE 1 0 :1:3 
@@ -107,14 +97,14 @@
 `uc 1 GIE 1 0 :1:7 
 ]
 "483
-[s S231 . 1 `uc 1 . 1 0 :2:0 
+[s S288 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 TMR0IF 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 TMR0IE 1 0 :1:5 
 ]
-[u S236 . 1 `S222 1 . 1 0 `S231 1 . 1 0 ]
-[v _INTCONbits INTCONbits `VES236  1 e 1 @11 ]
-[s S25 . 1 `uc 1 TMR1IF 1 0 :1:0 
+[u S293 . 1 `S279 1 . 1 0 `S288 1 . 1 0 ]
+[v _INTCONbits INTCONbits `VES293  1 e 1 @11 ]
+[s S86 . 1 `uc 1 TMR1IF 1 0 :1:0 
 `uc 1 TMR2IF 1 0 :1:1 
 `uc 1 CCP1IF 1 0 :1:2 
 `uc 1 SSPIF 1 0 :1:3 
@@ -123,17 +113,17 @@
 `uc 1 ADIF 1 0 :1:6 
 ]
 "554
-[u S33 . 1 `S25 1 . 1 0 ]
-[v _PIR1bits PIR1bits `VES33  1 e 1 @12 ]
+[u S94 . 1 `S86 1 . 1 0 ]
+[v _PIR1bits PIR1bits `VES94  1 e 1 @12 ]
 "1239
 [v _ADRESH ADRESH `VEuc  1 e 1 @30 ]
-[s S44 . 1 `uc 1 ADON 1 0 :1:0 
+[s S105 . 1 `uc 1 ADON 1 0 :1:0 
 `uc 1 GO_nDONE 1 0 :1:1 
 `uc 1 CHS 1 0 :4:2 
 `uc 1 ADCS 1 0 :2:6 
 ]
 "1277
-[s S49 . 1 `uc 1 . 1 0 :1:0 
+[s S110 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 GO 1 0 :1:1 
 `uc 1 CHS0 1 0 :1:2 
 `uc 1 CHS1 1 0 :1:3 
@@ -142,15 +132,15 @@
 `uc 1 ADCS0 1 0 :1:6 
 `uc 1 ADCS1 1 0 :1:7 
 ]
-[s S58 . 1 `uc 1 . 1 0 :1:0 
+[s S119 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 nDONE 1 0 :1:1 
 ]
-[s S61 . 1 `uc 1 . 1 0 :1:0 
+[s S122 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 GO_DONE 1 0 :1:1 
 ]
-[u S64 . 1 `S44 1 . 1 0 `S49 1 . 1 0 `S58 1 . 1 0 `S61 1 . 1 0 ]
-[v _ADCON0bits ADCON0bits `VES64  1 e 1 @31 ]
-[s S133 . 1 `uc 1 PS 1 0 :3:0 
+[u S125 . 1 `S105 1 . 1 0 `S110 1 . 1 0 `S119 1 . 1 0 `S122 1 . 1 0 ]
+[v _ADCON0bits ADCON0bits `VES125  1 e 1 @31 ]
+[s S190 . 1 `uc 1 PS 1 0 :3:0 
 `uc 1 PSA 1 0 :1:3 
 `uc 1 T0SE 1 0 :1:4 
 `uc 1 T0CS 1 0 :1:5 
@@ -158,12 +148,12 @@
 `uc 1 nRBPU 1 0 :1:7 
 ]
 "1367
-[s S140 . 1 `uc 1 PS0 1 0 :1:0 
+[s S197 . 1 `uc 1 PS0 1 0 :1:0 
 `uc 1 PS1 1 0 :1:1 
 `uc 1 PS2 1 0 :1:2 
 ]
-[u S144 . 1 `S133 1 . 1 0 `S140 1 . 1 0 ]
-[v _OPTION_REGbits OPTION_REGbits `VES144  1 e 1 @129 ]
+[u S201 . 1 `S190 1 . 1 0 `S197 1 . 1 0 ]
+[v _OPTION_REGbits OPTION_REGbits `VES201  1 e 1 @129 ]
 "1417
 [v _TRISA TRISA `VEuc  1 e 1 @133 ]
 "1479
@@ -174,7 +164,7 @@
 [v _TRISD TRISD `VEuc  1 e 1 @136 ]
 "1665
 [v _TRISE TRISE `VEuc  1 e 1 @137 ]
-[s S203 . 1 `uc 1 TMR1IE 1 0 :1:0 
+[s S260 . 1 `uc 1 TMR1IE 1 0 :1:0 
 `uc 1 TMR2IE 1 0 :1:1 
 `uc 1 CCP1IE 1 0 :1:2 
 `uc 1 SSPIE 1 0 :1:3 
@@ -183,39 +173,39 @@
 `uc 1 ADIE 1 0 :1:6 
 ]
 "1719
-[u S211 . 1 `S203 1 . 1 0 ]
-[v _PIE1bits PIE1bits `VES211  1 e 1 @140 ]
-[s S162 . 1 `uc 1 SCS 1 0 :1:0 
+[u S268 . 1 `S260 1 . 1 0 ]
+[v _PIE1bits PIE1bits `VES268  1 e 1 @140 ]
+[s S219 . 1 `uc 1 SCS 1 0 :1:0 
 `uc 1 LTS 1 0 :1:1 
 `uc 1 HTS 1 0 :1:2 
 `uc 1 OSTS 1 0 :1:3 
 `uc 1 IRCF 1 0 :3:4 
 ]
 "1883
-[s S168 . 1 `uc 1 . 1 0 :4:0 
+[s S225 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 IRCF0 1 0 :1:4 
 `uc 1 IRCF1 1 0 :1:5 
 `uc 1 IRCF2 1 0 :1:6 
 ]
-[u S173 . 1 `S162 1 . 1 0 `S168 1 . 1 0 ]
-[v _OSCCONbits OSCCONbits `VES173  1 e 1 @143 ]
+[u S230 . 1 `S219 1 . 1 0 `S225 1 . 1 0 ]
+[v _OSCCONbits OSCCONbits `VES230  1 e 1 @143 ]
 "2347
 [v _WPUB WPUB `VEuc  1 e 1 @149 ]
-[s S188 . 1 `uc 1 . 1 0 :4:0 
+[s S245 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 VCFG0 1 0 :1:4 
 `uc 1 VCFG1 1 0 :1:5 
 `uc 1 . 1 0 :1:6 
 `uc 1 ADFM 1 0 :1:7 
 ]
 "2992
-[u S194 . 1 `S188 1 . 1 0 ]
-[v _ADCON1bits ADCON1bits `VES194  1 e 1 @159 ]
+[u S251 . 1 `S245 1 . 1 0 ]
+[v _ADCON1bits ADCON1bits `VES251  1 e 1 @159 ]
 "3388
 [v _ANSEL ANSEL `VEuc  1 e 1 @392 ]
 "3450
 [v _ANSELH ANSELH `VEuc  1 e 1 @393 ]
-"4195
-[v _RD3 RD3 `VEb  1 e 0 @67 ]
+"4159
+[v _RC7 RC7 `VEb  1 e 0 @63 ]
 "4198
 [v _RD4 RD4 `VEb  1 e 0 @68 ]
 "4201
@@ -224,22 +214,22 @@
 [v _RD6 RD6 `VEb  1 e 0 @70 ]
 "4207
 [v _RD7 RD7 `VEb  1 e 0 @71 ]
-"29 C:\Users\Diego\Documents\GitHub\Digital_2\Labsdigital2.X\prelab2.c
+"30 C:\Users\Diego\Documents\GitHub\Digital_2\Labsdigital2.X\Lab2.c
 [v _i i `i  1 e 2 0 ]
-"30
+"31
 [v _valpot0 valpot0 `i  1 e 2 0 ]
-"32
-[v _val val `i  1 e 2 0 ]
 "33
+[v _val val `i  1 e 2 0 ]
+"34
 [v _varvolt varvolt `f  1 e 4 0 ]
-"57
+"58
 [v _main main `(v  1 e 1 0 ]
 {
-"80
+"81
 [v main@s s `[20]uc  1 a 20 0 ]
-"90
+"91
 [v main@varvolt2 varvolt2 `f  1 a 4 20 ]
-"100
+"101
 } 0
 "505 C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\doprnt.c
 [v _sprintf sprintf `(i  1 e 2 0 ]
@@ -247,9 +237,9 @@
 [v sprintf@sp sp `*.5uc  1 a 1 wreg ]
 "533
 [v sprintf@fval fval `d  1 a 4 58 ]
-[u S525 . 4 `ul 1 vd 4 0 `d 1 integ 4 0 ]
+[u S522 . 4 `ul 1 vd 4 0 `d 1 integ 4 0 ]
 "543
-[v sprintf@tmpval tmpval `S525  1 a 4 54 ]
+[v sprintf@tmpval tmpval `S522  1 a 4 54 ]
 "545
 [v sprintf@val val `ul  1 a 4 47 ]
 "534
@@ -336,17 +326,17 @@
 "8 C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\sprcmul.c
 [v ___flmul __flmul `(d  1 e 4 0 ]
 {
-[s S718 . 4 `uc 1 a 1 0 `uc 1 b 1 1 `uc 1 c 1 2 `uc 1 d 1 3 ]
+[s S715 . 4 `uc 1 a 1 0 `uc 1 b 1 1 `uc 1 c 1 2 `uc 1 d 1 3 ]
 "13
-[s S723 . 4 `i 1 wordA 2 0 `i 1 wordB 2 2 ]
-[u S726 . 4 `l 1 i 4 0 `d 1 f 4 0 `S718 1 fAsBytes 4 0 `S723 1 fAsWords 4 0 ]
-[v ___flmul@prod prod `S726  1 a 4 42 ]
+[s S720 . 4 `i 1 wordA 2 0 `i 1 wordB 2 2 ]
+[u S723 . 4 `l 1 i 4 0 `d 1 f 4 0 `S715 1 fAsBytes 4 0 `S720 1 fAsWords 4 0 ]
+[v ___flmul@prod prod `S723  1 a 4 42 ]
 "12
 [v ___flmul@grs grs `ul  1 a 4 36 ]
-[s S795 . 2 `uc 1 a 1 0 `uc 1 b 1 1 ]
+[s S792 . 2 `uc 1 a 1 0 `uc 1 b 1 1 ]
 "14
-[u S798 . 2 `i 1 i 2 0 `ui 1 n 2 0 `S795 1 nAsBytes 2 0 ]
-[v ___flmul@temp temp `S798  1 a 2 46 ]
+[u S795 . 2 `i 1 i 2 0 `ui 1 n 2 0 `S792 1 nAsBytes 2 0 ]
+[v ___flmul@temp temp `S795  1 a 2 46 ]
 "10
 [v ___flmul@bexp bexp `uc  1 a 1 41 ]
 "11
@@ -449,8 +439,8 @@
 [v ___fltol __fltol `(l  1 e 4 0 ]
 {
 "45
-[v ___fltol@exp1 exp1 `uc  1 a 1 68 ]
-[v ___fltol@sign1 sign1 `uc  1 a 1 67 ]
+[v ___fltol@exp1 exp1 `uc  1 a 1 9 ]
+[v ___fltol@sign1 sign1 `uc  1 a 1 8 ]
 "43
 [v ___fltol@f1 f1 `d  1 p 4 0 ]
 "70
@@ -498,10 +488,10 @@
 [v ___fleq@ff2 ff2 `d  1 p 4 10 ]
 "12
 } 0
-"101 C:\Users\Diego\Documents\GitHub\Digital_2\Labsdigital2.X\prelab2.c
+"102 C:\Users\Diego\Documents\GitHub\Digital_2\Labsdigital2.X\Lab2.c
 [v _setup setup `(v  1 e 1 0 ]
 {
-"146
+"147
 } 0
 "8 C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\sprcdiv.c
 [v ___fldiv __fldiv `(d  1 e 4 0 ]
@@ -523,76 +513,10 @@
 [v ___fldiv@b b `d  1 p 4 52 ]
 "185
 } 0
-"98 C:\Users\Diego\Documents\GitHub\Digital_2\Labsdigital2.X\LCD.c
-[v _Lcd_Write_String Lcd_Write_String `(v  1 e 1 0 ]
-{
-[v Lcd_Write_String@a a `*.5uc  1 a 1 wreg ]
-"99
-[v Lcd_Write_String@i i `i  1 a 2 12 ]
-"98
-[v Lcd_Write_String@a a `*.5uc  1 a 1 wreg ]
-"100
-[v Lcd_Write_String@a a `*.5uc  1 a 1 14 ]
-"102
-} 0
-"83
-[v _Lcd_Write_Char Lcd_Write_Char `(v  1 e 1 0 ]
-{
-[v Lcd_Write_Char@a a `uc  1 a 1 wreg ]
-"84
-[v Lcd_Write_Char@y y `uc  1 a 1 9 ]
-[v Lcd_Write_Char@temp temp `uc  1 a 1 8 ]
-"83
-[v Lcd_Write_Char@a a `uc  1 a 1 wreg ]
-"85
-[v Lcd_Write_Char@a a `uc  1 a 1 10 ]
-"96
-} 0
-"48
-[v _Lcd_Set_Cursor Lcd_Set_Cursor `(v  1 e 1 0 ]
-{
-[v Lcd_Set_Cursor@a a `uc  1 a 1 wreg ]
-"49
-[v Lcd_Set_Cursor@temp temp `uc  1 a 1 15 ]
-[v Lcd_Set_Cursor@y y `uc  1 a 1 14 ]
-[v Lcd_Set_Cursor@z z `uc  1 a 1 13 ]
-"48
-[v Lcd_Set_Cursor@a a `uc  1 a 1 wreg ]
-[v Lcd_Set_Cursor@b b `uc  1 p 1 10 ]
-"50
-[v Lcd_Set_Cursor@a a `uc  1 a 1 12 ]
-"63
-} 0
-"65
-[v _Lcd_Init Lcd_Init `(v  1 e 1 0 ]
-{
-"81
-} 0
-"43
-[v _Lcd_Clear Lcd_Clear `(v  1 e 1 0 ]
-{
-"46
-} 0
-"35
-[v _Lcd_Cmd Lcd_Cmd `(v  1 e 1 0 ]
-{
-[v Lcd_Cmd@a a `uc  1 a 1 wreg ]
-[v Lcd_Cmd@a a `uc  1 a 1 wreg ]
-[v Lcd_Cmd@a a `uc  1 a 1 9 ]
-"41
-} 0
-"13
-[v _Lcd_Port Lcd_Port `(v  1 e 1 0 ]
-{
-[v Lcd_Port@a a `uc  1 a 1 wreg ]
-[v Lcd_Port@a a `uc  1 a 1 wreg ]
-[v Lcd_Port@a a `uc  1 a 1 6 ]
-"33
-} 0
-"34 C:\Users\Diego\Documents\GitHub\Digital_2\Labsdigital2.X\prelab2.c
+"35 C:\Users\Diego\Documents\GitHub\Digital_2\Labsdigital2.X\Lab2.c
 [v _isr isr `II(v  1 e 1 0 ]
 {
-"53
+"54
 } 0
 "10 C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\xxtofl.c
 [v i1___xxtofl __xxtofl `(d  1 e 4 0 ]

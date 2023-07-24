@@ -25,6 +25,7 @@
 #include "LCD.h"
 #include "adclib.h"
 #include "stdio.h"
+#include "display8bits.h"
 void setup(void);
 int i;
 int valpot0;

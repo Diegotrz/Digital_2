@@ -60,23 +60,23 @@
 //LCD Functions Developed by electroSome
 
 
-void Lcd_Port(char a);
+void LCD8_PORT(char a);
 
-void Lcd_Cmd(char a);
+void LCD8_CMD(char a);
 
-void Lcd_Clear(void);
+void LCD8_CLEAR(void);
 
-void Lcd_Set_Cursor(char a, char b);
+void LCD8_SET_CURSOR(char a, char b);
 
-void Lcd_Init(void);
+void LCD8_INIT(void);
 
-void Lcd_Write_Char(char a);
+void LCD8_WRITE_CHAR(char a);
 
-void Lcd_Write_String(char *a);
+void LCD8_WRITE_STRING(char *a);
 
-void Lcd_Shift_Right(void);
+void LCD8_SHIFT_RIGHT(void);
 
-void Lcd_Shift_Left(void);
+void LCD8_SHIFT_LEFT(void);
 
 #endif	
 

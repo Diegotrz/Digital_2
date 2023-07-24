@@ -1,4 +1,4 @@
-# 1 "displaylib.c"
+# 1 "display8bits.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,8 +6,10 @@
 # 1 "<built-in>" 2
 # 1 "D:/Mpxlab/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "displaylib.c" 2
-# 11 "displaylib.c"
+# 1 "display8bits.c" 2
+# 11 "display8bits.c"
+# 1 "./display8bits.h" 1
+# 58 "./display8bits.h"
 # 1 "D:/Mpxlab/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\\pic\\include\\xc.h" 1 3
 # 18 "D:/Mpxlab/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -2625,174 +2627,129 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 29 "D:/Mpxlab/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\\pic\\include\\xc.h" 2 3
-# 11 "displaylib.c" 2
-
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c90\\stdint.h" 1 3
-# 12 "displaylib.c" 2
-
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c90\\stdio.h" 1 3
-
-
-
-# 1 "D:/Mpxlab/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\\pic\\include\\__size_t.h" 1 3
-
-
-
-typedef unsigned size_t;
-# 4 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c90\\stdio.h" 2 3
-
-# 1 "D:/Mpxlab/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\\pic\\include\\__null.h" 1 3
-# 5 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c90\\stdio.h" 2 3
+# 58 "./display8bits.h" 2
 
 
 
 
 
+void LCD8_PORT(char a);
 
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c90\\stdarg.h" 1 3
+void LCD8_CMD(char a);
 
+void LCD8_CLEAR(void);
 
+void LCD8_SET_CURSOR(char a, char b);
 
+void LCD8_INIT(void);
 
+void LCD8_WRITE_CHAR(char a);
 
+void LCD8_WRITE_STRING(char *a);
 
-typedef void * va_list[1];
+void LCD8_SHIFT_RIGHT(void);
 
-#pragma intrinsic(__va_start)
-extern void * __va_start(void);
-
-#pragma intrinsic(__va_arg)
-extern void * __va_arg(void *, ...);
-# 11 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c90\\stdio.h" 2 3
-# 43 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c90\\stdio.h" 3
-struct __prbuf
-{
- char * ptr;
- void (* func)(char);
-};
-# 85 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c90\\stdio.h" 3
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c90\\conio.h" 1 3
+void LCD8_SHIFT_LEFT(void);
+# 11 "display8bits.c" 2
 
 
+void LCD8_PORT(char a) {
+    if (a & 1)
+        RD4 = 1;
+    else
+        RD4 = 0;
 
+    if (a & 2)
+        RD5 = 1;
+    else
+        RD5 = 0;
 
+    if (a & 4)
+        RD6 = 1;
+    else
+        RD6 = 0;
 
+    if (a & 8)
+        RD7 = 1;
+    else
+        RD7 = 0;
+}
 
+void LCD8_CMD(char a) {
+    PORTCbits.RC6 = 0;
+    LCD8_PORT(a);
+    RC7 = 1;
+    _delay((unsigned long)((4)*(8000000/4000.0)));
+    RC7 = 0;
+}
 
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c90\\errno.h" 1 3
-# 29 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c90\\errno.h" 3
-extern int errno;
-# 8 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c90\\conio.h" 2 3
+void LCD8_CLEAR(void) {
+    LCD8_CMD(0);
+   LCD8_CMD(1);
+}
 
-
-
-
-extern void init_uart(void);
-
-extern char getch(void);
-extern char getche(void);
-extern void putch(char);
-extern void ungetch(char);
-
-extern __bit kbhit(void);
-
-
-
-extern char * cgets(char *);
-extern void cputs(const char *);
-# 85 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c90\\stdio.h" 2 3
-
-
-
-extern int cprintf(char *, ...);
-#pragma printf_check(cprintf)
-
-
-
-extern int _doprnt(struct __prbuf *, const register char *, register va_list);
-# 180 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c90\\stdio.h" 3
-#pragma printf_check(vprintf) const
-#pragma printf_check(vsprintf) const
-
-extern char * gets(char *);
-extern int puts(const char *);
-extern int scanf(const char *, ...) __attribute__((unsupported("scanf() is not supported by this compiler")));
-extern int sscanf(const char *, const char *, ...) __attribute__((unsupported("sscanf() is not supported by this compiler")));
-extern int vprintf(const char *, va_list) __attribute__((unsupported("vprintf() is not supported by this compiler")));
-extern int vsprintf(char *, const char *, va_list) __attribute__((unsupported("vsprintf() is not supported by this compiler")));
-extern int vscanf(const char *, va_list ap) __attribute__((unsupported("vscanf() is not supported by this compiler")));
-extern int vsscanf(const char *, const char *, va_list) __attribute__((unsupported("vsscanf() is not supported by this compiler")));
-
-#pragma printf_check(printf) const
-#pragma printf_check(sprintf) const
-extern int sprintf(char *, const char *, ...);
-extern int printf(const char *, ...);
-# 13 "displaylib.c" 2
-
-# 1 "./displaylib.h" 1
-# 10 "./displaylib.h"
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c90\\stdint.h" 1 3
-# 10 "./displaylib.h" 2
-
-
-
-char portval;
-char valdisplay(char val);
-# 14 "displaylib.c" 2
-
-
-char valdisplay(char val){
-    switch (val){
-        case '0':
-        portval = 0b00111111;
-            break;
-        case '1':
-         portval = 0b00000110;
-            break;
-        case '2':
-            portval = 0b01011011;
-            break;
-        case '3':
-            portval = 0b11110010;
-            break;
-        case '4':
-            portval = 0b01100110;
-            break;
-        case '5':
-            portval = 0b10110110;
-            break;
-        case '6':
-            portval = 0b10111110;
-            break;
-        case '7':
-            portval = 0b11100000;
-            break;
-        case '8':
-            portval = 0b11111110;
-            break;
-        case '9':
-            portval = 0b11110110;
-            break;
-         case '10':
-            portval = 0b11101110;
-            break;
-             case '11':
-            portval =0b00111110 ;
-            break;
-            case '12':
-            portval = 0b10011100;
-            break;
-            case '13':
-            portval = 0b01111010;
-            break;
-            case '14':
-            portval = 0b10011110;
-            break;
-            case '15':
-            portval = 0b10001110;
-            break;
+void LCD8_SET_CURSOR(char a, char b) {
+    char temp, z, y;
+    if (a == 1) {
+        temp = 0x80 + b - 1;
+        z = temp >> 4;
+        y = temp & 0x0F;
+        LCD8_CMD(z);
+        LCD8_CMD(y);
+    } else if (a == 2) {
+        temp = 0xC0 + b - 1;
+        z = temp >> 4;
+        y = temp & 0x0F;
+        LCD8_CMD(z);
+        LCD8_CMD(y);
     }
+}
 
-  return portval;
+void LCD8_INIT(void) {
+    LCD8_PORT(0x00);
+    _delay((unsigned long)((20)*(8000000/4000.0)));
+    LCD8_CMD(0x03);
+    _delay((unsigned long)((5)*(8000000/4000.0)));
+    LCD8_CMD(0x03);
+    _delay((unsigned long)((11)*(8000000/4000.0)));
+    LCD8_CMD(0x03);
 
+    LCD8_CMD(0x02);
+    LCD8_CMD(0x02);
+    LCD8_CMD(0x08);
+    LCD8_CMD(0x00);
+    LCD8_CMD(0x0C);
+    LCD8_CMD(0x00);
+    LCD8_CMD(0x06);
+}
+
+void LCD8_WRITE_CHAR(char a) {
+    char temp, y;
+    temp = a & 0x0F;
+    y = a & 0xF0;
+    PORTCbits.RC6 = 1;
+    LCD8_PORT(y >> 4);
+    RC7 = 1;
+    _delay((unsigned long)((40)*(8000000/4000000.0)));
+    RC7 = 0;
+    LCD8_PORT(temp);
+    RC7 = 1;
+    _delay((unsigned long)((40)*(8000000/4000000.0)));
+    RC7 = 0;
+}
+
+void LCD8_WRITE_STRING(char *a) {
+    int i;
+    for (i = 0; a[i] != '\0'; i++)
+        LCD8_WRITE_CHAR(a[i]);
+}
+
+void LCD8_SHIFT_RIGHT(void) {
+    LCD8_CMD(0x01);
+    LCD8_CMD(0x0C);
+}
+
+void LCD8_SHIFT_LEFT(void) {
+    LCD8_CMD(0x01);
+    LCD8_CMD(0x08);
 }

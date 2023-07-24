@@ -10,7 +10,7 @@
 
 #include "display8bits.h"
 
-void Lcd_Port(char a) {
+void LCD8_PORT(char a) {
     if (a & 1)
         D4 = 1;
     else
@@ -32,82 +32,82 @@ void Lcd_Port(char a) {
         D7 = 0;
 }
 
-void Lcd_Cmd(char a) {
+void LCD8_CMD(char a) {
     RS = 0; // => RS = 0 // Dato en el puerto lo va interpretar como comando
-    Lcd_Port(a);
+    LCD8_PORT(a);
     EN = 1; // => E = 1
     __delay_ms(4);
     EN = 0; // => E = 0
 }
 
-void Lcd_Clear(void) {
-    Lcd_Cmd(0);
-    Lcd_Cmd(1);
+void LCD8_CLEAR(void) {
+    LCD8_CMD(0);
+   LCD8_CMD(1);
 }
 
-void Lcd_Set_Cursor(char a, char b) {
+void LCD8_SET_CURSOR(char a, char b) {
     char temp, z, y;
     if (a == 1) {
         temp = 0x80 + b - 1;
         z = temp >> 4;
         y = temp & 0x0F;
-        Lcd_Cmd(z);
-        Lcd_Cmd(y);
+        LCD8_CMD(z);
+        LCD8_CMD(y);
     } else if (a == 2) {
         temp = 0xC0 + b - 1;
         z = temp >> 4;
         y = temp & 0x0F;
-        Lcd_Cmd(z);
-        Lcd_Cmd(y);
+        LCD8_CMD(z);
+        LCD8_CMD(y);
     }
 }
 
-void Lcd_Init(void) {
-    Lcd_Port(0x00);
+void LCD8_INIT(void) {
+    LCD8_PORT(0x00);
     __delay_ms(20);
-    Lcd_Cmd(0x03);
+    LCD8_CMD(0x03);
     __delay_ms(5);
-    Lcd_Cmd(0x03);
+    LCD8_CMD(0x03);
     __delay_ms(11);
-    Lcd_Cmd(0x03);
+    LCD8_CMD(0x03);
     /////////////////////////////////////////////////////
-    Lcd_Cmd(0x02);
-    Lcd_Cmd(0x02);
-    Lcd_Cmd(0x08);
-    Lcd_Cmd(0x00);
-    Lcd_Cmd(0x0C);
-    Lcd_Cmd(0x00);
-    Lcd_Cmd(0x06);
+    LCD8_CMD(0x02);
+    LCD8_CMD(0x02);
+    LCD8_CMD(0x08);
+    LCD8_CMD(0x00);
+    LCD8_CMD(0x0C);
+    LCD8_CMD(0x00);
+    LCD8_CMD(0x06);
 }
 
-void Lcd_Write_Char(char a) {
+void LCD8_WRITE_CHAR(char a) {
     char temp, y;
     temp = a & 0x0F;
     y = a & 0xF0;
     RS = 1; // => RS = 1
-    Lcd_Port(y >> 4); //Data transfer
+    LCD8_PORT(y >> 4); //Data transfer
     EN = 1;
     __delay_us(40);
     EN = 0;
-    Lcd_Port(temp);
+    LCD8_PORT(temp);
     EN = 1;
     __delay_us(40);
     EN = 0;
 }
 
-void Lcd_Write_String(char *a) {
+void LCD8_WRITE_STRING(char *a) {
     int i;
     for (i = 0; a[i] != '\0'; i++)
-        Lcd_Write_Char(a[i]);
+        LCD8_WRITE_CHAR(a[i]);
 }
 
-void Lcd_Shift_Right(void) {
-    Lcd_Cmd(0x01);
-    Lcd_Cmd(0x0C);
+void LCD8_SHIFT_RIGHT(void) {
+    LCD8_CMD(0x01);
+    LCD8_CMD(0x0C);
 }
 
-void Lcd_Shift_Left(void) {
-    Lcd_Cmd(0x01);
-    Lcd_Cmd(0x08);
+void LCD8_SHIFT_LEFT(void) {
+    LCD8_CMD(0x01);
+    LCD8_CMD(0x08);
 }
 
