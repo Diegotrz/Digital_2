@@ -6,10 +6,10 @@ Linker command line:
   --edf=C:\Program Files\Microchip\xc8\v2.40\pic\dat\20220703182018_en.msgs \
   -cn -h+dist/default/production\Labsdigital2.X.production.sym \
   --cmf=dist/default/production\Labsdigital2.X.production.cmf -z -Q16F887 \
-  -oC:\Users\diego\AppData\Local\Temp\xcAsa8s.5 --defsym=__MPLAB_BUILD=1 \
+  -oC:\Users\Diego\AppData\Local\Temp\xcAsbso.4 --defsym=__MPLAB_BUILD=1 \
   --fixupoverflow=error \
   -Mdist/default/production/Labsdigital2.X.production.map \
-  --md=C:\Users\diego\AppData\Local\Temp\xcAsa8s.dat -E1 -ver=XC8 Compiler \
+  --md=C:\Users\Diego\AppData\Local\Temp\xcAsbso.dat -E1 -ver=XC8 Compiler \
   --acfsm=1493 -ACODE=00h-07FFhx4 -ASTRCODE=00h-01FFFh -ASTRING=00h-0FFhx32 \
   -ACONST=00h-0FFhx32 -AENTRY=00h-0FFhx32 -ACOMMON=070h-07Fh \
   -ABANK0=020h-06Fh -ABANK1=0A0h-0EFh -ABANK2=0110h-016Fh \
@@ -20,7 +20,7 @@ Linker command line:
   -AEEDATA=00h-0FFh/02100h -peeprom_data=EEDATA -DEEDATA=2 -DCODE=2 \
   -DSTRCODE=2 -DSTRING=2 -DCONST=2 -DENTRY=2 \
   -preset_vec=00h,intentry=04h,init,end_init -ppowerup=CODE -pcinit=CODE \
-  -pfunctab=ENTRY -k C:\Users\diego\AppData\Local\Temp\xcAsa8s.o \
+  -pfunctab=ENTRY -k C:\Users\Diego\AppData\Local\Temp\xcAsbso.o \
   dist/default/production\Labsdigital2.X.production.o 
 
 Object code version is 3.11
@@ -30,7 +30,7 @@ Machine type is 16F887
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\diego\AppData\Local\Temp\xcAsa8s.o
+C:\Users\Diego\AppData\Local\Temp\xcAsbso.o
                 end_init                              E        E        3        8       0
                 reset_vec                             0        0        3        0       0
                 config                             2007     2007        2        0       4
@@ -307,8 +307,6 @@ _OPTION_REGbits           (abs)        0081
 _OSCCONbits               (abs)        008F
 _PIE1bits                 (abs)        008C
 _PIR1bits                 (abs)        000C
-_PORTA                    (abs)        0005
-_PORTC                    (abs)        0007
 _PORTD                    (abs)        0008
 _PORTDbits                (abs)        0008
 _PORTE                    (abs)        0009
@@ -593,17 +591,17 @@ __tdiv_to_l_@f2           cstackBANK0  002A
 __tdiv_to_l_@quot         cstackBANK0  0031
 _dpowers                  strings      186E
 _fround                   text5        1109
-_fround$1234              cstackBANK0  005F
-_fround$1235              cstackBANK0  005B
+_fround$1048              cstackBANK0  005F
+_fround$1049              cstackBANK0  005B
 _i                        bssBANK3     01AC
 _isr                      text31       1D82
 _main                     maintext     06E8
 _portval                  bssBANK0     0069
 _scale                    text2        0C9D
-_scale$1236               cstackBANK0  005E
+_scale$1050               cstackBANK0  005E
 _setup                    text22       19F8
 _sprintf                  text1        0028
-_sprintf$1237             cstackBANK1  00C6
+_sprintf$1051             cstackBANK1  00C6
 _val                      bssBANK1     00E2
 _valpot0                  bssBANK0     0067
 _varvolt                  bssBANK3     01A8
