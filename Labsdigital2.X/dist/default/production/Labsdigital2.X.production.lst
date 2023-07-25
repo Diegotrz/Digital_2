@@ -1,7 +1,7 @@
 
 
 Microchip MPLAB XC8 Assembler V2.40 build 20220703182018 
-                                                                                               Tue Jul 25 12:50:14 2023
+                                                                                               Tue Jul 25 15:55:49 2023
 
 Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1 
      1                           	processor	16F887
@@ -1785,7 +1785,7 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1
   1771     128E  160A  158A  218C  160A  118A  	fcall	_UART_Print
   1772     1293                     l4553:
   1773                           
-  1774                           ;postlab2.c: 101:         if ( UART_Data_Ready() )
+  1774                           ;postlab2.c: 102:         if ( UART_Data_Ready() )
   1775     1293  160A  158A  20D1  160A  118A  	fcall	_UART_Data_Ready
   1776     1298  1C03               	btfss	3,0
   1777     1299  2A9B               	goto	u7471
@@ -1795,14 +1795,14 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1
   1781     129C                     u7470:
   1782     129C                     l4555:
   1783                           
-  1784                           ;postlab2.c: 102:     {;postlab2.c: 103:       uint8_t c = UART_GetC();
+  1784                           ;postlab2.c: 103:     {;postlab2.c: 104:       uint8_t c = UART_GetC();
   1785     129C  160A  158A  20E8  160A  118A  	fcall	_UART_GetC
   1786     12A1  1683               	bsf	3,5	;RP0=1, select bank3
   1787     12A2  1703               	bsf	3,6	;RP1=1, select bank3
   1788     12A3  009F               	movwf	main@c^(0+384)
   1789     12A4                     l4557:
   1790                           
-  1791                           ;postlab2.c: 104:       UART_PutC(c);
+  1791                           ;postlab2.c: 105:       UART_PutC(c);
   1792     12A4  081F               	movf	main@c^(0+384),w
   1793     12A5  160A  158A  20F6  160A  118A  	fcall	_UART_PutC
   1794     12AA  296F               	goto	l4521
@@ -7311,7 +7311,7 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1
   7246     19B9                     __ptext19:	
   7247 ;; *************** function _setup *****************
   7248 ;; Defined at:
-  7249 ;;		line 110 in file "postlab2.c"
+  7249 ;;		line 111 in file "postlab2.c"
   7250 ;; Parameters:    Size  Location     Type
   7251 ;;		None
   7252 ;; Auto vars:     Size  Location     Type
@@ -7347,78 +7347,78 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1
   7282                           ; Regs used in _setup: [wreg+status,2+status,0]
   7283                           
   7284                           
-  7285                           ;postlab2.c: 111:     ANSEL = 0b00000011;
+  7285                           ;postlab2.c: 112:     ANSEL = 0b00000011;
   7286     19B9  3003               	movlw	3
   7287     19BA  1683               	bsf	3,5	;RP0=1, select bank3
   7288     19BB  1703               	bsf	3,6	;RP1=1, select bank3
   7289     19BC  0088               	movwf	8	;volatile
   7290     19BD                     l3427:
   7291                           
-  7292                           ;postlab2.c: 112:     ANSELH = 0;
+  7292                           ;postlab2.c: 113:     ANSELH = 0;
   7293     19BD  0189               	clrf	9	;volatile
   7294     19BE                     l3429:
   7295                           
-  7296                           ;postlab2.c: 114:     TRISA = 0xFF;
+  7296                           ;postlab2.c: 115:     TRISA = 0xFF;
   7297     19BE  30FF               	movlw	255
   7298     19BF  1683               	bsf	3,5	;RP0=1, select bank1
   7299     19C0  1303               	bcf	3,6	;RP1=0, select bank1
   7300     19C1  0085               	movwf	5	;volatile
   7301     19C2                     l3431:
   7302                           
-  7303                           ;postlab2.c: 115:     TRISB = 0b11111111;
+  7303                           ;postlab2.c: 116:     TRISB = 0b11111111;
   7304     19C2  30FF               	movlw	255
   7305     19C3  0086               	movwf	6	;volatile
   7306     19C4                     l3433:
   7307                           
-  7308                           ;postlab2.c: 116:     TRISD = 0;
+  7308                           ;postlab2.c: 117:     TRISD = 0;
   7309     19C4  0188               	clrf	8	;volatile
   7310     19C5                     l3435:
   7311                           
-  7312                           ;postlab2.c: 117:     TRISE = 0;
+  7312                           ;postlab2.c: 118:     TRISE = 0;
   7313     19C5  0189               	clrf	9	;volatile
   7314     19C6                     l3437:
   7315                           
-  7316                           ;postlab2.c: 118:     OPTION_REGbits.nRBPU = 0;
+  7316                           ;postlab2.c: 119:     OPTION_REGbits.nRBPU = 0;
   7317     19C6  1381               	bcf	1,7	;volatile
   7318     19C7                     l3439:
   7319                           
-  7320                           ;postlab2.c: 119:     WPUB = 0b111111;
+  7320                           ;postlab2.c: 120:     WPUB = 0b111111;
   7321     19C7  303F               	movlw	63
   7322     19C8  0095               	movwf	21	;volatile
   7323                           
-  7324                           ;postlab2.c: 122:     PORTD = 0;
+  7324                           ;postlab2.c: 123:     PORTD = 0;
   7325     19C9  1283               	bcf	3,5	;RP0=0, select bank0
   7326     19CA  1303               	bcf	3,6	;RP1=0, select bank0
   7327     19CB  0188               	clrf	8	;volatile
   7328                           
-  7329                           ;postlab2.c: 123:     PORTE = 0;
+  7329                           ;postlab2.c: 124:     PORTE = 0;
   7330     19CC  0189               	clrf	9	;volatile
   7331     19CD                     l3441:
   7332                           
-  7333                           ;postlab2.c: 129:     OSCCONbits.IRCF = 0b0111;
+  7333                           ;postlab2.c: 130:     OSCCONbits.IRCF = 0b0111;
   7334     19CD  3070               	movlw	112
   7335     19CE  1683               	bsf	3,5	;RP0=1, select bank1
   7336     19CF  1303               	bcf	3,6	;RP1=0, select bank1
   7337     19D0  048F               	iorwf	15,f	;volatile
   7338     19D1                     l3443:
   7339                           
-  7340                           ;postlab2.c: 130:     OSCCONbits.SCS = 1;
+  7340                           ;postlab2.c: 131:     OSCCONbits.SCS = 1;
   7341     19D1  140F               	bsf	15,0	;volatile
   7342     19D2                     l3445:
   7343                           
-  7344                           ;postlab2.c: 133:     ADCON1bits.ADFM = 0;
+  7344                           ;postlab2.c: 134:     ADCON1bits.ADFM = 0;
   7345     19D2  139F               	bcf	31,7	;volatile
   7346     19D3                     l3447:
   7347                           
-  7348                           ;postlab2.c: 134:     ADCON1bits.VCFG0 = 0;
+  7348                           ;postlab2.c: 135:     ADCON1bits.VCFG0 = 0;
   7349     19D3  121F               	bcf	31,4	;volatile
   7350     19D4                     l3449:
   7351                           
-  7352                           ;postlab2.c: 135:     ADCON1bits.VCFG1 = 0;
+  7352                           ;postlab2.c: 136:     ADCON1bits.VCFG1 = 0;
   7353     19D4  129F               	bcf	31,5	;volatile
   7354     19D5                     l3451:
   7355                           
-  7356                           ;postlab2.c: 137:     ADCON0bits.ADCS = 0b01;
+  7356                           ;postlab2.c: 138:     ADCON0bits.ADCS = 0b01;
   7357     19D5  1283               	bcf	3,5	;RP0=0, select bank0
   7358     19D6  1303               	bcf	3,6	;RP1=0, select bank0
   7359     19D7  081F               	movf	31,w	;volatile
@@ -7427,16 +7427,16 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1
   7362     19DA  009F               	movwf	31	;volatile
   7363     19DB                     l3453:
   7364                           
-  7365                           ;postlab2.c: 138:     ADCON0bits.CHS = 0;
+  7365                           ;postlab2.c: 139:     ADCON0bits.CHS = 0;
   7366     19DB  30C3               	movlw	-61
   7367     19DC  059F               	andwf	31,f	;volatile
   7368     19DD                     l3455:
   7369                           
-  7370                           ;postlab2.c: 139:     ADCON0bits.ADON= 1;
+  7370                           ;postlab2.c: 140:     ADCON0bits.ADON= 1;
   7371     19DD  141F               	bsf	31,0	;volatile
   7372     19DE                     l3457:
   7373                           
-  7374                           ;postlab2.c: 140:     _delay((unsigned long)((50)*(8000000/4000000.0)));
+  7374                           ;postlab2.c: 141:     _delay((unsigned long)((50)*(8000000/4000000.0)));
   7375     19DE  3020               	movlw	32
   7376     19DF  1283               	bcf	3,5	;RP0=0, select bank0
   7377     19E0  1303               	bcf	3,6	;RP1=0, select bank0
@@ -7447,31 +7447,31 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1
   7382     19E4  0000               	nop
   7383     19E5                     l3459:
   7384                           
-  7385                           ;postlab2.c: 144:     PIR1bits.ADIF = 0;
+  7385                           ;postlab2.c: 145:     PIR1bits.ADIF = 0;
   7386     19E5  1283               	bcf	3,5	;RP0=0, select bank0
   7387     19E6  1303               	bcf	3,6	;RP1=0, select bank0
   7388     19E7  130C               	bcf	12,6	;volatile
   7389     19E8                     l3461:
   7390                           
-  7391                           ;postlab2.c: 145:     PIE1bits.ADIE = 1;
+  7391                           ;postlab2.c: 146:     PIE1bits.ADIE = 1;
   7392     19E8  1683               	bsf	3,5	;RP0=1, select bank1
   7393     19E9  1303               	bcf	3,6	;RP1=0, select bank1
   7394     19EA  170C               	bsf	12,6	;volatile
   7395     19EB                     l3463:
   7396                           
-  7397                           ;postlab2.c: 147:     INTCONbits.RBIE = 0;
+  7397                           ;postlab2.c: 148:     INTCONbits.RBIE = 0;
   7398     19EB  118B               	bcf	11,3	;volatile
   7399     19EC                     l3465:
   7400                           
-  7401                           ;postlab2.c: 148:     INTCONbits.RBIF = 1;
+  7401                           ;postlab2.c: 149:     INTCONbits.RBIF = 1;
   7402     19EC  140B               	bsf	11,0	;volatile
   7403     19ED                     l3467:
   7404                           
-  7405                           ;postlab2.c: 150:     INTCONbits.PEIE = 1;
+  7405                           ;postlab2.c: 151:     INTCONbits.PEIE = 1;
   7406     19ED  170B               	bsf	11,6	;volatile
   7407     19EE                     l3469:
   7408                           
-  7409                           ;postlab2.c: 151:     INTCONbits.GIE = 1;
+  7409                           ;postlab2.c: 152:     INTCONbits.GIE = 1;
   7410     19EE  178B               	bsf	11,7	;volatile
   7411     19EF                     l194:
   7412     19EF  0008               	return
@@ -7481,7 +7481,7 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1
   7416     1D52                     __ptext20:	
   7417 ;; *************** function _map *****************
   7418 ;; Defined at:
-  7419 ;;		line 155 in file "postlab2.c"
+  7419 ;;		line 156 in file "postlab2.c"
   7420 ;; Parameters:    Size  Location     Type
   7421 ;;  varmap          2   24[BANK1 ] unsigned int 
   7422 ;;  minval          2   26[BANK1 ] unsigned int 
@@ -7524,7 +7524,7 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1
   7459                           ; Regs used in _map: [wreg+status,2+status,0+pclath+cstack]
   7460                           
   7461                           
-  7462                           ;postlab2.c: 156:   float valmap =((varmap - minval) * (maxsal - minsal)) / (maxval - mi
+  7462                           ;postlab2.c: 157:   float valmap =((varmap - minval) * (maxsal - minsal)) / (maxval - mi
       +                          nval) + minsal;
   7463     1D52  1683               	bsf	3,5	;RP0=1, select bank1
   7464     1D53  1303               	bcf	3,6	;RP1=0, select bank1
@@ -7627,7 +7627,7 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1
   7561     1DC0  082A               	movf	?___xxtofl^(0+128),w
   7562     1DC1  00C8               	movwf	map@valmap^(0+128)
   7563                           
-  7564                           ;postlab2.c: 157:   return valmap;
+  7564                           ;postlab2.c: 158:   return valmap;
   7565     1DC2  084B               	movf	(map@valmap+3)^(0+128),w
   7566     1DC3  00A3               	movwf	(___fltol@f1+3)^(0+128)
   7567     1DC4  084A               	movf	(map@valmap+2)^(0+128),w
@@ -12038,7 +12038,7 @@ DATA                 0      0      BA      12        0.0%
 
 
 Microchip Technology PIC Macro Assembler V2.40 build 20220703182018 
-Symbol Table                                                                                   Tue Jul 25 12:50:14 2023
+Symbol Table                                                                                   Tue Jul 25 15:55:49 2023
 
                       _i 01A8                        pc 0002             ___awdiv@sign 0033  
                      fsr 0004      ___wmul@multiplicand 0028      __Umul8_16@word_mpld 002C  

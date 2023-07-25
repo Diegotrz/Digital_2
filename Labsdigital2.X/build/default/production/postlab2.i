@@ -2888,6 +2888,7 @@ void main(void) {
        UART_Print(s);
      sprintf(s, "%03u\r\n", varvolt2);
      UART_Print(s);
+
         if ( UART_Data_Ready() )
     {
       uint8_t c = UART_GetC();

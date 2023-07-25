@@ -659,120 +659,120 @@ Version 4.0 HI-TECH Software Intermediate Code
 "100
 [; ;postlab2.c: 100:      UART_Print(s);
 [e ( _UART_Print (1 -> &U _s `*Cuc ]
-"101
-[; ;postlab2.c: 101:         if ( UART_Data_Ready() )
-[e $ ! ( _UART_Data_Ready ..  158  ]
 "102
-[; ;postlab2.c: 102:     {
-{
+[; ;postlab2.c: 102:         if ( UART_Data_Ready() )
+[e $ ! ( _UART_Data_Ready ..  158  ]
 "103
-[; ;postlab2.c: 103:       uint8_t c = UART_GetC();
+[; ;postlab2.c: 103:     {
+{
+"104
+[; ;postlab2.c: 104:       uint8_t c = UART_GetC();
 [v _c `uc ~T0 @X0 1 a ]
 [e = _c ( _UART_GetC ..  ]
-"104
-[; ;postlab2.c: 104:       UART_PutC(c);
-[e ( _UART_PutC (1 -> _c `uc ]
 "105
-[; ;postlab2.c: 105:     }
-}
-[e :U 158 ]
+[; ;postlab2.c: 105:       UART_PutC(c);
+[e ( _UART_PutC (1 -> _c `uc ]
 "106
 [; ;postlab2.c: 106:     }
+}
+[e :U 158 ]
+"107
+[; ;postlab2.c: 107:     }
 }
 [e :U 151 ]
 [e $U 152  ]
 [e :U 153 ]
-"109
-[; ;postlab2.c: 109: }
+"110
+[; ;postlab2.c: 110: }
 [e :UE 150 ]
 }
-"110
-[; ;postlab2.c: 110: void setup(void){
+"111
+[; ;postlab2.c: 111: void setup(void){
 [v _setup `(v ~T0 @X0 1 ef ]
 {
 [e :U _setup ]
 [f ]
-"111
-[; ;postlab2.c: 111:     ANSEL = 0b00000011;
-[e = _ANSEL -> -> 3 `i `uc ]
 "112
-[; ;postlab2.c: 112:     ANSELH = 0;
+[; ;postlab2.c: 112:     ANSEL = 0b00000011;
+[e = _ANSEL -> -> 3 `i `uc ]
+"113
+[; ;postlab2.c: 113:     ANSELH = 0;
 [e = _ANSELH -> -> 0 `i `uc ]
-"114
-[; ;postlab2.c: 114:     TRISA = 0xFF;
-[e = _TRISA -> -> 255 `i `uc ]
 "115
-[; ;postlab2.c: 115:     TRISB = 0b11111111;
-[e = _TRISB -> -> 255 `i `uc ]
+[; ;postlab2.c: 115:     TRISA = 0xFF;
+[e = _TRISA -> -> 255 `i `uc ]
 "116
-[; ;postlab2.c: 116:     TRISD = 0;
-[e = _TRISD -> -> 0 `i `uc ]
+[; ;postlab2.c: 116:     TRISB = 0b11111111;
+[e = _TRISB -> -> 255 `i `uc ]
 "117
-[; ;postlab2.c: 117:     TRISE = 0;
-[e = _TRISE -> -> 0 `i `uc ]
+[; ;postlab2.c: 117:     TRISD = 0;
+[e = _TRISD -> -> 0 `i `uc ]
 "118
-[; ;postlab2.c: 118:     OPTION_REGbits.nRBPU = 0;
-[e = . . _OPTION_REGbits 0 5 -> -> 0 `i `uc ]
+[; ;postlab2.c: 118:     TRISE = 0;
+[e = _TRISE -> -> 0 `i `uc ]
 "119
-[; ;postlab2.c: 119:     WPUB = 0b111111;
+[; ;postlab2.c: 119:     OPTION_REGbits.nRBPU = 0;
+[e = . . _OPTION_REGbits 0 5 -> -> 0 `i `uc ]
+"120
+[; ;postlab2.c: 120:     WPUB = 0b111111;
 [e = _WPUB -> -> 63 `i `uc ]
-"122
-[; ;postlab2.c: 122:     PORTD = 0;
-[e = _PORTD -> -> 0 `i `uc ]
 "123
-[; ;postlab2.c: 123:     PORTE = 0;
+[; ;postlab2.c: 123:     PORTD = 0;
+[e = _PORTD -> -> 0 `i `uc ]
+"124
+[; ;postlab2.c: 124:     PORTE = 0;
 [e = _PORTE -> -> 0 `i `uc ]
-"129
-[; ;postlab2.c: 129:     OSCCONbits.IRCF = 0b0111;
-[e = . . _OSCCONbits 0 4 -> -> 7 `i `uc ]
 "130
-[; ;postlab2.c: 130:     OSCCONbits.SCS = 1;
+[; ;postlab2.c: 130:     OSCCONbits.IRCF = 0b0111;
+[e = . . _OSCCONbits 0 4 -> -> 7 `i `uc ]
+"131
+[; ;postlab2.c: 131:     OSCCONbits.SCS = 1;
 [e = . . _OSCCONbits 0 0 -> -> 1 `i `uc ]
-"133
-[; ;postlab2.c: 133:     ADCON1bits.ADFM = 0;
-[e = . . _ADCON1bits 0 4 -> -> 0 `i `uc ]
 "134
-[; ;postlab2.c: 134:     ADCON1bits.VCFG0 = 0;
-[e = . . _ADCON1bits 0 1 -> -> 0 `i `uc ]
+[; ;postlab2.c: 134:     ADCON1bits.ADFM = 0;
+[e = . . _ADCON1bits 0 4 -> -> 0 `i `uc ]
 "135
-[; ;postlab2.c: 135:     ADCON1bits.VCFG1 = 0;
+[; ;postlab2.c: 135:     ADCON1bits.VCFG0 = 0;
+[e = . . _ADCON1bits 0 1 -> -> 0 `i `uc ]
+"136
+[; ;postlab2.c: 136:     ADCON1bits.VCFG1 = 0;
 [e = . . _ADCON1bits 0 2 -> -> 0 `i `uc ]
-"137
-[; ;postlab2.c: 137:     ADCON0bits.ADCS = 0b01;
-[e = . . _ADCON0bits 0 3 -> -> 1 `i `uc ]
 "138
-[; ;postlab2.c: 138:     ADCON0bits.CHS = 0;
-[e = . . _ADCON0bits 0 2 -> -> 0 `i `uc ]
+[; ;postlab2.c: 138:     ADCON0bits.ADCS = 0b01;
+[e = . . _ADCON0bits 0 3 -> -> 1 `i `uc ]
 "139
-[; ;postlab2.c: 139:     ADCON0bits.ADON= 1;
-[e = . . _ADCON0bits 0 0 -> -> 1 `i `uc ]
+[; ;postlab2.c: 139:     ADCON0bits.CHS = 0;
+[e = . . _ADCON0bits 0 2 -> -> 0 `i `uc ]
 "140
-[; ;postlab2.c: 140:     _delay((unsigned long)((50)*(8000000/4000000.0)));
+[; ;postlab2.c: 140:     ADCON0bits.ADON= 1;
+[e = . . _ADCON0bits 0 0 -> -> 1 `i `uc ]
+"141
+[; ;postlab2.c: 141:     _delay((unsigned long)((50)*(8000000/4000000.0)));
 [e ( __delay (1 -> * -> -> 50 `i `d / -> -> 8000000 `l `d .4000000.0 `ul ]
-"144
-[; ;postlab2.c: 144:     PIR1bits.ADIF = 0;
-[e = . . _PIR1bits 0 6 -> -> 0 `i `uc ]
 "145
-[; ;postlab2.c: 145:     PIE1bits.ADIE = 1;
+[; ;postlab2.c: 145:     PIR1bits.ADIF = 0;
+[e = . . _PIR1bits 0 6 -> -> 0 `i `uc ]
+"146
+[; ;postlab2.c: 146:     PIE1bits.ADIE = 1;
 [e = . . _PIE1bits 0 6 -> -> 1 `i `uc ]
-"147
-[; ;postlab2.c: 147:     INTCONbits.RBIE = 0;
-[e = . . _INTCONbits 0 3 -> -> 0 `i `uc ]
 "148
-[; ;postlab2.c: 148:     INTCONbits.RBIF = 1;
+[; ;postlab2.c: 148:     INTCONbits.RBIE = 0;
+[e = . . _INTCONbits 0 3 -> -> 0 `i `uc ]
+"149
+[; ;postlab2.c: 149:     INTCONbits.RBIF = 1;
 [e = . . _INTCONbits 0 0 -> -> 1 `i `uc ]
-"150
-[; ;postlab2.c: 150:     INTCONbits.PEIE = 1;
-[e = . . _INTCONbits 0 6 -> -> 1 `i `uc ]
 "151
-[; ;postlab2.c: 151:     INTCONbits.GIE = 1;
+[; ;postlab2.c: 151:     INTCONbits.PEIE = 1;
+[e = . . _INTCONbits 0 6 -> -> 1 `i `uc ]
+"152
+[; ;postlab2.c: 152:     INTCONbits.GIE = 1;
 [e = . . _INTCONbits 0 7 -> -> 1 `i `uc ]
-"154
-[; ;postlab2.c: 154: }
+"155
+[; ;postlab2.c: 155: }
 [e :UE 159 ]
 }
-"155
-[; ;postlab2.c: 155: uint16_t map(uint16_t varmap,uint16_t minval,uint16_t maxval, uint16_t minsal, uint16_t maxsal){
+"156
+[; ;postlab2.c: 156: uint16_t map(uint16_t varmap,uint16_t minval,uint16_t maxval, uint16_t minsal, uint16_t maxsal){
 [v _map `(ui ~T0 @X0 1 ef5`ui`ui`ui`ui`ui ]
 {
 [e :U _map ]
@@ -782,16 +782,16 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _minsal `ui ~T0 @X0 1 r4 ]
 [v _maxsal `ui ~T0 @X0 1 r5 ]
 [f ]
-"156
-[; ;postlab2.c: 156:   float valmap =((varmap - minval) * (maxsal - minsal)) / (maxval - minval) + minsal;
+"157
+[; ;postlab2.c: 157:   float valmap =((varmap - minval) * (maxsal - minsal)) / (maxval - minval) + minsal;
 [v _valmap `f ~T0 @X0 1 a ]
 [e = _valmap -> + / * - _varmap _minval - _maxsal _minsal - _maxval _minval _minsal `f ]
-"157
-[; ;postlab2.c: 157:   return valmap;
+"158
+[; ;postlab2.c: 158:   return valmap;
 [e ) -> _valmap `ui ]
 [e $UE 160  ]
-"158
-[; ;postlab2.c: 158: }
+"159
+[; ;postlab2.c: 159: }
 [e :UE 160 ]
 }
 [p f _sprintf 8430596 ]

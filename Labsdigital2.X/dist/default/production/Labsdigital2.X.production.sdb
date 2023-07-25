@@ -69,9 +69,9 @@
 [v _isr isr `II(v  1 e 1 0 ]
 "70
 [v _main main `(v  1 e 1 0 ]
-"110
+"111
 [v _setup setup `(v  1 e 1 0 ]
-"155
+"156
 [v _map map `(ui  1 e 2 0 ]
 "41 C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\USARTmodl.c
 [v _UART_Data_Ready UART_Data_Ready `(b  1 e 0 0 ]
@@ -287,13 +287,13 @@
 "70
 [v _main main `(v  1 e 1 0 ]
 {
-"103
+"104
 [v main@c c `uc  1 a 1 15 ]
 "92
 [v main@s s `[9]uc  1 a 9 6 ]
 "96
 [v main@varvolt2 varvolt2 `f  1 a 4 16 ]
-"109
+"110
 } 0
 "505 C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\doprnt.c
 [v _sprintf sprintf `(i  1 e 2 0 ]
@@ -516,23 +516,23 @@
 [v ___fleq@ff2 ff2 `d  1 p 4 10 ]
 "12
 } 0
-"110 C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\postlab2.c
+"111 C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\postlab2.c
 [v _setup setup `(v  1 e 1 0 ]
 {
-"154
-} 0
 "155
+} 0
+"156
 [v _map map `(ui  1 e 2 0 ]
 {
-"156
+"157
 [v map@valmap valmap `f  1 a 4 40 ]
-"155
+"156
 [v map@varmap varmap `ui  1 p 2 24 ]
 [v map@minval minval `ui  1 p 2 26 ]
 [v map@maxval maxval `ui  1 p 2 28 ]
 [v map@minsal minsal `ui  1 p 2 30 ]
 [v map@maxsal maxsal `ui  1 p 2 32 ]
-"158
+"159
 } 0
 "10 C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\xxtofl.c
 [v ___xxtofl __xxtofl `(d  1 e 4 0 ]

@@ -32,6 +32,7 @@
       <itemPath>pruebalab2.c</itemPath>
       <itemPath>postlab2.c</itemPath>
       <itemPath>USARTmodl.c</itemPath>
+      <itemPath>postlab2prueba.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
@@ -307,6 +308,8 @@
         <XC8-config-global>
         </XC8-config-global>
       </item>
+      <item path="postlab2prueba.c" ex="true" overriding="false">
+      </item>
       <item path="prelab2.c" ex="true" overriding="false">
         <HI-TECH-COMP>
         </HI-TECH-COMP>
@@ -318,6 +321,14 @@
         </XC8-config-global>
       </item>
       <item path="pruebalab2.c" ex="true" overriding="false">
+        <HI-TECH-COMP>
+        </HI-TECH-COMP>
+        <HI-TECH-LINK>
+        </HI-TECH-LINK>
+        <XC8-CO>
+        </XC8-CO>
+        <XC8-config-global>
+        </XC8-config-global>
       </item>
       <item path="pruebaprelab2.c" ex="true" overriding="false">
         <HI-TECH-COMP>
