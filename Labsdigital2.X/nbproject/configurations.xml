@@ -28,6 +28,7 @@
       <itemPath>display8bits.c</itemPath>
       <itemPath>display8bits.h</itemPath>
       <itemPath>Lab2.c</itemPath>
+      <itemPath>pruebalab2.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
@@ -263,7 +264,7 @@
         <XC8-config-global>
         </XC8-config-global>
       </item>
-      <item path="display8bits.c" ex="true" overriding="false">
+      <item path="display8bits.c" ex="false" overriding="false">
         <HI-TECH-COMP>
         </HI-TECH-COMP>
         <HI-TECH-LINK>
@@ -273,7 +274,7 @@
         <XC8-config-global>
         </XC8-config-global>
       </item>
-      <item path="display8bits.h" ex="true" overriding="false">
+      <item path="display8bits.h" ex="false" overriding="false">
         <HI-TECH-COMP>
         </HI-TECH-COMP>
         <HI-TECH-LINK>
@@ -312,6 +313,8 @@
         </XC8-CO>
         <XC8-config-global>
         </XC8-config-global>
+      </item>
+      <item path="pruebalab2.c" ex="true" overriding="false">
       </item>
       <item path="pruebaprelab2.c" ex="true" overriding="false">
         <HI-TECH-COMP>

@@ -15,68 +15,28 @@
 #define _XTAL_FREQ 8000000
 #endif
 
-#ifndef RS
-#define RS PORTCbits.RC6
-#endif
-
-#ifndef EN
-#define EN RC7
-#endif
-
-#ifndef D0
-#define D0 RD0
-#endif
-
-#ifndef D1
-#define D1 RD1
-#endif
-
-#ifndef D2
-#define D2 RD2
-#endif
-
-#ifndef D3
-#define D3 RD3
-#endif
-
-#ifndef D4
-#define D4 RD4
-#endif
-
-#ifndef D5
-#define D5 RD5
-#endif
-
-#ifndef D6
-#define D6 RD6
-#endif
-
-#ifndef D7
-#define D7 RD7
-#endif
-
+// Define Pins
+#define LCD_E        RC7   // Enable pin for LCD
+#define LCD_RS       RC6   // RS pin for LCD
+#define LCD_Data_Bus   PORTD // Data bus for LCD
+// Define Pins direction register
+#define LCD_E_Dir         TRISC7
+#define LCD_RS_Dir        TRISC6
+#define LCD_Data_Bus_Dir   TRISD
+// Constants
+#define E_Delay       500
 #include <xc.h> // include processor files - each processor file is guarded.  
 
+int CMCON;
 //LCD Functions Developed by electroSome
 
 
-void LCD8_PORT(char a);
-
-void LCD8_CMD(char a);
-
-void LCD8_CLEAR(void);
-
-void LCD8_SET_CURSOR(char a, char b);
-
-void LCD8_INIT(void);
-
-void LCD8_WRITE_CHAR(char a);
-
-void LCD8_WRITE_STRING(char *a);
-
-void LCD8_SHIFT_RIGHT(void);
-
-void LCD8_SHIFT_LEFT(void);
+void WriteCommandToLCD(unsigned char);
+void WriteDataToLCD(char);
+void InitLCD(void);
+void WriteStringToLCD(const char*);
+void ClearLCDScreen(void);
+void ToggleEpinOfLCD(void);
 
 #endif	
 

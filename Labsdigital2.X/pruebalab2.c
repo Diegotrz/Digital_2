@@ -1,16 +1,46 @@
-/* 
- * File: LCD.c  
- * Se utilizó y se adaptaron las librerías de Ligo George 
- * de la página www.electrosome.com
- * Enlace: https://electrosome.com/lcd-pic-mplab-xc8/
- * Revision history: 
- */
-
-//LCD Functions Developed by electroSome
-
-#include "display8bits.h"
-
-
+/* Name     : main.c
+*  Purpose  : Main file for using LCD with PIC16F628A in 8bit mode.
+*  Author   : Amlendra Kumar
+*  Website  : https://aticleworld.com
+*/
+#include<htc.h>
+// Configuration word for PIC16F877A
+__CONFIG( FOSC_HS & WDTE_OFF & PWRTE_ON & CP_OFF & BOREN_ON
+          & LVP_OFF & CPD_OFF & WRT_OFF & DEBUG_OFF);
+// Define CPU Frequency
+// This must be defined, if __delay_ms() or
+// __delay_us() functions are used in the code
+#define _XTAL_FREQ   20000000
+// Define Pins
+#define LCD_E        RC7   // Enable pin for LCD
+#define LCD_RS       RC6   // RS pin for LCD
+#define LCD_Data_Bus   PORTD // Data bus for LCD
+// Define Pins direction register
+#define LCD_E_Dir         TRISC7
+#define LCD_RS_Dir        TRISC6
+#define LCD_Data_Bus_Dir   TRISD
+// Constants
+#define E_Delay       500
+// Function Declarations
+void WriteCommandToLCD(unsigned char);
+void WriteDataToLCD(char);
+void InitLCD(void);
+void WriteStringToLCD(const char*);
+void ClearLCDScreen(void);
+//Program start from here
+int CMCON;
+int main(void)
+{
+    CMCON = 0x07;            // Turn comparator off
+    InitLCD();                // Initialize LCD in 8bit mode
+    const char msg[] = "AticleWorld.com";
+    ClearLCDScreen();          // Clear LCD screen
+    WriteStringToLCD(msg);  // Write Hello World on LCD
+    while(1)
+    {
+    }
+    return 0;
+}
 void ToggleEpinOfLCD(void)
 {
     LCD_E = 1;                // Give a pulse on E pin

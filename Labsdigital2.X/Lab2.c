@@ -31,6 +31,7 @@ int valpot0;
 int valpot1;
 int val;
 float varvolt;
+
 void __interrupt() isr (void)
 {
 if(PIR1bits.ADIF){
@@ -65,7 +66,9 @@ void main(void) {
  setup();
  ADCON0bits.GO =1;
  i=0;
-
+CMCON = 0x07;            // Turn comparator off
+    InitLCD();                // Initialize LCD in 8bit mode
+     ClearLCDScreen();          
     while(1){
     //  Lcd_Set_Cursor(1,1);
       //Lcd_Write_String( 'h');
@@ -77,13 +80,15 @@ void main(void) {
      }
      
      char s[20];
-    float  f=5.1267;
-   
-float  varvolt2 = (varvolt*5)/255 ;
+ 
+//float  varvolt2 = (varvolt*5)/255 ;
   
-        sprintf(s, "volt= %f", varvolt2);
-
-    __delay_ms(2000);
+     float varvolt2 = map();
+     sprintf(s, "volt= %f", varvolt2);
+        // Clear LCD screen
+        const char msg[] = "AticleWorld.com";
+    ClearLCDScreen();  
+    WriteStringToLCD(s);  // Write Hello World on LCD
     }
     
     
@@ -103,7 +108,7 @@ void setup(void){
     //PORTC = 0;
     PORTD = 0;
     PORTE = 0;
-   
+   PORTC = 0;
    
     
     
@@ -133,4 +138,7 @@ void setup(void){
     INTCONbits.GIE = 1;
     
     
+}
+uint16_t map(uint16_t varmap,uint16_t minval,uint16_t maxval, uint16_t minsal, uint16_t maxsal){
+    return ((long)(varmap - minval)* (long)(maxsal-minsal)/ ((maxval / minval)+)
 }
