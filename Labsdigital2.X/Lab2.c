@@ -22,7 +22,6 @@
 
 #include <xc.h>
 #include "setup_lb.h"
-#include "LCD.h"
 #include "adclib.h"
 #include "stdio.h"
 #include "display8bits.h"
@@ -66,8 +65,7 @@ void main(void) {
  setup();
  ADCON0bits.GO =1;
  i=0;
-  
- Lcd_Init();
+
     while(1){
     //  Lcd_Set_Cursor(1,1);
       //Lcd_Write_String( 'h');
@@ -80,20 +78,11 @@ void main(void) {
      
      char s[20];
     float  f=5.1267;
-      Lcd_Clear();
-       /* Lcd_Set_Cursor(1,1);
-         Lcd_Write_String("varvolt");
-      //  Lcd_Write_String(varvolt);
-        Lcd_Set_Cursor(2,1);
-        Lcd_Write_String("1");
-         __delay_ms(4000);
-      */
+   
 float  varvolt2 = (varvolt*5)/255 ;
   
         sprintf(s, "volt= %f", varvolt2);
-    Lcd_Set_Cursor(1,1);
-    
-    Lcd_Write_String(s);
+
     __delay_ms(2000);
     }
     
