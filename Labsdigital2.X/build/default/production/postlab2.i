@@ -1,4 +1,4 @@
-# 1 "Lab2.c"
+# 1 "postlab2.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,7 +6,7 @@
 # 1 "<built-in>" 2
 # 1 "C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "Lab2.c" 2
+# 1 "postlab2.c" 2
 
 
 
@@ -2647,7 +2647,7 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 29 "C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\\pic\\include\\xc.h" 2 3
-# 23 "Lab2.c" 2
+# 23 "postlab2.c" 2
 
 # 1 "./setup_lb.h" 1
 
@@ -2769,7 +2769,7 @@ void config_pullup(int pulles, char pinpull);
 
 void config_osc(char valosc);
 void config_interrupt(int adcif, int adcie,int rbie, int rbif, int pie, int gie );
-# 24 "Lab2.c" 2
+# 24 "postlab2.c" 2
 
 # 1 "./adclib.h" 1
 # 11 "./adclib.h"
@@ -2783,7 +2783,7 @@ void adc_init(int channel, int justf,int vcf0,int vcf1,char adcs);
 int adc_read();
 void adc_cchange(int channel);
 int adc_get_channel();
-# 25 "Lab2.c" 2
+# 25 "postlab2.c" 2
 
 
 # 1 "./display8bits.h" 1
@@ -2798,7 +2798,23 @@ void InitLCD(void);
 void WriteStringToLCD(const char*);
 void ClearLCDScreen(void);
 void ToggleEpinOfLCD(void);
-# 27 "Lab2.c" 2
+# 27 "postlab2.c" 2
+
+# 1 "./USARTmodl.h" 1
+# 11 "./USARTmodl.h"
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c90\\stdint.h" 1 3
+# 11 "./USARTmodl.h" 2
+
+
+
+const char message[] = "2.Enviar Ascii" ;
+void UART_Init(const uint32_t baud_rate);
+__bit UART_Data_Ready();
+uint8_t UART_GetC();
+void UART_PutC(const char data);
+void UART_Print(const char *data);
+void UART_maininit ();
+# 28 "postlab2.c" 2
 
 void setup(void);
 int i;
@@ -2827,7 +2843,18 @@ if(PIR1bits.ADIF){
 
     }
 }
-
+ char uart_read(){
+ if(PIR1bits.RCIF== 0){
+     if (RCSTAbits.OERR){
+         RCSTAbits.CREN =0;
+         __nop();
+         RCSTAbits.CREN =1;
+ }
+     return RCREG;
+ }
+ else
+     return 0;
+ }
 
 
 void main(void) {
@@ -2841,9 +2868,7 @@ void main(void) {
  setup();
  ADCON0bits.GO =1;
  i=0;
-CMCON = 0x07;
-    InitLCD();
-     ClearLCDScreen();
+
     while(1){
 
 
@@ -2854,16 +2879,20 @@ CMCON = 0x07;
         }
      }
 
-     char s[20];
+     char s[9];
 
 
-
+     UART_Print ("\r\n");
      float varvolt2 = map(varvolt,0,255,0,5);
      sprintf(s, "volt= %f", varvolt2);
-
-        const char msg[] = "AticleWorld.com";
-    ClearLCDScreen();
-    WriteStringToLCD(s);
+       UART_Print(s);
+     sprintf(s, "%03u\r\n", varvolt2);
+     UART_Print(s);
+        if ( UART_Data_Ready() )
+    {
+      uint8_t c = UART_GetC();
+      UART_PutC(c);
+    }
     }
 
 
@@ -2874,7 +2903,6 @@ void setup(void){
 
     TRISA = 0xFF;
     TRISB = 0b11111111;
-    TRISC = 0;
     TRISD = 0;
     TRISE = 0;
     OPTION_REGbits.nRBPU = 0;
@@ -2883,7 +2911,7 @@ void setup(void){
 
     PORTD = 0;
     PORTE = 0;
-   PORTC = 0;
+
 
 
 

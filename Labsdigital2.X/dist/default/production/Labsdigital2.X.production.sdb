@@ -28,6 +28,8 @@
 [v ___fltol __fltol `(l  1 e 4 0 ]
 "60 C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\ftdivl.c
 [v __tdiv_to_l_ _tdiv_to_l_ `(ul  1 e 4 0 ]
+"8 C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\isdigit.c
+[v _isdigit isdigit `(b  1 e 0 0 ]
 "5 C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\llmod.c
 [v ___llmod __llmod `(ul  1 e 4 0 ]
 "5 C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\lwdiv.c
@@ -57,31 +59,29 @@
 [v _WriteCommandToLCD WriteCommandToLCD `(v  1 e 1 0 ]
 "27
 [v _WriteDataToLCD WriteDataToLCD `(v  1 e 1 0 ]
-"33
-[v _InitLCD InitLCD `(v  1 e 1 0 ]
-"47
-[v _WriteStringToLCD WriteStringToLCD `(v  1 e 1 0 ]
-"54
-[v _ClearLCDScreen ClearLCDScreen `(v  1 e 1 0 ]
-"35 C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\Lab2.c
-[v _isr isr `II(v  1 e 1 0 ]
-"58
-[v _main main `(v  1 e 1 0 ]
-"96
-[v _setup setup `(v  1 e 1 0 ]
-"142
-[v _map map `(ui  1 e 2 0 ]
 "13 C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\LCD.c
 [v _Lcd_Port Lcd_Port `(v  1 e 1 0 ]
 "35
 [v _Lcd_Cmd Lcd_Cmd `(v  1 e 1 0 ]
 "83
 [v _Lcd_Write_Char Lcd_Write_Char `(v  1 e 1 0 ]
-"30 C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X/display8bits.h
-[v _CMCON CMCON `i  1 e 2 0 ]
-"291 C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h
-[v _PORTC PORTC `VEuc  1 e 1 @7 ]
-"353
+"36 C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\postlab2.c
+[v _isr isr `II(v  1 e 1 0 ]
+"70
+[v _main main `(v  1 e 1 0 ]
+"110
+[v _setup setup `(v  1 e 1 0 ]
+"155
+[v _map map `(ui  1 e 2 0 ]
+"41 C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\USARTmodl.c
+[v _UART_Data_Ready UART_Data_Ready `(b  1 e 0 0 ]
+"46
+[v _UART_GetC UART_GetC `(uc  1 e 1 0 ]
+"59
+[v _UART_PutC UART_PutC `(v  1 e 1 0 ]
+"65
+[v _UART_Print UART_Print `(v  1 e 1 0 ]
+"353 C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h
 [v _PORTD PORTD `VEuc  1 e 1 @8 ]
 [s S26 . 1 `uc 1 RD0 1 0 :1:0 
 `uc 1 RD1 1 0 :1:1 
@@ -97,7 +97,7 @@
 [v _PORTDbits PORTDbits `VES35  1 e 1 @8 ]
 "415
 [v _PORTE PORTE `VEuc  1 e 1 @9 ]
-[s S294 . 1 `uc 1 RBIF 1 0 :1:0 
+[s S356 . 1 `uc 1 RBIF 1 0 :1:0 
 `uc 1 INTF 1 0 :1:1 
 `uc 1 T0IF 1 0 :1:2 
 `uc 1 RBIE 1 0 :1:3 
@@ -107,13 +107,13 @@
 `uc 1 GIE 1 0 :1:7 
 ]
 "483
-[s S303 . 1 `uc 1 . 1 0 :2:0 
+[s S365 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 TMR0IF 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 TMR0IE 1 0 :1:5 
 ]
-[u S308 . 1 `S294 1 . 1 0 `S303 1 . 1 0 ]
-[v _INTCONbits INTCONbits `VES308  1 e 1 @11 ]
+[u S370 . 1 `S356 1 . 1 0 `S365 1 . 1 0 ]
+[v _INTCONbits INTCONbits `VES370  1 e 1 @11 ]
 [s S107 . 1 `uc 1 TMR1IF 1 0 :1:0 
 `uc 1 TMR2IF 1 0 :1:1 
 `uc 1 CCP1IF 1 0 :1:2 
@@ -125,6 +125,34 @@
 "554
 [u S115 . 1 `S107 1 . 1 0 ]
 [v _PIR1bits PIR1bits `VES115  1 e 1 @12 ]
+"1039
+[v _RCSTA RCSTA `VEuc  1 e 1 @24 ]
+[s S173 . 1 `uc 1 RX9D 1 0 :1:0 
+`uc 1 OERR 1 0 :1:1 
+`uc 1 FERR 1 0 :1:2 
+`uc 1 ADDEN 1 0 :1:3 
+`uc 1 CREN 1 0 :1:4 
+`uc 1 SREN 1 0 :1:5 
+`uc 1 RX9 1 0 :1:6 
+`uc 1 SPEN 1 0 :1:7 
+]
+"1069
+[s S182 . 1 `uc 1 RCD8 1 0 :1:0 
+`uc 1 . 1 0 :5:1 
+`uc 1 RC9 1 0 :1:6 
+]
+[s S186 . 1 `uc 1 . 1 0 :6:0 
+`uc 1 nRC8 1 0 :1:6 
+]
+[s S189 . 1 `uc 1 . 1 0 :6:0 
+`uc 1 RC8_9 1 0 :1:6 
+]
+[u S192 . 1 `S173 1 . 1 0 `S182 1 . 1 0 `S186 1 . 1 0 `S189 1 . 1 0 ]
+[v _RCSTAbits RCSTAbits `VES192  1 e 1 @24 ]
+"1134
+[v _TXREG TXREG `VEuc  1 e 1 @25 ]
+"1141
+[v _RCREG RCREG `VEuc  1 e 1 @26 ]
 "1239
 [v _ADRESH ADRESH `VEuc  1 e 1 @30 ]
 [s S126 . 1 `uc 1 ADON 1 0 :1:0 
@@ -150,7 +178,7 @@
 ]
 [u S146 . 1 `S126 1 . 1 0 `S131 1 . 1 0 `S140 1 . 1 0 `S143 1 . 1 0 ]
 [v _ADCON0bits ADCON0bits `VES146  1 e 1 @31 ]
-[s S202 . 1 `uc 1 PS 1 0 :3:0 
+[s S265 . 1 `uc 1 PS 1 0 :3:0 
 `uc 1 PSA 1 0 :1:3 
 `uc 1 T0SE 1 0 :1:4 
 `uc 1 T0CS 1 0 :1:5 
@@ -158,23 +186,21 @@
 `uc 1 nRBPU 1 0 :1:7 
 ]
 "1367
-[s S209 . 1 `uc 1 PS0 1 0 :1:0 
+[s S272 . 1 `uc 1 PS0 1 0 :1:0 
 `uc 1 PS1 1 0 :1:1 
 `uc 1 PS2 1 0 :1:2 
 ]
-[u S213 . 1 `S202 1 . 1 0 `S209 1 . 1 0 ]
-[v _OPTION_REGbits OPTION_REGbits `VES213  1 e 1 @129 ]
+[u S276 . 1 `S265 1 . 1 0 `S272 1 . 1 0 ]
+[v _OPTION_REGbits OPTION_REGbits `VES276  1 e 1 @129 ]
 "1417
 [v _TRISA TRISA `VEuc  1 e 1 @133 ]
 "1479
 [v _TRISB TRISB `VEuc  1 e 1 @134 ]
-"1541
-[v _TRISC TRISC `VEuc  1 e 1 @135 ]
 "1603
 [v _TRISD TRISD `VEuc  1 e 1 @136 ]
 "1665
 [v _TRISE TRISE `VEuc  1 e 1 @137 ]
-[s S275 . 1 `uc 1 TMR1IE 1 0 :1:0 
+[s S337 . 1 `uc 1 TMR1IE 1 0 :1:0 
 `uc 1 TMR2IE 1 0 :1:1 
 `uc 1 CCP1IE 1 0 :1:2 
 `uc 1 SSPIE 1 0 :1:3 
@@ -183,41 +209,51 @@
 `uc 1 ADIE 1 0 :1:6 
 ]
 "1719
-[u S283 . 1 `S275 1 . 1 0 ]
-[v _PIE1bits PIE1bits `VES283  1 e 1 @140 ]
-[s S232 . 1 `uc 1 SCS 1 0 :1:0 
+[u S345 . 1 `S337 1 . 1 0 ]
+[v _PIE1bits PIE1bits `VES345  1 e 1 @140 ]
+[s S294 . 1 `uc 1 SCS 1 0 :1:0 
 `uc 1 LTS 1 0 :1:1 
 `uc 1 HTS 1 0 :1:2 
 `uc 1 OSTS 1 0 :1:3 
 `uc 1 IRCF 1 0 :3:4 
 ]
 "1883
-[s S238 . 1 `uc 1 . 1 0 :4:0 
+[s S300 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 IRCF0 1 0 :1:4 
 `uc 1 IRCF1 1 0 :1:5 
 `uc 1 IRCF2 1 0 :1:6 
 ]
-[u S243 . 1 `S232 1 . 1 0 `S238 1 . 1 0 ]
-[v _OSCCONbits OSCCONbits `VES243  1 e 1 @143 ]
+[u S305 . 1 `S294 1 . 1 0 `S300 1 . 1 0 ]
+[v _OSCCONbits OSCCONbits `VES305  1 e 1 @143 ]
 "2347
 [v _WPUB WPUB `VEuc  1 e 1 @149 ]
-[s S258 . 1 `uc 1 . 1 0 :4:0 
+"2557
+[v _TXSTA TXSTA `VEuc  1 e 1 @152 ]
+"2643
+[v _SPBRG SPBRG `VEuc  1 e 1 @153 ]
+[s S320 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 VCFG0 1 0 :1:4 
 `uc 1 VCFG1 1 0 :1:5 
 `uc 1 . 1 0 :1:6 
 `uc 1 ADFM 1 0 :1:7 
 ]
 "2992
-[u S264 . 1 `S258 1 . 1 0 ]
-[v _ADCON1bits ADCON1bits `VES264  1 e 1 @159 ]
+[u S326 . 1 `S320 1 . 1 0 ]
+[v _ADCON1bits ADCON1bits `VES326  1 e 1 @159 ]
 "3388
 [v _ANSEL ANSEL `VEuc  1 e 1 @392 ]
 "3450
 [v _ANSELH ANSELH `VEuc  1 e 1 @393 ]
+"3841
+[v _CREN CREN `VEb  1 e 0 @196 ]
+"4006
+[v _OERR OERR `VEb  1 e 0 @193 ]
 "4156
 [v _RC6 RC6 `VEb  1 e 0 @62 ]
 "4159
 [v _RC7 RC7 `VEb  1 e 0 @63 ]
+"4180
+[v _RCIF RCIF `VEb  1 e 0 @101 ]
 "4195
 [v _RD3 RD3 `VEb  1 e 0 @67 ]
 "4198
@@ -232,55 +268,61 @@
 [v _TRISC6 TRISC6 `VEb  1 e 0 @1086 ]
 "4474
 [v _TRISC7 TRISC7 `VEb  1 e 0 @1087 ]
+"4513
+[v _TRMT TRMT `VEb  1 e 0 @1217 ]
 "358 C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\doprnt.c
 [v _dpowers dpowers `DC[10]ul  1 s 40 dpowers ]
 "7 C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\powers.c
 [v __powers_ _powers_ `DC[13]d  1 e 52 0 ]
 "39
 [v __npowers_ _npowers_ `DC[13]d  1 e 52 0 ]
-"29 C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\Lab2.c
+"30 C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\postlab2.c
 [v _i i `i  1 e 2 0 ]
-"30
+"31
 [v _valpot0 valpot0 `i  1 e 2 0 ]
-"32
-[v _val val `i  1 e 2 0 ]
 "33
+[v _val val `i  1 e 2 0 ]
+"34
 [v _varvolt varvolt `f  1 e 4 0 ]
-"58
+"70
 [v _main main `(v  1 e 1 0 ]
 {
-"82
-[v main@s s `[20]uc  1 a 20 0 ]
-"86
-[v main@varvolt2 varvolt2 `f  1 a 4 20 ]
-"95
+"103
+[v main@c c `uc  1 a 1 15 ]
+"92
+[v main@s s `[9]uc  1 a 9 6 ]
+"96
+[v main@varvolt2 varvolt2 `f  1 a 4 16 ]
+"109
 } 0
 "505 C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\doprnt.c
 [v _sprintf sprintf `(i  1 e 2 0 ]
 {
 [v sprintf@sp sp `*.5uc  1 a 1 wreg ]
 "533
-[v sprintf@fval fval `d  1 a 4 62 ]
-[u S548 . 4 `ul 1 vd 4 0 `d 1 integ 4 0 ]
+[v sprintf@fval fval `d  1 a 4 63 ]
+[u S639 . 4 `ul 1 vd 4 0 `d 1 integ 4 0 ]
 "543
-[v sprintf@tmpval tmpval `S548  1 a 4 58 ]
+[v sprintf@tmpval tmpval `S639  1 a 4 55 ]
 "545
-[v sprintf@val val `ul  1 a 4 51 ]
+[v sprintf@val val `ul  1 a 4 47 ]
 "534
-[v sprintf@eexp eexp `i  1 a 2 55 ]
-"517
-[v sprintf@prec prec `i  1 a 2 49 ]
+[v sprintf@eexp eexp `i  1 a 2 61 ]
+"514
+[v sprintf@width width `i  1 a 2 59 ]
 "525
-[v sprintf@flag flag `us  1 a 2 47 ]
+[v sprintf@flag flag `us  1 a 2 53 ]
+"517
+[v sprintf@prec prec `i  1 a 2 51 ]
 "512
-[v sprintf@c c `uc  1 a 1 66 ]
+[v sprintf@c c `uc  1 a 1 68 ]
 "507
 [v sprintf@ap ap `[1]*.4v  1 a 1 46 ]
 "505
 [v sprintf@sp sp `*.5uc  1 a 1 wreg ]
 [v sprintf@f f `*.24DCuc  1 p 1 32 ]
 "550
-[v sprintf@sp sp `*.5uc  1 a 1 57 ]
+[v sprintf@sp sp `*.5uc  1 a 1 67 ]
 "1567
 } 0
 "433
@@ -316,6 +358,15 @@
 [v ___awdiv@dividend dividend `i  1 p 2 15 ]
 "41
 } 0
+"8 C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\isdigit.c
+[v _isdigit isdigit `(b  1 e 0 0 ]
+{
+[v isdigit@c c `uc  1 a 1 wreg ]
+[v isdigit@c c `uc  1 a 1 wreg ]
+"14
+[v isdigit@c c `uc  1 a 1 7 ]
+"15
+} 0
 "417 C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\doprnt.c
 [v _fround fround `(d  1 s 4 fround ]
 {
@@ -338,17 +389,17 @@
 "8 C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\sprcmul.c
 [v ___flmul __flmul `(d  1 e 4 0 ]
 {
-[s S741 . 4 `uc 1 a 1 0 `uc 1 b 1 1 `uc 1 c 1 2 `uc 1 d 1 3 ]
+[s S837 . 4 `uc 1 a 1 0 `uc 1 b 1 1 `uc 1 c 1 2 `uc 1 d 1 3 ]
 "13
-[s S746 . 4 `i 1 wordA 2 0 `i 1 wordB 2 2 ]
-[u S749 . 4 `l 1 i 4 0 `d 1 f 4 0 `S741 1 fAsBytes 4 0 `S746 1 fAsWords 4 0 ]
-[v ___flmul@prod prod `S749  1 a 4 42 ]
+[s S842 . 4 `i 1 wordA 2 0 `i 1 wordB 2 2 ]
+[u S845 . 4 `l 1 i 4 0 `d 1 f 4 0 `S837 1 fAsBytes 4 0 `S842 1 fAsWords 4 0 ]
+[v ___flmul@prod prod `S845  1 a 4 42 ]
 "12
 [v ___flmul@grs grs `ul  1 a 4 36 ]
-[s S818 . 2 `uc 1 a 1 0 `uc 1 b 1 1 ]
+[s S914 . 2 `uc 1 a 1 0 `uc 1 b 1 1 ]
 "14
-[u S821 . 2 `i 1 i 2 0 `ui 1 n 2 0 `S818 1 nAsBytes 2 0 ]
-[v ___flmul@temp temp `S821  1 a 2 46 ]
+[u S917 . 2 `i 1 i 2 0 `ui 1 n 2 0 `S914 1 nAsBytes 2 0 ]
+[v ___flmul@temp temp `S917  1 a 2 46 ]
 "10
 [v ___flmul@bexp bexp `uc  1 a 1 41 ]
 "11
@@ -404,10 +455,10 @@
 [v ___llmod __llmod `(ul  1 e 4 0 ]
 {
 "10
-[v ___llmod@counter counter `uc  1 a 1 15 ]
+[v ___llmod@counter counter `uc  1 a 1 29 ]
 "5
-[v ___llmod@divisor divisor `ul  1 p 4 6 ]
-[v ___llmod@dividend dividend `ul  1 p 4 10 ]
+[v ___llmod@divisor divisor `ul  1 p 4 20 ]
+[v ___llmod@dividend dividend `ul  1 p 4 24 ]
 "25
 } 0
 "5 C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\__lldiv.c
@@ -465,23 +516,23 @@
 [v ___fleq@ff2 ff2 `d  1 p 4 10 ]
 "12
 } 0
-"96 C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\Lab2.c
+"110 C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\postlab2.c
 [v _setup setup `(v  1 e 1 0 ]
 {
-"141
+"154
 } 0
-"142
+"155
 [v _map map `(ui  1 e 2 0 ]
 {
-"143
+"156
 [v map@valmap valmap `f  1 a 4 40 ]
-"142
+"155
 [v map@varmap varmap `ui  1 p 2 24 ]
 [v map@minval minval `ui  1 p 2 26 ]
 [v map@maxval maxval `ui  1 p 2 28 ]
 [v map@minsal minsal `ui  1 p 2 30 ]
 [v map@maxsal maxsal `ui  1 p 2 32 ]
-"145
+"158
 } 0
 "10 C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\xxtofl.c
 [v ___xxtofl __xxtofl `(d  1 e 4 0 ]
@@ -530,51 +581,37 @@
 [v ___fltol@f1 f1 `d  1 p 4 0 ]
 "70
 } 0
-"47 C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\display8bits.c
-[v _WriteStringToLCD WriteStringToLCD `(v  1 e 1 0 ]
+"65 C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\USARTmodl.c
+[v _UART_Print UART_Print `(v  1 e 1 0 ]
 {
-[v WriteStringToLCD@s s `*.5DCuc  1 a 1 wreg ]
-[v WriteStringToLCD@s s `*.5DCuc  1 a 1 wreg ]
-[v WriteStringToLCD@s s `*.5DCuc  1 a 1 9 ]
-"53
+"67
+[v UART_Print@i i `uc  1 a 1 10 ]
+"65
+[v UART_Print@data data `*.26DCuc  1 p 2 7 ]
+"70
 } 0
-"27
-[v _WriteDataToLCD WriteDataToLCD `(v  1 e 1 0 ]
+"59
+[v _UART_PutC UART_PutC `(v  1 e 1 0 ]
 {
-[v WriteDataToLCD@LCDChar LCDChar `uc  1 a 1 wreg ]
-[v WriteDataToLCD@LCDChar LCDChar `uc  1 a 1 wreg ]
-"29
-[v WriteDataToLCD@LCDChar LCDChar `uc  1 a 1 7 ]
-"32
+[v UART_PutC@data data `DCuc  1 a 1 wreg ]
+[v UART_PutC@data data `DCuc  1 a 1 wreg ]
+[v UART_PutC@data data `DCuc  1 a 1 6 ]
+"63
 } 0
-"33
-[v _InitLCD InitLCD `(v  1 e 1 0 ]
-{
 "46
-} 0
-"54
-[v _ClearLCDScreen ClearLCDScreen `(v  1 e 1 0 ]
+[v _UART_GetC UART_GetC `(uc  1 e 1 0 ]
 {
-"58
+"55
 } 0
-"21
-[v _WriteCommandToLCD WriteCommandToLCD `(v  1 e 1 0 ]
+"41
+[v _UART_Data_Ready UART_Data_Ready `(b  1 e 0 0 ]
 {
-[v WriteCommandToLCD@Command Command `uc  1 a 1 wreg ]
-[v WriteCommandToLCD@Command Command `uc  1 a 1 wreg ]
-"23
-[v WriteCommandToLCD@Command Command `uc  1 a 1 7 ]
-"26
+"44
 } 0
-"14
-[v _ToggleEpinOfLCD ToggleEpinOfLCD `(v  1 e 1 0 ]
-{
-"20
-} 0
-"35 C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\Lab2.c
+"36 C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\postlab2.c
 [v _isr isr `II(v  1 e 1 0 ]
 {
-"54
+"55
 } 0
 "10 C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\xxtofl.c
 [v i1___xxtofl __xxtofl `(d  1 e 4 0 ]
