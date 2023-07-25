@@ -31,7 +31,7 @@ int valpot0;
 int valpot1;
 int val;
 float varvolt;
-
+uint16_t map(uint16_t varmap,uint16_t minval,uint16_t maxval, uint16_t minsal, uint16_t maxsal);
 void __interrupt() isr (void)
 {
 if(PIR1bits.ADIF){
@@ -83,7 +83,7 @@ CMCON = 0x07;            // Turn comparator off
  
 //float  varvolt2 = (varvolt*5)/255 ;
   
-     float varvolt2 = map();
+     float varvolt2 = map(varvolt,0,255,0,5);
      sprintf(s, "volt= %f", varvolt2);
         // Clear LCD screen
         const char msg[] = "AticleWorld.com";
@@ -139,6 +139,7 @@ void setup(void){
     
     
 }
-uint16_t map(uint16_t varmap,uint16_t minval,uint16_t maxval, uint16_t minsal, uint16_t maxsal){
-    return ((long)(varmap - minval)* (long)(maxsal-minsal)/ ((maxval / minval)+)
+uint16_t  map(uint16_t varmap,uint16_t minval,uint16_t maxval, uint16_t minsal, uint16_t maxsal){
+  float  valmap =((varmap - minval) * (maxsal - minsal)) / (maxval - minval) + minsal;
+  return valmap;
 }

@@ -2806,6 +2806,7 @@ int valpot0;
 int valpot1;
 int val;
 float varvolt;
+uint16_t map(uint16_t varmap,uint16_t minval,uint16_t maxval, uint16_t minsal, uint16_t maxsal);
 void __attribute__((picinterrupt(("")))) isr (void)
 {
 if(PIR1bits.ADIF){
@@ -2855,9 +2856,10 @@ CMCON = 0x07;
 
      char s[20];
 
-float varvolt2 = (varvolt*5)/255 ;
 
-        sprintf(s, "volt= %f", varvolt2);
+
+     float varvolt2 = map(varvolt,0,255,0,5);
+     sprintf(s, "volt= %f", varvolt2);
 
         const char msg[] = "AticleWorld.com";
     ClearLCDScreen();
@@ -2911,4 +2913,8 @@ void setup(void){
     INTCONbits.GIE = 1;
 
 
+}
+uint16_t map(uint16_t varmap,uint16_t minval,uint16_t maxval, uint16_t minsal, uint16_t maxsal){
+  float valmap =((varmap - minval) * (maxsal - minsal)) / (maxval - minval) + minsal;
+  return valmap;
 }
