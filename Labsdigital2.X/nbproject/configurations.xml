@@ -308,7 +308,17 @@
         <XC8-config-global>
         </XC8-config-global>
       </item>
-      <item path="postlab2prueba.c" ex="true" overriding="false">
+      <item path="postlab2.c" ex="true" overriding="false">
+      </item>
+      <item path="postlab2prueba.c" ex="false" overriding="false">
+        <HI-TECH-COMP>
+        </HI-TECH-COMP>
+        <HI-TECH-LINK>
+        </HI-TECH-LINK>
+        <XC8-CO>
+        </XC8-CO>
+        <XC8-config-global>
+        </XC8-config-global>
       </item>
       <item path="prelab2.c" ex="true" overriding="false">
         <HI-TECH-COMP>

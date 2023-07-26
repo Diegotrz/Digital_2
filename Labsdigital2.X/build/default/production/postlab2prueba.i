@@ -1,4 +1,4 @@
-# 1 "postlab2.c"
+# 1 "postlab2prueba.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,13 +6,8 @@
 # 1 "<built-in>" 2
 # 1 "C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "postlab2.c" 2
-
-
-
-
-
-
+# 1 "postlab2prueba.c" 2
+# 12 "postlab2prueba.c"
 #pragma config FOSC = INTRC_CLKOUT
 #pragma config WDTE = OFF
 #pragma config PWRTE = OFF
@@ -21,12 +16,13 @@
 #pragma config CPD = OFF
 #pragma config BOREN = OFF
 #pragma config IESO = OFF
-#pragma config FCMEN = OFF
-#pragma config LVP = OFF
+#pragma config FCMEN = ON
+#pragma config LVP = ON
 
 
 #pragma config BOR4V = BOR40V
 #pragma config WRT = OFF
+
 
 
 
@@ -2647,15 +2643,10 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 29 "C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\\pic\\include\\xc.h" 2 3
-# 23 "postlab2.c" 2
-
-# 1 "./setup_lb.h" 1
-
-
-
+# 29 "postlab2prueba.c" 2
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c90\\stdint.h" 1 3
-# 5 "./setup_lb.h" 2
+# 30 "postlab2prueba.c" 2
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c90\\stdio.h" 1 3
 
@@ -2754,51 +2745,7 @@ extern int vsscanf(const char *, const char *, va_list) __attribute__((unsupport
 #pragma printf_check(sprintf) const
 extern int sprintf(char *, const char *, ...);
 extern int printf(const char *, ...);
-# 6 "./setup_lb.h" 2
-
-
-
-void config_pines(char ans,int ansh);
-void config_tris(char tris_a,char tris_b,char tris_c,char tris_d,char tris_e);
-void config_ports(char port_a,char port_c,char port_d,char port_e);
-void config_pullup(int pulles, char pinpull);
-
-
-
-
-
-void config_osc(char valosc);
-void config_interrupt(int adcif, int adcie,int rbie, int rbif, int pie, int gie );
-# 24 "postlab2.c" 2
-
-# 1 "./adclib.h" 1
-# 11 "./adclib.h"
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c90\\stdint.h" 1 3
-# 11 "./adclib.h" 2
-
-
-
-
-void adc_init(int channel, int justf,int vcf0,int vcf1,char adcs);
-int adc_read();
-void adc_cchange(int channel);
-int adc_get_channel();
-# 25 "postlab2.c" 2
-
-
-# 1 "./display8bits.h" 1
-# 30 "./display8bits.h"
-int CMCON;
-
-
-
-void WriteCommandToLCD(unsigned char);
-void WriteDataToLCD(char);
-void InitLCD(void);
-void WriteStringToLCD(const char*);
-void ClearLCDScreen(void);
-void ToggleEpinOfLCD(void);
-# 27 "postlab2.c" 2
+# 31 "postlab2prueba.c" 2
 
 # 1 "./USARTmodl.h" 1
 # 11 "./USARTmodl.h"
@@ -2814,35 +2761,61 @@ uint8_t UART_GetC();
 void UART_PutC(const char data);
 void UART_Print(const char *data);
 void UART_maininit ();
-# 28 "postlab2.c" 2
+# 32 "postlab2prueba.c" 2
 
-void setup(void);
-int i;
-int valpot0;
-int valpot1;
-int val;
-float varvolt;
-uint16_t map(uint16_t varmap,uint16_t minval,uint16_t maxval, uint16_t minsal, uint16_t maxsal);
+
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c90\\string.h" 1 3
+# 14 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c90\\string.h" 3
+extern void * memcpy(void *, const void *, size_t);
+extern void * memmove(void *, const void *, size_t);
+extern void * memset(void *, int, size_t);
+# 36 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c90\\string.h" 3
+extern char * strcat(char *, const char *);
+extern char * strcpy(char *, const char *);
+extern char * strncat(char *, const char *, size_t);
+extern char * strncpy(char *, const char *, size_t);
+extern char * strdup(const char *);
+extern char * strtok(char *, const char *);
+
+
+extern int memcmp(const void *, const void *, size_t);
+extern int strcmp(const char *, const char *);
+extern int stricmp(const char *, const char *);
+extern int strncmp(const char *, const char *, size_t);
+extern int strnicmp(const char *, const char *, size_t);
+extern void * memchr(const void *, int, size_t);
+extern size_t strcspn(const char *, const char *);
+extern char * strpbrk(const char *, const char *);
+extern size_t strspn(const char *, const char *);
+extern char * strstr(const char *, const char *);
+extern char * stristr(const char *, const char *);
+extern char * strerror(int);
+extern size_t strlen(const char *);
+extern char * strchr(const char *, int);
+extern char * strichr(const char *, int);
+extern char * strrchr(const char *, int);
+extern char * strrichr(const char *, int);
+# 34 "postlab2prueba.c" 2
+
+char valpot;
+
+
 void __attribute__((picinterrupt(("")))) isr (void)
 {
-if(PIR1bits.ADIF){
+    if(PIR1bits.ADIF){
 
-       if (ADCON0bits.CHS ==1){
+         if (ADCON0bits.CHS ==0)
+          valpot = ADRESH;
+         PIR1bits.ADIF =0;
 
-              valpot0 =5/ ADRESH;
 
-        }
-        else if (ADCON0bits.CHS ==0){
-
-         varvolt = ADRESH;
-        }
-      else if (ADCON0bits.CHS == 2)
-            val = ADRESH;
-
-            PIR1bits.ADIF =0;
 
     }
+
 }
+void setup(void);
+void preguntas (void);
+
  char uart_read(){
  if(PIR1bits.RCIF== 0){
      if (RCSTAbits.OERR){
@@ -2856,46 +2829,63 @@ if(PIR1bits.ADIF){
      return 0;
  }
 
+void main(void)
+{
+    setup();
+  OSCCON = 0x70;
 
-void main(void) {
+  UART_Init(9600);
 
+  _delay((unsigned long)((2000)*(8000000/4000.0)));
 
+  UART_Print("1.Leer potenciometro\r\n");
 
+  _delay((unsigned long)((1000)*(8000000/4000.0)));
 
+  UART_Print(message);
 
+  _delay((unsigned long)((1000)*(8000000/4000.0)));
 
-
- setup();
+  UART_Print("\r\n");
  ADCON0bits.GO =1;
- i=0;
+ char text[9];
+  while(1)
+  {
+       if (ADCON0bits.GO ==0)
+     ADCON0bits.GO =1;
+# 103 "postlab2prueba.c"
+      switch (uart_read()){
+          case '1':
 
-    while(1){
+               valpot = ADRESH;
+               UART_Print ("\r\n");
+            sprintf(text, "%03u\r\n", valpot);
+            UART_Print(text);
 
 
-     if (ADCON0bits.GO ==0){
-           for (i=0;i<=2;i++){
-           ADCON0bits.CHS = i;
-           ADCON0bits.GO =1;
-        }
-     }
+              preguntas();
+             RCREG ='0';
 
-     char s[9];
+             break;
+           case '2':
+               _delay((unsigned long)((9200000)*(8000000/4000000.0)));
+               UART_Print ("\r\n");
+               UART_Print(uart_read());
+               UART_Print ("\r\n");
+               preguntas();
+               RCREG ='0';
 
+               break;
 
-     UART_Print ("\r\n");
-     float varvolt2 = map(varvolt,0,255,0,5);
-     sprintf(s, "volt= %f", varvolt2);
-       UART_Print(s);
-     sprintf(s, "%03u\r\n", varvolt2);
-     UART_Print(s);
+      }
 
-        if ( UART_Data_Ready() )
+    if ( UART_Data_Ready() )
     {
       uint8_t c = UART_GetC();
       UART_PutC(c);
     }
-    }
 
+  }
 
 }
 void setup(void){
@@ -2903,22 +2893,7 @@ void setup(void){
     ANSELH = 0;
 
     TRISA = 0xFF;
-    TRISB = 0b11111111;
-    TRISD = 0;
-    TRISE = 0;
-    OPTION_REGbits.nRBPU = 0;
-    WPUB = 0b111111;
 
-
-    PORTD = 0;
-    PORTE = 0;
-
-
-
-
-
-    OSCCONbits.IRCF = 0b0111;
-    OSCCONbits.SCS = 1;
 
 
     ADCON1bits.ADFM = 0;
@@ -2930,20 +2905,14 @@ void setup(void){
     ADCON0bits.ADON= 1;
     _delay((unsigned long)((50)*(8000000/4000000.0)));
 
-
-
     PIR1bits.ADIF = 0;
     PIE1bits.ADIE = 1;
-
-    INTCONbits.RBIE = 0;
-    INTCONbits.RBIF = 1;
-
     INTCONbits.PEIE = 1;
     INTCONbits.GIE = 1;
 
-
 }
-uint16_t map(uint16_t varmap,uint16_t minval,uint16_t maxval, uint16_t minsal, uint16_t maxsal){
-  float valmap =((varmap - minval) * (maxsal - minsal)) / (maxval - minval) + minsal;
-  return valmap;
+void preguntas(void)
+{
+    UART_Print ("1.Leer potenciometro\r\n");
+    UART_Print (message);
 }
