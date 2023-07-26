@@ -28,14 +28,14 @@ void SPI_Write(char incoming);
 void SPI_Initialize_Master(); 
 
 void main(){
-    
+    int a= 60;
     SPI_Initialize_Master(); 
     while (1){
      SPI_Write(0X0A);
          __delay_ms(100);
        SPI_Write(0X0F);
          __delay_ms(100);
-       SPI_Write(0X15);
+       SPI_Write(a);
          __delay_ms(100);
     
     

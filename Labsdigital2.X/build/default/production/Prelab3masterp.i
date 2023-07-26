@@ -2656,14 +2656,14 @@ void SPI_Write(char incoming);
 void SPI_Initialize_Master();
 
 void main(){
-
+    int a= 60;
     SPI_Initialize_Master();
     while (1){
      SPI_Write(0X0A);
          _delay((unsigned long)((100)*(8000000/4000.0)));
        SPI_Write(0X0F);
          _delay((unsigned long)((100)*(8000000/4000.0)));
-       SPI_Write(0X15);
+       SPI_Write(a);
          _delay((unsigned long)((100)*(8000000/4000.0)));
 
 

@@ -325,6 +325,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 [e :U _main ]
 [f ]
+"31
+[; ;Prelab3masterp.c: 31:     int a= 60;
+[v _a `i ~T0 @X0 1 a ]
+[e = _a -> 60 `i ]
 "32
 [; ;Prelab3masterp.c: 32:     SPI_Initialize_Master();
 [e ( _SPI_Initialize_Master ..  ]
@@ -345,8 +349,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;Prelab3masterp.c: 37:          _delay((unsigned long)((100)*(8000000/4000.0)));
 [e ( __delay (1 -> * -> -> 100 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
 "38
-[; ;Prelab3masterp.c: 38:        SPI_Write(0X15);
-[e ( _SPI_Write (1 -> -> 21 `i `uc ]
+[; ;Prelab3masterp.c: 38:        SPI_Write(a);
+[e ( _SPI_Write (1 -> _a `uc ]
 "39
 [; ;Prelab3masterp.c: 39:          _delay((unsigned long)((100)*(8000000/4000.0)));
 [e ( __delay (1 -> * -> -> 100 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]

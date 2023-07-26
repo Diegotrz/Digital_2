@@ -9,11 +9,11 @@
 ### Memory Usage ###
  Intel Hex-file ranges:
   0h - 2Fh		(dist/default/production\Labsdigital2.X.production.hex)
-  F4Ch - FFFh		(dist/default/production\Labsdigital2.X.production.hex)
+  F44h - FFFh		(dist/default/production\Labsdigital2.X.production.hex)
   4000h - 4007h		(dist/default/production\Labsdigital2.X.production.hex)
   400Eh - 4011h		(dist/default/production\Labsdigital2.X.production.hex)
  Unused ranges:
-  30h - F4Bh
+  30h - F43h
   1000h - 3FFFh
   4008h - 400Dh
 
@@ -28,7 +28,7 @@
 00000010 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
 00000020 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
 ----------------------------------------------------------
-00000F40 | -- -- -- -- -- -- -- -- -- -- -- -- H1 H1 H1 H1
+00000F40 | -- -- -- -- H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
 00000F50 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
 00000F60 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
 00000F70 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
