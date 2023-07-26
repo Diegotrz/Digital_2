@@ -29,7 +29,7 @@
 #define _XTAL_FREQ 8000000
 #include <string.h>
 char valpot;
-
+uint16_t map(uint16_t varmap,uint16_t minval,uint16_t maxval, uint16_t minsal, uint16_t maxsal);
 /********************** end UART functions **************************/
 void __interrupt() isr (void)
 {
@@ -98,10 +98,14 @@ void main(void)
       //Probando usando un break
       switch (uart_read()){
           case '1': 
-             
+              
+               
+      
                valpot = ADRESH;
-               UART_Print ("\r\n");
-            sprintf(text, "%03u\r\n", valpot);
+              uint16_t varvolt2 = map(valpot,0,255,0,5);
+     
+              UART_Print ("\r\n");
+            sprintf(text, "%03u\r\n", varvolt2);
             UART_Print(text);
    
   
@@ -109,12 +113,15 @@ void main(void)
              RCREG ='0';
              
              break;
-           case '2': 
-               __delay_us(9200000);
-               UART_Print ("\r\n");
-               UART_Print(uart_read());
-               UART_Print ("\r\n");
-               preguntas();
+           case '+': 
+               __delay_us(2000);
+               PORTD ++;
+               RCREG ='0';
+               
+               break;
+                 case '-': 
+               __delay_us(2000);
+               PORTD --;
                RCREG ='0';
                
                break;
@@ -157,4 +164,8 @@ void preguntas(void)
 {
     UART_Print ("1.Leer potenciometro\r\n");
     UART_Print (message);
+}
+uint16_t  map(uint16_t varmap,uint16_t minval,uint16_t maxval, uint16_t minsal, uint16_t maxsal){
+  float  valmap =((varmap - minval) * (maxsal - minsal)) / (maxval - minval) + minsal;
+  return valmap;
 }
