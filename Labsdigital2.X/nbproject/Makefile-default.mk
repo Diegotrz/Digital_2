@@ -51,17 +51,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=LCD.c display8bits.c postlab2.c USARTmodl.c
+SOURCEFILES_QUOTED_IF_SPACED=LCD.c display8bits.c USARTmodl.c Prelab3masterp.c
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/LCD.p1 ${OBJECTDIR}/display8bits.p1 ${OBJECTDIR}/postlab2.p1 ${OBJECTDIR}/USARTmodl.p1
-POSSIBLE_DEPFILES=${OBJECTDIR}/LCD.p1.d ${OBJECTDIR}/display8bits.p1.d ${OBJECTDIR}/postlab2.p1.d ${OBJECTDIR}/USARTmodl.p1.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/LCD.p1 ${OBJECTDIR}/display8bits.p1 ${OBJECTDIR}/USARTmodl.p1 ${OBJECTDIR}/Prelab3masterp.p1
+POSSIBLE_DEPFILES=${OBJECTDIR}/LCD.p1.d ${OBJECTDIR}/display8bits.p1.d ${OBJECTDIR}/USARTmodl.p1.d ${OBJECTDIR}/Prelab3masterp.p1.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/LCD.p1 ${OBJECTDIR}/display8bits.p1 ${OBJECTDIR}/postlab2.p1 ${OBJECTDIR}/USARTmodl.p1
+OBJECTFILES=${OBJECTDIR}/LCD.p1 ${OBJECTDIR}/display8bits.p1 ${OBJECTDIR}/USARTmodl.p1 ${OBJECTDIR}/Prelab3masterp.p1
 
 # Source Files
-SOURCEFILES=LCD.c display8bits.c postlab2.c USARTmodl.c
+SOURCEFILES=LCD.c display8bits.c USARTmodl.c Prelab3masterp.c
 
 
 
@@ -104,14 +104,6 @@ ${OBJECTDIR}/display8bits.p1: display8bits.c  nbproject/Makefile-${CND_CONF}.mk
 	@-${MV} ${OBJECTDIR}/display8bits.d ${OBJECTDIR}/display8bits.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/display8bits.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
-${OBJECTDIR}/postlab2.p1: postlab2.c  nbproject/Makefile-${CND_CONF}.mk 
-	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/postlab2.p1.d 
-	@${RM} ${OBJECTDIR}/postlab2.p1 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -mdebugger=none   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto     -o ${OBJECTDIR}/postlab2.p1 postlab2.c 
-	@-${MV} ${OBJECTDIR}/postlab2.d ${OBJECTDIR}/postlab2.p1.d 
-	@${FIXDEPS} ${OBJECTDIR}/postlab2.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
-	
 ${OBJECTDIR}/USARTmodl.p1: USARTmodl.c  nbproject/Makefile-${CND_CONF}.mk 
 	@${MKDIR} "${OBJECTDIR}" 
 	@${RM} ${OBJECTDIR}/USARTmodl.p1.d 
@@ -119,6 +111,14 @@ ${OBJECTDIR}/USARTmodl.p1: USARTmodl.c  nbproject/Makefile-${CND_CONF}.mk
 	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -mdebugger=none   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto     -o ${OBJECTDIR}/USARTmodl.p1 USARTmodl.c 
 	@-${MV} ${OBJECTDIR}/USARTmodl.d ${OBJECTDIR}/USARTmodl.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/USARTmodl.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
+${OBJECTDIR}/Prelab3masterp.p1: Prelab3masterp.c  nbproject/Makefile-${CND_CONF}.mk 
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/Prelab3masterp.p1.d 
+	@${RM} ${OBJECTDIR}/Prelab3masterp.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -mdebugger=none   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto     -o ${OBJECTDIR}/Prelab3masterp.p1 Prelab3masterp.c 
+	@-${MV} ${OBJECTDIR}/Prelab3masterp.d ${OBJECTDIR}/Prelab3masterp.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/Prelab3masterp.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
 else
 ${OBJECTDIR}/LCD.p1: LCD.c  nbproject/Makefile-${CND_CONF}.mk 
@@ -137,14 +137,6 @@ ${OBJECTDIR}/display8bits.p1: display8bits.c  nbproject/Makefile-${CND_CONF}.mk
 	@-${MV} ${OBJECTDIR}/display8bits.d ${OBJECTDIR}/display8bits.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/display8bits.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
-${OBJECTDIR}/postlab2.p1: postlab2.c  nbproject/Makefile-${CND_CONF}.mk 
-	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/postlab2.p1.d 
-	@${RM} ${OBJECTDIR}/postlab2.p1 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto     -o ${OBJECTDIR}/postlab2.p1 postlab2.c 
-	@-${MV} ${OBJECTDIR}/postlab2.d ${OBJECTDIR}/postlab2.p1.d 
-	@${FIXDEPS} ${OBJECTDIR}/postlab2.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
-	
 ${OBJECTDIR}/USARTmodl.p1: USARTmodl.c  nbproject/Makefile-${CND_CONF}.mk 
 	@${MKDIR} "${OBJECTDIR}" 
 	@${RM} ${OBJECTDIR}/USARTmodl.p1.d 
@@ -152,6 +144,14 @@ ${OBJECTDIR}/USARTmodl.p1: USARTmodl.c  nbproject/Makefile-${CND_CONF}.mk
 	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto     -o ${OBJECTDIR}/USARTmodl.p1 USARTmodl.c 
 	@-${MV} ${OBJECTDIR}/USARTmodl.d ${OBJECTDIR}/USARTmodl.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/USARTmodl.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
+${OBJECTDIR}/Prelab3masterp.p1: Prelab3masterp.c  nbproject/Makefile-${CND_CONF}.mk 
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/Prelab3masterp.p1.d 
+	@${RM} ${OBJECTDIR}/Prelab3masterp.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto     -o ${OBJECTDIR}/Prelab3masterp.p1 Prelab3masterp.c 
+	@-${MV} ${OBJECTDIR}/Prelab3masterp.d ${OBJECTDIR}/Prelab3masterp.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/Prelab3masterp.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
 endif
 
