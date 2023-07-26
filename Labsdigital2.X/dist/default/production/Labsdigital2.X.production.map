@@ -6,10 +6,10 @@ Linker command line:
   --edf=C:\Program Files\Microchip\xc8\v2.40\pic\dat\20220703182018_en.msgs \
   -cn -h+dist/default/production\Labsdigital2.X.production.sym \
   --cmf=dist/default/production\Labsdigital2.X.production.cmf -z -Q16F887 \
-  -oC:\Users\diego\AppData\Local\Temp\xcAs9bc.4 --defsym=__MPLAB_BUILD=1 \
+  -oC:\Users\Diego\AppData\Local\Temp\xcAsgu0.4 --defsym=__MPLAB_BUILD=1 \
   --fixupoverflow=error \
   -Mdist/default/production/Labsdigital2.X.production.map \
-  --md=C:\Users\diego\AppData\Local\Temp\xcAs9bc.dat -E1 -ver=XC8 Compiler \
+  --md=C:\Users\Diego\AppData\Local\Temp\xcAsgu0.dat -E1 -ver=XC8 Compiler \
   --acfsm=1493 -ACODE=00h-07FFhx4 -ASTRCODE=00h-01FFFh -ASTRING=00h-0FFhx32 \
   -ACONST=00h-0FFhx32 -AENTRY=00h-0FFhx32 -ACOMMON=070h-07Fh \
   -ABANK0=020h-06Fh -ABANK1=0A0h-0EFh -ABANK2=0110h-016Fh \
@@ -20,7 +20,7 @@ Linker command line:
   -AEEDATA=00h-0FFh/02100h -peeprom_data=EEDATA -DEEDATA=2 -DCODE=2 \
   -DSTRCODE=2 -DSTRING=2 -DCONST=2 -DENTRY=2 \
   -preset_vec=00h,intentry=04h,init,end_init -ppowerup=CODE -pcinit=CODE \
-  -pfunctab=ENTRY -k C:\Users\diego\AppData\Local\Temp\xcAs9bc.o \
+  -pfunctab=ENTRY -k C:\Users\Diego\AppData\Local\Temp\xcAsgu0.o \
   dist/default/production\Labsdigital2.X.production.o 
 
 Object code version is 3.11
@@ -30,7 +30,7 @@ Machine type is 16F887
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\diego\AppData\Local\Temp\xcAs9bc.o
+C:\Users\Diego\AppData\Local\Temp\xcAsgu0.o
                 end_init                              C        C        3        8       0
                 reset_vec                             0        0        3        0       0
                 config                             2007     2007        2        0       4
@@ -365,7 +365,7 @@ __stringbase             strings      03AD
 __stringtab              strings      039E
 _dpowers                 strings      03AE
 _isdigit                 text3        0520
-_isdigit$864             cstackCOMMON 0073
+_isdigit$877             cstackCOMMON 0073
 _isr                     text15       04E1
 _main                    maintext     019E
 _message                 strings      03B8
@@ -404,15 +404,6 @@ wtemp0                   (abs)        007E
 MODULE INFORMATION
 
 Module		Function		Class		Link	Load	Size
-postlab2prueba.c
-		_main          		CODE           	019E	0000	248
-		_uart_read     		CODE           	04FA	0000	19
-		_isr           		CODE           	04E1	0000	25
-		_preguntas     		CODE           	050D	0000	19
-		_setup         		CODE           	04BF	0000	34
-
-postlab2prueba.c estimated size: 345
-
 C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\__lldiv.c
 		___lldiv       		CODE           	0336	0000	104
 
@@ -441,6 +432,15 @@ C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\lwmod.c
 		___lwmod       		CODE           	042B	0000	60
 
 C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\lwmod.c estimated size: 60
+
+postlab2.c
+		_main          		CODE           	019E	0000	248
+		_uart_read     		CODE           	04FA	0000	19
+		_isr           		CODE           	04E1	0000	25
+		_preguntas     		CODE           	050D	0000	19
+		_setup         		CODE           	04BF	0000	34
+
+postlab2.c estimated size: 345
 
 shared
 		__stringtab    		STRING         	039E	0000	16

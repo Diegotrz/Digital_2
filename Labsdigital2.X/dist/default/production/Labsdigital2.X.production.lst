@@ -1,7 +1,7 @@
 
 
 Microchip MPLAB XC8 Assembler V2.40 build 20220703182018 
-                                                                                               Tue Jul 25 19:53:48 2023
+                                                                                               Tue Jul 25 22:26:54 2023
 
 Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1 
      1                           	processor	16F887
@@ -523,14 +523,14 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1
    509     03C5  3469               	retlw	105
    510     03C6  3400               	retlw	0
    511     03C7                     __end_of_message:
-   512     000B                     _INTCONbits	set	11
-   513     0018                     _RCSTAbits	set	24
-   514     001E                     _ADRESH	set	30
-   515     001F                     _ADCON0bits	set	31
-   516     000C                     _PIR1bits	set	12
-   517     0019                     _TXREG	set	25
-   518     001A                     _RCREG	set	26
-   519     0018                     _RCSTA	set	24
+   512     0019                     _TXREG	set	25
+   513     0018                     _RCSTA	set	24
+   514     000B                     _INTCONbits	set	11
+   515     001A                     _RCREG	set	26
+   516     0018                     _RCSTAbits	set	24
+   517     001E                     _ADRESH	set	30
+   518     001F                     _ADCON0bits	set	31
+   519     000C                     _PIR1bits	set	12
    520     0008                     _PORTD	set	8
    521     0008                     _PORTDbits	set	8
    522     00C4                     _CREN	set	196
@@ -543,12 +543,12 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1
    529     0046                     _RD6	set	70
    530     0045                     _RD5	set	69
    531     0044                     _RD4	set	68
-   532     008C                     _PIE1bits	set	140
-   533     009F                     _ADCON1bits	set	159
-   534     0085                     _TRISA	set	133
-   535     008F                     _OSCCON	set	143
-   536     0098                     _TXSTA	set	152
-   537     0099                     _SPBRG	set	153
+   532     0098                     _TXSTA	set	152
+   533     0099                     _SPBRG	set	153
+   534     008C                     _PIE1bits	set	140
+   535     009F                     _ADCON1bits	set	159
+   536     0085                     _TRISA	set	133
+   537     008F                     _OSCCON	set	143
    538     0088                     _TRISD	set	136
    539     04C1                     _TRMT	set	1217
    540     043E                     _TRISC6	set	1086
@@ -621,8 +621,8 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1
    607                           
    608                           	psect	cstackCOMMON
    609     0070                     __pcstackCOMMON:
-   610     0070                     ?_isdigit:
-   611     0070                     ?_UART_Data_Ready:	
+   610     0070                     ?_UART_Data_Ready:
+   611     0070                     ?_isdigit:	
    612                           ; 1 bit 
    613                           
    614     0070                     ?_setup:	
@@ -653,16 +653,16 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1
    639                           ; 1 bytes @ 0x0
    640     0070                     	ds	3
    641     0073                     ??_setup:
-   642     0073                     ??_isdigit:	
+   642     0073                     ??_UART_Data_Ready:	
    643                           ; 1 bytes @ 0x3
    644                           
-   645     0073                     ??_UART_Data_Ready:	
+   645     0073                     ??_UART_GetC:	
    646                           ; 1 bytes @ 0x3
    647                           
-   648     0073                     ??_UART_GetC:	
+   648     0073                     ??_UART_PutC:	
    649                           ; 1 bytes @ 0x3
    650                           
-   651     0073                     ??_UART_PutC:	
+   651     0073                     ??_isdigit:	
    652                           ; 1 bytes @ 0x3
    653                           
    654     0073                     ??_uart_read:	
@@ -680,7 +680,7 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1
    666     0073                     UART_PutC@data:	
    667                           ; 2 bytes @ 0x3
    668                           
-   669     0073                     _isdigit$864:	
+   669     0073                     _isdigit$877:	
    670                           ; 1 bytes @ 0x3
    671                           
    672     0073                     ___wmul@multiplier:	
@@ -847,7 +847,7 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1
    833 ;;
    834 ;; *************** function _main *****************
    835 ;; Defined at:
-   836 ;;		line 67 in file "postlab2prueba.c"
+   836 ;;		line 63 in file "postlab2.c"
    837 ;; Parameters:    Size  Location     Type
    838 ;;		None
    839 ;; Auto vars:     Size  Location     Type
@@ -891,18 +891,18 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1
    877                           ; Regs used in _main: [wreg-fsr0h+status,2+status,0+btemp+1+pclath+cstack]
    878                           
    879                           
-   880                           ;postlab2prueba.c: 69:     setup();
+   880                           ;postlab2.c: 65:     setup();
    881     019E  120A  118A  24BF  120A  118A  	fcall	_setup
    882     01A3                     l2011:
    883                           
-   884                           ;postlab2prueba.c: 70:   OSCCON = 0x70;
+   884                           ;postlab2.c: 66:   OSCCON = 0x70;
    885     01A3  3070               	movlw	112
    886     01A4  1683               	bsf	3,5	;RP0=1, select bank1
    887     01A5  1303               	bcf	3,6	;RP1=0, select bank1
    888     01A6  008F               	movwf	15	;volatile
    889     01A7                     l2013:
    890                           
-   891                           ;postlab2prueba.c: 72:   UART_Init(9600);
+   891                           ;postlab2.c: 68:   UART_Init(9600);
    892     01A7  3000               	movlw	0
    893     01A8  1283               	bcf	3,5	;RP0=0, select bank0
    894     01A9  1303               	bcf	3,6	;RP1=0, select bank0
@@ -916,7 +916,7 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1
    902     01B1  120A  118A  2296  120A  118A  	fcall	_UART_Init
    903     01B6                     l2015:
    904                           
-   905                           ;postlab2prueba.c: 74:   _delay((unsigned long)((2000)*(8000000/4000.0)));
+   905                           ;postlab2.c: 70:   _delay((unsigned long)((2000)*(8000000/4000.0)));
    906     01B6  3015               	movlw	21
    907     01B7  1283               	bcf	3,5	;RP0=0, select bank0
    908     01B8  1303               	bcf	3,6	;RP1=0, select bank0
@@ -935,7 +935,7 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1
    921     01C4  29C5               	nop2
    922     01C5                     l2017:
    923                           
-   924                           ;postlab2prueba.c: 76:   UART_Print("1.Leer potenciometro\r\n");
+   924                           ;postlab2.c: 72:   UART_Print("1.Leer potenciometro\r\n");
    925     01C5  301A               	movlw	(low ((STR_1-__stringbase)| (0+32768)))& (0+255)
    926     01C6  00F4               	movwf	UART_Print@data
    927     01C7  3080               	movlw	128
@@ -943,7 +943,7 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1
    929     01C9  120A  118A  2467  120A  118A  	fcall	_UART_Print
    930     01CE                     l2019:
    931                           
-   932                           ;postlab2prueba.c: 78:   _delay((unsigned long)((1000)*(8000000/4000.0)));
+   932                           ;postlab2.c: 74:   _delay((unsigned long)((1000)*(8000000/4000.0)));
    933     01CE  300B               	movlw	11
    934     01CF  1283               	bcf	3,5	;RP0=0, select bank0
    935     01D0  1303               	bcf	3,6	;RP1=0, select bank0
@@ -961,7 +961,7 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1
    947     01DB  29D6               	goto	u1637
    948     01DC                     l2021:
    949                           
-   950                           ;postlab2prueba.c: 80:   UART_Print(message);
+   950                           ;postlab2.c: 76:   UART_Print(message);
    951     01DC  300B               	movlw	(low ((_message-__stringbase)| (0+32768)))& (0+255)
    952     01DD  00F4               	movwf	UART_Print@data
    953     01DE  3080               	movlw	128
@@ -969,7 +969,7 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1
    955     01E0  120A  118A  2467  120A  118A  	fcall	_UART_Print
    956     01E5                     l2023:
    957                           
-   958                           ;postlab2prueba.c: 82:   _delay((unsigned long)((1000)*(8000000/4000.0)));
+   958                           ;postlab2.c: 78:   _delay((unsigned long)((1000)*(8000000/4000.0)));
    959     01E5  300B               	movlw	11
    960     01E6  1283               	bcf	3,5	;RP0=0, select bank0
    961     01E7  1303               	bcf	3,6	;RP1=0, select bank0
@@ -987,7 +987,7 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1
    973     01F2  29ED               	goto	u1647
    974     01F3                     l2025:
    975                           
-   976                           ;postlab2prueba.c: 84:   UART_Print("\r\n");
+   976                           ;postlab2.c: 80:   UART_Print("\r\n");
    977     01F3  302E               	movlw	(low (((STR_1+20)-__stringbase)| (0+32768)))& (0+255)
    978     01F4  00F4               	movwf	UART_Print@data
    979     01F5  3080               	movlw	128
@@ -995,13 +995,13 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1
    981     01F7  120A  118A  2467  120A  118A  	fcall	_UART_Print
    982     01FC                     l2027:
    983                           
-   984                           ;postlab2prueba.c: 85:  ADCON0bits.GO =1;
+   984                           ;postlab2.c: 81:  ADCON0bits.GO =1;
    985     01FC  1283               	bcf	3,5	;RP0=0, select bank0
    986     01FD  1303               	bcf	3,6	;RP1=0, select bank0
    987     01FE  149F               	bsf	31,1	;volatile
    988     01FF                     l2029:
    989                           
-   990                           ;postlab2prueba.c: 88:   {;postlab2prueba.c: 89:        if (ADCON0bits.GO ==0)
+   990                           ;postlab2.c: 84:   {;postlab2.c: 85:        if (ADCON0bits.GO ==0)
    991     01FF  1283               	bcf	3,5	;RP0=0, select bank0
    992     0200  1303               	bcf	3,6	;RP1=0, select bank0
    993     0201  189F               	btfsc	31,1	;volatile
@@ -1012,17 +1012,17 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1
    998     0205                     u1600:
    999     0205                     l2031:
   1000                           
-  1001                           ;postlab2prueba.c: 90:      ADCON0bits.GO =1;
+  1001                           ;postlab2.c: 86:      ADCON0bits.GO =1;
   1002     0205  149F               	bsf	31,1	;volatile
   1003     0206  2A65               	goto	l2055
   1004     0207                     l2033:
   1005                           
-  1006                           ;postlab2prueba.c: 106:                valpot = ADRESH;
+  1006                           ;postlab2.c: 102:                valpot = ADRESH;
   1007     0207  081E               	movf	30,w	;volatile
   1008     0208  00C4               	movwf	_valpot
   1009     0209                     l2035:
   1010                           
-  1011                           ;postlab2prueba.c: 107:                UART_Print ("\r\n");
+  1011                           ;postlab2.c: 103:                UART_Print ("\r\n");
   1012     0209  302E               	movlw	(low (((STR_1+20)-__stringbase)| (0+32768)))& (0+255)
   1013     020A  00F4               	movwf	UART_Print@data
   1014     020B  3080               	movlw	128
@@ -1030,7 +1030,7 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1
   1016     020D  120A  118A  2467  120A  118A  	fcall	_UART_Print
   1017     0212                     l2037:
   1018                           
-  1019                           ;postlab2prueba.c: 108:             sprintf(text, "%03u\r\n", valpot);
+  1019                           ;postlab2.c: 104:             sprintf(text, "%03u\r\n", valpot);
   1020     0212  3031               	movlw	(low ((STR_4-__stringbase)| (0+32768)))& (0+255)
   1021     0213  1283               	bcf	3,5	;RP0=0, select bank0
   1022     0214  1303               	bcf	3,6	;RP1=0, select bank0
@@ -1046,7 +1046,7 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1
   1032     021E  120A  118A  2018  120A  118A  	fcall	_sprintf
   1033     0223                     l2039:
   1034                           
-  1035                           ;postlab2prueba.c: 109:             UART_Print(text);
+  1035                           ;postlab2.c: 105:             UART_Print(text);
   1036     0223  303A               	movlw	(low (main@text| 0))& (0+255)
   1037     0224  00F4               	movwf	UART_Print@data
   1038     0225  3000               	movlw	0
@@ -1054,21 +1054,20 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1
   1040     0227  120A  118A  2467  120A  118A  	fcall	_UART_Print
   1041     022C                     l2041:
   1042                           
-  1043                           ;postlab2prueba.c: 112:               preguntas();
+  1043                           ;postlab2.c: 108:               preguntas();
   1044     022C  120A  118A  250D  120A  118A  	fcall	_preguntas
   1045                           
-  1046                           ;postlab2prueba.c: 113:              RCREG ='0';
+  1046                           ;postlab2.c: 109:              RCREG ='0';
   1047     0231  3030               	movlw	48
   1048     0232  1283               	bcf	3,5	;RP0=0, select bank0
   1049     0233  1303               	bcf	3,6	;RP1=0, select bank0
   1050     0234  009A               	movwf	26	;volatile
   1051                           
-  1052                           ;postlab2prueba.c: 115:              break;
+  1052                           ;postlab2.c: 111:              break;
   1053     0235  2A7B               	goto	l2057
   1054     0236                     l2043:
   1055                           
-  1056                           ;postlab2prueba.c: 117:                _delay((unsigned long)((9200000)*(8000000/4000000
-      +                          .0)));
+  1056                           ;postlab2.c: 113:                _delay((unsigned long)((9200000)*(8000000/4000000.0)));
   1057     0236  305E               	movlw	94
   1058     0237  1283               	bcf	3,5	;RP0=0, select bank0
   1059     0238  1303               	bcf	3,6	;RP1=0, select bank0
@@ -1087,7 +1086,7 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1
   1072     0244  2A45               	nop2
   1073     0245                     l2045:
   1074                           
-  1075                           ;postlab2prueba.c: 118:                UART_Print ("\r\n");
+  1075                           ;postlab2.c: 114:                UART_Print ("\r\n");
   1076     0245  302E               	movlw	(low (((STR_1+20)-__stringbase)| (0+32768)))& (0+255)
   1077     0246  00F4               	movwf	UART_Print@data
   1078     0247  3080               	movlw	128
@@ -1095,7 +1094,7 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1
   1080     0249  120A  118A  2467  120A  118A  	fcall	_UART_Print
   1081     024E                     l2047:
   1082                           
-  1083                           ;postlab2prueba.c: 119:                UART_Print(uart_read());
+  1083                           ;postlab2.c: 115:                UART_Print(uart_read());
   1084     024E  120A  118A  24FA  120A  118A  	fcall	_uart_read
   1085     0253  00F4               	movwf	UART_Print@data
   1086     0254  3080               	movlw	128
@@ -1103,7 +1102,7 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1
   1088     0256  120A  118A  2467  120A  118A  	fcall	_UART_Print
   1089     025B                     l2049:
   1090                           
-  1091                           ;postlab2prueba.c: 120:                UART_Print ("\r\n");
+  1091                           ;postlab2.c: 116:                UART_Print ("\r\n");
   1092     025B  302E               	movlw	(low (((STR_1+20)-__stringbase)| (0+32768)))& (0+255)
   1093     025C  00F4               	movwf	UART_Print@data
   1094     025D  3080               	movlw	128
@@ -1152,7 +1151,7 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1
   1136     027A  2A7B               	goto	l2057
   1137     027B                     l2057:
   1138                           
-  1139                           ;postlab2prueba.c: 128:     if ( UART_Data_Ready() )
+  1139                           ;postlab2.c: 124:     if ( UART_Data_Ready() )
   1140     027B  120A  118A  254C  120A  118A  	fcall	_UART_Data_Ready
   1141     0280  1C03               	btfss	3,0
   1142     0281  2A83               	goto	u1611
@@ -1162,14 +1161,14 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1
   1146     0284                     u1610:
   1147     0284                     l2059:
   1148                           
-  1149                           ;postlab2prueba.c: 129:     {;postlab2prueba.c: 130:       uint8_t c = UART_GetC();
+  1149                           ;postlab2.c: 125:     {;postlab2.c: 126:       uint8_t c = UART_GetC();
   1150     0284  120A  118A  2532  120A  118A  	fcall	_UART_GetC
   1151     0289  1283               	bcf	3,5	;RP0=0, select bank0
   1152     028A  1303               	bcf	3,6	;RP1=0, select bank0
   1153     028B  00C3               	movwf	main@c
   1154     028C                     l2061:
   1155                           
-  1156                           ;postlab2prueba.c: 131:       UART_PutC(c);
+  1156                           ;postlab2.c: 127:       UART_PutC(c);
   1157     028C  0843               	movf	main@c,w
   1158     028D  120A  118A  2540  120A  118A  	fcall	_UART_PutC
   1159     0292  29FF               	goto	l2029
@@ -1180,7 +1179,7 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1
   1164     04FA                     __ptext1:	
   1165 ;; *************** function _uart_read *****************
   1166 ;; Defined at:
-  1167 ;;		line 54 in file "postlab2prueba.c"
+  1167 ;;		line 50 in file "postlab2.c"
   1168 ;; Parameters:    Size  Location     Type
   1169 ;;		None
   1170 ;; Auto vars:     Size  Location     Type
@@ -1211,51 +1210,51 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1
   1195     04FA                     _uart_read:	
   1196                           ;psect for function _uart_read
   1197                           
-  1198     04FA                     l1553:	
+  1198     04FA                     l1521:	
   1199                           ;incstack = 0
   1200                           ; Regs used in _uart_read: [wreg]
   1201                           
   1202                           
-  1203                           ;postlab2prueba.c: 55:  if(PIR1bits.RCIF== 0){
+  1203                           ;postlab2.c: 51:  if(PIR1bits.RCIF== 0){
   1204     04FA  1283               	bcf	3,5	;RP0=0, select bank0
   1205     04FB  1303               	bcf	3,6	;RP1=0, select bank0
   1206     04FC  1A8C               	btfsc	12,5	;volatile
-  1207     04FD  2CFF               	goto	u1031
-  1208     04FE  2D00               	goto	u1030
-  1209     04FF                     u1031:
-  1210     04FF  2D0B               	goto	l1565
-  1211     0500                     u1030:
-  1212     0500                     l1555:
+  1207     04FD  2CFF               	goto	u951
+  1208     04FE  2D00               	goto	u950
+  1209     04FF                     u951:
+  1210     04FF  2D0B               	goto	l1533
+  1211     0500                     u950:
+  1212     0500                     l1523:
   1213                           
-  1214                           ;postlab2prueba.c: 56:      if (RCSTAbits.OERR){
+  1214                           ;postlab2.c: 52:      if (RCSTAbits.OERR){
   1215     0500  1C98               	btfss	24,1	;volatile
-  1216     0501  2D03               	goto	u1041
-  1217     0502  2D04               	goto	u1040
-  1218     0503                     u1041:
-  1219     0503  2D09               	goto	l1559
-  1220     0504                     u1040:
-  1221     0504                     l1557:
+  1216     0501  2D03               	goto	u961
+  1217     0502  2D04               	goto	u960
+  1218     0503                     u961:
+  1219     0503  2D09               	goto	l1527
+  1220     0504                     u960:
+  1221     0504                     l1525:
   1222                           
-  1223                           ;postlab2prueba.c: 57:          RCSTAbits.CREN =0;
+  1223                           ;postlab2.c: 53:          RCSTAbits.CREN =0;
   1224     0504  1218               	bcf	24,4	;volatile
   1225                           
-  1226                           ;postlab2prueba.c: 58:          __nop();
+  1226                           ;postlab2.c: 54:          __nop();
   1227     0505  0000               	nop
   1228                           
-  1229                           ;postlab2prueba.c: 59:          RCSTAbits.CREN =1;
+  1229                           ;postlab2.c: 55:          RCSTAbits.CREN =1;
   1230     0506  1283               	bcf	3,5	;RP0=0, select bank0
   1231     0507  1303               	bcf	3,6	;RP1=0, select bank0
   1232     0508  1618               	bsf	24,4	;volatile
-  1233     0509                     l1559:
+  1233     0509                     l1527:
   1234                           
-  1235                           ;postlab2prueba.c: 61:      return RCREG;
+  1235                           ;postlab2.c: 57:      return RCREG;
   1236     0509  081A               	movf	26,w	;volatile
-  1237     050A  2D0C               	goto	l205
-  1238     050B                     l1565:
+  1237     050A  2D0C               	goto	l152
+  1238     050B                     l1533:
   1239                           
-  1240                           ;postlab2prueba.c: 64:      return 0;
+  1240                           ;postlab2.c: 60:      return 0;
   1241     050B  3000               	movlw	0
-  1242     050C                     l205:
+  1242     050C                     l152:
   1243     050C  0008               	return
   1244     050D                     __end_of_uart_read:
   1245                           
@@ -1907,7 +1906,7 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1
   1852                           ;isdigit@c stored from wreg
   1853     0520  00F4               	movwf	isdigit@c
   1854     0521                     l1423:
-  1855     0521  01F3               	clrf	_isdigit$864
+  1855     0521  01F3               	clrf	_isdigit$877
   1856     0522                     l1425:
   1857     0522  303A               	movlw	58
   1858     0523  0274               	subwf	isdigit@c,w
@@ -1927,10 +1926,10 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1
   1872     052D  2D30               	goto	l1431
   1873     052E                     u700:
   1874     052E                     l1429:
-  1875     052E  01F3               	clrf	_isdigit$864
-  1876     052F  0AF3               	incf	_isdigit$864,f
+  1875     052E  01F3               	clrf	_isdigit$877
+  1876     052F  0AF3               	incf	_isdigit$877,f
   1877     0530                     l1431:
-  1878     0530  0C73               	rrf	_isdigit$864,w
+  1878     0530  0C73               	rrf	_isdigit$877,w
   1879     0531                     l811:
   1880     0531  0008               	return
   1881     0532                     __end_of_isdigit:
@@ -2291,7 +2290,7 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1
   2236     04BF                     __ptext7:	
   2237 ;; *************** function _setup *****************
   2238 ;; Defined at:
-  2239 ;;		line 137 in file "postlab2prueba.c"
+  2239 ;;		line 133 in file "postlab2.c"
   2240 ;; Parameters:    Size  Location     Type
   2241 ;;		None
   2242 ;; Auto vars:     Size  Location     Type
@@ -2322,86 +2321,86 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1
   2267     04BF                     _setup:	
   2268                           ;psect for function _setup
   2269                           
-  2270     04BF                     l1569:	
+  2270     04BF                     l1537:	
   2271                           ;incstack = 0
   2272                           ; Regs used in _setup: [wreg+status,2+status,0]
   2273                           
   2274                           
-  2275                           ;postlab2prueba.c: 138:     ANSEL = 0b00000011;
+  2275                           ;postlab2.c: 134:     ANSEL = 0b00000011;
   2276     04BF  3003               	movlw	3
   2277     04C0  1683               	bsf	3,5	;RP0=1, select bank3
   2278     04C1  1703               	bsf	3,6	;RP1=1, select bank3
   2279     04C2  0088               	movwf	8	;volatile
-  2280     04C3                     l1571:
+  2280     04C3                     l1539:
   2281                           
-  2282                           ;postlab2prueba.c: 139:     ANSELH = 0;
+  2282                           ;postlab2.c: 135:     ANSELH = 0;
   2283     04C3  0189               	clrf	9	;volatile
-  2284     04C4                     l1573:
+  2284     04C4                     l1541:
   2285                           
-  2286                           ;postlab2prueba.c: 141:     TRISA = 0xFF;
+  2286                           ;postlab2.c: 137:     TRISA = 0xFF;
   2287     04C4  30FF               	movlw	255
   2288     04C5  1683               	bsf	3,5	;RP0=1, select bank1
   2289     04C6  1303               	bcf	3,6	;RP1=0, select bank1
   2290     04C7  0085               	movwf	5	;volatile
-  2291     04C8                     l1575:
+  2291     04C8                     l1543:
   2292                           
-  2293                           ;postlab2prueba.c: 145:     ADCON1bits.ADFM = 0;
+  2293                           ;postlab2.c: 141:     ADCON1bits.ADFM = 0;
   2294     04C8  139F               	bcf	31,7	;volatile
-  2295     04C9                     l1577:
+  2295     04C9                     l1545:
   2296                           
-  2297                           ;postlab2prueba.c: 146:     ADCON1bits.VCFG0 = 0;
+  2297                           ;postlab2.c: 142:     ADCON1bits.VCFG0 = 0;
   2298     04C9  121F               	bcf	31,4	;volatile
-  2299     04CA                     l1579:
+  2299     04CA                     l1547:
   2300                           
-  2301                           ;postlab2prueba.c: 147:     ADCON1bits.VCFG1 = 0;
+  2301                           ;postlab2.c: 143:     ADCON1bits.VCFG1 = 0;
   2302     04CA  129F               	bcf	31,5	;volatile
-  2303     04CB                     l1581:
+  2303     04CB                     l1549:
   2304                           
-  2305                           ;postlab2prueba.c: 149:     ADCON0bits.ADCS = 0b01;
+  2305                           ;postlab2.c: 145:     ADCON0bits.ADCS = 0b01;
   2306     04CB  1283               	bcf	3,5	;RP0=0, select bank0
   2307     04CC  1303               	bcf	3,6	;RP1=0, select bank0
   2308     04CD  081F               	movf	31,w	;volatile
   2309     04CE  393F               	andlw	-193
   2310     04CF  3840               	iorlw	64
   2311     04D0  009F               	movwf	31	;volatile
-  2312     04D1                     l1583:
+  2312     04D1                     l1551:
   2313                           
-  2314                           ;postlab2prueba.c: 150:     ADCON0bits.CHS = 0;
+  2314                           ;postlab2.c: 146:     ADCON0bits.CHS = 0;
   2315     04D1  30C3               	movlw	-61
   2316     04D2  059F               	andwf	31,f	;volatile
-  2317     04D3                     l1585:
+  2317     04D3                     l1553:
   2318                           
-  2319                           ;postlab2prueba.c: 151:     ADCON0bits.ADON= 1;
+  2319                           ;postlab2.c: 147:     ADCON0bits.ADON= 1;
   2320     04D3  141F               	bsf	31,0	;volatile
-  2321     04D4                     l1587:
+  2321     04D4                     l1555:
   2322                           
-  2323                           ;postlab2prueba.c: 152:     _delay((unsigned long)((50)*(8000000/4000000.0)));
+  2323                           ;postlab2.c: 148:     _delay((unsigned long)((50)*(8000000/4000000.0)));
   2324     04D4  3021               	movlw	33
   2325     04D5  00F3               	movwf	??_setup
   2326     04D6                     u1667:
   2327     04D6  0BF3               	decfsz	??_setup,f
   2328     04D7  2CD6               	goto	u1667
-  2329     04D8                     l1589:
+  2329     04D8                     l1557:
   2330                           
-  2331                           ;postlab2prueba.c: 154:     PIR1bits.ADIF = 0;
+  2331                           ;postlab2.c: 150:     PIR1bits.ADIF = 0;
   2332     04D8  1283               	bcf	3,5	;RP0=0, select bank0
   2333     04D9  1303               	bcf	3,6	;RP1=0, select bank0
   2334     04DA  130C               	bcf	12,6	;volatile
-  2335     04DB                     l1591:
+  2335     04DB                     l1559:
   2336                           
-  2337                           ;postlab2prueba.c: 155:     PIE1bits.ADIE = 1;
+  2337                           ;postlab2.c: 151:     PIE1bits.ADIE = 1;
   2338     04DB  1683               	bsf	3,5	;RP0=1, select bank1
   2339     04DC  1303               	bcf	3,6	;RP1=0, select bank1
   2340     04DD  170C               	bsf	12,6	;volatile
-  2341     04DE                     l1593:
+  2341     04DE                     l1561:
   2342                           
-  2343                           ;postlab2prueba.c: 156:     INTCONbits.PEIE = 1;
+  2343                           ;postlab2.c: 152:     INTCONbits.PEIE = 1;
   2344     04DE  170B               	bsf	11,6	;volatile
-  2345     04DF                     l1595:
+  2345     04DF                     l1563:
   2346                           
-  2347                           ;postlab2prueba.c: 157:     INTCONbits.GIE = 1;
+  2347                           ;postlab2.c: 153:     INTCONbits.GIE = 1;
   2348     04DF  178B               	bsf	11,7	;volatile
-  2349     04E0                     l223:
+  2349     04E0                     l170:
   2350     04E0  0008               	return
   2351     04E1                     __end_of_setup:
   2352                           
@@ -2409,7 +2408,7 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1
   2354     050D                     __ptext8:	
   2355 ;; *************** function _preguntas *****************
   2356 ;; Defined at:
-  2357 ;;		line 160 in file "postlab2prueba.c"
+  2357 ;;		line 156 in file "postlab2.c"
   2358 ;; Parameters:    Size  Location     Type
   2359 ;;		None
   2360 ;; Auto vars:     Size  Location     Type
@@ -2440,25 +2439,25 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1
   2385     050D                     _preguntas:	
   2386                           ;psect for function _preguntas
   2387                           
-  2388     050D                     l1695:	
+  2388     050D                     l1679:	
   2389                           ;incstack = 0
   2390                           ; Regs used in _preguntas: [wreg-fsr0h+status,2+status,0+btemp+1+pclath+cstack]
   2391                           
   2392                           
-  2393                           ;postlab2prueba.c: 162:     UART_Print ("1.Leer potenciometro\r\n");
+  2393                           ;postlab2.c: 158:     UART_Print ("1.Leer potenciometro\r\n");
   2394     050D  301A               	movlw	(low ((STR_1-__stringbase)| (0+32768)))& (0+255)
   2395     050E  00F4               	movwf	UART_Print@data
   2396     050F  3080               	movlw	128
   2397     0510  00F5               	movwf	UART_Print@data+1
   2398     0511  120A  118A  2467  120A  118A  	fcall	_UART_Print
   2399                           
-  2400                           ;postlab2prueba.c: 163:     UART_Print (message);
+  2400                           ;postlab2.c: 159:     UART_Print (message);
   2401     0516  300B               	movlw	(low ((_message-__stringbase)| (0+32768)))& (0+255)
   2402     0517  00F4               	movwf	UART_Print@data
   2403     0518  3080               	movlw	128
   2404     0519  00F5               	movwf	UART_Print@data+1
   2405     051A  120A  118A  2467  120A  118A  	fcall	_UART_Print
-  2406     051F                     l226:
+  2406     051F                     l173:
   2407     051F  0008               	return
   2408     0520                     __end_of_preguntas:
   2409                           
@@ -2557,7 +2556,7 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1
   2501     0498                     u681:
   2502     0498  2C69               	goto	l1417
   2503     0499                     u680:
-  2504     0499                     l145:
+  2504     0499                     l226:
   2505     0499  0008               	return
   2506     049A                     __end_of_UART_Print:
   2507                           
@@ -2589,8 +2588,8 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1
   2533 ;; This function calls:
   2534 ;;		Nothing
   2535 ;; This function is called by:
-  2536 ;;		_UART_Print
-  2537 ;;		_main
+  2536 ;;		_main
+  2537 ;;		_UART_Print
   2538 ;; This function uses a non-reentrant model
   2539 ;;
   2540                           
@@ -2603,7 +2602,7 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1
   2547                           ;UART_PutC@data stored from wreg
   2548     0540  00F3               	movwf	UART_PutC@data
   2549     0541                     l1411:
-  2550     0541                     l136:	
+  2550     0541                     l217:	
   2551                           ;USARTmodl.c: 59: void UART_PutC(const char data);USARTmodl.c: 60: {;USARTmodl.c: 61:   
       +                          while (TRMT == 0);
   2552                           
@@ -2613,7 +2612,7 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1
   2556     0544  2D46               	goto	u671
   2557     0545  2D47               	goto	u670
   2558     0546                     u671:
-  2559     0546  2D41               	goto	l136
+  2559     0546  2D41               	goto	l217
   2560     0547                     u670:
   2561     0547                     l1413:
   2562                           
@@ -2622,7 +2621,7 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1
   2565     0548  1283               	bcf	3,5	;RP0=0, select bank0
   2566     0549  1303               	bcf	3,6	;RP1=0, select bank0
   2567     054A  0099               	movwf	25	;volatile
-  2568     054B                     l139:
+  2568     054B                     l220:
   2569     054B  0008               	return
   2570     054C                     __end_of_UART_PutC:
   2571                           
@@ -2817,7 +2816,7 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1
   2759     0317  2B19               	goto	u1461
   2760     0318  2B1A               	goto	u1460
   2761     0319                     u1461:
-  2762     0319  2B20               	goto	l117
+  2762     0319  2B20               	goto	l198
   2763     031A                     u1460:
   2764     031A                     l1907:
   2765                           
@@ -2828,7 +2827,7 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1
   2770     031D  00B0               	movwf	UART_Init@n
   2771     031E  3000               	movlw	0
   2772     031F  00B1               	movwf	UART_Init@n+1
-  2773     0320                     l117:
+  2773     0320                     l198:
   2774                           
   2775                           ;USARTmodl.c: 26:     SPBRG = n;
   2776     0320  1283               	bcf	3,5	;RP0=0, select bank0
@@ -2843,7 +2842,7 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1
   2785     0327  0098               	movwf	24	;volatile
   2786                           
   2787                           ;USARTmodl.c: 28:   }
-  2788     0328  2B31               	goto	l118
+  2788     0328  2B31               	goto	l199
   2789     0329                     l1909:
   2790                           
   2791                           ;USARTmodl.c: 31:   {;USARTmodl.c: 32:     SPBRG = n;
@@ -2857,7 +2856,7 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1
   2799                           ;USARTmodl.c: 33:     TXSTA = 0x24;
   2800     032F  3024               	movlw	36
   2801     0330  0098               	movwf	24	;volatile
-  2802     0331                     l118:	
+  2802     0331                     l199:	
   2803                           ;USARTmodl.c: 34:   }
   2804                           
   2805                           
@@ -2866,7 +2865,7 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1
   2808     0332  1283               	bcf	3,5	;RP0=0, select bank0
   2809     0333  1303               	bcf	3,6	;RP1=0, select bank0
   2810     0334  0098               	movwf	24	;volatile
-  2811     0335                     l119:
+  2811     0335                     l200:
   2812     0335  0008               	return
   2813     0336                     __end_of_UART_Init:
   2814                           
@@ -3075,42 +3074,42 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1
   3017     0532                     _UART_GetC:	
   3018                           ;psect for function _UART_GetC
   3019                           
-  3020     0532                     l1545:	
+  3020     0532                     l1689:	
   3021                           ;incstack = 0
   3022                           ; Regs used in _UART_GetC: [wreg]
   3023                           
-  3024     0532                     l129:	
+  3024     0532                     l210:	
   3025                           ;USARTmodl.c: 48:   while (RCIF == 0) ;
   3026                           
   3027     0532  1283               	bcf	3,5	;RP0=0, select bank0
   3028     0533  1303               	bcf	3,6	;RP1=0, select bank0
   3029     0534  1E8C               	btfss	12,5	;volatile
-  3030     0535  2D37               	goto	u1011
-  3031     0536  2D38               	goto	u1010
-  3032     0537                     u1011:
-  3033     0537  2D32               	goto	l129
-  3034     0538                     u1010:
-  3035     0538                     l131:
+  3030     0535  2D37               	goto	u1161
+  3031     0536  2D38               	goto	u1160
+  3032     0537                     u1161:
+  3033     0537  2D32               	goto	l210
+  3034     0538                     u1160:
+  3035     0538                     l212:
   3036                           
   3037                           ;USARTmodl.c: 49:   if (OERR)
   3038     0538  1C98               	btfss	24,1	;volatile
-  3039     0539  2D3B               	goto	u1021
-  3040     053A  2D3C               	goto	u1020
-  3041     053B                     u1021:
-  3042     053B  2D3E               	goto	l1549
-  3043     053C                     u1020:
-  3044     053C                     l1547:
+  3039     0539  2D3B               	goto	u1171
+  3040     053A  2D3C               	goto	u1170
+  3041     053B                     u1171:
+  3042     053B  2D3E               	goto	l1693
+  3043     053C                     u1170:
+  3044     053C                     l1691:
   3045                           
   3046                           ;USARTmodl.c: 50:   {;USARTmodl.c: 51:     CREN = 0;
   3047     053C  1218               	bcf	24,4	;volatile
   3048                           
   3049                           ;USARTmodl.c: 52:     CREN = 1;
   3050     053D  1618               	bsf	24,4	;volatile
-  3051     053E                     l1549:
+  3051     053E                     l1693:
   3052                           
   3053                           ;USARTmodl.c: 54:   return RCREG;
   3054     053E  081A               	movf	26,w	;volatile
-  3055     053F                     l133:
+  3055     053F                     l214:
   3056     053F  0008               	return
   3057     0540                     __end_of_UART_GetC:
   3058                           
@@ -3149,7 +3148,7 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1
   3091     054C                     _UART_Data_Ready:	
   3092                           ;psect for function _UART_Data_Ready
   3093                           
-  3094     054C                     l1537:	
+  3094     054C                     l1681:	
   3095                           ;incstack = 0
   3096                           ; Regs used in _UART_Data_Ready: [status]
   3097                           
@@ -3158,17 +3157,17 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1
   3100     054C  1283               	bcf	3,5	;RP0=0, select bank0
   3101     054D  1303               	bcf	3,6	;RP1=0, select bank0
   3102     054E  1A8C               	btfsc	12,5	;volatile
-  3103     054F  2D51               	goto	u1001
-  3104     0550  2D52               	goto	u1000
-  3105     0551                     u1001:
-  3106     0551  2D54               	goto	l1541
-  3107     0552                     u1000:
-  3108     0552                     l1539:
+  3103     054F  2D51               	goto	u1151
+  3104     0550  2D52               	goto	u1150
+  3105     0551                     u1151:
+  3106     0551  2D54               	goto	l1685
+  3107     0552                     u1150:
+  3108     0552                     l1683:
   3109     0552  1003               	clrc
-  3110     0553  2D55               	goto	l126
-  3111     0554                     l1541:
+  3110     0553  2D55               	goto	l207
+  3111     0554                     l1685:
   3112     0554  1403               	setc
-  3113     0555                     l126:
+  3113     0555                     l207:
   3114     0555  0008               	return
   3115     0556                     __end_of_UART_Data_Ready:
   3116                           
@@ -3176,7 +3175,7 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1
   3118     04E1                     __ptext15:	
   3119 ;; *************** function _isr *****************
   3120 ;; Defined at:
-  3121 ;;		line 38 in file "postlab2prueba.c"
+  3121 ;;		line 34 in file "postlab2.c"
   3122 ;; Parameters:    Size  Location     Type
   3123 ;;		None
   3124 ;; Auto vars:     Size  Location     Type
@@ -3208,18 +3207,18 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1
   3150                           
   3151     04E1                     i1l1697:
   3152                           
-  3153                           ;postlab2prueba.c: 40:     if(PIR1bits.ADIF){
+  3153                           ;postlab2.c: 36:     if(PIR1bits.ADIF){
   3154     04E1  1283               	bcf	3,5	;RP0=0, select bank0
   3155     04E2  1303               	bcf	3,6	;RP1=0, select bank0
   3156     04E3  1F0C               	btfss	12,6	;volatile
   3157     04E4  2CE6               	goto	u118_21
   3158     04E5  2CE7               	goto	u118_20
   3159     04E6                     u118_21:
-  3160     04E6  2CF3               	goto	i1l200
+  3160     04E6  2CF3               	goto	i1l147
   3161     04E7                     u118_20:
   3162     04E7                     i1l1699:
   3163                           
-  3164                           ;postlab2prueba.c: 42:          if (ADCON0bits.CHS ==0)
+  3164                           ;postlab2.c: 38:          if (ADCON0bits.CHS ==0)
   3165     04E7  0C1F               	rrf	31,w	;volatile
   3166     04E8  00F0               	movwf	??_isr
   3167     04E9  0C70               	rrf	??_isr,w
@@ -3233,14 +3232,14 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1
   3175     04F0                     u119_20:
   3176     04F0                     i1l1701:
   3177                           
-  3178                           ;postlab2prueba.c: 43:           valpot = ADRESH;
+  3178                           ;postlab2.c: 39:           valpot = ADRESH;
   3179     04F0  081E               	movf	30,w	;volatile
   3180     04F1  00C4               	movwf	_valpot
   3181     04F2                     i1l1703:
   3182                           
-  3183                           ;postlab2prueba.c: 44:          PIR1bits.ADIF =0;
+  3183                           ;postlab2.c: 40:          PIR1bits.ADIF =0;
   3184     04F2  130C               	bcf	12,6	;volatile
-  3185     04F3                     i1l200:
+  3185     04F3                     i1l147:
   3186     04F3  0872               	movf	??_isr+2,w
   3187     04F4  008A               	movwf	10
   3188     04F5  0E71               	swapf	??_isr+1,w
@@ -3537,15 +3536,15 @@ DATA                 0      0      30      12        0.0%
 
 
 Microchip Technology PIC Macro Assembler V2.40 build 20220703182018 
-Symbol Table                                                                                   Tue Jul 25 19:53:48 2023
+Symbol Table                                                                                   Tue Jul 25 22:26:54 2023
 
                       pc 0002                       fsr 0004      ___wmul@multiplicand 0075  
-                    l131 0538                      l133 053F                      l117 0320  
-                    l205 050C                      l126 0555                      l118 0331  
-                    l119 0335                      l223 04E0                      l136 0541  
-                    l129 0532                      l145 0499                      l226 051F  
-                    l139 054B                      l324 0032                      l360 04BE  
-                    l354 019D                      l630 042A                      l358 04A6  
+                    l200 0335                      l210 0532                      l212 0538  
+                    l220 054B                      l214 053F                      l207 0555  
+                    l152 050C                      l217 0541                      l226 0499  
+                    l170 04E0                      l324 0032                      l173 051F  
+                    l360 04BE                      l354 019D                      l198 0320  
+                    l630 042A                      l358 04A6                      l199 0331  
                     l640 0466                      l394 039D                      l811 0531  
                     _RD3 0043                      _RD4 0044                      _RC6 003E  
                     _RD5 0045                      _RC7 003F                      _RD6 0046  
@@ -3554,67 +3553,67 @@ Symbol Table                                                                    
                     u741 04B9                      u725 04A7                      u670 0547  
                     u671 0546                      u735 04AE                      u680 0499  
                     u681 0498                      u690 0528                      u691 0527  
-                    _isr 04E1                      fsr0 0004                      indf 0000  
-                   l2011 01A3                     l2021 01DC                     l2013 01A7  
-                   l2031 0205                     l2023 01E5                     l2015 01B6  
-                   l2041 022C                     l2033 0207                     l2025 01F3  
-                   l2017 01C5                     l2009 019E                     l1411 0541  
-                   l2131 00B4                     l2043 0236                     l2035 0209  
-                   l2027 01FC                     l2019 01CE                     l1413 0547  
-                   l1421 0482                     l2061 028C                     l2045 0245  
-                   l2037 0212                     l2029 01FF                     l1415 0467  
-                   l1431 0530                     l1423 0521                     l2127 0273  
-                   l2047 024E                     l2039 0223                     l2055 0265  
-                   l1417 0469                     l1441 04AD                     l1425 0522  
-                   l2129 0045                     l2049 025B                     l2057 027B  
-                   l1419 047E                     l1443 04B4                     l1435 049A  
-                   l1427 0528                     l2059 0284                     l1541 0554  
+                    u950 0500                      u951 04FF                      u960 0504  
+                    u961 0503                      _isr 04E1                      fsr0 0004  
+                    indf 0000                     l2011 01A3                     l2021 01DC  
+                   l2013 01A7                     l2031 0205                     l2023 01E5  
+                   l2015 01B6                     l2041 022C                     l2033 0207  
+                   l2025 01F3                     l2017 01C5                     l2009 019E  
+                   l1411 0541                     l2131 00B4                     l2043 0236  
+                   l2035 0209                     l2027 01FC                     l2019 01CE  
+                   l1413 0547                     l1421 0482                     l2061 028C  
+                   l2045 0245                     l2037 0212                     l2029 01FF  
+                   l1415 0467                     l1431 0530                     l1423 0521  
+                   l2127 0273                     l2047 024E                     l2039 0223  
+                   l2055 0265                     l1417 0469                     l1441 04AD  
+                   l1425 0522                     l2129 0045                     l1521 04FA  
+                   l2049 025B                     l2057 027B                     l1419 047E  
+                   l1443 04B4                     l1435 049A                     l1427 0528  
+                   l1523 0500                     l2059 0284                     l1541 04C4  
                    l1445 04BA                     l1437 049C                     l1429 052E  
-                   l1439 04A0                     l1537 054C                     l1545 0532  
-                   l1553 04FA                     l1539 0552                     l1547 053C  
-                   l1571 04C3                     l1555 0500                     l1549 053E  
-                   l1901 02CE                     l1581 04CB                     l1573 04C4  
-                   l1557 0504                     l1565 050B                     l1831 035C  
-                   l1823 0336                     l1903 02DB                     l1591 04DB  
-                   l1583 04D1                     l1575 04C8                     l1911 001B  
-                   l1559 0509                     l1841 038F                     l1833 0365  
-                   l1825 0348                     l1905 030D                     l1593 04DE  
-                   l1585 04D3                     l1577 04C9                     l1569 04BF  
-                   l1921 0033                     l1913 001E                     l1835 0377  
-                   l1827 034B                     l1843 0395                     l1907 031A  
-                   l1595 04DF                     l1587 04D4                     l1579 04CA  
-                   l1851 03EF                     l1931 005E                     l1915 0024  
-                   l1837 0385                     l1829 0358                     l1909 0329  
-                   l1589 04D8                     l1861 0412                     l1853 03F2  
+                   l1525 0504                     l1533 050B                     l1551 04D1  
+                   l1543 04C8                     l1439 04A0                     l1527 0509  
+                   l1561 04DE                     l1553 04D3                     l1545 04C9  
+                   l1537 04BF                     l1563 04DF                     l1555 04D4  
+                   l1547 04CA                     l1539 04C3                     l1901 02CE  
+                   l1557 04D8                     l1549 04CB                     l1831 035C  
+                   l1823 0336                     l1903 02DB                     l1559 04DB  
+                   l1911 001B                     l1681 054C                     l1841 038F  
+                   l1833 0365                     l1825 0348                     l1905 030D  
+                   l1921 0033                     l1913 001E                     l1683 0552  
+                   l1691 053C                     l1835 0377                     l1827 034B  
+                   l1843 0395                     l1907 031A                     l1851 03EF  
+                   l1931 005E                     l1915 0024                     l1685 0554  
+                   l1693 053E                     l1837 0385                     l1829 0358  
+                   l1909 0329                     l1861 0412                     l1853 03F2  
                    l1933 0073                     l1925 0037                     l1917 0029  
-                   l1839 0386                     l1695 050D                     l1863 0418  
+                   l1839 0386                     l1679 050D                     l1863 0418  
                    l1855 03F9                     l1847 03E5                     l1935 0086  
                    l1943 00A0                     l1927 004A                     l1919 002E  
-                   l1865 0419                     l1857 03FD                     l1849 03E9  
-                   l1881 0441                     l1873 042B                     l1961 00F0  
-                   l1945 00BC                     l1937 008A                     l1929 005A  
-                   l1867 0420                     l1859 0401                     l1883 0445  
-                   l1875 0433                     l1891 0462                     l1971 0115  
-                   l1963 00FB                     l1955 00CA                     l1947 00C4  
-                   l1939 009B                     l1869 0426                     l1885 044F  
-                   l1877 0436                     l1981 0136                     l1973 011A  
-                   l1965 0107                     l1949 00C8                     l1895 0296  
-                   l1887 0455                     l1879 043D                     l1991 017C  
-                   l1983 013A                     l1975 011E                     l1967 010B  
-                   l1959 00E6                     l1897 02C8                     l1889 045C  
-                   l1993 0180                     l1985 0146                     l1969 010F  
-                   l1977 012B                     l1899 02CC                     l1987 0149  
-                   l1979 0131                     l1995 0189                     l1989 0177  
-                   l1997 0199                     ?_isr 0070                     STR_1 03C7  
-                   STR_2 03DB                     STR_3 03DB                     STR_4 03DE  
-                   STR_5 03DB                     STR_6 03DB                     STR_7 03C7  
-                   u1000 0552                     _CREN 00C4                     u1001 0551  
-                   u1010 0538                     u1011 0537                     u1020 053C  
-                   u1021 053B                     u1030 0500                     u1031 04FF  
-                   u1040 0504                     u1041 0503                     u1220 0348  
-                   u1221 0347                     u1310 0401                     u1311 0400  
-                   u1240 035C                     u1241 035B                     u1305 03F3  
-                   u1330 0412                     u1410 0462                     u1235 034D  
+                   l1689 0532                     l1865 0419                     l1857 03FD  
+                   l1849 03E9                     l1881 0441                     l1873 042B  
+                   l1961 00F0                     l1945 00BC                     l1937 008A  
+                   l1929 005A                     l1867 0420                     l1859 0401  
+                   l1883 0445                     l1875 0433                     l1891 0462  
+                   l1971 0115                     l1963 00FB                     l1955 00CA  
+                   l1947 00C4                     l1939 009B                     l1869 0426  
+                   l1885 044F                     l1877 0436                     l1981 0136  
+                   l1973 011A                     l1965 0107                     l1949 00C8  
+                   l1895 0296                     l1887 0455                     l1879 043D  
+                   l1991 017C                     l1983 013A                     l1975 011E  
+                   l1967 010B                     l1959 00E6                     l1897 02C8  
+                   l1889 045C                     l1993 0180                     l1985 0146  
+                   l1969 010F                     l1977 012B                     l1899 02CC  
+                   l1987 0149                     l1979 0131                     l1995 0189  
+                   l1989 0177                     l1997 0199                     ?_isr 0070  
+                   STR_1 03C7                     STR_2 03DB                     STR_3 03DB  
+                   STR_4 03DE                     STR_5 03DB                     STR_6 03DB  
+                   STR_7 03C7                     _CREN 00C4                     u1220 0348  
+                   u1221 0347                     u1150 0552                     u1310 0401  
+                   u1151 0551                     u1311 0400                     u1160 0538  
+                   u1240 035C                     u1161 0537                     u1241 035B  
+                   u1305 03F3                     u1170 053C                     u1330 0412  
+                   u1410 0462                     u1171 053B                     u1235 034D  
                    u1331 0411                     u1411 0461                     u1260 0377  
                    u1420 02A6                     u1500 00E5                     u1261 0376  
                    u1325 0402                     u1405 0456                     u1501 00E4  
@@ -3643,7 +3642,7 @@ Symbol Table                                                                    
                    _OERR 00C1                     _TRMT 04C1                     _main 019E  
                    btemp 007E                     start 000C                    ??_isr 0070  
                   ?_main 0070                    _CMCON 0079                    _ANSEL 0188  
-        __end_of___lldiv 039E          __end_of___lwdiv 042B                    i1l200 04F3  
+        __end_of___lldiv 039E          __end_of___lwdiv 042B                    i1l147 04F3  
         __end_of___lwmod 0467                    _RCREG 001A                    _RCSTA 0018  
                   _SPBRG 0099                    _PORTD 0008                    _TRISA 0085  
                   _TRISD 0088                    _TXREG 0019                    _TXSTA 0098  
@@ -3686,7 +3685,7 @@ Symbol Table                                                                    
                _PIE1bits 008C                 _PIR1bits 000C                _uart_read 04FA  
               _preguntas 050D               _ADCON0bits 001F              __stringbase 03AD  
              _ADCON1bits 009F        ___wmul@multiplier 0073               ?_uart_read 0070  
-             ?_preguntas 0070       __end_of__stringtab 03AE              _isdigit$864 0073  
+             ?_preguntas 0070       __end_of__stringtab 03AE              _isdigit$877 0073  
              sprintf@val 0030          ___lwdiv@divisor 0073          ___lwdiv@counter 0020  
                __ptext10 0540                 __ptext11 0296                 __ptext12 0336  
                __ptext13 0532                 __ptext14 054C                 __ptext15 04E1  
