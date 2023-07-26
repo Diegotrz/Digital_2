@@ -7,8 +7,6 @@
 [v ___lldiv __lldiv `(ul  1 e 4 0 ]
 "10 C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\sprcadd.c
 [v ___fladd __fladd `(d  1 e 4 0 ]
-"15 C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\Umul16.c
-[v ___wmul __wmul `(ui  1 e 2 0 ]
 "4 C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\Umul8_16.c
 [v __Umul8_16 _Umul8_16 `(ui  1 e 2 0 ]
 "6 C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\pic\__eeprom.c
@@ -27,12 +25,12 @@
 [v _Lcd_Cmd Lcd_Cmd `(v  1 e 1 0 ]
 "83
 [v _Lcd_Write_Char Lcd_Write_Char `(v  1 e 1 0 ]
-"31 C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\Prelab3masterp.c
-[v _SPI_init SPI_init `(v  1 e 1 0 ]
-"58
-[v _SPI_write SPI_write `(v  1 e 1 0 ]
-"65
+"30 C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\Prelab3masterp.c
 [v _main main `(v  1 e 1 0 ]
+"65
+[v _SPI_Write SPI_Write `(v  1 e 1 0 ]
+"71
+[v _SPI_Initialize_Master SPI_Initialize_Master `(v  1 e 1 0 ]
 "59 C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\USARTmodl.c
 [v _UART_PutC UART_PutC `(v  1 e 1 0 ]
 "353 C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h
@@ -51,31 +49,19 @@
 [v _PORTDbits PORTDbits `VES35  1 e 1 @8 ]
 "844
 [v _SSPBUF SSPBUF `VEuc  1 e 1 @19 ]
-[s S128 . 1 `uc 1 SSPM 1 0 :4:0 
-`uc 1 CKP 1 0 :1:4 
-`uc 1 SSPEN 1 0 :1:5 
-`uc 1 SSPOV 1 0 :1:6 
-`uc 1 WCOL 1 0 :1:7 
-]
-"871
-[s S134 . 1 `uc 1 SSPM0 1 0 :1:0 
-`uc 1 SSPM1 1 0 :1:1 
-`uc 1 SSPM2 1 0 :1:2 
-`uc 1 SSPM3 1 0 :1:3 
-]
-[u S139 . 1 `S128 1 . 1 0 `S134 1 . 1 0 ]
-[v _SSPCONbits SSPCONbits `VES139  1 e 1 @20 ]
+"851
+[v _SSPCON SSPCON `VEuc  1 e 1 @20 ]
 "1039
 [v _RCSTA RCSTA `VEuc  1 e 1 @24 ]
 "1134
 [v _TXREG TXREG `VEuc  1 e 1 @25 ]
 "1141
 [v _RCREG RCREG `VEuc  1 e 1 @26 ]
-"1479
-[v _TRISB TRISB `VEuc  1 e 1 @134 ]
 "1603
 [v _TRISD TRISD `VEuc  1 e 1 @136 ]
-[s S154 . 1 `uc 1 BF 1 0 :1:0 
+"2178
+[v _SSPSTAT SSPSTAT `VEuc  1 e 1 @148 ]
+[s S139 . 1 `uc 1 BF 1 0 :1:0 
 `uc 1 UA 1 0 :1:1 
 `uc 1 R_nW 1 0 :1:2 
 `uc 1 S 1 0 :1:3 
@@ -85,51 +71,47 @@
 `uc 1 SMP 1 0 :1:7 
 ]
 "2232
-[s S163 . 1 `uc 1 . 1 0 :2:0 
+[s S148 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 R 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 D 1 0 :1:5 
 ]
-[s S168 . 1 `uc 1 . 1 0 :2:0 
+[s S153 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 I2C_READ 1 0 :1:2 
 `uc 1 I2C_START 1 0 :1:3 
 `uc 1 I2C_STOP 1 0 :1:4 
 `uc 1 I2C_DATA 1 0 :1:5 
 ]
-[s S174 . 1 `uc 1 . 1 0 :2:0 
+[s S159 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 nW 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 nA 1 0 :1:5 
 ]
-[s S179 . 1 `uc 1 . 1 0 :2:0 
+[s S164 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 nWRITE 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 nADDRESS 1 0 :1:5 
 ]
-[s S184 . 1 `uc 1 . 1 0 :2:0 
+[s S169 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 R_W 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 D_A 1 0 :1:5 
 ]
-[s S189 . 1 `uc 1 . 1 0 :2:0 
+[s S174 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 READ_WRITE 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 DATA_ADDRESS 1 0 :1:5 
 ]
-[u S194 . 1 `S154 1 . 1 0 `S163 1 . 1 0 `S168 1 . 1 0 `S174 1 . 1 0 `S179 1 . 1 0 `S184 1 . 1 0 `S189 1 . 1 0 ]
-[v _SSPSTATbits SSPSTATbits `VES194  1 e 1 @148 ]
+[u S179 . 1 `S139 1 . 1 0 `S148 1 . 1 0 `S153 1 . 1 0 `S159 1 . 1 0 `S164 1 . 1 0 `S169 1 . 1 0 `S174 1 . 1 0 ]
+[v _SSPSTATbits SSPSTATbits `VES179  1 e 1 @148 ]
 "2557
 [v _TXSTA TXSTA `VEuc  1 e 1 @152 ]
 "2643
 [v _SPBRG SPBRG `VEuc  1 e 1 @153 ]
-"3646
-[v _BF BF `VEb  1 e 0 @1184 ]
 "3841
 [v _CREN CREN `VEb  1 e 0 @196 ]
 "4006
 [v _OERR OERR `VEb  1 e 0 @193 ]
-"4108
-[v _RB0 RB0 `VEb  1 e 0 @48 ]
 "4156
 [v _RC6 RC6 `VEb  1 e 0 @62 ]
 "4159
@@ -148,8 +130,6 @@
 [v _RD7 RD7 `VEb  1 e 0 @71 ]
 "4462
 [v _TRISC3 TRISC3 `VEb  1 e 0 @1083 ]
-"4465
-[v _TRISC4 TRISC4 `VEb  1 e 0 @1084 ]
 "4468
 [v _TRISC5 TRISC5 `VEb  1 e 0 @1085 ]
 "4471
@@ -158,22 +138,22 @@
 [v _TRISC7 TRISC7 `VEb  1 e 0 @1087 ]
 "4513
 [v _TRMT TRMT `VEb  1 e 0 @1217 ]
-"65 C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\Prelab3masterp.c
+"30 C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Labsdigital2.X\Prelab3masterp.c
 [v _main main `(v  1 e 1 0 ]
 {
+"45
+} 0
+"65
+[v _SPI_Write SPI_Write `(v  1 e 1 0 ]
+{
+[v SPI_Write@incoming incoming `uc  1 a 1 wreg ]
+[v SPI_Write@incoming incoming `uc  1 a 1 wreg ]
+"67
+[v SPI_Write@incoming incoming `uc  1 a 1 0 ]
+"68
+} 0
+"71
+[v _SPI_Initialize_Master SPI_Initialize_Master `(v  1 e 1 0 ]
+{
 "77
-} 0
-"58
-[v _SPI_write SPI_write `(v  1 e 1 0 ]
-{
-[v SPI_write@data data `uc  1 a 1 wreg ]
-[v SPI_write@data data `uc  1 a 1 wreg ]
-"60
-[v SPI_write@data data `uc  1 a 1 0 ]
-"62
-} 0
-"31
-[v _SPI_init SPI_init `(v  1 e 1 0 ]
-{
-"56
 } 0

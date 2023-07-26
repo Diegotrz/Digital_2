@@ -21,57 +21,57 @@
 
 
 #include <xc.h>
+#define _XTAL_FREQ 8000000
+char SPI_Read();
+unsigned SPI_Ready2Read();
+void SPI_Write(char incoming);
+void SPI_Initialize_Master(); 
 
-void delay(unsigned int nMilliseconds)
-{
-#define CYCLES_PER_MS 100 /* Number of decrement-and-test cycles. */
-unsigned long nCycles = nMilliseconds * CYCLES_PER_MS;
-while (nCycles--);
-}
-void SPI_init()
-{
+void main(){
     
-// this setting selects master mode with frequency fosc/4
-  
-SSPCONbits.SSPM0 = 0;
-SSPCONbits.SSPM1 = 0;
-SSPCONbits.SSPM2 = 0;
-SSPCONbits.SSPM3 = 0;
-// Enable SPI Port
-SSPCONbits.SSPEN = 1;
-// Configure The Clock Polarity & Phase
-SSPCONbits.CKP = 0;
-
+    SPI_Initialize_Master(); 
+    while (1){
+     SPI_Write(0X0A);
+         __delay_ms(100);
+       SPI_Write(0X0F);
+         __delay_ms(100);
+       SPI_Write(0X15);
+         __delay_ms(100);
     
-SSPSTATbits.CKE = 0;
-//  Slew rate control enabled for High Speed mode
-SSPSTATbits.SMP = 0;
-     
-// Set SPI pins as digital I/O
-TRISC5 = 0; // SDO -> Output
-TRISC4 = 1; // SDI -> Input
-TRISC3 = 0; // SCK -> Output
-//Uncommnent this line, if you want to send send over interrupt
-// SSPIE = 1; PEIE = 1; GIE = 1;
+    
+    }
+    
+    
 }
-//------------------------------------------------------------------------------
-void SPI_write(char data)
-{
-SSPBUF = data;
-while(BF == 0);
-}
-//-----------------------------------------------------------------------------
 
-void main(void) 
+
+
+
+
+char SPI_Read() //Read the received data
 {
-SPI_init();
-TRISB=0x00;
-while(1)
-{ 
-if(RB0) 
-SPI_write(0x01);    // if switch pressed, send 0x01
-else 
-SPI_write(0x02);    // if switch is pressed pressed, send 0x02
+    while ( !SSPSTATbits.BF ); // Hold till BF bit is set, to make sure the complete data is read
+    return(SSPBUF); // return the read data
 }
-return;
+
+unsigned SPI_Ready2Read()
+{
+    if (SSPSTAT & 0b00000001)
+        return 1;
+    else
+        return 0;
+}
+
+void SPI_Write(char incoming)
+{
+    SSPBUF = incoming; //Write the user given data into buffer
+}
+
+
+void SPI_Initialize_Master()
+{
+     TRISC5 = 0; //
+     SSPSTAT = 0b00000000; //pg 74/234
+     SSPCON = 0b00100000; //pg 75/234
+     TRISC3 = 0; //Set as output for slave mode
 }

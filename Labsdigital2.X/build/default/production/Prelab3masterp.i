@@ -2650,56 +2650,56 @@ extern __bank0 __bit __timeout;
 # 23 "Prelab3masterp.c" 2
 
 
-void delay(unsigned int nMilliseconds)
-{
+char SPI_Read();
+unsigned SPI_Ready2Read();
+void SPI_Write(char incoming);
+void SPI_Initialize_Master();
 
-unsigned long nCycles = nMilliseconds * 100;
-while (nCycles--);
-}
-void SPI_init()
-{
+void main(){
 
-
-
-SSPCONbits.SSPM0 = 0;
-SSPCONbits.SSPM1 = 0;
-SSPCONbits.SSPM2 = 0;
-SSPCONbits.SSPM3 = 0;
-
-SSPCONbits.SSPEN = 1;
-
-SSPCONbits.CKP = 0;
+    SPI_Initialize_Master();
+    while (1){
+     SPI_Write(0X0A);
+         _delay((unsigned long)((100)*(8000000/4000.0)));
+       SPI_Write(0X0F);
+         _delay((unsigned long)((100)*(8000000/4000.0)));
+       SPI_Write(0X15);
+         _delay((unsigned long)((100)*(8000000/4000.0)));
 
 
-SSPSTATbits.CKE = 0;
-
-SSPSTATbits.SMP = 0;
-
-
-TRISC5 = 0;
-TRISC4 = 1;
-TRISC3 = 0;
+    }
 
 
 }
 
-void SPI_write(char data)
+
+
+
+
+char SPI_Read()
 {
-SSPBUF = data;
-while(BF == 0);
+    while ( !SSPSTATbits.BF );
+    return(SSPBUF);
+}
+
+unsigned SPI_Ready2Read()
+{
+    if (SSPSTAT & 0b00000001)
+        return 1;
+    else
+        return 0;
+}
+
+void SPI_Write(char incoming)
+{
+    SSPBUF = incoming;
 }
 
 
-void main(void)
+void SPI_Initialize_Master()
 {
-SPI_init();
-TRISB=0x00;
-while(1)
-{
-if(RB0)
-SPI_write(0x01);
-else
-SPI_write(0x02);
-}
-return;
+     TRISC5 = 0;
+     SSPSTAT = 0b00000000;
+     SSPCON = 0b00100000;
+     TRISC3 = 0;
 }
