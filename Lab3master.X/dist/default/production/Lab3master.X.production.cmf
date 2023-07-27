@@ -22,7 +22,7 @@ text5 CODE 0 752 752 16 2 1
 maintext CODE 0 789 789 73 2 1
 cstackCOMMON COMMON 1 70 70 7 1 1
 config CONFIG 4 2007 2007 2 2 1
-$C:\Users\Diego\AppData\Local\Temp\xcAs2hc.o
+$C:\Users\Diego\AppData\Local\Temp\xcAs8u8.o
 idloc IDLOC 5 2000 2000 4 2 1
 end_init CODE 0 0 0 3 2 1
 config CONFIG 4 2007 2007 2 2 1
@@ -70,11 +70,11 @@ STRING 800-1FFF 2
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production\Lab3master.X.production.o
-7FC cinit CODE >621:C:\Users\Diego\AppData\Local\Temp\xcAs2hc.s
-7FC cinit CODE >624:C:\Users\Diego\AppData\Local\Temp\xcAs2hc.s
-7FC cinit CODE >630:C:\Users\Diego\AppData\Local\Temp\xcAs2hc.s
-7FC cinit CODE >632:C:\Users\Diego\AppData\Local\Temp\xcAs2hc.s
-7FD cinit CODE >633:C:\Users\Diego\AppData\Local\Temp\xcAs2hc.s
+7FC cinit CODE >621:C:\Users\Diego\AppData\Local\Temp\xcAs8u8.s
+7FC cinit CODE >624:C:\Users\Diego\AppData\Local\Temp\xcAs8u8.s
+7FC cinit CODE >630:C:\Users\Diego\AppData\Local\Temp\xcAs8u8.s
+7FC cinit CODE >632:C:\Users\Diego\AppData\Local\Temp\xcAs8u8.s
+7FD cinit CODE >633:C:\Users\Diego\AppData\Local\Temp\xcAs8u8.s
 752 text5 CODE >12:C:\Users\Diego\Documents\GitHub\Digital_2/Lab3slave.X/SPI.c
 753 text5 CODE >14:C:\Users\Diego\Documents\GitHub\Digital_2/Lab3slave.X/SPI.c
 756 text5 CODE >15:C:\Users\Diego\Documents\GitHub\Digital_2/Lab3slave.X/SPI.c
@@ -150,25 +150,25 @@ __Hspace_4 4010 0 ABS 0 - -
 spiInit@sTransmitEdge 72 0 COMMON 1 cstackCOMMON dist/default/production\Lab3master.X.production.o
 __Heeprom_data 0 0 EEDATA 3 eeprom_data -
 __Hstrings 0 0 ABS 0 strings -
-___sp 0 0 STACK 2 stack C:\Users\Diego\AppData\Local\Temp\xcAs2hc.o
+___sp 0 0 STACK 2 stack C:\Users\Diego\AppData\Local\Temp\xcAs8u8.o
 _main F12 0 CODE 0 maintext dist/default/production\Lab3master.X.production.o
 btemp 7E 0 ABS 0 - dist/default/production\Lab3master.X.production.o
-start 0 0 CODE 0 init C:\Users\Diego\AppData\Local\Temp\xcAs2hc.o
+start 0 0 CODE 0 init C:\Users\Diego\AppData\Local\Temp\xcAs8u8.o
 __Hpowerup 0 0 CODE 0 powerup -
-intlevel0 0 0 ENTRY 0 functab C:\Users\Diego\AppData\Local\Temp\xcAs2hc.o
-intlevel1 0 0 ENTRY 0 functab C:\Users\Diego\AppData\Local\Temp\xcAs2hc.o
-intlevel2 0 0 ENTRY 0 functab C:\Users\Diego\AppData\Local\Temp\xcAs2hc.o
-intlevel3 0 0 ENTRY 0 functab C:\Users\Diego\AppData\Local\Temp\xcAs2hc.o
-intlevel4 0 0 ENTRY 0 functab C:\Users\Diego\AppData\Local\Temp\xcAs2hc.o
-intlevel5 0 0 ENTRY 0 functab C:\Users\Diego\AppData\Local\Temp\xcAs2hc.o
+intlevel0 0 0 ENTRY 0 functab C:\Users\Diego\AppData\Local\Temp\xcAs8u8.o
+intlevel1 0 0 ENTRY 0 functab C:\Users\Diego\AppData\Local\Temp\xcAs8u8.o
+intlevel2 0 0 ENTRY 0 functab C:\Users\Diego\AppData\Local\Temp\xcAs8u8.o
+intlevel3 0 0 ENTRY 0 functab C:\Users\Diego\AppData\Local\Temp\xcAs8u8.o
+intlevel4 0 0 ENTRY 0 functab C:\Users\Diego\AppData\Local\Temp\xcAs8u8.o
+intlevel5 0 0 ENTRY 0 functab C:\Users\Diego\AppData\Local\Temp\xcAs8u8.o
 _OSCCONbits 8F 0 ABS 0 - dist/default/production\Lab3master.X.production.o
 wtemp0 7E 0 ABS 0 - dist/default/production\Lab3master.X.production.o
 __Hfunctab 0 0 ENTRY 0 functab -
 __Hclrtext 0 0 ABS 0 clrtext -
 _ANSELH 189 0 ABS 0 - dist/default/production\Lab3master.X.production.o
 __Lmaintext 0 0 ABS 0 maintext -
-___stackhi 0 0 ABS 0 - C:\Users\Diego\AppData\Local\Temp\xcAs2hc.o
-___stacklo 0 0 ABS 0 - C:\Users\Diego\AppData\Local\Temp\xcAs2hc.o
+___stackhi 0 0 ABS 0 - C:\Users\Diego\AppData\Local\Temp\xcAs8u8.o
+___stacklo 0 0 ABS 0 - C:\Users\Diego\AppData\Local\Temp\xcAs8u8.o
 spiInit@sDataSample 70 0 COMMON 1 cstackCOMMON dist/default/production\Lab3master.X.production.o
 start_initialization FF8 0 CODE 0 cinit dist/default/production\Lab3master.X.production.o
 _SSPBUF 13 0 ABS 0 - dist/default/production\Lab3master.X.production.o
@@ -177,7 +177,7 @@ _TRISC1 439 0 ABS 0 - dist/default/production\Lab3master.X.production.o
 _TRISC2 43A 0 ABS 0 - dist/default/production\Lab3master.X.production.o
 _TRISC3 43B 0 ABS 0 - dist/default/production\Lab3master.X.production.o
 _TRISC5 43D 0 ABS 0 - dist/default/production\Lab3master.X.production.o
-___int_sp 0 0 STACK 2 stack C:\Users\Diego\AppData\Local\Temp\xcAs2hc.o
+___int_sp 0 0 STACK 2 stack C:\Users\Diego\AppData\Local\Temp\xcAs8u8.o
 __Hbank0 0 0 ABS 0 bank0 -
 __Hbank1 0 0 ABS 0 bank1 -
 __Hbank2 0 0 ABS 0 bank2 -
@@ -219,7 +219,7 @@ __S0 800 0 ABS 0 - -
 __S1 77 0 ABS 0 - -
 __S3 0 0 ABS 0 - -
 __Lintentry 0 0 CODE 0 intentry -
-reset_vec 0 0 CODE 0 reset_vec C:\Users\Diego\AppData\Local\Temp\xcAs2hc.o
+reset_vec 0 0 CODE 0 reset_vec C:\Users\Diego\AppData\Local\Temp\xcAs8u8.o
 __pmaintext F12 0 CODE 0 maintext dist/default/production\Lab3master.X.production.o
 __Lcommon 0 0 ABS 0 common -
 __Lconfig 0 0 CONFIG 4 config -
