@@ -24,7 +24,7 @@ SPI_CLOCK_IDLE_LOW 0
 SPI_IDLE_2_ACTIVE 0
 SPI_ACTIVE_2_IDLE 64
 ]
-"127 C:\Users\Diego\Documents\GitHub\Digital_2\Lab3slave.X\slaveprueba.c
+"126 C:\Users\Diego\Documents\GitHub\Digital_2\Lab3slave.X\Lab3slave1.c
 [e E1292 . `uc
 SPI_MASTER_OSC_DIV4 32
 SPI_MASTER_OSC_DIV16 33
@@ -65,13 +65,13 @@ SPI_ACTIVE_2_IDLE 64
 [v ___eecpymem __eecpymem `(v  1 e 1 0 ]
 "39
 [v ___memcpyee __memcpyee `(v  1 e 1 0 ]
-"56 C:\Users\Diego\Documents\GitHub\Digital_2\Lab3slave.X\slaveprueba.c
+"55 C:\Users\Diego\Documents\GitHub\Digital_2\Lab3slave.X\Lab3slave1.c
 [v _isr isr `II(v  1 e 1 0 ]
-"83
+"82
 [v _main main `(v  1 e 1 0 ]
-"112
+"111
 [v _setup setup `(v  1 e 1 0 ]
-"143
+"142
 [v _map map `(ui  1 e 2 0 ]
 "12 C:\Users\Diego\Documents\GitHub\Digital_2\Lab3slave.X\SPI.c
 [v _spiInit spiInit `(v  1 e 1 0 ]
@@ -79,13 +79,11 @@ SPI_ACTIVE_2_IDLE 64
 [v _spiReceiveWait spiReceiveWait `(v  1 s 1 spiReceiveWait ]
 "34
 [v _spiWrite spiWrite `(v  1 e 1 0 ]
-"47
-[v _spiRead spiRead `(uc  1 e 1 0 ]
 "229 D:/Mpxlab/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h
 [v _PORTB PORTB `VEuc  1 e 1 @6 ]
 "353
 [v _PORTD PORTD `VEuc  1 e 1 @8 ]
-[s S245 . 1 `uc 1 RBIF 1 0 :1:0 
+[s S244 . 1 `uc 1 RBIF 1 0 :1:0 
 `uc 1 INTF 1 0 :1:1 
 `uc 1 T0IF 1 0 :1:2 
 `uc 1 RBIE 1 0 :1:3 
@@ -95,14 +93,14 @@ SPI_ACTIVE_2_IDLE 64
 `uc 1 GIE 1 0 :1:7 
 ]
 "483
-[s S254 . 1 `uc 1 . 1 0 :2:0 
+[s S253 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 TMR0IF 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 TMR0IE 1 0 :1:5 
 ]
-[u S259 . 1 `S245 1 . 1 0 `S254 1 . 1 0 ]
-[v _INTCONbits INTCONbits `VES259  1 e 1 @11 ]
-[s S155 . 1 `uc 1 TMR1IF 1 0 :1:0 
+[u S258 . 1 `S244 1 . 1 0 `S253 1 . 1 0 ]
+[v _INTCONbits INTCONbits `VES258  1 e 1 @11 ]
+[s S153 . 1 `uc 1 TMR1IF 1 0 :1:0 
 `uc 1 TMR2IF 1 0 :1:1 
 `uc 1 CCP1IF 1 0 :1:2 
 `uc 1 SSPIF 1 0 :1:3 
@@ -111,21 +109,21 @@ SPI_ACTIVE_2_IDLE 64
 `uc 1 ADIF 1 0 :1:6 
 ]
 "554
-[u S163 . 1 `S155 1 . 1 0 ]
-[v _PIR1bits PIR1bits `VES163  1 e 1 @12 ]
+[u S161 . 1 `S153 1 . 1 0 ]
+[v _PIR1bits PIR1bits `VES161  1 e 1 @12 ]
 "844
 [v _SSPBUF SSPBUF `VEuc  1 e 1 @19 ]
 "851
 [v _SSPCON SSPCON `VEuc  1 e 1 @20 ]
 "1239
 [v _ADRESH ADRESH `VEuc  1 e 1 @30 ]
-[s S174 . 1 `uc 1 ADON 1 0 :1:0 
+[s S172 . 1 `uc 1 ADON 1 0 :1:0 
 `uc 1 GO_nDONE 1 0 :1:1 
 `uc 1 CHS 1 0 :4:2 
 `uc 1 ADCS 1 0 :2:6 
 ]
 "1277
-[s S179 . 1 `uc 1 . 1 0 :1:0 
+[s S177 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 GO 1 0 :1:1 
 `uc 1 CHS0 1 0 :1:2 
 `uc 1 CHS1 1 0 :1:3 
@@ -134,15 +132,15 @@ SPI_ACTIVE_2_IDLE 64
 `uc 1 ADCS0 1 0 :1:6 
 `uc 1 ADCS1 1 0 :1:7 
 ]
-[s S188 . 1 `uc 1 . 1 0 :1:0 
+[s S186 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 nDONE 1 0 :1:1 
 ]
-[s S191 . 1 `uc 1 . 1 0 :1:0 
+[s S189 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 GO_DONE 1 0 :1:1 
 ]
-[u S194 . 1 `S174 1 . 1 0 `S179 1 . 1 0 `S188 1 . 1 0 `S191 1 . 1 0 ]
-[v _ADCON0bits ADCON0bits `VES194  1 e 1 @31 ]
-[s S296 . 1 `uc 1 TRISA0 1 0 :1:0 
+[u S192 . 1 `S172 1 . 1 0 `S177 1 . 1 0 `S186 1 . 1 0 `S189 1 . 1 0 ]
+[v _ADCON0bits ADCON0bits `VES192  1 e 1 @31 ]
+[s S295 . 1 `uc 1 TRISA0 1 0 :1:0 
 `uc 1 TRISA1 1 0 :1:1 
 `uc 1 TRISA2 1 0 :1:2 
 `uc 1 TRISA3 1 0 :1:3 
@@ -152,13 +150,13 @@ SPI_ACTIVE_2_IDLE 64
 `uc 1 TRISA7 1 0 :1:7 
 ]
 "1434
-[u S305 . 1 `S296 1 . 1 0 ]
-[v _TRISAbits TRISAbits `VES305  1 e 1 @133 ]
+[u S304 . 1 `S295 1 . 1 0 ]
+[v _TRISAbits TRISAbits `VES304  1 e 1 @133 ]
 "1479
 [v _TRISB TRISB `VEuc  1 e 1 @134 ]
 "1603
 [v _TRISD TRISD `VEuc  1 e 1 @136 ]
-[s S277 . 1 `uc 1 TMR1IE 1 0 :1:0 
+[s S276 . 1 `uc 1 TMR1IE 1 0 :1:0 
 `uc 1 TMR2IE 1 0 :1:1 
 `uc 1 CCP1IE 1 0 :1:2 
 `uc 1 SSPIE 1 0 :1:3 
@@ -167,22 +165,22 @@ SPI_ACTIVE_2_IDLE 64
 `uc 1 ADIE 1 0 :1:6 
 ]
 "1719
-[u S285 . 1 `S277 1 . 1 0 ]
-[v _PIE1bits PIE1bits `VES285  1 e 1 @140 ]
-[s S334 . 1 `uc 1 SCS 1 0 :1:0 
+[u S284 . 1 `S276 1 . 1 0 ]
+[v _PIE1bits PIE1bits `VES284  1 e 1 @140 ]
+[s S333 . 1 `uc 1 SCS 1 0 :1:0 
 `uc 1 LTS 1 0 :1:1 
 `uc 1 HTS 1 0 :1:2 
 `uc 1 OSTS 1 0 :1:3 
 `uc 1 IRCF 1 0 :3:4 
 ]
 "1883
-[s S340 . 1 `uc 1 . 1 0 :4:0 
+[s S339 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 IRCF0 1 0 :1:4 
 `uc 1 IRCF1 1 0 :1:5 
 `uc 1 IRCF2 1 0 :1:6 
 ]
-[u S345 . 1 `S334 1 . 1 0 `S340 1 . 1 0 ]
-[v _OSCCONbits OSCCONbits `VES345  1 e 1 @143 ]
+[u S344 . 1 `S333 1 . 1 0 `S339 1 . 1 0 ]
+[v _OSCCONbits OSCCONbits `VES344  1 e 1 @143 ]
 "2178
 [v _SSPSTAT SSPSTAT `VEuc  1 e 1 @148 ]
 [s S42 . 1 `uc 1 BF 1 0 :1:0 
@@ -228,15 +226,15 @@ SPI_ACTIVE_2_IDLE 64
 ]
 [u S82 . 1 `S42 1 . 1 0 `S51 1 . 1 0 `S56 1 . 1 0 `S62 1 . 1 0 `S67 1 . 1 0 `S72 1 . 1 0 `S77 1 . 1 0 ]
 [v _SSPSTATbits SSPSTATbits `VES82  1 e 1 @148 ]
-[s S360 . 1 `uc 1 . 1 0 :4:0 
+[s S359 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 VCFG0 1 0 :1:4 
 `uc 1 VCFG1 1 0 :1:5 
 `uc 1 . 1 0 :1:6 
 `uc 1 ADFM 1 0 :1:7 
 ]
 "2992
-[u S366 . 1 `S360 1 . 1 0 ]
-[v _ADCON1bits ADCON1bits `VES366  1 e 1 @159 ]
+[u S365 . 1 `S359 1 . 1 0 ]
+[v _ADCON1bits ADCON1bits `VES365  1 e 1 @159 ]
 "3388
 [v _ANSEL ANSEL `VEuc  1 e 1 @392 ]
 "3450
@@ -247,23 +245,23 @@ SPI_ACTIVE_2_IDLE 64
 [v _TRISC3 TRISC3 `VEb  1 e 0 @1083 ]
 "4468
 [v _TRISC5 TRISC5 `VEb  1 e 0 @1085 ]
-"43 C:\Users\Diego\Documents\GitHub\Digital_2\Lab3slave.X\slaveprueba.c
+"42 C:\Users\Diego\Documents\GitHub\Digital_2\Lab3slave.X\Lab3slave1.c
 [v _i i `i  1 e 2 0 ]
-"44
+"43
 [v _valpot0 valpot0 `i  1 e 2 0 ]
-"46
+"45
 [v _val val `i  1 e 2 0 ]
-"47
+"46
 [v _varvolt varvolt `f  1 e 4 0 ]
-"83
+"82
 [v _main main `(v  1 e 1 0 ]
 {
-"108
+"107
 } 0
-"112
+"111
 [v _setup setup `(v  1 e 1 0 ]
 {
-"142
+"141
 } 0
 "12 C:\Users\Diego\Documents\GitHub\Digital_2\Lab3slave.X\SPI.c
 [v _spiInit spiInit `(v  1 e 1 0 ]
@@ -277,18 +275,18 @@ SPI_ACTIVE_2_IDLE 64
 [v spiInit@sType sType `E1292  1 a 1 9 ]
 "27
 } 0
-"143 C:\Users\Diego\Documents\GitHub\Digital_2\Lab3slave.X\slaveprueba.c
+"142 C:\Users\Diego\Documents\GitHub\Digital_2\Lab3slave.X\Lab3slave1.c
 [v _map map `(ui  1 e 2 0 ]
 {
-"144
-[v map@valmap valmap `f  1 a 4 50 ]
 "143
+[v map@valmap valmap `f  1 a 4 50 ]
+"142
 [v map@varmap varmap `ui  1 p 2 34 ]
 [v map@minval minval `ui  1 p 2 36 ]
 [v map@maxval maxval `ui  1 p 2 38 ]
 [v map@minsal minsal `ui  1 p 2 40 ]
 [v map@maxsal maxsal `ui  1 p 2 42 ]
-"146
+"145
 } 0
 "10 C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\xxtofl.c
 [v ___xxtofl __xxtofl `(d  1 e 4 0 ]
@@ -337,10 +335,10 @@ SPI_ACTIVE_2_IDLE 64
 [v ___fltol@f1 f1 `d  1 p 4 6 ]
 "70
 } 0
-"56 C:\Users\Diego\Documents\GitHub\Digital_2\Lab3slave.X\slaveprueba.c
+"55 C:\Users\Diego\Documents\GitHub\Digital_2\Lab3slave.X\Lab3slave1.c
 [v _isr isr `II(v  1 e 1 0 ]
 {
-"79
+"78
 } 0
 "10 C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\xxtofl.c
 [v i1___xxtofl __xxtofl `(d  1 e 4 0 ]
@@ -375,16 +373,6 @@ SPI_ACTIVE_2_IDLE 64
 "36
 [v spiWrite@dat dat `uc  1 a 1 0 ]
 "37
-} 0
-"47
-[v _spiRead spiRead `(uc  1 e 1 0 ]
-{
-"51
-} 0
-"29
-[v _spiReceiveWait spiReceiveWait `(v  1 s 1 spiReceiveWait ]
-{
-"32
 } 0
 "5 C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\awdiv.c
 [v ___awdiv __awdiv `(i  1 e 2 0 ]

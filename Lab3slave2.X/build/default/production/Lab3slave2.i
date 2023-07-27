@@ -1,4 +1,4 @@
-# 1 "slaveprueba.c"
+# 1 "Lab3slave2.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,8 +6,8 @@
 # 1 "<built-in>" 2
 # 1 "D:/Mpxlab/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "slaveprueba.c" 2
-# 13 "slaveprueba.c"
+# 1 "Lab3slave2.c" 2
+# 13 "Lab3slave2.c"
 #pragma config FOSC = EXTRC_NOCLKOUT
 #pragma config WDTE = OFF
 #pragma config PWRTE = OFF
@@ -2647,10 +2647,10 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 29 "D:/Mpxlab/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\\pic\\include\\xc.h" 2 3
-# 34 "slaveprueba.c" 2
+# 34 "Lab3slave2.c" 2
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c90\\stdint.h" 1 3
-# 35 "slaveprueba.c" 2
+# 35 "Lab3slave2.c" 2
 
 # 1 "./SPI.h" 1
 # 17 "./SPI.h"
@@ -2687,7 +2687,7 @@ void spiInit(Spi_Type, Spi_Data_Sample, Spi_Clock_Idle, Spi_Transmit_Edge);
 void spiWrite(char);
 unsigned spiDataReady();
 char spiRead();
-# 36 "slaveprueba.c" 2
+# 36 "Lab3slave2.c" 2
 
 
 
@@ -2710,7 +2710,7 @@ void setup(void);
 
 void __attribute__((picinterrupt(("")))) isr(void){
    if(SSPIF == 1){
-        PORTD = spiRead();
+
         spiWrite(varvolt);
         SSPIF = 0;
     }

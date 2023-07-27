@@ -1,4 +1,4 @@
-# 1 "masterprueba.c"
+# 1 "Lab3master.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,8 +6,13 @@
 # 1 "<built-in>" 2
 # 1 "D:/Mpxlab/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "masterprueba.c" 2
-# 21 "masterprueba.c"
+# 1 "Lab3master.c" 2
+
+
+
+
+
+
 #pragma config FOSC = EXTRC_NOCLKOUT
 #pragma config WDTE = OFF
 #pragma config PWRTE = OFF
@@ -2647,10 +2652,10 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 29 "D:/Mpxlab/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\\pic\\include\\xc.h" 2 3
-# 42 "masterprueba.c" 2
+# 28 "Lab3master.c" 2
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c90\\stdint.h" 1 3
-# 43 "masterprueba.c" 2
+# 29 "Lab3master.c" 2
 
 # 1 "./SPI.h" 1
 # 17 "./SPI.h"
@@ -2687,8 +2692,8 @@ void spiInit(Spi_Type, Spi_Data_Sample, Spi_Clock_Idle, Spi_Transmit_Edge);
 void spiWrite(char);
 unsigned spiDataReady();
 char spiRead();
-# 44 "masterprueba.c" 2
-# 53 "masterprueba.c"
+# 30 "Lab3master.c" 2
+# 39 "Lab3master.c"
 void setup(void);
 
 
@@ -2700,6 +2705,9 @@ void main(void) {
 
 
     while(1){
+
+
+
        PORTCbits.RC2 = 0;
        _delay((unsigned long)((1)*(8000000/4000.0)));
 
@@ -2711,8 +2719,19 @@ void main(void) {
 
        _delay((unsigned long)((250)*(8000000/4000.0)));
 
+       PORTCbits.RC1 = 0;
+       _delay((unsigned long)((5)*(8000000/4000.0)));
+
+       spiWrite(PORTB);
+       PORTA = spiRead();
+
+       _delay((unsigned long)((1)*(8000000/4000.0)));
+       PORTCbits.RC1 = 1;
+
+       _delay((unsigned long)((250)*(8000000/4000.0)));
+
     }
-    return;
+
 }
 
 
@@ -2720,11 +2739,15 @@ void main(void) {
 void setup(void){
     ANSEL = 0;
     ANSELH = 0;
+    TRISC1 = 0;
     TRISC2 = 0;
+    TRISA =0;
     TRISB = 0;
     TRISD = 0;
+    PORTA = 0;
     PORTB = 0;
     PORTD = 0;
+    PORTCbits.RC1 = 1;
     PORTCbits.RC2 = 1;
     spiInit(SPI_MASTER_OSC_DIV4, SPI_DATA_SAMPLE_MIDDLE, SPI_CLOCK_IDLE_LOW, SPI_IDLE_2_ACTIVE);
 
