@@ -13,8 +13,8 @@
 #pragma config CPD = OFF        // Data Code Protection bit (Data memory code protection is disabled)
 #pragma config BOREN = OFF      // Brown Out Reset Selection bits (BOR disabled)
 #pragma config IESO = OFF       // Internal External Switchover bit (Internal/External Switchover mode is disabled)
-#pragma config FCMEN = ON       // Fail-Safe Clock Monitor Enabled bit (Fail-Safe Clock Monitor is enabled)
-#pragma config LVP = ON         // Low Voltage Programming Enable bit (RB3/PGM pin has PGM function, low voltage programming enabled)
+#pragma config FCMEN = OFF      // Fail-Safe Clock Monitor Enabled bit (Fail-Safe Clock Monitor is enabled)
+#pragma config LVP = OFF        // Low Voltage Programming Enable bit (RB3/PGM pin has PGM function, low voltage programming enabled)
 
 // CONFIG2
 #pragma config BOR4V = BOR40V   // Brown-out Reset Selection bit (Brown-out Reset set to 4.0V)
@@ -76,7 +76,7 @@ void main(void)
   UART_Print(message);  // UART print message
  UART_Print (message2);
   __delay_ms(1000);  // wait 1 second
- 
+ RCREG ='0';
   UART_Print("\r\n");  // start new line
  ADCON0bits.GO =1;
  char text[9];
@@ -95,8 +95,11 @@ void main(void)
           TRISDbits.TRISD3 =0;
       }
       * */
+      
       //Probando usando un break
-      switch (uart_read()){
+       char valuart = uart_read();
+       __delay_us(2000);
+      switch (valuart){
           case '1': 
               
                
@@ -114,14 +117,14 @@ void main(void)
              
              break;
            case '+': 
-               __delay_us(2000);
+               __delay_us(500);
                PORTB ++;
                 preguntas();
                RCREG ='0';
                
                break;
                  case '-': 
-               __delay_us(2000);
+               __delay_us(500);
                PORTB --;
                 preguntas();
                RCREG ='0';
@@ -129,13 +132,15 @@ void main(void)
                break;
           
       }
+      
       //Enviar datos al terminal
     if ( UART_Data_Ready() )  // if a character available
     {
       uint8_t c = UART_GetC();  // read from UART and store in 'c'
       UART_PutC(c);  // send 'c' via UART (return the received character back)
     }
- 
+      
+  
   }
  
 }

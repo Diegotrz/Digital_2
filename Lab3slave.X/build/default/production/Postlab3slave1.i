@@ -1,4 +1,4 @@
-# 1 "Lab3slave1.c"
+# 1 "Postlab3slave1.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,8 +6,8 @@
 # 1 "<built-in>" 2
 # 1 "D:/Mpxlab/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "Lab3slave1.c" 2
-# 12 "Lab3slave1.c"
+# 1 "Postlab3slave1.c" 2
+# 12 "Postlab3slave1.c"
 #pragma config FOSC = EXTRC_NOCLKOUT
 #pragma config WDTE = OFF
 #pragma config PWRTE = OFF
@@ -2647,10 +2647,10 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 29 "D:/Mpxlab/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\\pic\\include\\xc.h" 2 3
-# 33 "Lab3slave1.c" 2
+# 33 "Postlab3slave1.c" 2
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c90\\stdint.h" 1 3
-# 34 "Lab3slave1.c" 2
+# 34 "Postlab3slave1.c" 2
 
 # 1 "./SPI.h" 1
 # 17 "./SPI.h"
@@ -2687,7 +2687,7 @@ void spiInit(Spi_Type, Spi_Data_Sample, Spi_Clock_Idle, Spi_Transmit_Edge);
 void spiWrite(char);
 unsigned spiDataReady();
 char spiRead();
-# 35 "Lab3slave1.c" 2
+# 35 "Postlab3slave1.c" 2
 
 
 
@@ -2731,6 +2731,25 @@ void __attribute__((picinterrupt(("")))) isr(void){
             PIR1bits.ADIF =0;
 
     }
+    if (INTCONbits.RBIF ){
+
+
+
+    if (PORTBbits.RB2){
+            while (RB2){
+                PORTD ++;
+           INTCONbits.RBIF = 0;
+                         }
+        }
+        if (PORTBbits.RB0){
+            while (RB0);{
+                PORTD --;
+                 INTCONbits.RBIF = 0;
+                         }
+
+
+        }
+}
 }
 
 
@@ -2743,7 +2762,7 @@ void main(void) {
 
 
     while(1){
-
+      INTCONbits.RBIF = 1;
        _delay((unsigned long)((250)*(8000000/4000.0)));
        if (ADCON0bits.GO ==0){
            for (i=0;i<=2;i++){
@@ -2767,11 +2786,13 @@ void main(void) {
 void setup(void){
     ANSEL = 0b00000011;
     ANSELH = 0;
+    TRISB = 1;
 
-    TRISB = 0;
+
+
     TRISD = 0;
 
-    PORTB = 0;
+
     PORTD = 0;
 
     INTCONbits.GIE = 1;
@@ -2794,6 +2815,9 @@ void setup(void){
     _delay((unsigned long)((50)*(8000000/4000000.0)));
     PIR1bits.ADIF = 0;
     PIE1bits.ADIE = 1;
+
+    INTCONbits.RBIE = 0;
+    INTCONbits.RBIF = 1;
 }
 uint16_t map(uint16_t varmap,uint16_t minval,uint16_t maxval, uint16_t minsal, uint16_t maxsal){
   float valmap =((varmap - minval) * (maxsal - minsal)) / (maxval - minval) + minsal;

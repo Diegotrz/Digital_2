@@ -22,8 +22,8 @@
 #pragma config CPD = OFF
 #pragma config BOREN = OFF
 #pragma config IESO = OFF
-#pragma config FCMEN = ON
-#pragma config LVP = ON
+#pragma config FCMEN = OFF
+#pragma config LVP = OFF
 
 
 #pragma config BOR4V = BOR40V
@@ -2852,7 +2852,7 @@ void main(void)
   UART_Print(message);
  UART_Print (message2);
   _delay((unsigned long)((1000)*(8000000/4000.0)));
-
+ RCREG ='0';
   UART_Print("\r\n");
  ADCON0bits.GO =1;
  char text[9];
@@ -2860,8 +2860,10 @@ void main(void)
   {
        if (ADCON0bits.GO ==0)
      ADCON0bits.GO =1;
-# 99 "postlab2.c"
-      switch (uart_read()){
+# 100 "postlab2.c"
+       char valuart = uart_read();
+       _delay((unsigned long)((2000)*(8000000/4000000.0)));
+      switch (valuart){
           case '1':
 
 
@@ -2879,14 +2881,14 @@ void main(void)
 
              break;
            case '+':
-               _delay((unsigned long)((2000)*(8000000/4000000.0)));
+               _delay((unsigned long)((500)*(8000000/4000000.0)));
                PORTB ++;
                 preguntas();
                RCREG ='0';
 
                break;
                  case '-':
-               _delay((unsigned long)((2000)*(8000000/4000000.0)));
+               _delay((unsigned long)((500)*(8000000/4000000.0)));
                PORTB --;
                 preguntas();
                RCREG ='0';
@@ -2895,11 +2897,13 @@ void main(void)
 
       }
 
+
     if ( UART_Data_Ready() )
     {
       uint8_t c = UART_GetC();
       UART_PutC(c);
     }
+
 
   }
 

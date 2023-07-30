@@ -167,9 +167,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "15
 [p x IESO  =  OFF        ]
 "16
-[p x FCMEN  =  ON        ]
+[p x FCMEN  =  OFF       ]
 "17
-[p x LVP  =  ON          ]
+[p x LVP  =  OFF         ]
 "20
 [p x BOR4V  =  BOR40V    ]
 "21
@@ -595,6 +595,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "78
 [; ;postlab2.c: 78:   _delay((unsigned long)((1000)*(8000000/4000.0)));
 [e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+"79
+[; ;postlab2.c: 79:  RCREG ='0';
+[e = _RCREG -> -> 48 `ui `uc ]
 "80
 [; ;postlab2.c: 80:   UART_Print("\r\n");
 [e ( _UART_Print (1 :s 2C ]
@@ -617,192 +620,199 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;postlab2.c: 86:      ADCON0bits.GO =1;
 [e = . . _ADCON0bits 1 1 -> -> 1 `i `uc ]
 [e :U 150 ]
-"99
-[; ;postlab2.c: 99:       switch (uart_read()){
+"100
+[; ;postlab2.c: 100:        char valuart = uart_read();
+[v _valuart `uc ~T0 @X0 1 a ]
+[e = _valuart ( _uart_read ..  ]
+"101
+[; ;postlab2.c: 101:        _delay((unsigned long)((2000)*(8000000/4000000.0)));
+[e ( __delay (1 -> * -> -> 2000 `i `d / -> -> 8000000 `l `d .4000000.0 `ul ]
+"102
+[; ;postlab2.c: 102:       switch (valuart){
 [e $U 152  ]
 {
-"100
-[; ;postlab2.c: 100:           case '1':
+"103
+[; ;postlab2.c: 103:           case '1':
 [e :U 153 ]
-"104
-[; ;postlab2.c: 104:                valpot = ADRESH;
+"107
+[; ;postlab2.c: 107:                valpot = ADRESH;
 [e = _valpot -> _ADRESH `uc ]
-"105
-[; ;postlab2.c: 105:               uint16_t varvolt2 = map(valpot,0,255,0,5);
+"108
+[; ;postlab2.c: 108:               uint16_t varvolt2 = map(valpot,0,255,0,5);
 [v _varvolt2 `ui ~T0 @X0 1 a ]
 [e = _varvolt2 ( _map (4 , , , , -> _valpot `ui -> -> 0 `i `ui -> -> 255 `i `ui -> -> 0 `i `ui -> -> 5 `i `ui ]
-"107
-[; ;postlab2.c: 107:               UART_Print ("\r\n");
+"110
+[; ;postlab2.c: 110:               UART_Print ("\r\n");
 [e ( _UART_Print (1 :s 3C ]
-"108
-[; ;postlab2.c: 108:             sprintf(text, "%03u\r\n", varvolt2);
+"111
+[; ;postlab2.c: 111:             sprintf(text, "%03u\r\n", varvolt2);
 [e ( _sprintf (1 , (. , &U _text :s 4C _varvolt2 ]
-"109
-[; ;postlab2.c: 109:             UART_Print(text);
-[e ( _UART_Print (1 -> &U _text `*Cuc ]
 "112
-[; ;postlab2.c: 112:               preguntas();
-[e ( _preguntas ..  ]
-"113
-[; ;postlab2.c: 113:              RCREG ='0';
-[e = _RCREG -> -> 48 `ui `uc ]
+[; ;postlab2.c: 112:             UART_Print(text);
+[e ( _UART_Print (1 -> &U _text `*Cuc ]
 "115
-[; ;postlab2.c: 115:              break;
-[e $U 151  ]
+[; ;postlab2.c: 115:               preguntas();
+[e ( _preguntas ..  ]
 "116
-[; ;postlab2.c: 116:            case '+':
-[e :U 154 ]
-"117
-[; ;postlab2.c: 117:                _delay((unsigned long)((2000)*(8000000/4000000.0)));
-[e ( __delay (1 -> * -> -> 2000 `i `d / -> -> 8000000 `l `d .4000000.0 `ul ]
+[; ;postlab2.c: 116:              RCREG ='0';
+[e = _RCREG -> -> 48 `ui `uc ]
 "118
-[; ;postlab2.c: 118:                PORTB ++;
-[e ++ _PORTB -> -> 1 `i `Vuc ]
+[; ;postlab2.c: 118:              break;
+[e $U 151  ]
 "119
-[; ;postlab2.c: 119:                 preguntas();
-[e ( _preguntas ..  ]
+[; ;postlab2.c: 119:            case '+':
+[e :U 154 ]
 "120
-[; ;postlab2.c: 120:                RCREG ='0';
-[e = _RCREG -> -> 48 `ui `uc ]
+[; ;postlab2.c: 120:                _delay((unsigned long)((500)*(8000000/4000000.0)));
+[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 8000000 `l `d .4000000.0 `ul ]
+"121
+[; ;postlab2.c: 121:                PORTB ++;
+[e ++ _PORTB -> -> 1 `i `Vuc ]
 "122
-[; ;postlab2.c: 122:                break;
-[e $U 151  ]
-"123
-[; ;postlab2.c: 123:                  case '-':
-[e :U 155 ]
-"124
-[; ;postlab2.c: 124:                _delay((unsigned long)((2000)*(8000000/4000000.0)));
-[e ( __delay (1 -> * -> -> 2000 `i `d / -> -> 8000000 `l `d .4000000.0 `ul ]
-"125
-[; ;postlab2.c: 125:                PORTB --;
-[e -- _PORTB -> -> 1 `i `Vuc ]
-"126
-[; ;postlab2.c: 126:                 preguntas();
+[; ;postlab2.c: 122:                 preguntas();
 [e ( _preguntas ..  ]
-"127
-[; ;postlab2.c: 127:                RCREG ='0';
+"123
+[; ;postlab2.c: 123:                RCREG ='0';
 [e = _RCREG -> -> 48 `ui `uc ]
-"129
-[; ;postlab2.c: 129:                break;
+"125
+[; ;postlab2.c: 125:                break;
 [e $U 151  ]
-"131
-[; ;postlab2.c: 131:       }
+"126
+[; ;postlab2.c: 126:                  case '-':
+[e :U 155 ]
+"127
+[; ;postlab2.c: 127:                _delay((unsigned long)((500)*(8000000/4000000.0)));
+[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 8000000 `l `d .4000000.0 `ul ]
+"128
+[; ;postlab2.c: 128:                PORTB --;
+[e -- _PORTB -> -> 1 `i `Vuc ]
+"129
+[; ;postlab2.c: 129:                 preguntas();
+[e ( _preguntas ..  ]
+"130
+[; ;postlab2.c: 130:                RCREG ='0';
+[e = _RCREG -> -> 48 `ui `uc ]
+"132
+[; ;postlab2.c: 132:                break;
+[e $U 151  ]
+"134
+[; ;postlab2.c: 134:       }
 }
 [e $U 151  ]
 [e :U 152 ]
-[e [\ -> ( _uart_read ..  `i , $ -> -> 49 `ui `i 153
+[e [\ -> _valuart `i , $ -> -> 49 `ui `i 153
  , $ -> -> 43 `ui `i 154
  , $ -> -> 45 `ui `i 155
  151 ]
 [e :U 151 ]
-"133
-[; ;postlab2.c: 133:     if ( UART_Data_Ready() )
+"137
+[; ;postlab2.c: 137:     if ( UART_Data_Ready() )
 [e $ ! ( _UART_Data_Ready ..  156  ]
-"134
-[; ;postlab2.c: 134:     {
+"138
+[; ;postlab2.c: 138:     {
 {
-"135
-[; ;postlab2.c: 135:       uint8_t c = UART_GetC();
+"139
+[; ;postlab2.c: 139:       uint8_t c = UART_GetC();
 [v _c `uc ~T0 @X0 1 a ]
 [e = _c ( _UART_GetC ..  ]
-"136
-[; ;postlab2.c: 136:       UART_PutC(c);
+"140
+[; ;postlab2.c: 140:       UART_PutC(c);
 [e ( _UART_PutC (1 -> _c `uc ]
-"137
-[; ;postlab2.c: 137:     }
+"141
+[; ;postlab2.c: 141:     }
 }
 [e :U 156 ]
-"139
-[; ;postlab2.c: 139:   }
+"144
+[; ;postlab2.c: 144:   }
 }
 [e :U 147 ]
 [e $U 148  ]
 [e :U 149 ]
-"141
-[; ;postlab2.c: 141: }
+"146
+[; ;postlab2.c: 146: }
 [e :UE 146 ]
 }
-"142
-[; ;postlab2.c: 142: void setup(void){
+"147
+[; ;postlab2.c: 147: void setup(void){
 [v _setup `(v ~T0 @X0 1 ef ]
 {
 [e :U _setup ]
 [f ]
-"143
-[; ;postlab2.c: 143:     ANSEL = 0b00000011;
-[e = _ANSEL -> -> 3 `i `uc ]
-"144
-[; ;postlab2.c: 144:     ANSELH = 0;
-[e = _ANSELH -> -> 0 `i `uc ]
-"146
-[; ;postlab2.c: 146:     TRISB= 0xFF;
-[e = _TRISB -> -> 255 `i `uc ]
-"147
-[; ;postlab2.c: 147:     TRISB = 0;
-[e = _TRISB -> -> 0 `i `uc ]
 "148
-[; ;postlab2.c: 148:     PORTB = 0;
-[e = _PORTB -> -> 0 `i `uc ]
+[; ;postlab2.c: 148:     ANSEL = 0b00000011;
+[e = _ANSEL -> -> 3 `i `uc ]
+"149
+[; ;postlab2.c: 149:     ANSELH = 0;
+[e = _ANSELH -> -> 0 `i `uc ]
 "151
-[; ;postlab2.c: 151:     ADCON1bits.ADFM = 0;
-[e = . . _ADCON1bits 0 4 -> -> 0 `i `uc ]
+[; ;postlab2.c: 151:     TRISB= 0xFF;
+[e = _TRISB -> -> 255 `i `uc ]
 "152
-[; ;postlab2.c: 152:     ADCON1bits.VCFG0 = 0;
-[e = . . _ADCON1bits 0 1 -> -> 0 `i `uc ]
+[; ;postlab2.c: 152:     TRISB = 0;
+[e = _TRISB -> -> 0 `i `uc ]
 "153
-[; ;postlab2.c: 153:     ADCON1bits.VCFG1 = 0;
-[e = . . _ADCON1bits 0 2 -> -> 0 `i `uc ]
-"155
-[; ;postlab2.c: 155:     ADCON0bits.ADCS = 0b01;
-[e = . . _ADCON0bits 0 3 -> -> 1 `i `uc ]
+[; ;postlab2.c: 153:     PORTB = 0;
+[e = _PORTB -> -> 0 `i `uc ]
 "156
-[; ;postlab2.c: 156:     ADCON0bits.CHS = 0;
-[e = . . _ADCON0bits 0 2 -> -> 0 `i `uc ]
+[; ;postlab2.c: 156:     ADCON1bits.ADFM = 0;
+[e = . . _ADCON1bits 0 4 -> -> 0 `i `uc ]
 "157
-[; ;postlab2.c: 157:     ADCON0bits.ADON= 1;
-[e = . . _ADCON0bits 0 0 -> -> 1 `i `uc ]
+[; ;postlab2.c: 157:     ADCON1bits.VCFG0 = 0;
+[e = . . _ADCON1bits 0 1 -> -> 0 `i `uc ]
 "158
-[; ;postlab2.c: 158:     _delay((unsigned long)((50)*(8000000/4000000.0)));
-[e ( __delay (1 -> * -> -> 50 `i `d / -> -> 8000000 `l `d .4000000.0 `ul ]
+[; ;postlab2.c: 158:     ADCON1bits.VCFG1 = 0;
+[e = . . _ADCON1bits 0 2 -> -> 0 `i `uc ]
 "160
-[; ;postlab2.c: 160:     PIR1bits.ADIF = 0;
-[e = . . _PIR1bits 0 6 -> -> 0 `i `uc ]
+[; ;postlab2.c: 160:     ADCON0bits.ADCS = 0b01;
+[e = . . _ADCON0bits 0 3 -> -> 1 `i `uc ]
 "161
-[; ;postlab2.c: 161:     PIE1bits.ADIE = 1;
-[e = . . _PIE1bits 0 6 -> -> 1 `i `uc ]
+[; ;postlab2.c: 161:     ADCON0bits.CHS = 0;
+[e = . . _ADCON0bits 0 2 -> -> 0 `i `uc ]
 "162
-[; ;postlab2.c: 162:     INTCONbits.PEIE = 1;
-[e = . . _INTCONbits 0 6 -> -> 1 `i `uc ]
+[; ;postlab2.c: 162:     ADCON0bits.ADON= 1;
+[e = . . _ADCON0bits 0 0 -> -> 1 `i `uc ]
 "163
-[; ;postlab2.c: 163:     INTCONbits.GIE = 1;
-[e = . . _INTCONbits 0 7 -> -> 1 `i `uc ]
+[; ;postlab2.c: 163:     _delay((unsigned long)((50)*(8000000/4000000.0)));
+[e ( __delay (1 -> * -> -> 50 `i `d / -> -> 8000000 `l `d .4000000.0 `ul ]
 "165
-[; ;postlab2.c: 165: }
+[; ;postlab2.c: 165:     PIR1bits.ADIF = 0;
+[e = . . _PIR1bits 0 6 -> -> 0 `i `uc ]
+"166
+[; ;postlab2.c: 166:     PIE1bits.ADIE = 1;
+[e = . . _PIE1bits 0 6 -> -> 1 `i `uc ]
+"167
+[; ;postlab2.c: 167:     INTCONbits.PEIE = 1;
+[e = . . _INTCONbits 0 6 -> -> 1 `i `uc ]
+"168
+[; ;postlab2.c: 168:     INTCONbits.GIE = 1;
+[e = . . _INTCONbits 0 7 -> -> 1 `i `uc ]
+"170
+[; ;postlab2.c: 170: }
 [e :UE 157 ]
 }
-"166
-[; ;postlab2.c: 166: void preguntas(void)
+"171
+[; ;postlab2.c: 171: void preguntas(void)
 [v _preguntas `(v ~T0 @X0 1 ef ]
-"167
-[; ;postlab2.c: 167: {
+"172
+[; ;postlab2.c: 172: {
 {
 [e :U _preguntas ]
 [f ]
-"168
-[; ;postlab2.c: 168:     UART_Print ("1.Leer potenciometro\r\n");
+"173
+[; ;postlab2.c: 173:     UART_Print ("1.Leer potenciometro\r\n");
 [e ( _UART_Print (1 :s 5C ]
-"169
-[; ;postlab2.c: 169:     UART_Print (message);
+"174
+[; ;postlab2.c: 174:     UART_Print (message);
 [e ( _UART_Print (1 &U _message ]
-"170
-[; ;postlab2.c: 170:     UART_Print (message2);
+"175
+[; ;postlab2.c: 175:     UART_Print (message2);
 [e ( _UART_Print (1 &U _message2 ]
-"171
-[; ;postlab2.c: 171: }
+"176
+[; ;postlab2.c: 176: }
 [e :UE 158 ]
 }
-"172
-[; ;postlab2.c: 172: uint16_t map(uint16_t varmap,uint16_t minval,uint16_t maxval, uint16_t minsal, uint16_t maxsal){
+"177
+[; ;postlab2.c: 177: uint16_t map(uint16_t varmap,uint16_t minval,uint16_t maxval, uint16_t minsal, uint16_t maxsal){
 [v _map `(ui ~T0 @X0 1 ef5`ui`ui`ui`ui`ui ]
 {
 [e :U _map ]
@@ -812,16 +822,16 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _minsal `ui ~T0 @X0 1 r4 ]
 [v _maxsal `ui ~T0 @X0 1 r5 ]
 [f ]
-"173
-[; ;postlab2.c: 173:   float valmap =((varmap - minval) * (maxsal - minsal)) / (maxval - minval) + minsal;
+"178
+[; ;postlab2.c: 178:   float valmap =((varmap - minval) * (maxsal - minsal)) / (maxval - minval) + minsal;
 [v _valmap `f ~T0 @X0 1 a ]
 [e = _valmap -> + / * - _varmap _minval - _maxsal _minsal - _maxval _minval _minsal `f ]
-"174
-[; ;postlab2.c: 174:   return valmap;
+"179
+[; ;postlab2.c: 179:   return valmap;
 [e ) -> _valmap `ui ]
 [e $UE 159  ]
-"175
-[; ;postlab2.c: 175: }
+"180
+[; ;postlab2.c: 180: }
 [e :UE 159 ]
 }
 [p f _sprintf 8422404 ]
