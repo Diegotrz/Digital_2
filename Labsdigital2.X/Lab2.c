@@ -87,8 +87,10 @@ CMCON = 0x07;            // Turn comparator off
      sprintf(s, "volt= %f", varvolt2);
         // Clear LCD screen
         const char msg[] = "AticleWorld.com";
+    
     ClearLCDScreen();  
     WriteStringToLCD(s);  // Write Hello World on LCD
+     __delay_ms(1000);   
     }
     
     

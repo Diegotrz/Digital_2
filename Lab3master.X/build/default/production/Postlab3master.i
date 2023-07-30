@@ -1,4 +1,4 @@
-# 1 "display8bits.c"
+# 1 "Postlab3master.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,10 +6,35 @@
 # 1 "<built-in>" 2
 # 1 "D:/Mpxlab/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "display8bits.c" 2
-# 11 "display8bits.c"
-# 1 "./display8bits.h" 1
-# 28 "./display8bits.h"
+# 1 "Postlab3master.c" 2
+
+
+
+
+
+
+#pragma config FOSC = EXTRC_NOCLKOUT
+#pragma config WDTE = OFF
+#pragma config PWRTE = OFF
+#pragma config MCLRE = OFF
+#pragma config CP = OFF
+#pragma config CPD = OFF
+#pragma config BOREN = OFF
+#pragma config IESO = OFF
+#pragma config FCMEN = OFF
+#pragma config LVP = OFF
+
+
+#pragma config BOR4V = BOR40V
+#pragma config WRT = OFF
+
+
+
+
+
+
+
+
 # 1 "D:/Mpxlab/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\\pic\\include\\xc.h" 1 3
 # 18 "D:/Mpxlab/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -2627,65 +2652,262 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 29 "D:/Mpxlab/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\\pic\\include\\xc.h" 2 3
-# 28 "./display8bits.h" 2
+# 28 "Postlab3master.c" 2
 
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c90\\stdint.h" 1 3
+# 29 "Postlab3master.c" 2
 
-int CMCON;
-
-
-
-void WriteCommandToLCD(unsigned char);
-void WriteDataToLCD(char);
-void InitLCD(void);
-void WriteStringToLCD(const char*);
-void ClearLCDScreen(void);
-void ToggleEpinOfLCD(void);
-# 11 "display8bits.c" 2
-
-
-
-void ToggleEpinOfLCD(void)
+# 1 "./SPI.h" 1
+# 17 "./SPI.h"
+typedef enum
 {
-    RC7 = 1;
-    _delay((unsigned long)((500)*(8000000/4000000.0)));
-    RC7 = 0;
-    _delay((unsigned long)((500)*(8000000/4000000.0)));
-}
-void WriteCommandToLCD(unsigned char Command)
-{
-    RC6 = 0;
-    PORTD = Command;
-    ToggleEpinOfLCD();
-}
-void WriteDataToLCD(char LCDChar)
-{
-    RC6 = 1;
-    PORTD = LCDChar;
-    ToggleEpinOfLCD();
-}
-void InitLCD(void)
-{
+    SPI_MASTER_OSC_DIV4 = 0b00100000,
+    SPI_MASTER_OSC_DIV16 = 0b00100001,
+    SPI_MASTER_OSC_DIV64 = 0b00100010,
+    SPI_MASTER_TMR2 = 0b00100011,
+    SPI_SLAVE_SS_EN = 0b00100100,
+    SPI_SLAVE_SS_DIS = 0b00100101
+}Spi_Type;
 
-    RC7 = 0;
-    RC6 = 0;
-    PORTD = 0;
-    TRISC7 = 0;
-    TRISC6 = 0;
-    TRISD = 0;
-    WriteCommandToLCD(0x38);
-    WriteCommandToLCD(0x0c);
-    WriteCommandToLCD(0x01);
-    WriteCommandToLCD(0x06);
-}
-void WriteStringToLCD(const char *s)
+typedef enum
 {
-    while(*s)
-    {
-        WriteDataToLCD(*s++);
+    SPI_DATA_SAMPLE_MIDDLE = 0b00000000,
+    SPI_DATA_SAMPLE_END = 0b10000000
+}Spi_Data_Sample;
+
+typedef enum
+{
+    SPI_CLOCK_IDLE_HIGH = 0b00010000,
+    SPI_CLOCK_IDLE_LOW = 0b00000000
+}Spi_Clock_Idle;
+
+typedef enum
+{
+    SPI_IDLE_2_ACTIVE = 0b00000000,
+    SPI_ACTIVE_2_IDLE = 0b01000000
+}Spi_Transmit_Edge;
+
+
+void spiInit(Spi_Type, Spi_Data_Sample, Spi_Clock_Idle, Spi_Transmit_Edge);
+void spiWrite(char);
+unsigned spiDataReady();
+char spiRead();
+# 30 "Postlab3master.c" 2
+
+# 1 "./LCD.h" 1
+# 47 "./LCD.h"
+void Lcd_Port(char a);
+
+void Lcd_Cmd(char a);
+
+void Lcd_Clear(void);
+
+void Lcd_Set_Cursor(char a, char b);
+
+void Lcd_Init(void);
+
+void Lcd_Write_Char(char a);
+
+void Lcd_Write_String(char *a);
+
+void Lcd_Shift_Right(void);
+
+void Lcd_Shift_Left(void);
+# 31 "Postlab3master.c" 2
+
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c90\\stdio.h" 1 3
+
+
+
+# 1 "D:/Mpxlab/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\\pic\\include\\__size_t.h" 1 3
+
+
+
+typedef unsigned size_t;
+# 4 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c90\\stdio.h" 2 3
+
+# 1 "D:/Mpxlab/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\\pic\\include\\__null.h" 1 3
+# 5 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c90\\stdio.h" 2 3
+
+
+
+
+
+
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c90\\stdarg.h" 1 3
+
+
+
+
+
+
+typedef void * va_list[1];
+
+#pragma intrinsic(__va_start)
+extern void * __va_start(void);
+
+#pragma intrinsic(__va_arg)
+extern void * __va_arg(void *, ...);
+# 11 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c90\\stdio.h" 2 3
+# 43 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c90\\stdio.h" 3
+struct __prbuf
+{
+ char * ptr;
+ void (* func)(char);
+};
+# 85 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c90\\stdio.h" 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c90\\conio.h" 1 3
+
+
+
+
+
+
+
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c90\\errno.h" 1 3
+# 29 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c90\\errno.h" 3
+extern int errno;
+# 8 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c90\\conio.h" 2 3
+
+
+
+
+extern void init_uart(void);
+
+extern char getch(void);
+extern char getche(void);
+extern void putch(char);
+extern void ungetch(char);
+
+extern __bit kbhit(void);
+
+
+
+extern char * cgets(char *);
+extern void cputs(const char *);
+# 85 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c90\\stdio.h" 2 3
+
+
+
+extern int cprintf(char *, ...);
+#pragma printf_check(cprintf)
+
+
+
+extern int _doprnt(struct __prbuf *, const register char *, register va_list);
+# 180 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c90\\stdio.h" 3
+#pragma printf_check(vprintf) const
+#pragma printf_check(vsprintf) const
+
+extern char * gets(char *);
+extern int puts(const char *);
+extern int scanf(const char *, ...) __attribute__((unsupported("scanf() is not supported by this compiler")));
+extern int sscanf(const char *, const char *, ...) __attribute__((unsupported("sscanf() is not supported by this compiler")));
+extern int vprintf(const char *, va_list) __attribute__((unsupported("vprintf() is not supported by this compiler")));
+extern int vsprintf(char *, const char *, va_list) __attribute__((unsupported("vsprintf() is not supported by this compiler")));
+extern int vscanf(const char *, va_list ap) __attribute__((unsupported("vscanf() is not supported by this compiler")));
+extern int vsscanf(const char *, const char *, va_list) __attribute__((unsupported("vsscanf() is not supported by this compiler")));
+
+#pragma printf_check(printf) const
+#pragma printf_check(sprintf) const
+extern int sprintf(char *, const char *, ...);
+extern int printf(const char *, ...);
+# 32 "Postlab3master.c" 2
+
+
+
+
+
+uint8_t pot1;
+uint8_t pot2;
+
+
+
+
+void setup(void);
+
+
+
+
+void main(void) {
+    setup();
+     Lcd_Init();
+
+
+
+    while(1){
+
+
+
+       PORTCbits.RC2 = 0;
+       _delay((unsigned long)((1)*(8000000/4000.0)));
+
+       spiWrite(1);
+       pot1 = spiRead();
+
+       _delay((unsigned long)((1)*(8000000/4000.0)));
+       PORTCbits.RC2 = 1;
+
+       _delay((unsigned long)((250)*(8000000/4000.0)));
+
+       PORTCbits.RC1 = 0;
+       _delay((unsigned long)((5)*(8000000/4000.0)));
+
+       spiWrite(1);
+       pot2 = spiRead();
+
+       _delay((unsigned long)((1)*(8000000/4000.0)));
+       PORTCbits.RC1 = 1;
+
+       _delay((unsigned long)((250)*(8000000/4000.0)));
+
+        char s[20];
+        char s2[20];
+      Lcd_Clear();
+
+
+
+
+    Lcd_Set_Cursor(1,1);
+    Lcd_Write_String("Pot1");
+
+    sprintf(s, "%u", pot1);
+    Lcd_Set_Cursor(2,1);
+    Lcd_Write_String(s);
+
+    Lcd_Set_Cursor(1,7);
+    Lcd_Write_String("Pot2");
+
+    sprintf(s2, "%u", pot2);
+    Lcd_Set_Cursor(2,7);
+    Lcd_Write_String(s2);
+    _delay((unsigned long)((500)*(8000000/4000.0)));
+
+
+
     }
+
 }
-void ClearLCDScreen(void)
-{
-    WriteCommandToLCD(0x01);
-    _delay((unsigned long)((2)*(8000000/4000.0)));
+
+
+
+void setup(void){
+    ANSEL = 0;
+    ANSELH = 0;
+    TRISC1 = 0;
+    TRISC2 = 0;
+    TRISC6 = 0;
+    TRISC7 = 0;
+    TRISA =0;
+    TRISB = 0;
+    TRISD = 0;
+    PORTA = 0;
+    PORTB = 0;
+    PORTD = 0;
+    PORTCbits.RC1 = 1;
+    PORTCbits.RC2 = 1;
+    spiInit(SPI_MASTER_OSC_DIV4, SPI_DATA_SAMPLE_MIDDLE, SPI_CLOCK_IDLE_LOW, SPI_IDLE_2_ACTIVE);
+
+    OSCCONbits.IRCF = 0b0111;
+    OSCCONbits.SCS = 1;
 }

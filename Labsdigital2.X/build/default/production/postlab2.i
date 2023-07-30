@@ -1,4 +1,4 @@
-# 1 "Lab3master.c"
+# 1 "postlab2.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,14 +6,15 @@
 # 1 "<built-in>" 2
 # 1 "D:/Mpxlab/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "Lab3master.c" 2
+# 1 "postlab2.c" 2
 
 
 
 
 
 
-#pragma config FOSC = EXTRC_NOCLKOUT
+
+#pragma config FOSC = INTRC_CLKOUT
 #pragma config WDTE = OFF
 #pragma config PWRTE = OFF
 #pragma config MCLRE = OFF
@@ -21,16 +22,12 @@
 #pragma config CPD = OFF
 #pragma config BOREN = OFF
 #pragma config IESO = OFF
-#pragma config FCMEN = OFF
-#pragma config LVP = OFF
+#pragma config FCMEN = ON
+#pragma config LVP = ON
 
 
 #pragma config BOR4V = BOR40V
 #pragma config WRT = OFF
-
-
-
-
 
 
 
@@ -2652,105 +2649,292 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 29 "D:/Mpxlab/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\\pic\\include\\xc.h" 2 3
-# 28 "Lab3master.c" 2
+# 25 "postlab2.c" 2
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c90\\stdint.h" 1 3
-# 29 "Lab3master.c" 2
+# 26 "postlab2.c" 2
 
-# 1 "./SPI.h" 1
-# 17 "./SPI.h"
-typedef enum
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c90\\stdio.h" 1 3
+
+
+
+# 1 "D:/Mpxlab/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\\pic\\include\\__size_t.h" 1 3
+
+
+
+typedef unsigned size_t;
+# 4 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c90\\stdio.h" 2 3
+
+# 1 "D:/Mpxlab/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\\pic\\include\\__null.h" 1 3
+# 5 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c90\\stdio.h" 2 3
+
+
+
+
+
+
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c90\\stdarg.h" 1 3
+
+
+
+
+
+
+typedef void * va_list[1];
+
+#pragma intrinsic(__va_start)
+extern void * __va_start(void);
+
+#pragma intrinsic(__va_arg)
+extern void * __va_arg(void *, ...);
+# 11 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c90\\stdio.h" 2 3
+# 43 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c90\\stdio.h" 3
+struct __prbuf
 {
-    SPI_MASTER_OSC_DIV4 = 0b00100000,
-    SPI_MASTER_OSC_DIV16 = 0b00100001,
-    SPI_MASTER_OSC_DIV64 = 0b00100010,
-    SPI_MASTER_TMR2 = 0b00100011,
-    SPI_SLAVE_SS_EN = 0b00100100,
-    SPI_SLAVE_SS_DIS = 0b00100101
-}Spi_Type;
+ char * ptr;
+ void (* func)(char);
+};
+# 85 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c90\\stdio.h" 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c90\\conio.h" 1 3
 
-typedef enum
+
+
+
+
+
+
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c90\\errno.h" 1 3
+# 29 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c90\\errno.h" 3
+extern int errno;
+# 8 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c90\\conio.h" 2 3
+
+
+
+
+extern void init_uart(void);
+
+extern char getch(void);
+extern char getche(void);
+extern void putch(char);
+extern void ungetch(char);
+
+extern __bit kbhit(void);
+
+
+
+extern char * cgets(char *);
+extern void cputs(const char *);
+# 85 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c90\\stdio.h" 2 3
+
+
+
+extern int cprintf(char *, ...);
+#pragma printf_check(cprintf)
+
+
+
+extern int _doprnt(struct __prbuf *, const register char *, register va_list);
+# 180 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c90\\stdio.h" 3
+#pragma printf_check(vprintf) const
+#pragma printf_check(vsprintf) const
+
+extern char * gets(char *);
+extern int puts(const char *);
+extern int scanf(const char *, ...) __attribute__((unsupported("scanf() is not supported by this compiler")));
+extern int sscanf(const char *, const char *, ...) __attribute__((unsupported("sscanf() is not supported by this compiler")));
+extern int vprintf(const char *, va_list) __attribute__((unsupported("vprintf() is not supported by this compiler")));
+extern int vsprintf(char *, const char *, va_list) __attribute__((unsupported("vsprintf() is not supported by this compiler")));
+extern int vscanf(const char *, va_list ap) __attribute__((unsupported("vscanf() is not supported by this compiler")));
+extern int vsscanf(const char *, const char *, va_list) __attribute__((unsupported("vsscanf() is not supported by this compiler")));
+
+#pragma printf_check(printf) const
+#pragma printf_check(sprintf) const
+extern int sprintf(char *, const char *, ...);
+extern int printf(const char *, ...);
+# 27 "postlab2.c" 2
+
+# 1 "./USARTmodl.h" 1
+# 11 "./USARTmodl.h"
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c90\\stdint.h" 1 3
+# 11 "./USARTmodl.h" 2
+
+
+
+const char message[] = " + para aumentar contador\r\n" ;
+const char message2[] = "- para disminuir contador\r\n" ;
+void UART_Init(const uint32_t baud_rate);
+__bit UART_Data_Ready();
+uint8_t UART_GetC();
+void UART_PutC(const char data);
+void UART_Print(const char *data);
+void UART_maininit ();
+# 28 "postlab2.c" 2
+
+
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c90\\string.h" 1 3
+# 14 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c90\\string.h" 3
+extern void * memcpy(void *, const void *, size_t);
+extern void * memmove(void *, const void *, size_t);
+extern void * memset(void *, int, size_t);
+# 36 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c90\\string.h" 3
+extern char * strcat(char *, const char *);
+extern char * strcpy(char *, const char *);
+extern char * strncat(char *, const char *, size_t);
+extern char * strncpy(char *, const char *, size_t);
+extern char * strdup(const char *);
+extern char * strtok(char *, const char *);
+
+
+extern int memcmp(const void *, const void *, size_t);
+extern int strcmp(const char *, const char *);
+extern int stricmp(const char *, const char *);
+extern int strncmp(const char *, const char *, size_t);
+extern int strnicmp(const char *, const char *, size_t);
+extern void * memchr(const void *, int, size_t);
+extern size_t strcspn(const char *, const char *);
+extern char * strpbrk(const char *, const char *);
+extern size_t strspn(const char *, const char *);
+extern char * strstr(const char *, const char *);
+extern char * stristr(const char *, const char *);
+extern char * strerror(int);
+extern size_t strlen(const char *);
+extern char * strchr(const char *, int);
+extern char * strichr(const char *, int);
+extern char * strrchr(const char *, int);
+extern char * strrichr(const char *, int);
+# 30 "postlab2.c" 2
+
+char valpot;
+uint16_t map(uint16_t varmap,uint16_t minval,uint16_t maxval, uint16_t minsal, uint16_t maxsal);
+
+void __attribute__((picinterrupt(("")))) isr (void)
 {
-    SPI_DATA_SAMPLE_MIDDLE = 0b00000000,
-    SPI_DATA_SAMPLE_END = 0b10000000
-}Spi_Data_Sample;
+    if(PIR1bits.ADIF){
 
-typedef enum
-{
-    SPI_CLOCK_IDLE_HIGH = 0b00010000,
-    SPI_CLOCK_IDLE_LOW = 0b00000000
-}Spi_Clock_Idle;
-
-typedef enum
-{
-    SPI_IDLE_2_ACTIVE = 0b00000000,
-    SPI_ACTIVE_2_IDLE = 0b01000000
-}Spi_Transmit_Edge;
+         if (ADCON0bits.CHS ==0)
+          valpot = ADRESH;
+         PIR1bits.ADIF =0;
 
 
-void spiInit(Spi_Type, Spi_Data_Sample, Spi_Clock_Idle, Spi_Transmit_Edge);
-void spiWrite(char);
-unsigned spiDataReady();
-char spiRead();
-# 30 "Lab3master.c" 2
-# 39 "Lab3master.c"
-void setup(void);
-
-
-
-
-void main(void) {
-    setup();
-
-
-
-    while(1){
-
-
-
-       PORTCbits.RC2 = 0;
-       _delay((unsigned long)((1)*(8000000/4000.0)));
-
-       spiWrite(PORTB);
-       PORTD = spiRead();
-
-       _delay((unsigned long)((1)*(8000000/4000.0)));
-       PORTCbits.RC2 = 1;
-
-       _delay((unsigned long)((250)*(8000000/4000.0)));
-
-       PORTCbits.RC1 = 0;
-       _delay((unsigned long)((5)*(8000000/4000.0)));
-
-       spiWrite(PORTB);
-       PORTA = spiRead();
-
-       _delay((unsigned long)((1)*(8000000/4000.0)));
-       PORTCbits.RC1 = 1;
-
-       _delay((unsigned long)((250)*(8000000/4000.0)));
 
     }
 
 }
+void setup(void);
+void preguntas (void);
+
+ char uart_read(){
+ if(PIR1bits.RCIF== 0){
+     if (RCSTAbits.OERR){
+         RCSTAbits.CREN =0;
+         __nop();
+         RCSTAbits.CREN =1;
+ }
+     return RCREG;
+ }
+ else
+     return 0;
+ }
+
+void main(void)
+{
+    setup();
+  OSCCON = 0x70;
+
+  UART_Init(9600);
+
+  _delay((unsigned long)((2000)*(8000000/4000.0)));
+
+  UART_Print("1.Leer potenciometro\r\n");
+
+  _delay((unsigned long)((1000)*(8000000/4000.0)));
+
+  UART_Print(message);
+ UART_Print (message2);
+  _delay((unsigned long)((1000)*(8000000/4000.0)));
+
+  UART_Print("\r\n");
+ ADCON0bits.GO =1;
+ char text[9];
+  while(1)
+  {
+       if (ADCON0bits.GO ==0)
+     ADCON0bits.GO =1;
+# 99 "postlab2.c"
+      switch (uart_read()){
+          case '1':
 
 
 
+               valpot = ADRESH;
+              uint16_t varvolt2 = map(valpot,0,255,0,5);
+
+              UART_Print ("\r\n");
+            sprintf(text, "%03u\r\n", varvolt2);
+            UART_Print(text);
+
+
+              preguntas();
+             RCREG ='0';
+
+             break;
+           case '+':
+               _delay((unsigned long)((2000)*(8000000/4000000.0)));
+               PORTB ++;
+                preguntas();
+               RCREG ='0';
+
+               break;
+                 case '-':
+               _delay((unsigned long)((2000)*(8000000/4000000.0)));
+               PORTB --;
+                preguntas();
+               RCREG ='0';
+
+               break;
+
+      }
+
+    if ( UART_Data_Ready() )
+    {
+      uint8_t c = UART_GetC();
+      UART_PutC(c);
+    }
+
+  }
+
+}
 void setup(void){
-    ANSEL = 0;
+    ANSEL = 0b00000011;
     ANSELH = 0;
-    TRISC1 = 0;
-    TRISC2 = 0;
-    TRISA =0;
-    TRISB = 0;
-    TRISD = 0;
-    PORTA = 0;
-    PORTB = 0;
-    PORTD = 0;
-    PORTCbits.RC1 = 1;
-    PORTCbits.RC2 = 1;
-    spiInit(SPI_MASTER_OSC_DIV4, SPI_DATA_SAMPLE_MIDDLE, SPI_CLOCK_IDLE_LOW, SPI_IDLE_2_ACTIVE);
 
-    OSCCONbits.IRCF = 0b0111;
-    OSCCONbits.SCS = 1;
+    TRISB= 0xFF;
+    TRISB = 0;
+    PORTB = 0;
+
+
+    ADCON1bits.ADFM = 0;
+    ADCON1bits.VCFG0 = 0;
+    ADCON1bits.VCFG1 = 0;
+
+    ADCON0bits.ADCS = 0b01;
+    ADCON0bits.CHS = 0;
+    ADCON0bits.ADON= 1;
+    _delay((unsigned long)((50)*(8000000/4000000.0)));
+
+    PIR1bits.ADIF = 0;
+    PIE1bits.ADIE = 1;
+    INTCONbits.PEIE = 1;
+    INTCONbits.GIE = 1;
+
+}
+void preguntas(void)
+{
+    UART_Print ("1.Leer potenciometro\r\n");
+    UART_Print (message);
+    UART_Print (message2);
+}
+uint16_t map(uint16_t varmap,uint16_t minval,uint16_t maxval, uint16_t minsal, uint16_t maxsal){
+  float valmap =((varmap - minval) * (maxsal - minsal)) / (maxval - minval) + minsal;
+  return valmap;
 }

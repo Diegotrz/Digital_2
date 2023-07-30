@@ -93,6 +93,7 @@ float  varvolt2 = (varvolt*5)/255 ;
     Lcd_Set_Cursor(1,1);
     
     Lcd_Write_String(s);
+   
     __delay_ms(2000);
     }
     

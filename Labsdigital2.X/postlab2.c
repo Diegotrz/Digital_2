@@ -74,7 +74,7 @@ void main(void)
   __delay_ms(1000);  // wait 1 second
  
   UART_Print(message);  // UART print message
- 
+ UART_Print (message2);
   __delay_ms(1000);  // wait 1 second
  
   UART_Print("\r\n");  // start new line
@@ -115,13 +115,15 @@ void main(void)
              break;
            case '+': 
                __delay_us(2000);
-               PORTD ++;
+               PORTB ++;
+                preguntas();
                RCREG ='0';
                
                break;
                  case '-': 
                __delay_us(2000);
-               PORTD --;
+               PORTB --;
+                preguntas();
                RCREG ='0';
                
                break;
@@ -141,8 +143,9 @@ void setup(void){
     ANSEL = 0b00000011;
     ANSELH = 0;
     
-    TRISA = 0xFF;
-    
+    TRISB= 0xFF;
+    TRISB = 0;
+    PORTB = 0;
  
     // Configuración del ADC
     ADCON1bits.ADFM = 0; //Justificado a la izquierda
@@ -164,6 +167,7 @@ void preguntas(void)
 {
     UART_Print ("1.Leer potenciometro\r\n");
     UART_Print (message);
+    UART_Print (message2);
 }
 uint16_t  map(uint16_t varmap,uint16_t minval,uint16_t maxval, uint16_t minsal, uint16_t maxsal){
   float  valmap =((varmap - minval) * (maxsal - minsal)) / (maxval - minval) + minsal;

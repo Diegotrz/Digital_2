@@ -11,7 +11,8 @@
 #include <stdint.h>
 #include <stdio.h>         // for sprintf
 #define _XTAL_FREQ 8000000
-const char message[] = "2.Enviar Ascii" ;
+const char message[] = " + para aumentar contador\r\n" ;
+const char message2[] = "- para disminuir contador\r\n" ;
 void UART_Init(const uint32_t baud_rate);
 __bit UART_Data_Ready();
 uint8_t UART_GetC();

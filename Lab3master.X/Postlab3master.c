@@ -29,10 +29,13 @@
 #include <stdint.h>
 #include "SPI.h"
 #include "LCD.h"
+#include "stdio.h"
 //*****************************************************************************
 // Definición de variables
 //*****************************************************************************
 #define _XTAL_FREQ 8000000
+uint8_t pot1;
+uint8_t pot2;
 //*****************************************************************************
 // Definición de funciones para que se puedan colocar después del main de lo 
 // contrario hay que colocarlos todas las funciones antes del main
@@ -44,6 +47,7 @@ void setup(void);
 //*****************************************************************************
 void main(void) {
     setup();
+     Lcd_Init();
     //*************************************************************************
     // Loop infinito
     //*************************************************************************
@@ -54,8 +58,8 @@ void main(void) {
        PORTCbits.RC2 = 0;       //Slave Select
        __delay_ms(1);
        
-       spiWrite(PORTB);
-       PORTD = spiRead();
+       spiWrite(1);
+       pot1 = spiRead();
        
        __delay_ms(1);
        PORTCbits.RC2 = 1;       //Slave Deselect 
@@ -65,13 +69,37 @@ void main(void) {
        PORTCbits.RC1 = 0;       //Slave Select
        __delay_ms(5);
        
-       spiWrite(PORTB);
-       PORTA = spiRead();
+       spiWrite(1);
+       pot2 = spiRead();
        
        __delay_ms(1);
        PORTCbits.RC1 = 1;       //Slave Deselect 
        
        __delay_ms(250);
+     // Envío de datos a la LCD
+        char s[20];
+        char s2[20];
+      Lcd_Clear();
+    
+//float  varvolt2 = (varvolt*5)/255 ;
+  
+        
+    Lcd_Set_Cursor(1,1);
+    Lcd_Write_String("Pot1");
+    
+    sprintf(s, "%u", pot1);
+    Lcd_Set_Cursor(2,1);
+    Lcd_Write_String(s);
+    
+    Lcd_Set_Cursor(1,7);
+    Lcd_Write_String("Pot2");
+    
+    sprintf(s2, "%u", pot2);
+    Lcd_Set_Cursor(2,7);
+    Lcd_Write_String(s2);
+    __delay_ms(500);
+       
+       
        
     }
 
@@ -84,6 +112,8 @@ void setup(void){
     ANSELH = 0;
     TRISC1 = 0;
     TRISC2 = 0;
+    TRISC6 = 0;
+    TRISC7 = 0;
     TRISA =0;
     TRISB = 0;
     TRISD = 0;
