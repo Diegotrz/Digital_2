@@ -2731,25 +2731,7 @@ void __attribute__((picinterrupt(("")))) isr(void){
             PIR1bits.ADIF =0;
 
     }
-    if (INTCONbits.RBIF ){
 
-
-
-    if (PORTBbits.RB2){
-            while (RB2){
-                PORTD ++;
-           INTCONbits.RBIF = 0;
-                         }
-        }
-        if (PORTBbits.RB0){
-            while (RB0);{
-                PORTD --;
-                 INTCONbits.RBIF = 0;
-                         }
-
-
-        }
-}
 }
 
 
@@ -2762,7 +2744,16 @@ void main(void) {
 
 
     while(1){
-      INTCONbits.RBIF = 1;
+      if (!PORTBbits.RB0){
+            while (!RB0);
+                PORTD ++;
+        }
+    if (!PORTBbits.RB1){
+            while (!RB1) ;
+                PORTD --;
+
+
+        }
        _delay((unsigned long)((250)*(8000000/4000.0)));
        if (ADCON0bits.GO ==0){
            for (i=0;i<=2;i++){
@@ -2786,10 +2777,10 @@ void main(void) {
 void setup(void){
     ANSEL = 0b00000011;
     ANSELH = 0;
-    TRISB = 1;
+    TRISB = 0b11111111;
 
-
-
+    OPTION_REGbits.nRBPU = 0;
+    WPUB = 0b11111111;
     TRISD = 0;
 
 

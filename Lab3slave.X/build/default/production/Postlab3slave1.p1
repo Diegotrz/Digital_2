@@ -44,22 +44,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 "1239
 [; ;D:/Mpxlab/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 1239: extern volatile unsigned char ADRESH __attribute__((address(0x01E)));
 [v _ADRESH `Vuc ~T0 @X0 0 e@30 ]
-"466
-[; ;D:/Mpxlab/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 466:     struct {
-[s S16 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S16 . RBIF INTF T0IF RBIE INTE T0IE PEIE GIE ]
-"476
-[; ;D:/Mpxlab/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 476:     struct {
-[s S17 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
-[n S17 . . TMR0IF . TMR0IE ]
-"465
-[; ;D:/Mpxlab/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 465: typedef union {
-[u S15 `S16 1 `S17 1 ]
-[n S15 . . . ]
-"483
-[; ;D:/Mpxlab/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 483: extern volatile INTCONbits_t INTCONbits __attribute__((address(0x00B)));
-[v _INTCONbits `VS15 ~T0 @X0 0 e@11 ]
-"235
+[p mainexit ]
+"51 Postlab3slave1.c
+[; ;Postlab3slave1.c: 51: void setup(void);
+[v _setup `(v ~T0 @X0 0 ef ]
+"235 D:/Mpxlab/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h
 [; ;D:/Mpxlab/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 235:     struct {
 [s S8 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S8 . RB0 RB1 RB2 RB3 RB4 RB5 RB6 RB7 ]
@@ -70,19 +59,15 @@ Version 4.0 HI-TECH Software Intermediate Code
 "246
 [; ;D:/Mpxlab/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 246: extern volatile PORTBbits_t PORTBbits __attribute__((address(0x006)));
 [v _PORTBbits `VS7 ~T0 @X0 0 e@6 ]
-"353
-[; ;D:/Mpxlab/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 353: extern volatile unsigned char PORTD __attribute__((address(0x008)));
-[v _PORTD `Vuc ~T0 @X0 0 e@8 ]
-"4114
-[; ;D:/Mpxlab/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 4114: extern volatile __bit RB2 __attribute__((address(0x32)));
-[v _RB2 `Vb ~T0 @X0 0 e@50 ]
 "4108
 [; ;D:/Mpxlab/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 4108: extern volatile __bit RB0 __attribute__((address(0x30)));
 [v _RB0 `Vb ~T0 @X0 0 e@48 ]
-[p mainexit ]
-"51 Postlab3slave1.c
-[; ;Postlab3slave1.c: 51: void setup(void);
-[v _setup `(v ~T0 @X0 0 ef ]
+"353
+[; ;D:/Mpxlab/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 353: extern volatile unsigned char PORTD __attribute__((address(0x008)));
+[v _PORTD `Vuc ~T0 @X0 0 e@8 ]
+"4111
+[; ;D:/Mpxlab/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 4111: extern volatile __bit RB1 __attribute__((address(0x31)));
+[v _RB1 `Vb ~T0 @X0 0 e@49 ]
 [v F36 `(v ~T0 @X0 1 tf1`ul ]
 "12 D:/Mpxlab/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\builtins.h
 [v __delay `JF36 ~T0 @X0 0 e ]
@@ -99,9 +84,42 @@ Version 4.0 HI-TECH Software Intermediate Code
 "1479
 [; ;D:/Mpxlab/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 1479: extern volatile unsigned char TRISB __attribute__((address(0x086)));
 [v _TRISB `Vuc ~T0 @X0 0 e@134 ]
+"1353
+[; ;D:/Mpxlab/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 1353:     struct {
+[s S50 :3 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S50 . PS PSA T0SE T0CS INTEDG nRBPU ]
+"1361
+[; ;D:/Mpxlab/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 1361:     struct {
+[s S51 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S51 . PS0 PS1 PS2 ]
+"1352
+[; ;D:/Mpxlab/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 1352: typedef union {
+[u S49 `S50 1 `S51 1 ]
+[n S49 . . . ]
+"1367
+[; ;D:/Mpxlab/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 1367: extern volatile OPTION_REGbits_t OPTION_REGbits __attribute__((address(0x081)));
+[v _OPTION_REGbits `VS49 ~T0 @X0 0 e@129 ]
+"2347
+[; ;D:/Mpxlab/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 2347: extern volatile unsigned char WPUB __attribute__((address(0x095)));
+[v _WPUB `Vuc ~T0 @X0 0 e@149 ]
 "1603
 [; ;D:/Mpxlab/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 1603: extern volatile unsigned char TRISD __attribute__((address(0x088)));
 [v _TRISD `Vuc ~T0 @X0 0 e@136 ]
+"466
+[; ;D:/Mpxlab/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 466:     struct {
+[s S16 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S16 . RBIF INTF T0IF RBIE INTE T0IE PEIE GIE ]
+"476
+[; ;D:/Mpxlab/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 476:     struct {
+[s S17 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
+[n S17 . . TMR0IF . TMR0IE ]
+"465
+[; ;D:/Mpxlab/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 465: typedef union {
+[u S15 `S16 1 `S17 1 ]
+[n S15 . . . ]
+"483
+[; ;D:/Mpxlab/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 483: extern volatile INTCONbits_t INTCONbits __attribute__((address(0x00B)));
+[v _INTCONbits `VS15 ~T0 @X0 0 e@11 ]
 "1709
 [; ;D:/Mpxlab/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 1709:     struct {
 [s S63 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
@@ -124,8 +142,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 "1434
 [; ;D:/Mpxlab/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 1434: extern volatile TRISAbits_t TRISAbits __attribute__((address(0x085)));
 [v _TRISAbits `VS52 ~T0 @X0 0 e@133 ]
-"147 Postlab3slave1.c
-[; ;Postlab3slave1.c: 147:     spiInit(SPI_SLAVE_SS_EN, SPI_DATA_SAMPLE_MIDDLE, SPI_CLOCK_IDLE_LOW, SPI_IDLE_2_ACTIVE);
+"138 Postlab3slave1.c
+[; ;Postlab3slave1.c: 138:     spiInit(SPI_SLAVE_SS_EN, SPI_DATA_SAMPLE_MIDDLE, SPI_CLOCK_IDLE_LOW, SPI_IDLE_2_ACTIVE);
 [c E1292 32 33 34 35 36 37 .. ]
 [n E1292 . SPI_MASTER_OSC_DIV4 SPI_MASTER_OSC_DIV16 SPI_MASTER_OSC_DIV64 SPI_MASTER_TMR2 SPI_SLAVE_SS_EN SPI_SLAVE_SS_DIS  ]
 [c E1300 0 128 .. ]
@@ -507,226 +525,205 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;Postlab3slave1.c: 77:     }
 }
 [e :U 140 ]
-"78
-[; ;Postlab3slave1.c: 78:     if (INTCONbits.RBIF ){
-[e $ ! != -> . . _INTCONbits 0 0 `i -> 0 `i 146  ]
-{
-"82
-[; ;Postlab3slave1.c: 82:     if (PORTBbits.RB2){
-[e $ ! != -> . . _PORTBbits 0 2 `i -> 0 `i 147  ]
-{
-"83
-[; ;Postlab3slave1.c: 83:             while (RB2){
-[e $U 148  ]
-[e :U 149 ]
-{
-"84
-[; ;Postlab3slave1.c: 84:                 PORTD ++;
-[e ++ _PORTD -> -> 1 `i `Vuc ]
-"85
-[; ;Postlab3slave1.c: 85:            INTCONbits.RBIF = 0;
-[e = . . _INTCONbits 0 0 -> -> 0 `i `uc ]
-"86
-[; ;Postlab3slave1.c: 86:                          }
-}
-[e :U 148 ]
-"83
-[; ;Postlab3slave1.c: 83:             while (RB2){
-[e $ _RB2 149  ]
-[e :U 150 ]
-"87
-[; ;Postlab3slave1.c: 87:         }
-}
-[e :U 147 ]
-"88
-[; ;Postlab3slave1.c: 88:         if (PORTBbits.RB0){
-[e $ ! != -> . . _PORTBbits 0 0 `i -> 0 `i 151  ]
-{
-"89
-[; ;Postlab3slave1.c: 89:             while (RB0);{
-[e $U 152  ]
-[e :U 153 ]
-[e :U 152 ]
-[e $ _RB0 153  ]
-[e :U 154 ]
-{
-"90
-[; ;Postlab3slave1.c: 90:                 PORTD --;
-[e -- _PORTD -> -> 1 `i `Vuc ]
-"91
-[; ;Postlab3slave1.c: 91:                  INTCONbits.RBIF = 0;
-[e = . . _INTCONbits 0 0 -> -> 0 `i `uc ]
-"92
-[; ;Postlab3slave1.c: 92:                          }
-}
-"95
-[; ;Postlab3slave1.c: 95:         }
-}
-[e :U 151 ]
-"96
-[; ;Postlab3slave1.c: 96: }
-}
-[e :U 146 ]
-"97
-[; ;Postlab3slave1.c: 97: }
+"79
+[; ;Postlab3slave1.c: 79: }
 [e :UE 138 ]
 }
 [v $root$_main `(v ~T0 @X0 0 e ]
-"101
-[; ;Postlab3slave1.c: 101: void main(void) {
+"83
+[; ;Postlab3slave1.c: 83: void main(void) {
 [v _main `(v ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
-"102
-[; ;Postlab3slave1.c: 102:     setup();
+"84
+[; ;Postlab3slave1.c: 84:     setup();
 [e ( _setup ..  ]
-"103
-[; ;Postlab3slave1.c: 103:     ADCON0bits.GO =1;
+"85
+[; ;Postlab3slave1.c: 85:     ADCON0bits.GO =1;
 [e = . . _ADCON0bits 1 1 -> -> 1 `i `uc ]
-"104
-[; ;Postlab3slave1.c: 104:     i=0;
+"86
+[; ;Postlab3slave1.c: 86:     i=0;
 [e = _i -> 0 `i ]
-"108
-[; ;Postlab3slave1.c: 108:     while(1){
+"90
+[; ;Postlab3slave1.c: 90:     while(1){
+[e :U 148 ]
+{
+"91
+[; ;Postlab3slave1.c: 91:       if (!PORTBbits.RB0){
+[e $ ! ! != -> . . _PORTBbits 0 0 `i -> 0 `i 150  ]
+{
+"92
+[; ;Postlab3slave1.c: 92:             while (!RB0);
+[e $U 151  ]
+[e :U 152 ]
+[e :U 151 ]
+[e $ ! _RB0 152  ]
+[e :U 153 ]
+"93
+[; ;Postlab3slave1.c: 93:                 PORTD ++;
+[e ++ _PORTD -> -> 1 `i `Vuc ]
+"94
+[; ;Postlab3slave1.c: 94:         }
+}
+[e :U 150 ]
+"95
+[; ;Postlab3slave1.c: 95:     if (!PORTBbits.RB1){
+[e $ ! ! != -> . . _PORTBbits 0 1 `i -> 0 `i 154  ]
+{
+"96
+[; ;Postlab3slave1.c: 96:             while (!RB1) ;
+[e $U 155  ]
+[e :U 156 ]
+[e :U 155 ]
+[e $ ! _RB1 156  ]
 [e :U 157 ]
-{
-"109
-[; ;Postlab3slave1.c: 109:       INTCONbits.RBIF = 1;
-[e = . . _INTCONbits 0 0 -> -> 1 `i `uc ]
-"110
-[; ;Postlab3slave1.c: 110:        _delay((unsigned long)((250)*(8000000/4000.0)));
+"97
+[; ;Postlab3slave1.c: 97:                 PORTD --;
+[e -- _PORTD -> -> 1 `i `Vuc ]
+"100
+[; ;Postlab3slave1.c: 100:         }
+}
+[e :U 154 ]
+"101
+[; ;Postlab3slave1.c: 101:        _delay((unsigned long)((250)*(8000000/4000.0)));
 [e ( __delay (1 -> * -> -> 250 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-"111
-[; ;Postlab3slave1.c: 111:        if (ADCON0bits.GO ==0){
-[e $ ! == -> . . _ADCON0bits 1 1 `i -> 0 `i 159  ]
+"102
+[; ;Postlab3slave1.c: 102:        if (ADCON0bits.GO ==0){
+[e $ ! == -> . . _ADCON0bits 1 1 `i -> 0 `i 158  ]
 {
-"112
-[; ;Postlab3slave1.c: 112:            for (i=0;i<=2;i++){
+"103
+[; ;Postlab3slave1.c: 103:            for (i=0;i<=2;i++){
 {
 [e = _i -> 0 `i ]
-[e $ <= _i -> 2 `i 160  ]
-[e $U 161  ]
-[e :U 160 ]
+[e $ <= _i -> 2 `i 159  ]
+[e $U 160  ]
+[e :U 159 ]
 {
-"113
-[; ;Postlab3slave1.c: 113:            ADCON0bits.CHS = i;
+"104
+[; ;Postlab3slave1.c: 104:            ADCON0bits.CHS = i;
 [e = . . _ADCON0bits 0 2 -> _i `uc ]
-"114
-[; ;Postlab3slave1.c: 114:            ADCON0bits.GO =1;
+"105
+[; ;Postlab3slave1.c: 105:            ADCON0bits.GO =1;
 [e = . . _ADCON0bits 1 1 -> -> 1 `i `uc ]
-"115
-[; ;Postlab3slave1.c: 115:         }
+"106
+[; ;Postlab3slave1.c: 106:         }
 }
 [e ++ _i -> 1 `i ]
-[e $ <= _i -> 2 `i 160  ]
-[e :U 161 ]
+[e $ <= _i -> 2 `i 159  ]
+[e :U 160 ]
 }
-"116
-[; ;Postlab3slave1.c: 116:      }
+"107
+[; ;Postlab3slave1.c: 107:      }
 }
-[e :U 159 ]
-"117
-[; ;Postlab3slave1.c: 117:        char s[20];
+[e :U 158 ]
+"108
+[; ;Postlab3slave1.c: 108:        char s[20];
 [v _s `uc ~T0 @X0 -> 20 `i a ]
-"121
-[; ;Postlab3slave1.c: 121:      float varvolt2 = map(varvolt,0,255,0,5);
+"112
+[; ;Postlab3slave1.c: 112:      float varvolt2 = map(varvolt,0,255,0,5);
 [v _varvolt2 `f ~T0 @X0 1 a ]
 [e = _varvolt2 -> ( _map (4 , , , , -> _varvolt `ui -> -> 0 `i `ui -> -> 255 `i `ui -> -> 0 `i `ui -> -> 5 `i `ui `f ]
-"124
-[; ;Postlab3slave1.c: 124:     }
+"115
+[; ;Postlab3slave1.c: 115:     }
 }
-[e :U 156 ]
-[e $U 157  ]
-[e :U 158 ]
-"126
-[; ;Postlab3slave1.c: 126: }
-[e :UE 155 ]
+[e :U 147 ]
+[e $U 148  ]
+[e :U 149 ]
+"117
+[; ;Postlab3slave1.c: 117: }
+[e :UE 146 ]
 }
-"130
-[; ;Postlab3slave1.c: 130: void setup(void){
+"121
+[; ;Postlab3slave1.c: 121: void setup(void){
 [v _setup `(v ~T0 @X0 1 ef ]
 {
 [e :U _setup ]
 [f ]
-"131
-[; ;Postlab3slave1.c: 131:     ANSEL = 0b00000011;
+"122
+[; ;Postlab3slave1.c: 122:     ANSEL = 0b00000011;
 [e = _ANSEL -> -> 3 `i `uc ]
-"132
-[; ;Postlab3slave1.c: 132:     ANSELH = 0;
+"123
+[; ;Postlab3slave1.c: 123:     ANSELH = 0;
 [e = _ANSELH -> -> 0 `i `uc ]
-"133
-[; ;Postlab3slave1.c: 133:     TRISB = 1;
-[e = _TRISB -> -> 1 `i `uc ]
-"137
-[; ;Postlab3slave1.c: 137:     TRISD = 0;
+"124
+[; ;Postlab3slave1.c: 124:     TRISB = 0b11111111;
+[e = _TRISB -> -> 255 `i `uc ]
+"126
+[; ;Postlab3slave1.c: 126:     OPTION_REGbits.nRBPU = 0;
+[e = . . _OPTION_REGbits 0 5 -> -> 0 `i `uc ]
+"127
+[; ;Postlab3slave1.c: 127:     WPUB = 0b11111111;
+[e = _WPUB -> -> 255 `i `uc ]
+"128
+[; ;Postlab3slave1.c: 128:     TRISD = 0;
 [e = _TRISD -> -> 0 `i `uc ]
-"140
-[; ;Postlab3slave1.c: 140:     PORTD = 0;
+"131
+[; ;Postlab3slave1.c: 131:     PORTD = 0;
 [e = _PORTD -> -> 0 `i `uc ]
-"142
-[; ;Postlab3slave1.c: 142:     INTCONbits.GIE = 1;
+"133
+[; ;Postlab3slave1.c: 133:     INTCONbits.GIE = 1;
 [e = . . _INTCONbits 0 7 -> -> 1 `i `uc ]
-"143
-[; ;Postlab3slave1.c: 143:     INTCONbits.PEIE = 1;
+"134
+[; ;Postlab3slave1.c: 134:     INTCONbits.PEIE = 1;
 [e = . . _INTCONbits 0 6 -> -> 1 `i `uc ]
-"144
-[; ;Postlab3slave1.c: 144:     PIR1bits.SSPIF = 0;
+"135
+[; ;Postlab3slave1.c: 135:     PIR1bits.SSPIF = 0;
 [e = . . _PIR1bits 0 3 -> -> 0 `i `uc ]
-"145
-[; ;Postlab3slave1.c: 145:     PIE1bits.SSPIE = 1;
+"136
+[; ;Postlab3slave1.c: 136:     PIE1bits.SSPIE = 1;
 [e = . . _PIE1bits 0 3 -> -> 1 `i `uc ]
-"146
-[; ;Postlab3slave1.c: 146:     TRISAbits.TRISA5 = 1;
+"137
+[; ;Postlab3slave1.c: 137:     TRISAbits.TRISA5 = 1;
 [e = . . _TRISAbits 0 5 -> -> 1 `i `uc ]
-"147
-[; ;Postlab3slave1.c: 147:     spiInit(SPI_SLAVE_SS_EN, SPI_DATA_SAMPLE_MIDDLE, SPI_CLOCK_IDLE_LOW, SPI_IDLE_2_ACTIVE);
+"138
+[; ;Postlab3slave1.c: 138:     spiInit(SPI_SLAVE_SS_EN, SPI_DATA_SAMPLE_MIDDLE, SPI_CLOCK_IDLE_LOW, SPI_IDLE_2_ACTIVE);
 [e ( _spiInit (4 , , , . `E1292 4 . `E1300 0 . `E1304 1 . `E1308 0 ]
-"149
-[; ;Postlab3slave1.c: 149:     OSCCONbits.IRCF = 0b0111;
+"140
+[; ;Postlab3slave1.c: 140:     OSCCONbits.IRCF = 0b0111;
 [e = . . _OSCCONbits 0 4 -> -> 7 `i `uc ]
-"150
-[; ;Postlab3slave1.c: 150:     OSCCONbits.SCS = 1;
+"141
+[; ;Postlab3slave1.c: 141:     OSCCONbits.SCS = 1;
 [e = . . _OSCCONbits 0 0 -> -> 1 `i `uc ]
-"152
-[; ;Postlab3slave1.c: 152:     ADCON1bits.ADFM = 0;
+"143
+[; ;Postlab3slave1.c: 143:     ADCON1bits.ADFM = 0;
 [e = . . _ADCON1bits 0 4 -> -> 0 `i `uc ]
-"153
-[; ;Postlab3slave1.c: 153:     ADCON1bits.VCFG0 = 0;
+"144
+[; ;Postlab3slave1.c: 144:     ADCON1bits.VCFG0 = 0;
 [e = . . _ADCON1bits 0 1 -> -> 0 `i `uc ]
-"154
-[; ;Postlab3slave1.c: 154:     ADCON1bits.VCFG1 = 0;
+"145
+[; ;Postlab3slave1.c: 145:     ADCON1bits.VCFG1 = 0;
 [e = . . _ADCON1bits 0 2 -> -> 0 `i `uc ]
-"156
-[; ;Postlab3slave1.c: 156:     ADCON0bits.ADCS = 0b01;
+"147
+[; ;Postlab3slave1.c: 147:     ADCON0bits.ADCS = 0b01;
 [e = . . _ADCON0bits 0 3 -> -> 1 `i `uc ]
-"157
-[; ;Postlab3slave1.c: 157:     ADCON0bits.CHS = 0;
+"148
+[; ;Postlab3slave1.c: 148:     ADCON0bits.CHS = 0;
 [e = . . _ADCON0bits 0 2 -> -> 0 `i `uc ]
-"158
-[; ;Postlab3slave1.c: 158:     ADCON0bits.ADON= 1;
+"149
+[; ;Postlab3slave1.c: 149:     ADCON0bits.ADON= 1;
 [e = . . _ADCON0bits 0 0 -> -> 1 `i `uc ]
-"159
-[; ;Postlab3slave1.c: 159:     _delay((unsigned long)((50)*(8000000/4000000.0)));
+"150
+[; ;Postlab3slave1.c: 150:     _delay((unsigned long)((50)*(8000000/4000000.0)));
 [e ( __delay (1 -> * -> -> 50 `i `d / -> -> 8000000 `l `d .4000000.0 `ul ]
-"160
-[; ;Postlab3slave1.c: 160:     PIR1bits.ADIF = 0;
+"151
+[; ;Postlab3slave1.c: 151:     PIR1bits.ADIF = 0;
 [e = . . _PIR1bits 0 6 -> -> 0 `i `uc ]
-"161
-[; ;Postlab3slave1.c: 161:     PIE1bits.ADIE = 1;
+"152
+[; ;Postlab3slave1.c: 152:     PIE1bits.ADIE = 1;
 [e = . . _PIE1bits 0 6 -> -> 1 `i `uc ]
-"163
-[; ;Postlab3slave1.c: 163:     INTCONbits.RBIE = 0;
+"154
+[; ;Postlab3slave1.c: 154:     INTCONbits.RBIE = 0;
 [e = . . _INTCONbits 0 3 -> -> 0 `i `uc ]
-"164
-[; ;Postlab3slave1.c: 164:     INTCONbits.RBIF = 1;
+"155
+[; ;Postlab3slave1.c: 155:     INTCONbits.RBIF = 1;
 [e = . . _INTCONbits 0 0 -> -> 1 `i `uc ]
-"165
-[; ;Postlab3slave1.c: 165: }
-[e :UE 163 ]
+"156
+[; ;Postlab3slave1.c: 156: }
+[e :UE 162 ]
 }
-"166
-[; ;Postlab3slave1.c: 166: uint16_t map(uint16_t varmap,uint16_t minval,uint16_t maxval, uint16_t minsal, uint16_t maxsal){
+"157
+[; ;Postlab3slave1.c: 157: uint16_t map(uint16_t varmap,uint16_t minval,uint16_t maxval, uint16_t minsal, uint16_t maxsal){
 [v _map `(ui ~T0 @X0 1 ef5`ui`ui`ui`ui`ui ]
 {
 [e :U _map ]
@@ -736,15 +733,15 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _minsal `ui ~T0 @X0 1 r4 ]
 [v _maxsal `ui ~T0 @X0 1 r5 ]
 [f ]
-"167
-[; ;Postlab3slave1.c: 167:   float valmap =((varmap - minval) * (maxsal - minsal)) / (maxval - minval) + minsal;
+"158
+[; ;Postlab3slave1.c: 158:   float valmap =((varmap - minval) * (maxsal - minsal)) / (maxval - minval) + minsal;
 [v _valmap `f ~T0 @X0 1 a ]
 [e = _valmap -> + / * - _varmap _minval - _maxsal _minsal - _maxval _minval _minsal `f ]
-"168
-[; ;Postlab3slave1.c: 168:   return valmap;
+"159
+[; ;Postlab3slave1.c: 159:   return valmap;
 [e ) -> _valmap `ui ]
-[e $UE 164  ]
-"169
-[; ;Postlab3slave1.c: 169: }
-[e :UE 164 ]
+[e $UE 163  ]
+"160
+[; ;Postlab3slave1.c: 160: }
+[e :UE 163 ]
 }

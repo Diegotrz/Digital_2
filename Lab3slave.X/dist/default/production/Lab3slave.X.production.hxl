@@ -9,12 +9,12 @@
 ### Memory Usage ###
  Intel Hex-file ranges:
   0h - 5h		(dist/default/production\Lab3slave.X.production.hex)
-  8h - ACBh		(dist/default/production\Lab3slave.X.production.hex)
+  8h - AC5h		(dist/default/production\Lab3slave.X.production.hex)
   4000h - 4007h		(dist/default/production\Lab3slave.X.production.hex)
   400Eh - 4011h		(dist/default/production\Lab3slave.X.production.hex)
  Unused ranges:
   6h - 7h
-  ACCh - 3FFFh
+  AC6h - 3FFFh
   4008h - 400Dh
 
 ### Hex Memory Map ###
@@ -196,7 +196,7 @@
 00000A90 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
 00000AA0 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
 00000AB0 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
-00000AC0 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 -- -- -- --
+00000AC0 | H1 H1 H1 H1 H1 H1 -- -- -- -- -- -- -- -- -- --
 ----------------------------------------------------------
 00004000 | H1 H1 H1 H1 H1 H1 H1 H1 -- -- -- -- -- -- H1 H1
 00004010 | H1 H1 -- -- -- -- -- -- -- -- -- -- -- -- -- --
