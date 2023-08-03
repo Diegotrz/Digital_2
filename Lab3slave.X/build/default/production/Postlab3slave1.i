@@ -8,7 +8,7 @@
 # 2 "<built-in>" 2
 # 1 "Postlab3slave1.c" 2
 # 12 "Postlab3slave1.c"
-#pragma config FOSC = EXTRC_NOCLKOUT
+#pragma config FOSC = INTRC_CLKOUT
 #pragma config WDTE = OFF
 #pragma config PWRTE = OFF
 #pragma config MCLRE = OFF

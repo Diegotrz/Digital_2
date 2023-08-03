@@ -33,7 +33,7 @@ cstackBANK1 BANK1 1 A0 A0 6 1 1
 intentry CODE 0 4 4 A 2 1
 bssBANK0 BANK0 1 59 59 D 1 1
 config CONFIG 4 2007 2007 2 2 1
-$C:\Users\Diego\AppData\Local\Temp\xcAsdf4.o
+$C:\Users\Diego\AppData\Local\Temp\xcAs4is.o
 idloc IDLOC 5 2000 2000 4 2 1
 reset_vec CODE 0 0 0 3 2 1
 end_init CODE 0 E E 3 2 1
@@ -81,26 +81,26 @@ STRING 546-1FFF 2
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production\Lab3slave2.X.production.o
-11 cinit CODE >642:C:\Users\Diego\AppData\Local\Temp\xcAsdf4.s
-11 cinit CODE >645:C:\Users\Diego\AppData\Local\Temp\xcAsdf4.s
-11 cinit CODE >671:C:\Users\Diego\AppData\Local\Temp\xcAsdf4.s
-12 cinit CODE >672:C:\Users\Diego\AppData\Local\Temp\xcAsdf4.s
-13 cinit CODE >673:C:\Users\Diego\AppData\Local\Temp\xcAsdf4.s
-14 cinit CODE >674:C:\Users\Diego\AppData\Local\Temp\xcAsdf4.s
-15 cinit CODE >675:C:\Users\Diego\AppData\Local\Temp\xcAsdf4.s
-16 cinit CODE >676:C:\Users\Diego\AppData\Local\Temp\xcAsdf4.s
-17 cinit CODE >677:C:\Users\Diego\AppData\Local\Temp\xcAsdf4.s
-18 cinit CODE >678:C:\Users\Diego\AppData\Local\Temp\xcAsdf4.s
-19 cinit CODE >679:C:\Users\Diego\AppData\Local\Temp\xcAsdf4.s
-1A cinit CODE >680:C:\Users\Diego\AppData\Local\Temp\xcAsdf4.s
-1B cinit CODE >681:C:\Users\Diego\AppData\Local\Temp\xcAsdf4.s
-1C cinit CODE >682:C:\Users\Diego\AppData\Local\Temp\xcAsdf4.s
-1D cinit CODE >683:C:\Users\Diego\AppData\Local\Temp\xcAsdf4.s
-1E cinit CODE >684:C:\Users\Diego\AppData\Local\Temp\xcAsdf4.s
-1F cinit CODE >685:C:\Users\Diego\AppData\Local\Temp\xcAsdf4.s
-20 cinit CODE >691:C:\Users\Diego\AppData\Local\Temp\xcAsdf4.s
-20 cinit CODE >693:C:\Users\Diego\AppData\Local\Temp\xcAsdf4.s
-21 cinit CODE >694:C:\Users\Diego\AppData\Local\Temp\xcAsdf4.s
+11 cinit CODE >642:C:\Users\Diego\AppData\Local\Temp\xcAs4is.s
+11 cinit CODE >645:C:\Users\Diego\AppData\Local\Temp\xcAs4is.s
+11 cinit CODE >671:C:\Users\Diego\AppData\Local\Temp\xcAs4is.s
+12 cinit CODE >672:C:\Users\Diego\AppData\Local\Temp\xcAs4is.s
+13 cinit CODE >673:C:\Users\Diego\AppData\Local\Temp\xcAs4is.s
+14 cinit CODE >674:C:\Users\Diego\AppData\Local\Temp\xcAs4is.s
+15 cinit CODE >675:C:\Users\Diego\AppData\Local\Temp\xcAs4is.s
+16 cinit CODE >676:C:\Users\Diego\AppData\Local\Temp\xcAs4is.s
+17 cinit CODE >677:C:\Users\Diego\AppData\Local\Temp\xcAs4is.s
+18 cinit CODE >678:C:\Users\Diego\AppData\Local\Temp\xcAs4is.s
+19 cinit CODE >679:C:\Users\Diego\AppData\Local\Temp\xcAs4is.s
+1A cinit CODE >680:C:\Users\Diego\AppData\Local\Temp\xcAs4is.s
+1B cinit CODE >681:C:\Users\Diego\AppData\Local\Temp\xcAs4is.s
+1C cinit CODE >682:C:\Users\Diego\AppData\Local\Temp\xcAs4is.s
+1D cinit CODE >683:C:\Users\Diego\AppData\Local\Temp\xcAs4is.s
+1E cinit CODE >684:C:\Users\Diego\AppData\Local\Temp\xcAs4is.s
+1F cinit CODE >685:C:\Users\Diego\AppData\Local\Temp\xcAs4is.s
+20 cinit CODE >691:C:\Users\Diego\AppData\Local\Temp\xcAs4is.s
+20 cinit CODE >693:C:\Users\Diego\AppData\Local\Temp\xcAs4is.s
+21 cinit CODE >694:C:\Users\Diego\AppData\Local\Temp\xcAs4is.s
 4 intentry CODE >56:C:\Users\Diego\Documents\GitHub\Digital_2\Lab3slave2.X\Lab3slave2.c
 3AA text12 CODE >5:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\awdiv.c
 3AA text12 CODE >13:C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\awdiv.c
@@ -427,19 +427,19 @@ spiInit@sTransmitEdge 28 0 BANK0 1 cstackBANK0 dist/default/production\Lab3slave
 __Heeprom_data 0 0 EEDATA 3 eeprom_data -
 ?_map 42 0 BANK0 1 cstackBANK0 dist/default/production\Lab3slave2.X.production.o
 __Hstrings 0 0 ABS 0 strings -
-___sp 0 0 STACK 2 stack C:\Users\Diego\AppData\Local\Temp\xcAsdf4.o
+___sp 0 0 STACK 2 stack C:\Users\Diego\AppData\Local\Temp\xcAs4is.o
 _main 32C 0 CODE 0 maintext dist/default/production\Lab3slave2.X.production.o
 btemp 7E 0 ABS 0 - dist/default/production\Lab3slave2.X.production.o
-start 1C 0 CODE 0 init C:\Users\Diego\AppData\Local\Temp\xcAsdf4.o
+start 1C 0 CODE 0 init C:\Users\Diego\AppData\Local\Temp\xcAs4is.o
 ?___wmul 26 0 BANK0 1 cstackBANK0 dist/default/production\Lab3slave2.X.production.o
 __Hpowerup 0 0 CODE 0 powerup -
 __end_ofi1___xxtofl 32C 0 CODE 0 text9 dist/default/production\Lab3slave2.X.production.o
-intlevel0 0 0 ENTRY 0 functab C:\Users\Diego\AppData\Local\Temp\xcAsdf4.o
-intlevel1 0 0 ENTRY 0 functab C:\Users\Diego\AppData\Local\Temp\xcAsdf4.o
-intlevel2 0 0 ENTRY 0 functab C:\Users\Diego\AppData\Local\Temp\xcAsdf4.o
-intlevel3 0 0 ENTRY 0 functab C:\Users\Diego\AppData\Local\Temp\xcAsdf4.o
-intlevel4 0 0 ENTRY 0 functab C:\Users\Diego\AppData\Local\Temp\xcAsdf4.o
-intlevel5 0 0 ENTRY 0 functab C:\Users\Diego\AppData\Local\Temp\xcAsdf4.o
+intlevel0 0 0 ENTRY 0 functab C:\Users\Diego\AppData\Local\Temp\xcAs4is.o
+intlevel1 0 0 ENTRY 0 functab C:\Users\Diego\AppData\Local\Temp\xcAs4is.o
+intlevel2 0 0 ENTRY 0 functab C:\Users\Diego\AppData\Local\Temp\xcAs4is.o
+intlevel3 0 0 ENTRY 0 functab C:\Users\Diego\AppData\Local\Temp\xcAs4is.o
+intlevel4 0 0 ENTRY 0 functab C:\Users\Diego\AppData\Local\Temp\xcAs4is.o
+intlevel5 0 0 ENTRY 0 functab C:\Users\Diego\AppData\Local\Temp\xcAs4is.o
 _OSCCONbits 8F 0 ABS 0 - dist/default/production\Lab3slave2.X.production.o
 wtemp0 7E 0 ABS 0 - dist/default/production\Lab3slave2.X.production.o
 __Hfunctab 0 0 ENTRY 0 functab -
@@ -458,8 +458,8 @@ __end_of___awdiv 822 0 CODE 0 text12 dist/default/production\Lab3slave2.X.produc
 __end_of___fltol 668 0 CODE 0 text7 dist/default/production\Lab3slave2.X.production.o
 __end_of___lwdiv 97A 0 CODE 0 text6 dist/default/production\Lab3slave2.X.production.o
 i1___fltol@f1 70 0 COMMON 1 cstackCOMMON dist/default/production\Lab3slave2.X.production.o
-___stackhi 0 0 ABS 0 - C:\Users\Diego\AppData\Local\Temp\xcAsdf4.o
-___stacklo 0 0 ABS 0 - C:\Users\Diego\AppData\Local\Temp\xcAsdf4.o
+___stackhi 0 0 ABS 0 - C:\Users\Diego\AppData\Local\Temp\xcAs4is.o
+___stacklo 0 0 ABS 0 - C:\Users\Diego\AppData\Local\Temp\xcAs4is.o
 ___lwdiv@quotient 32 0 BANK0 1 cstackBANK0 dist/default/production\Lab3slave2.X.production.o
 i1___fltol 668 0 CODE 0 text10 dist/default/production\Lab3slave2.X.production.o
 spiInit@sDataSample 26 0 BANK0 1 cstackBANK0 dist/default/production\Lab3slave2.X.production.o
@@ -471,7 +471,7 @@ _SSPBUF 13 0 ABS 0 - dist/default/production\Lab3slave2.X.production.o
 _SSPCON 14 0 ABS 0 - dist/default/production\Lab3slave2.X.production.o
 _TRISC3 43B 0 ABS 0 - dist/default/production\Lab3slave2.X.production.o
 _TRISC5 43D 0 ABS 0 - dist/default/production\Lab3slave2.X.production.o
-___int_sp 0 0 STACK 2 stack C:\Users\Diego\AppData\Local\Temp\xcAsdf4.o
+___int_sp 0 0 STACK 2 stack C:\Users\Diego\AppData\Local\Temp\xcAs4is.o
 __Hbank0 0 0 ABS 0 bank0 -
 __Hbank1 0 0 ABS 0 bank1 -
 __Hbank2 0 0 ABS 0 bank2 -
@@ -531,7 +531,7 @@ __end_of_map 8EE 0 CODE 0 text3 dist/default/production\Lab3slave2.X.production.
 _valpot0 61 0 BANK0 1 bssBANK0 dist/default/production\Lab3slave2.X.production.o
 _varvolt 59 0 BANK0 1 bssBANK0 dist/default/production\Lab3slave2.X.production.o
 __Lintentry 8 0 CODE 0 intentry -
-reset_vec 0 0 CODE 0 reset_vec C:\Users\Diego\AppData\Local\Temp\xcAsdf4.o
+reset_vec 0 0 CODE 0 reset_vec C:\Users\Diego\AppData\Local\Temp\xcAs4is.o
 __end_of___xxtofl 1BC 0 CODE 0 text4 dist/default/production\Lab3slave2.X.production.o
 __LbssBANK0 0 0 ABS 0 bssBANK0 -
 _PIE1bits 8C 0 ABS 0 - dist/default/production\Lab3slave2.X.production.o

@@ -150,7 +150,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;D:/Mpxlab/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 2992: extern volatile ADCON1bits_t ADCON1bits __attribute__((address(0x09F)));
 [v _ADCON1bits `VS115 ~T0 @X0 0 e@159 ]
 "13 Lab3slave2.c
-[p x FOSC  =  EXTRC_NOCLKOUT ]
+[p x FOSC  =  INTRC_CLKOUT ]
 "14
 [p x WDTE  =  OFF        ]
 "15

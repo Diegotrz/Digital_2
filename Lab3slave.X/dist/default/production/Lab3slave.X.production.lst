@@ -1,7 +1,7 @@
 
 
 Microchip MPLAB XC8 Assembler V2.40 build 20220703182018 
-                                                                                               Wed Aug 02 00:25:00 2023
+                                                                                               Wed Aug 02 20:10:49 2023
 
 Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1 
      1                           	processor	16F887
@@ -3152,8 +3152,8 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1
   3133                           
   3134                           ;Config register CONFIG1 @ 0x2007
   3135                           ;	Oscillator Selection bits
-  3136                           ;	FOSC = EXTRC_NOCLKOUT, RCIO oscillator: I/O function on RA6/OSC2/CLKOUT pin, RC on RA7
-      +                          /OSC1/CLKIN
+  3136                           ;	FOSC = INTRC_CLKOUT, INTOSC oscillator: CLKOUT function on RA6/OSC2/CLKOUT pin, I/O fu
+      +                          nction on RA7/OSC1/CLKIN
   3137                           ;	Watchdog Timer Enable bit
   3138                           ;	WDTE = OFF, WDT disabled and can be enabled by SWDTEN bit of the WDTCON register
   3139                           ;	Power-up Timer Enable bit
@@ -3175,7 +3175,7 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1
   3155                           ;	In-Circuit Debugger Mode bit
   3156                           ;	DEBUG = 0x1, unprogrammed default
   3157     2007                     	org	8199
-  3158     2007  20D6               	dw	8406
+  3158     2007  20D5               	dw	8405
   3159                           
   3160                           ;Config register CONFIG2 @ 0x2008
   3161                           ;	Brown-out Reset Selection bit
@@ -3378,7 +3378,7 @@ DATA                 0      0      5D      12        0.0%
 
 
 Microchip Technology PIC Macro Assembler V2.40 build 20220703182018 
-Symbol Table                                                                                   Wed Aug 02 00:25:00 2023
+Symbol Table                                                                                   Wed Aug 02 20:10:49 2023
 
                       _i 0063              _SSPSTATbits 0094                       l16 056B  
                      l17 0570             ___awdiv@sign 0076                       fsr 0004  

@@ -103,7 +103,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;D:/Mpxlab/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 1883: extern volatile OSCCONbits_t OSCCONbits __attribute__((address(0x08F)));
 [v _OSCCONbits `VS69 ~T0 @X0 0 e@143 ]
 "7 Postlab3master.c
-[p x FOSC  =  EXTRC_NOCLKOUT ]
+[p x FOSC  =  INTRC_CLKOUT ]
 "8
 [p x WDTE  =  OFF        ]
 "9

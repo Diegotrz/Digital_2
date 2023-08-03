@@ -232,7 +232,7 @@ cstackBANK0 20 68 BANK0 20 1
 cstackBANK1 A0 A5 BANK1 A0 1
 %locals
 dist/default/production\Lab3slave.X.production.o
-C:\Users\Diego\AppData\Local\Temp\xcAsbok.s
+C:\Users\Diego\AppData\Local\Temp\xcAst8.s
 655 11 0 CODE 0
 658 11 0 CODE 0
 708 11 0 CODE 0
