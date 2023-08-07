@@ -1,9 +1,10 @@
 /*
- * File:   Lab4master.c
- * Author: diego
+ * File:   Postlab4master.c
+ * Author: Diego
  *
- * Created on 3 de agosto de 2023, 04:52 PM
+ * Created on 6 de agosto de 2023, 10:57 PM
  */
+
 // CONFIG1
 #pragma config FOSC = INTRC_CLKOUT// Oscillator Selection bits (INTOSC oscillator: CLKOUT function on RA6/OSC2/CLKOUT pin, I/O function on RA7/OSC1/CLKIN)
 #pragma config WDTE = OFF       // Watchdog Timer Enable bit (WDT disabled and can be enabled by SWDTEN bit of the WDTCON register)
@@ -86,8 +87,9 @@ void RTC_display()
   Date[15] = year   % 10 + '0';
   //Lcd_Clear();
  Lcd_Set_Cursor(1,1);
-  
   Lcd_Write_String(Time);
+  Lcd_Set_Cursor(2,1);
+  Lcd_Write_String(Date);
   
 }
 //*****************************************************************************
@@ -99,6 +101,11 @@ void main(void) {
     I2C_Init(100000);
     minute = decimal_to_bcd(0);
     second = decimal_to_bcd(0);
+    hour = decimal_to_bcd(0);
+    m_day = decimal_to_bcd(6);
+    month= decimal_to_bcd(8);
+    year= decimal_to_bcd(23);
+    
     I2C_Master_Start();
         I2C_Master_Write(0xD0);
         I2C_Master_Write(0x01);    
@@ -112,6 +119,21 @@ void main(void) {
         I2C_Master_Write(second);   
         
         I2C_Master_Stop();
+        __delay_ms(200);
+        
+        I2C_Master_Start();
+        I2C_Master_Write(0xD0);
+        I2C_Master_Write(0x02);    
+        I2C_Master_Write(hour);   
+        I2C_Master_Write(0x03);    
+        I2C_Master_Write(m_day);  
+        I2C_Master_Write(0x04);    
+        I2C_Master_Write(month);
+        I2C_Master_Write(0x05);    
+        I2C_Master_Write(year);
+        I2C_Master_Stop();
+        __delay_ms(200);
+        
     while(1){
        
         I2C_Master_Start();
@@ -129,16 +151,30 @@ void main(void) {
         I2C_Master_RepeatedStart();
         I2C_Master_Write(0xD1);
         minute = I2C_Master_Read(0);
+        I2C_Master_Write(0x02);
+        I2C_Master_RepeatedStart();
+        I2C_Master_Write(0xD1);
+        hour = I2C_Master_Read(0);
+        I2C_Master_Write(0x03);
+        I2C_Master_RepeatedStart();
+        I2C_Master_Write(0xD1);
+        m_day = I2C_Master_Read(0);
+        I2C_Master_Write(0x04);
+        I2C_Master_RepeatedStart();
+        I2C_Master_Write(0xD1);
+        month = I2C_Master_Read(0);
+        I2C_Master_Write(0x05);
+        I2C_Master_RepeatedStart();
+        I2C_Master_Write(0xD1);
+        year = I2C_Master_Read(0);
         I2C_Master_Stop();
         __delay_ms(200);
              
-        __delay_ms(200);
+    
        
         RTC_display();
       //  Lcd_Clear();
-       Lcd_Set_Cursor(2,8);
-  
-  
+ 
     }
     
 }

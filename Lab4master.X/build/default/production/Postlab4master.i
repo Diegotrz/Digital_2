@@ -1,4 +1,4 @@
-# 1 "Lab4master.c"
+# 1 "Postlab4master.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,7 +6,8 @@
 # 1 "<built-in>" 2
 # 1 "D:/Mpxlab/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "Lab4master.c" 2
+# 1 "Postlab4master.c" 2
+
 
 
 
@@ -169,7 +170,7 @@ typedef int16_t intptr_t;
 
 
 typedef uint16_t uintptr_t;
-# 29 "Lab4master.c" 2
+# 30 "Postlab4master.c" 2
 
 # 1 "D:/Mpxlab/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\\pic\\include\\proc\\pic16f887.h" 1 3
 # 45 "D:/Mpxlab/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\\pic\\include\\proc\\pic16f887.h" 3
@@ -2581,7 +2582,7 @@ extern volatile __bit nW __attribute__((address(0x4A2)));
 
 
 extern volatile __bit nWRITE __attribute__((address(0x4A2)));
-# 30 "Lab4master.c" 2
+# 31 "Postlab4master.c" 2
 
 # 1 "./I2C.h" 1
 # 18 "./I2C.h"
@@ -2700,7 +2701,7 @@ unsigned short I2C_Master_Read(unsigned short a);
 
 
 void I2C_Slave_Init(uint8_t address);
-# 31 "Lab4master.c" 2
+# 32 "Postlab4master.c" 2
 
 # 1 "./LCD.h" 1
 # 47 "./LCD.h"
@@ -2721,7 +2722,7 @@ void Lcd_Write_String(char *a);
 void Lcd_Shift_Right(void);
 
 void Lcd_Shift_Left(void);
-# 32 "Lab4master.c" 2
+# 33 "Postlab4master.c" 2
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c90\\stdio.h" 1 3
 
@@ -2820,7 +2821,7 @@ extern int vsscanf(const char *, const char *, va_list) __attribute__((unsupport
 #pragma printf_check(sprintf) const
 extern int sprintf(char *, const char *, ...);
 extern int printf(const char *, ...);
-# 33 "Lab4master.c" 2
+# 34 "Postlab4master.c" 2
 
 
 
@@ -2877,8 +2878,9 @@ void RTC_display()
   Date[15] = year % 10 + '0';
 
  Lcd_Set_Cursor(1,1);
-
   Lcd_Write_String(Time);
+  Lcd_Set_Cursor(2,1);
+  Lcd_Write_String(Date);
 
 }
 
@@ -2890,6 +2892,11 @@ void main(void) {
     I2C_Init(100000);
     minute = decimal_to_bcd(0);
     second = decimal_to_bcd(0);
+    hour = decimal_to_bcd(0);
+    m_day = decimal_to_bcd(6);
+    month= decimal_to_bcd(8);
+    year= decimal_to_bcd(23);
+
     I2C_Master_Start();
         I2C_Master_Write(0xD0);
         I2C_Master_Write(0x01);
@@ -2903,6 +2910,21 @@ void main(void) {
         I2C_Master_Write(second);
 
         I2C_Master_Stop();
+        _delay((unsigned long)((200)*(8000000/4000.0)));
+
+        I2C_Master_Start();
+        I2C_Master_Write(0xD0);
+        I2C_Master_Write(0x02);
+        I2C_Master_Write(hour);
+        I2C_Master_Write(0x03);
+        I2C_Master_Write(m_day);
+        I2C_Master_Write(0x04);
+        I2C_Master_Write(month);
+        I2C_Master_Write(0x05);
+        I2C_Master_Write(year);
+        I2C_Master_Stop();
+        _delay((unsigned long)((200)*(8000000/4000.0)));
+
     while(1){
 
         I2C_Master_Start();
@@ -2920,16 +2942,30 @@ void main(void) {
         I2C_Master_RepeatedStart();
         I2C_Master_Write(0xD1);
         minute = I2C_Master_Read(0);
+        I2C_Master_Write(0x02);
+        I2C_Master_RepeatedStart();
+        I2C_Master_Write(0xD1);
+        hour = I2C_Master_Read(0);
+        I2C_Master_Write(0x03);
+        I2C_Master_RepeatedStart();
+        I2C_Master_Write(0xD1);
+        m_day = I2C_Master_Read(0);
+        I2C_Master_Write(0x04);
+        I2C_Master_RepeatedStart();
+        I2C_Master_Write(0xD1);
+        month = I2C_Master_Read(0);
+        I2C_Master_Write(0x05);
+        I2C_Master_RepeatedStart();
+        I2C_Master_Write(0xD1);
+        year = I2C_Master_Read(0);
         I2C_Master_Stop();
         _delay((unsigned long)((200)*(8000000/4000.0)));
 
-        _delay((unsigned long)((200)*(8000000/4000.0)));
+
 
         RTC_display();
 
-       Lcd_Set_Cursor(2,8);
 
-  Lcd_Write_String("prueba");
     }
 
 }

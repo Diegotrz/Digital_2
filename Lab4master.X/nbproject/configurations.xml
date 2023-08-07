@@ -21,6 +21,7 @@
       <itemPath>lab4pruebamaster.c</itemPath>
       <itemPath>PruebaLedlab4.c</itemPath>
       <itemPath>Lab4prueba.c</itemPath>
+      <itemPath>Postlab4master.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
@@ -154,7 +155,17 @@
         <property key="program-the-device-with-default-config-words" value="true"/>
         <property key="remove-unused-sections" value="true"/>
       </HI-TECH-LINK>
+      <item path="Lab4master.c" ex="true" overriding="false">
+      </item>
       <item path="Lab4prueba.c" ex="true" overriding="false">
+        <HI-TECH-COMP>
+        </HI-TECH-COMP>
+        <HI-TECH-LINK>
+        </HI-TECH-LINK>
+        <XC8-CO>
+        </XC8-CO>
+        <XC8-config-global>
+        </XC8-config-global>
       </item>
       <item path="Prelab4master.c" ex="true" overriding="false">
         <HI-TECH-COMP>
@@ -167,6 +178,14 @@
         </XC8-config-global>
       </item>
       <item path="PruebaLedlab4.c" ex="true" overriding="false">
+        <HI-TECH-COMP>
+        </HI-TECH-COMP>
+        <HI-TECH-LINK>
+        </HI-TECH-LINK>
+        <XC8-CO>
+        </XC8-CO>
+        <XC8-config-global>
+        </XC8-config-global>
       </item>
       <XC8-CO>
         <property key="coverage-enable" value=""/>
