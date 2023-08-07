@@ -3,7 +3,7 @@
 [d edition pro ]
 [d chip 16F887 ]
 [d frameptr 0 ]
-"12 C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2/Lab3slave.X/SPI.c
+"12 C:\Users\Diego\Documents\GitHub\Digital_2/Lab3slave.X/SPI.c
 [e E1292 . `uc
 SPI_MASTER_OSC_DIV4 32
 SPI_MASTER_OSC_DIV16 33
@@ -24,7 +24,7 @@ SPI_CLOCK_IDLE_LOW 0
 SPI_IDLE_2_ACTIVE 0
 SPI_ACTIVE_2_IDLE 64
 ]
-"167 C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Lab3master.X\Postlab3master.c
+"167 C:\Users\Diego\Documents\GitHub\Digital_2\Lab3master.X\Postlab3master.c
 [e E1292 . `uc
 SPI_MASTER_OSC_DIV4 32
 SPI_MASTER_OSC_DIV16 33
@@ -45,7 +45,7 @@ SPI_CLOCK_IDLE_LOW 0
 SPI_IDLE_2_ACTIVE 0
 SPI_ACTIVE_2_IDLE 64
 ]
-"12 C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2/Lab3slave.X/SPI.c
+"12 C:\Users\Diego\Documents\GitHub\Digital_2/Lab3slave.X/SPI.c
 [v _spiInit spiInit `(v  1 e 1 0 ]
 "29
 [v _spiReceiveWait spiReceiveWait `(v  1 s 1 spiReceiveWait ]
@@ -67,7 +67,7 @@ SPI_ACTIVE_2_IDLE 64
 [v ___eecpymem __eecpymem `(v  1 e 1 0 ]
 "39
 [v ___memcpyee __memcpyee `(v  1 e 1 0 ]
-"13 C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Lab3master.X\LCD.c
+"13 C:\Users\Diego\Documents\GitHub\Digital_2\Lab3master.X\LCD.c
 [v _Lcd_Port Lcd_Port `(v  1 e 1 0 ]
 "35
 [v _Lcd_Cmd Lcd_Cmd `(v  1 e 1 0 ]
@@ -81,11 +81,13 @@ SPI_ACTIVE_2_IDLE 64
 [v _Lcd_Write_Char Lcd_Write_Char `(v  1 e 1 0 ]
 "98
 [v _Lcd_Write_String Lcd_Write_String `(v  1 e 1 0 ]
-"49 C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Lab3master.X\Postlab3master.c
+"49 C:\Users\Diego\Documents\GitHub\Digital_2\Lab3master.X\Postlab3master.c
 [v _main main `(v  1 e 1 0 ]
 "152
 [v _setup setup `(v  1 e 1 0 ]
-"167 C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h
+"358 C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\doprnt.c
+[v _dpowers dpowers `DC[5]ui  1 s 10 dpowers ]
+"167 D:/Mpxlab/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h
 [v _PORTA PORTA `VEuc  1 e 1 @5 ]
 "229
 [v _PORTB PORTB `VEuc  1 e 1 @6 ]
@@ -198,9 +200,7 @@ SPI_ACTIVE_2_IDLE 64
 [v _TRISC6 TRISC6 `VEb  1 e 0 @1086 ]
 "4474
 [v _TRISC7 TRISC7 `VEb  1 e 0 @1087 ]
-"358 C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\doprnt.c
-[v _dpowers dpowers `DC[5]ui  1 s 10 dpowers ]
-"37 C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Lab3master.X\Postlab3master.c
+"37 C:\Users\Diego\Documents\GitHub\Digital_2\Lab3master.X\Postlab3master.c
 [v _pot1 pot1 `uc  1 e 1 0 ]
 "38
 [v _pot2 pot2 `uc  1 e 1 0 ]
@@ -260,7 +260,7 @@ SPI_ACTIVE_2_IDLE 64
 [v ___lwdiv@dividend dividend `ui  1 p 2 2 ]
 "30
 } 0
-"34 C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2/Lab3slave.X/SPI.c
+"34 C:\Users\Diego\Documents\GitHub\Digital_2/Lab3slave.X/SPI.c
 [v _spiWrite spiWrite `(v  1 e 1 0 ]
 {
 [v spiWrite@dat dat `uc  1 a 1 wreg ]
@@ -279,12 +279,12 @@ SPI_ACTIVE_2_IDLE 64
 {
 "32
 } 0
-"152 C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Lab3master.X\Postlab3master.c
+"152 C:\Users\Diego\Documents\GitHub\Digital_2\Lab3master.X\Postlab3master.c
 [v _setup setup `(v  1 e 1 0 ]
 {
 "171
 } 0
-"12 C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2/Lab3slave.X/SPI.c
+"12 C:\Users\Diego\Documents\GitHub\Digital_2/Lab3slave.X/SPI.c
 [v _spiInit spiInit `(v  1 e 1 0 ]
 {
 [v spiInit@sType sType `E1292  1 a 1 wreg ]
@@ -296,7 +296,7 @@ SPI_ACTIVE_2_IDLE 64
 [v spiInit@sType sType `E1292  1 a 1 3 ]
 "27
 } 0
-"98 C:\Users\diego\OneDrive\Documentos\GitHub\Digital_2\Lab3master.X\LCD.c
+"98 C:\Users\Diego\Documents\GitHub\Digital_2\Lab3master.X\LCD.c
 [v _Lcd_Write_String Lcd_Write_String `(v  1 e 1 0 ]
 {
 "99

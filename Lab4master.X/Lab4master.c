@@ -42,6 +42,12 @@ uint8_t  i, second, minute, hour, m_day, month, year;
 // contrario hay que colocarlos todas las funciones antes del main
 //*****************************************************************************
 void setup(void);
+void I2C_Init(uint32_t i2c_clk_freq)
+{
+  SSPCON  = 0x28;  // configure MSSP module to work in I2C mode
+  SSPADD  = (_XTAL_FREQ/(4 * i2c_clk_freq)) - 1;  // set I2C clock frequency
+  SSPSTAT = 0;
+}
 uint8_t bcd_to_decimal(uint8_t number) {
   return((number >> 4) * 10 + (number & 0x0F));
 }
@@ -90,27 +96,42 @@ void RTC_display()
 void main(void) {
     setup();
     Lcd_Init();
-    minute = decimal_to_bcd(1);
+    I2C_Init(100000);
+    minute = decimal_to_bcd(0);
+    second = decimal_to_bcd(0);
     I2C_Master_Start();
         I2C_Master_Write(0xD0);
         I2C_Master_Write(0x01);    
         I2C_Master_Write(minute);   
+        
         I2C_Master_Stop();
         __delay_ms(200);
-    while(1){
-        /**/
         I2C_Master_Start();
         I2C_Master_Write(0xD0);
         I2C_Master_Write(0x00);    
-       I2C_Master_RepeatedStart();
-         I2C_Master_Write(0xD1);
-         I2C_Master_Write(0x00);
-       second =  I2C_Master_Read(1);
-        I2C_Master_RepeatedStart();
-       I2C_Master_Write(0xD1);
-       I2C_Master_Write(0x01);
-    //   minute =  I2C_Master_Read(1);
+        I2C_Master_Write(second);   
+        
         I2C_Master_Stop();
+    while(1){
+       
+        I2C_Master_Start();
+        I2C_Master_Write(0xD0);
+        I2C_Master_Write(0x00);
+        I2C_Master_Stop();
+        
+        I2C_Master_Start();
+        I2C_Master_Write(0xD0);
+        I2C_Master_Write(0x00);
+        I2C_Master_RepeatedStart();
+        I2C_Master_Write(0xD1);
+        second = I2C_Master_Read(0);
+        I2C_Master_Write(0x01);
+        I2C_Master_RepeatedStart();
+        I2C_Master_Write(0xD1);
+        minute = I2C_Master_Read(0);
+        I2C_Master_Stop();
+        __delay_ms(200);
+             
         __delay_ms(200);
        
         RTC_display();
@@ -127,16 +148,22 @@ void main(void) {
 void setup(void){
     ANSEL = 0;
     ANSELH = 0;
-    TRISB = 0;
+    TRISC1 = 0;
+    TRISC2 = 0;
     TRISC6 = 0;
     TRISC7 = 0;
+    TRISA =0;
+    TRISB = 0;
     TRISD = 0;
+    PORTA = 0;
     PORTB = 0;
     PORTD = 0;
-     // Configuración del oscilador
+    PORTCbits.RC1 = 1;  
+    PORTCbits.RC2 = 1;
+ 
+// Configuración del oscilador
     OSCCONbits.IRCF =   0b0111; //8MHz
     OSCCONbits.SCS = 1;
-    I2C_Master_Init(100000);        // Inicializar Comuncación I2C
     
    
 }
