@@ -158,6 +158,6 @@ void setup(void){
 
     
     
-    I2C_Slave_Init(0x50);   
+    I2C_Slave_Init(0x24);   
     
 }

@@ -2889,76 +2889,28 @@ void RTC_display()
 void main(void) {
     setup();
     Lcd_Init();
-    I2C_Init(100000);
+
+     I2C_Master_Init(100000);
     minute = decimal_to_bcd(0);
     second = decimal_to_bcd(0);
     hour = decimal_to_bcd(0);
     m_day = decimal_to_bcd(6);
     month= decimal_to_bcd(8);
     year= decimal_to_bcd(23);
-
-    I2C_Master_Start();
-        I2C_Master_Write(0xD0);
-        I2C_Master_Write(0x01);
-        I2C_Master_Write(minute);
-
-        I2C_Master_Stop();
-        _delay((unsigned long)((200)*(8000000/4000.0)));
-        I2C_Master_Start();
-        I2C_Master_Write(0xD0);
-        I2C_Master_Write(0x00);
-        I2C_Master_Write(second);
-
-        I2C_Master_Stop();
-        _delay((unsigned long)((200)*(8000000/4000.0)));
-
-        I2C_Master_Start();
-        I2C_Master_Write(0xD0);
-        I2C_Master_Write(0x02);
-        I2C_Master_Write(hour);
-        I2C_Master_Write(0x03);
-        I2C_Master_Write(m_day);
-        I2C_Master_Write(0x04);
-        I2C_Master_Write(month);
-        I2C_Master_Write(0x05);
-        I2C_Master_Write(year);
-        I2C_Master_Stop();
-        _delay((unsigned long)((200)*(8000000/4000.0)));
-
+# 138 "Postlab4master.c"
     while(1){
+       I2C_Master_Start();
+        I2C_Master_Write(0x24);
+        I2C_Master_Write(PORTB);
+        I2C_Master_Stop();
+        _delay((unsigned long)((200)*(8000000/4000.0)));
 
         I2C_Master_Start();
-        I2C_Master_Write(0xD0);
-        I2C_Master_Write(0x00);
+        I2C_Master_Write(0x25);
+        PORTA = I2C_Master_Read(0);
         I2C_Master_Stop();
-
-        I2C_Master_Start();
-        I2C_Master_Write(0xD0);
-        I2C_Master_Write(0x00);
-        I2C_Master_RepeatedStart();
-        I2C_Master_Write(0xD1);
-        second = I2C_Master_Read(0);
-        I2C_Master_Write(0x01);
-        I2C_Master_RepeatedStart();
-        I2C_Master_Write(0xD1);
-        minute = I2C_Master_Read(0);
-        I2C_Master_Write(0x02);
-        I2C_Master_RepeatedStart();
-        I2C_Master_Write(0xD1);
-        hour = I2C_Master_Read(0);
-        I2C_Master_Write(0x03);
-        I2C_Master_RepeatedStart();
-        I2C_Master_Write(0xD1);
-        m_day = I2C_Master_Read(0);
-        I2C_Master_Write(0x04);
-        I2C_Master_RepeatedStart();
-        I2C_Master_Write(0xD1);
-        month = I2C_Master_Read(0);
-        I2C_Master_Write(0x05);
-        I2C_Master_RepeatedStart();
-        I2C_Master_Write(0xD1);
-        year = I2C_Master_Read(0);
-        I2C_Master_Stop();
+        _delay((unsigned long)((200)*(8000000/4000.0)));
+# 187 "Postlab4master.c"
         _delay((unsigned long)((200)*(8000000/4000.0)));
 
 
@@ -2975,8 +2927,6 @@ void main(void) {
 void setup(void){
     ANSEL = 0;
     ANSELH = 0;
-    TRISC1 = 0;
-    TRISC2 = 0;
     TRISC6 = 0;
     TRISC7 = 0;
     TRISA =0;
@@ -2985,8 +2935,7 @@ void setup(void){
     PORTA = 0;
     PORTB = 0;
     PORTD = 0;
-    PORTCbits.RC1 = 1;
-    PORTCbits.RC2 = 1;
+
 
 
     OSCCONbits.IRCF = 0b0111;
