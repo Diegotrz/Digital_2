@@ -650,80 +650,74 @@ Version 4.0 HI-TECH Software Intermediate Code
 "133
 [; ;Lab4master.c: 133:         _delay((unsigned long)((200)*(8000000/4000.0)));
 [e ( __delay (1 -> * -> -> 200 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-"135
-[; ;Lab4master.c: 135:         _delay((unsigned long)((200)*(8000000/4000.0)));
-[e ( __delay (1 -> * -> -> 200 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-"137
-[; ;Lab4master.c: 137:         RTC_display();
+"136
+[; ;Lab4master.c: 136:         RTC_display();
 [e ( _RTC_display ..  ]
-"139
-[; ;Lab4master.c: 139:        Lcd_Set_Cursor(2,8);
-[e ( _Lcd_Set_Cursor (2 , -> -> 2 `i `uc -> -> 8 `i `uc ]
-"142
-[; ;Lab4master.c: 142:     }
+"140
+[; ;Lab4master.c: 140:     }
 }
 [e :U 144 ]
 [e $U 145  ]
 [e :U 146 ]
-"144
-[; ;Lab4master.c: 144: }
+"142
+[; ;Lab4master.c: 142: }
 [e :UE 143 ]
 }
-"148
-[; ;Lab4master.c: 148: void setup(void){
+"146
+[; ;Lab4master.c: 146: void setup(void){
 [v _setup `(v ~T0 @X0 1 ef ]
 {
 [e :U _setup ]
 [f ]
-"149
-[; ;Lab4master.c: 149:     ANSEL = 0;
+"147
+[; ;Lab4master.c: 147:     ANSEL = 0;
 [e = _ANSEL -> -> 0 `i `uc ]
-"150
-[; ;Lab4master.c: 150:     ANSELH = 0;
+"148
+[; ;Lab4master.c: 148:     ANSELH = 0;
 [e = _ANSELH -> -> 0 `i `uc ]
-"151
-[; ;Lab4master.c: 151:     TRISC1 = 0;
+"149
+[; ;Lab4master.c: 149:     TRISC1 = 0;
 [e = _TRISC1 -> -> 0 `i `b ]
-"152
-[; ;Lab4master.c: 152:     TRISC2 = 0;
+"150
+[; ;Lab4master.c: 150:     TRISC2 = 0;
 [e = _TRISC2 -> -> 0 `i `b ]
-"153
-[; ;Lab4master.c: 153:     TRISC6 = 0;
+"151
+[; ;Lab4master.c: 151:     TRISC6 = 0;
 [e = _TRISC6 -> -> 0 `i `b ]
-"154
-[; ;Lab4master.c: 154:     TRISC7 = 0;
+"152
+[; ;Lab4master.c: 152:     TRISC7 = 0;
 [e = _TRISC7 -> -> 0 `i `b ]
-"155
-[; ;Lab4master.c: 155:     TRISA =0;
+"153
+[; ;Lab4master.c: 153:     TRISA =0;
 [e = _TRISA -> -> 0 `i `uc ]
-"156
-[; ;Lab4master.c: 156:     TRISB = 0;
+"154
+[; ;Lab4master.c: 154:     TRISB = 0;
 [e = _TRISB -> -> 0 `i `uc ]
-"157
-[; ;Lab4master.c: 157:     TRISD = 0;
+"155
+[; ;Lab4master.c: 155:     TRISD = 0;
 [e = _TRISD -> -> 0 `i `uc ]
-"158
-[; ;Lab4master.c: 158:     PORTA = 0;
+"156
+[; ;Lab4master.c: 156:     PORTA = 0;
 [e = _PORTA -> -> 0 `i `uc ]
-"159
-[; ;Lab4master.c: 159:     PORTB = 0;
+"157
+[; ;Lab4master.c: 157:     PORTB = 0;
 [e = _PORTB -> -> 0 `i `uc ]
-"160
-[; ;Lab4master.c: 160:     PORTD = 0;
+"158
+[; ;Lab4master.c: 158:     PORTD = 0;
 [e = _PORTD -> -> 0 `i `uc ]
-"161
-[; ;Lab4master.c: 161:     PORTCbits.RC1 = 1;
+"159
+[; ;Lab4master.c: 159:     PORTCbits.RC1 = 1;
 [e = . . _PORTCbits 0 1 -> -> 1 `i `uc ]
-"162
-[; ;Lab4master.c: 162:     PORTCbits.RC2 = 1;
+"160
+[; ;Lab4master.c: 160:     PORTCbits.RC2 = 1;
 [e = . . _PORTCbits 0 2 -> -> 1 `i `uc ]
-"165
-[; ;Lab4master.c: 165:     OSCCONbits.IRCF = 0b0111;
+"163
+[; ;Lab4master.c: 163:     OSCCONbits.IRCF = 0b0111;
 [e = . . _OSCCONbits 0 4 -> -> 7 `i `uc ]
-"166
-[; ;Lab4master.c: 166:     OSCCONbits.SCS = 1;
+"164
+[; ;Lab4master.c: 164:     OSCCONbits.SCS = 1;
 [e = . . _OSCCONbits 0 0 -> -> 1 `i `uc ]
-"169
-[; ;Lab4master.c: 169: }
+"167
+[; ;Lab4master.c: 167: }
 [e :UE 147 ]
 }

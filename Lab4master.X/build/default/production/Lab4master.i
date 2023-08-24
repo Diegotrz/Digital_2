@@ -2923,11 +2923,9 @@ void main(void) {
         I2C_Master_Stop();
         _delay((unsigned long)((200)*(8000000/4000.0)));
 
-        _delay((unsigned long)((200)*(8000000/4000.0)));
 
         RTC_display();
 
-       Lcd_Set_Cursor(2,8);
 
 
     }
