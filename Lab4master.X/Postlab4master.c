@@ -106,7 +106,7 @@ void main(void) {
     m_day = decimal_to_bcd(6);
     month= decimal_to_bcd(8);
     year= decimal_to_bcd(23);
-    /*
+    
     I2C_Master_Start();
         I2C_Master_Write(0xD0);
         I2C_Master_Write(0x01);    
@@ -134,21 +134,10 @@ void main(void) {
         I2C_Master_Write(year);
         I2C_Master_Stop();
         __delay_ms(200);
-        */
-    while(1){
-       I2C_Master_Start();
-        I2C_Master_Write(0x24);
-        I2C_Master_Write(PORTB);
-        I2C_Master_Stop();
-        __delay_ms(200);
-       
-        I2C_Master_Start();
-        I2C_Master_Write(0x25);
-        PORTA = I2C_Master_Read(0);
-        I2C_Master_Stop();
-        __delay_ms(200);
         
-       /*  
+    while(1){
+      
+        
         I2C_Master_Start();
         I2C_Master_Write(0xD0);
         I2C_Master_Write(0x00);
@@ -181,7 +170,7 @@ void main(void) {
         I2C_Master_Write(0xD1);
         year = I2C_Master_Read(0);
         I2C_Master_Stop();
-        */ 
+        
          
       
         __delay_ms(200);
