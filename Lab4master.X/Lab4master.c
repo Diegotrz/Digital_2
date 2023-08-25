@@ -131,13 +131,11 @@ void main(void) {
         minute = I2C_Master_Read(0);
         I2C_Master_Stop();
         __delay_ms(200);
-             
-        __delay_ms(200);
+
        
         RTC_display();
       //  Lcd_Clear();
-       Lcd_Set_Cursor(2,8);
-  
+    
   
     }
     

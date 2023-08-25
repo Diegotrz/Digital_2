@@ -19,18 +19,30 @@
 [v ___eecpymem __eecpymem `(v  1 e 1 0 ]
 "39
 [v ___memcpyee __memcpyee `(v  1 e 1 0 ]
-"16 C:\Users\Diego\Documents\GitHub\Digital_2\Lab4master.X\I2C.c
-[v _I2C_Master_Init I2C_Master_Init `(v  1 e 1 0 ]
-"32
+"32 C:\Users\Diego\Documents\GitHub\Digital_2\Lab4master.X\I2C.c
 [v _I2C_Master_Wait I2C_Master_Wait `(v  1 e 1 0 ]
 "39
 [v _I2C_Master_Start I2C_Master_Start `(v  1 e 1 0 ]
+"47
+[v _I2C_Master_RepeatedStart I2C_Master_RepeatedStart `(v  1 e 1 0 ]
 "55
 [v _I2C_Master_Stop I2C_Master_Stop `(v  1 e 1 0 ]
 "65
 [v _I2C_Master_Write I2C_Master_Write `(v  1 e 1 0 ]
 "74
 [v _I2C_Master_Read I2C_Master_Read `(us  1 e 2 0 ]
+"45 C:\Users\Diego\Documents\GitHub\Digital_2\Lab4master.X\Lab4master.c
+[v _I2C_Init I2C_Init `(v  1 e 1 0 ]
+"51
+[v _bcd_to_decimal bcd_to_decimal `(uc  1 e 1 0 ]
+"56
+[v _decimal_to_bcd decimal_to_bcd `(uc  1 e 1 0 ]
+"59
+[v _RTC_display RTC_display `(v  1 e 1 0 ]
+"96
+[v _main main `(v  1 e 1 0 ]
+"146
+[v _setup setup `(v  1 e 1 0 ]
 "13 C:\Users\Diego\Documents\GitHub\Digital_2\Lab4master.X\LCD.c
 [v _Lcd_Port Lcd_Port `(v  1 e 1 0 ]
 "35
@@ -43,21 +55,11 @@
 [v _Lcd_Write_Char Lcd_Write_Char `(v  1 e 1 0 ]
 "98
 [v _Lcd_Write_String Lcd_Write_String `(v  1 e 1 0 ]
-"52 C:\Users\Diego\Documents\GitHub\Digital_2\Lab4master.X\Postlab4master.c
-[v _bcd_to_decimal bcd_to_decimal `(uc  1 e 1 0 ]
-"57
-[v _decimal_to_bcd decimal_to_bcd `(uc  1 e 1 0 ]
-"60
-[v _RTC_display RTC_display `(v  1 e 1 0 ]
-"98
-[v _main main `(v  1 e 1 0 ]
-"200
-[v _setup setup `(v  1 e 1 0 ]
 "167 D:/Mpxlab/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h
 [v _PORTA PORTA `VEuc  1 e 1 @5 ]
 "229
 [v _PORTB PORTB `VEuc  1 e 1 @6 ]
-[s S109 . 1 `uc 1 RC0 1 0 :1:0 
+[s S150 . 1 `uc 1 RC0 1 0 :1:0 
 `uc 1 RC1 1 0 :1:1 
 `uc 1 RC2 1 0 :1:2 
 `uc 1 RC3 1 0 :1:3 
@@ -67,10 +69,22 @@
 `uc 1 RC7 1 0 :1:7 
 ]
 "308
-[u S118 . 1 `S109 1 . 1 0 ]
-[v _PORTCbits PORTCbits `VES118  1 e 1 @7 ]
+[u S159 . 1 `S150 1 . 1 0 ]
+[v _PORTCbits PORTCbits `VES159  1 e 1 @7 ]
 "353
 [v _PORTD PORTD `VEuc  1 e 1 @8 ]
+[s S245 . 1 `uc 1 RD0 1 0 :1:0 
+`uc 1 RD1 1 0 :1:1 
+`uc 1 RD2 1 0 :1:2 
+`uc 1 RD3 1 0 :1:3 
+`uc 1 RD4 1 0 :1:4 
+`uc 1 RD5 1 0 :1:5 
+`uc 1 RD6 1 0 :1:6 
+`uc 1 RD7 1 0 :1:7 
+]
+"370
+[u S254 . 1 `S245 1 . 1 0 ]
+[v _PORTDbits PORTDbits `VES254  1 e 1 @8 ]
 "844
 [v _SSPBUF SSPBUF `VEuc  1 e 1 @19 ]
 "851
@@ -93,20 +107,20 @@
 [v _TRISCbits TRISCbits `VES35  1 e 1 @135 ]
 "1603
 [v _TRISD TRISD `VEuc  1 e 1 @136 ]
-[s S196 . 1 `uc 1 SCS 1 0 :1:0 
+[s S171 . 1 `uc 1 SCS 1 0 :1:0 
 `uc 1 LTS 1 0 :1:1 
 `uc 1 HTS 1 0 :1:2 
 `uc 1 OSTS 1 0 :1:3 
 `uc 1 IRCF 1 0 :3:4 
 ]
 "1883
-[s S202 . 1 `uc 1 . 1 0 :4:0 
+[s S177 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 IRCF0 1 0 :1:4 
 `uc 1 IRCF1 1 0 :1:5 
 `uc 1 IRCF2 1 0 :1:6 
 ]
-[u S207 . 1 `S196 1 . 1 0 `S202 1 . 1 0 ]
-[v _OSCCONbits OSCCONbits `VES207  1 e 1 @143 ]
+[u S182 . 1 `S171 1 . 1 0 `S177 1 . 1 0 ]
+[v _OSCCONbits OSCCONbits `VES182  1 e 1 @143 ]
 "1980
 [v _SSPCON2 SSPCON2 `VEuc  1 e 1 @145 ]
 [s S47 . 1 `uc 1 SEN 1 0 :1:0 
@@ -133,8 +147,8 @@
 [v _GIE GIE `VEb  1 e 0 @95 ]
 "4045
 [v _PEIE PEIE `VEb  1 e 0 @94 ]
-"4159
-[v _RC7 RC7 `VEb  1 e 0 @63 ]
+"4195
+[v _RD3 RD3 `VEb  1 e 0 @67 ]
 "4198
 [v _RD4 RD4 `VEb  1 e 0 @68 ]
 "4201
@@ -147,6 +161,10 @@
 [v _SSPIE SSPIE `VEb  1 e 0 @1123 ]
 "4282
 [v _SSPIF SSPIF `VEb  1 e 0 @99 ]
+"4456
+[v _TRISC1 TRISC1 `VEb  1 e 0 @1081 ]
+"4459
+[v _TRISC2 TRISC2 `VEb  1 e 0 @1082 ]
 "4462
 [v _TRISC3 TRISC3 `VEb  1 e 0 @1083 ]
 "4465
@@ -155,47 +173,47 @@
 [v _TRISC6 TRISC6 `VEb  1 e 0 @1086 ]
 "4474
 [v _TRISC7 TRISC7 `VEb  1 e 0 @1087 ]
-"40 C:\Users\Diego\Documents\GitHub\Digital_2\Lab4master.X\Postlab4master.c
+"39 C:\Users\Diego\Documents\GitHub\Digital_2\Lab4master.X\Lab4master.c
 [v _second second `uc  1 e 1 0 ]
 [v _minute minute `uc  1 e 1 0 ]
 [v _hour hour `uc  1 e 1 0 ]
 [v _m_day m_day `uc  1 e 1 0 ]
 [v _month month `uc  1 e 1 0 ]
 [v _year year `uc  1 e 1 0 ]
-"98
+"96
 [v _main main `(v  1 e 1 0 ]
 {
-"196
+"142
 } 0
-"200
+"146
 [v _setup setup `(v  1 e 1 0 ]
 {
-"218
+"167
 } 0
-"57
+"56
 [v _decimal_to_bcd decimal_to_bcd `(uc  1 e 1 0 ]
 {
 [v decimal_to_bcd@number number `uc  1 a 1 wreg ]
 [v decimal_to_bcd@number number `uc  1 a 1 wreg ]
 [v decimal_to_bcd@number number `uc  1 a 1 0 ]
-"59
+"58
 } 0
-"60
+"59
 [v _RTC_display RTC_display `(v  1 e 1 0 ]
 {
-"62
+"61
 [v RTC_display@Time Time `[15]uc  1 s 15 Time ]
-"63
+"62
 [v RTC_display@Date Date `[17]uc  1 s 17 Date ]
-"94
+"92
 } 0
-"52
+"51
 [v _bcd_to_decimal bcd_to_decimal `(uc  1 e 1 0 ]
 {
 [v bcd_to_decimal@number number `uc  1 a 1 wreg ]
 [v bcd_to_decimal@number number `uc  1 a 1 wreg ]
 [v bcd_to_decimal@number number `uc  1 a 1 6 ]
-"54
+"53
 } 0
 "4 C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\Umul8.c
 [v ___bmul __bmul `(uc  1 e 1 0 ]
@@ -311,6 +329,11 @@
 {
 "43
 } 0
+"47
+[v _I2C_Master_RepeatedStart I2C_Master_RepeatedStart `(v  1 e 1 0 ]
+{
+"51
+} 0
 "74
 [v _I2C_Master_Read I2C_Master_Read `(us  1 e 2 0 ]
 {
@@ -325,11 +348,11 @@
 {
 "35
 } 0
-"16
-[v _I2C_Master_Init I2C_Master_Init `(v  1 e 1 0 ]
+"45 C:\Users\Diego\Documents\GitHub\Digital_2\Lab4master.X\Lab4master.c
+[v _I2C_Init I2C_Init `(v  1 e 1 0 ]
 {
-[v I2C_Master_Init@c c `DCul  1 p 4 0 ]
-"24
+[v I2C_Init@i2c_clk_freq i2c_clk_freq `ul  1 p 4 0 ]
+"50
 } 0
 "5 C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\__lldiv.c
 [v ___lldiv __lldiv `(ul  1 e 4 0 ]
